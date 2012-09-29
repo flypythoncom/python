@@ -1,0 +1,86 @@
+---
+layout:           default
+---
+<script type="text/javascript">
+    BYB.images = [
+        'http://ww1.sinaimg.cn/large/8b8af2c8gw1do3ek44ojej.jpg'
+        ,'http://ww1.sinaimg.cn/large/8b8af2c8gw1do3eq6pla4j.jpg'
+        ,'http://ww1.sinaimg.cn/large/a74e55b4jw1dv23n1n9zaj.jpg'
+        ,'http://ww3.sinaimg.cn/large/a74e55b4jw1dv23op0j6qj.jpg'
+    ];
+    BYB.img = new Image();
+    BYB.img.src = BYB.images[parseInt(Math.random()*10,10)%4];
+    BYB.img.id = 'bgImage'
+</script>
+<div id="mycard" class="clearfix">
+    <div class="name">
+        <a href="/" class="link-icon">BeiYuu</a>
+    </div>
+    <div class="blog">
+        <a href="/blog" class="link-icon"><span></span></a>
+        <a href="/blog" class="link-info hide"><span>Blog</span></a>
+    </div>
+    <div class="project">
+        <a href="/project" class="link-icon"><span></span></a>
+        <a href="/project" class="link-info hide"><span>Project</span></a>
+    </div>
+    <div class="wiki">
+        <a href="/wiki" class="link-icon"><span></span></a>
+        <a href="/wiki" class="link-info hide"><span>Wiki</span></a>
+    </div>
+    <div class="about">
+        <a href="/about" class="link-icon"><span></span></a>
+        <a href="/about" class="link-info hide"><span>About Me</span></a>
+    </div>
+    <div class="rss">
+        <a href="{{ site.feed }}" class="link-icon"><span></span></a>
+        <a href="{{ site.feed }}" class="link-info hide"><span>Rss</span></a>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var imgWidth,imgHeight,winWidth,winHeight;
+        var imgComplete = function(){
+            imgHeight = BYB.img.height;
+            imgWidth = BYB.img.width;
+            resizeWindow();
+            //$('#mycard').css({'opacity':0.8});
+            $('body').css('background','none');
+            $(BYB.img).animate({opacity:'toggle'},500);
+        }
+
+        var resizeWindow = function(){
+            var _width,_height;
+            winHeight = $(document).height();
+            winWidth = $(document).width();
+            _height = imgHeight*winWidth/imgWidth;
+            _width = imgWidth*winHeight/imgHeight;
+            if(_height < winHeight){
+                $('#bgImage').css({'height':winHeight,'width':_width,'left':-(_width-winWidth)*0.5});
+            }else{
+                $('#bgImage').css({'width':winWidth,'height':_height,'left':0});
+            }
+        }
+
+        $(BYB.img).css({'position':'fixed','top':'0','z-index':'-2','display':'none'});
+        $('body').append(BYB.img);
+        if(BYB.img.complete){
+            imgComplete()
+        }else{
+            BYB.img.onload = imgComplete;
+        }
+
+        $(window).on('resize',resizeWindow);
+
+        $('#mycard div').on('mouseenter',function(){
+            if(!$(this).hasClass('name')){
+                $(this).addClass('link-hover');
+                $(this).children('.link-info').removeClass('hide').animate({height:'23px'},'fast');
+            }
+        });
+        $('#mycard div').on('mouseleave',function(){
+            $(this).removeClass('link-hover');
+            $(this).children('.link-info').stop().animate({height:'0'});
+        });
+    })
+</script>

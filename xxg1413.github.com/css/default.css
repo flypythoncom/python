@@ -1,0 +1,140 @@
+/**
+ *
+ * Author:           BeiYuu
+ * Contact:          beiyuu.com
+ *
+ */
+
+/* 重置浏览器CSS */
+/* 防止用户自定义背景颜色对网页的影响 */
+html{color:#000;background:#F8F8F0;}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+/* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+  /* 要注意表单元素并不继续父级 font 的问题 */
+body,button,input,select,textarea{font-size:12px/1.5;}
+input,select,textarea{font-size:100%;}
+  /* 去掉各Table  cell 的边距并让其边重合 */
+table{border-collapse:collapse;border-spacing:0;}
+  /* IE bug fixed: th 不继承 text-align*/
+th{text-align:inherit;}
+/* 去除默认边框 */
+fieldset,img,a img{border:0;}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe{display:block;}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym{border:0;font-variant:normal;}
+/* 一致的 del 样式 */
+del{text-decoration:line-through;}
+address,caption,cite,code,dfn,em,th,var {font-style:normal;font-weight:500;}
+  /* 去掉列表前的标识, li 会继承 */
+ol,ul {list-style:none;}
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,th{text-align:left;}
+/* 来自yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500;}
+q:before,q:after {content:'';}
+/* 统一上标和下标 */
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+/* 清理浮动 */
+.clearfix:after {visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0;}
+.clearfix{zoom:1; /* for IE6 IE7 */}
+/* 隐藏, 通常用来与 JS 配合 */
+body .hide{display:none;}
+/* 设置内联, 减少浮动带来的bug */
+.left,.right{display:inline;}
+.left{float:left;}
+.right{float:right;}
+
+
+/***********default settings**********/
+body {font-family: "微软雅黑","Times New Roman", Times, serif;font-size:16px;background:#F8F8F0}
+a {color:#4A75B5;text-decoration:none;outline:none;}
+a:hover {text-decoration:underline}
+a.external {padding-right:13px;background:url('/images/icons.gif') no-repeat right 1px;}
+a.external:hover {background-position:right -14px;}
+h1,h1 a {font-size:30px;font-weight:bold;margin-bottom:30px;color:#000}
+h1 a:hover {text-decoration:none;}
+h2 {font-size:22px;font-weight:bold;margin-bottom:13px;}
+h3 {font-size:18px;font-weight:bold;margin-bottom:10px;}
+h4,h5,h6 {font-weight:bold;margin-bottom:10px;}
+p {margin-bottom:20px;line-height:25px;}
+code {background:#eee;border:1px solid #ccc;padding:0 5px;font-family:"Courier";line-height:14px;font-size:14px;}
+pre {background-color:#000;padding:15px;overflow:auto;margin-bottom:20px;font-size:14px;border: 1px solid #eee;-webkit-border-radius: 4px 4px 4px 4px;-moz-border-radius: 4px 4px 4px 4px;border-radius: 4px 4px 4px 4px;color:#b9bdb6}
+pre code{background-color:transparent;border:none;padding:0;}
+pre ol{margin-left:25px;list-style-type:decimal;}
+
+/************layout style*****************/
+/*#head {width:100%;height:60px;background:url('/images/head-bg.png') 0 -31px;margin-bottom:50px;}*/
+#head {width:100%;height:60px;margin-bottom:50px;}
+#header {width:650px;margin:0 auto;}
+#content {width:650px;margin:0 auto;min-height:400px;height:auto !important;height:400px;}
+#footer {width:650px;margin:0 auto;}
+
+/*****************mycard style*********/
+#mycard {width:514px;background-color:#555;position:absolute;top:38.2%;left:40%;margin-left:-250px;margin-top:-100px;opacity:0.8;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=80)";filter:alpha(opacity=80);*padding-bottom:2px;}
+#mycard div{width:165px;height:100px;margin:2px;background-color:#d6b301;float:left;display:inline;line-height:100px;border:1px solid #555;position:relative;overflow:hidden;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=80)";filter:alpha(opacity=80);}
+#mycard .link-hover{width:163px;height:98px;border:2px solid #333}
+#mycard a.link-icon{display:block;height:100%;padding-top:30px;}
+#mycard .link-icon span{width:48px;height:48px;display:block;margin-left:68px;background-image:url(/images/index.png);cursor:pointer}
+#mycard a.link-info{text-align:center;position:absolute;bottom:0;left:0;line-height:normal;color:#fff;background-color:#000;height:0;width:100%;}
+#mycard a.link-info:hover {text-decoration:none}
+#mycard img{margin-top:20px}
+#mycard .name{text-align:center;background-color:#3B5997}
+#mycard .name .link-icon{color:#fff;font-size:38px;font-weight:bold;padding-top:0}
+#mycard .name a.link-icon:hover {text-decoration:none}
+#mycard .blog{background-color:#D6B301}
+#mycard .blog .link-icon span {background-position:-76px -15px;}
+#mycard .project{background-color:#55B00D}
+#mycard .project .link-icon span {background-position:-10px -15px;}
+#mycard .wiki{background-color:#00B5E2}
+#mycard .wiki .link-icon span {background-position:-10px -75px;}
+#mycard .about{background-color:#E75F21}
+#mycard .about .link-icon span {background-position:-150px -15px;}
+#mycard .rss{margin-bottom:0;background-color:#fff}
+#mycard .rss .link-icon span {background-position:-76px -75px;}
+
+
+/***************header style************/
+#head .logo {font-size:35px;font-weight:bold;margin-top:18px;}
+#head .logo a{color:#999;}
+#head .logo a:hover {text-decoration:none;color:#666;}
+#head .logo a:active {position:relative;top:1px;opacity:0.9;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=90)";filter:alpha(opacity=90);}
+#head .nav {margin-top:30px;}
+#head .nav a {margin-right:10px;font-size:15px;font-weight:bold;color:#E50053}
+
+/****************entry style**************/
+#content .entry{margin-bottom:50px;}
+.entry ul{margin-bottom:20px;margin-left:25px;}
+.entry ul li{margin-bottom:10px;list-style:disc}
+.entry blockquote{margin-left:30px;font-size:14px;font-style:italic}
+.entry img{max-width:650px;display:block;margin:10px auto;}
+
+/***************category style**************/
+.category h2{font-size:19px;}
+.category h2 a{color:#444}
+.category h2 a:hover {color:#E50053;text-decoration:none;}
+.category li{display:-moz-inline-stack;display:inline-block;*display:inline;width:230px;margin-bottom:30px;zoom:1;padding:10px 45px;vertical-align:middle;text-align:center;}
+.category span{color:#777;font-style:italic;font-size:14px;display:block;text-align:left}
+
+/***************Wiki Style*****************/
+.wiki h2{cursor:pointer;}
+.wiki ul{margin-left:30px;margin-bottom:20px;list-style:disc}
+.wiki ul li{margin-bottom:5px;}
+.wiki ul ul{list-style:circle;margin-top:10px;margin-bottom:10px;}
+/***************contact style*************/
+#disqus_container {font-size:12px;}
+#disqus_container a.comment{font-size:14px;}
+#footer .copyright {margin-top:15px;font-size:10px;font-color:#ccc;text-align:center}
+h3.about {color:#777;margin-top:20px;font-size:22px;margin-bottom:10px}
+.about-link a {margin-right:10px;font-weight:bold;font-style:italic;font-size:13px;color:#E50053}
+/**************目录导航**************/
+#menuIndex {position:fixed;top:60px;right:20px;width:250px;overflow:auto}
+#menuIndex a {display:block}
+#menuIndex a:hover {text-decoration:none;}
+#menuIndex ul li{font-size:12px;margin-bottom:5px;word-wrap:break-word;}
+#menuIndex ul li.on{background-color:#eee}
+#menuIndex li.h1{font-size:14px;font-weight:normal;}
+#menuIndex li.h3{padding-left:15px;}
