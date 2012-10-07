@@ -1,3 +1,0 @@
-﻿---
-layout: page
-title:
