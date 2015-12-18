@@ -10,11 +10,16 @@ def deQ():
 def viewQ():
     print queue
 
-CMDS = {'e': enQ,'d':deQ,'v':viewQ}
+def quit():
+    print ('Bye, Queue ends up with:\n')
+    print queue
+    exit()
+
+CMDS = {'e': enQ,'d':deQ,'v':viewQ,'q':quit}
 def showmenu():
     pr="""
 (E)nqueue
-(D)enqueue
+(D)equeue
 (V)iew
 (Q)uit
 
