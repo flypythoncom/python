@@ -12,7 +12,7 @@ from random import randint
 
 def printNum():
     
-    sInput = raw_input(u"请输入你猜的数字(1-100)：")
+    sInput = raw_input("请输入你猜的数字(1-100)：")
 
     try:
         nInput = int(sInput)
@@ -20,7 +20,7 @@ def printNum():
         print str(diag)
     
     if(nInput < 1 or nInput > 100):
-        print u"你数字不在范围之内，请重新输入"
+        print "你数字不在范围之内，请重新输入"
         
     return nInput
 

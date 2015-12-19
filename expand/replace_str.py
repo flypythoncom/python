@@ -1,9 +1,4 @@
-﻿#s = raw_input()
-#i = 0
-#for i in s:
-#    print i
-#raw_input()
-
+﻿# replace char<i> to <!> in the  string typed: 
 #扩展成在字符串中把特定字符替换成规定字符
 import re
 def printReplace(srcStr,word):
@@ -17,7 +12,7 @@ def printReplace_re(srcStr,word):
     return srcStr
 
 def main():    
-    srcStr = raw_input(u"请输入一个字符串：")
+    srcStr = raw_input("Please type a string：")
     destStr=printReplace_re(srcStr,'i')
     print destStr
 
