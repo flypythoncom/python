@@ -22,4 +22,3 @@ while True:
         print avg
     if ch == 'x':
         break
-    
