@@ -8,6 +8,6 @@ python
 
 #### 2016-03-20 update 
 
-- [Machine Learning with Python](https://github.com/xxg1413/MachineLearning)  
-- [Python-Algorithms](https://github.com/xxg1413/Python-Algorithms)
-- [python-cookbook](https://github.com/xxg1413/python-cookbook)
+- [MACHINE Learning with Python](https://github.com/xxg1413/MachineLearning)  
+- [PYTHON-Algorithms](https://github.com/xxg1413/Python-Algorithms)(
+- [PYTHON-cookbook](https://github.com/xxg1413/python-cookbook)(Gives Description on python programming)
