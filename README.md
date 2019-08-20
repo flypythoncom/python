@@ -19,4 +19,4 @@ python
 
 内测微信群
 
-<img src="qrcode" width="100" height="100">
+<img src="qrcode.png" width="310" height="430">
