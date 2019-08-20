@@ -19,4 +19,4 @@ python
 
 内测微信群
 
-![](qrcode.png)
+![](qrcode.png =100x100)
