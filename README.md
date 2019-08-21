@@ -1,22 +1,59 @@
-python
-======
-学习Python时的代码
+# FlyPython
+
+
+## Python Books
+
+#### Beginner
+-  《PYTHON CRASH COURSE: A HANDS-ON, PROJECT-BASED INTRODUCTION TO PROGRAMMING》
+- 《STARTING OUT WITH PYTHON (4TH EDITION)》
+- 《AUTOMATE THE BORING STUFF WITH PYTHON: PRACTICAL PROGRAMMING FOR TOTAL BEGINNERS》
+
+
+## Python书籍列表
+
+#### 初学者
+- 《Python编程从入门到实践》
+- 《Python编程快速上手-让繁琐工作自动化》
+- 《Python学习手册》
+
+
+#### 中级
+- 《流畅的Python》
+- 《Python Ticks: A Buufect of Awesome》
+- 《Effective Python: 59 Specific ways to 》
+-
+
+#### 实践
+- 《Python编程》
+- 《Python极客项目编程》
+- 《Python核心编程》
+
+
+#### 高级
+- 《Python Cookbook》
+
+
+
+
+#### 参考资源
+- https://pythonbooks.org/
+
+
+## Python课程列表
+
+#### 初学者
+
+- [Python for Everybody](https://www.coursera.org/specializations/python)
 
 
 
 
 
-#### 2016-03-20 update 
 
-- [Machine Learning with Python](https://github.com/xxg1413/MachineLearning)  
-- [Python-Algorithms](https://github.com/xxg1413/Python-Algorithms)
-- [python-cookbook](https://github.com/xxg1413/python-cookbook)
+#### 飞蟒学习小组
 
-
-#### 2019-08-20 update
-
-飞蟒学习小组内测中，欢迎大家参加内测
+飞蟒Python学习小组内测中，欢迎大家参加免费的内测
 
 内测微信群
 
-<img src="qrcode.png" width="310" height="430">
+<img src="qrcode.png" width="155" height="215">
