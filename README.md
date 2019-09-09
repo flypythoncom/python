@@ -54,6 +54,6 @@
 
 飞蟒Python学习小组内测中，欢迎大家参加免费的内测
 
-内测微信群
+扫描下面的二维码，回复『训练营』关键字加群
 
-<img src="qrcode.jpg" width="155" height="215">
+<img src="qrcode.jpg" width="258" height="258">
