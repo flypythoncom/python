@@ -56,4 +56,4 @@
 
 内测微信群
 
-<img src="qrcode.png" width="155" height="215">
+<img src="qrcode.jpg" width="155" height="215">
