@@ -3,12 +3,12 @@
 https://flypython.com 
 
 
-## news
+## Python News
 
 - [python official](https://www.python.org/)
 - [realpython](https://realpython.com)
 - medium [python](https://medium.com/tag/python)
-- reddit [python](https://www.reddit.com/r/Python/) [learn python](https://www.reddit.com/r/learnpython/） [python tips](https://www.reddit.com/r/pythontips/)
+- reddit [python](https://www.reddit.com/r/Python/)  [learn python](https://www.reddit.com/r/learnpython/） [python tips](https://www.reddit.com/r/pythontips/)
 
 
 ## Python Books
@@ -33,6 +33,11 @@ https://flypython.com
  - [Python for Everybody](https://www.coursera.org/specializations/python)
 
 
+
+## Data Science
+
+#### matplotlib
+- [AnatomyOfMatplotlib] (https://github.com/matplotlib/AnatomyOfMatplotlib）
 
 
 ## Python书籍列表
