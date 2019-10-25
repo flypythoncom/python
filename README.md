@@ -8,7 +8,7 @@ https://flypython.com
 - [python official](https://www.python.org/)
 - [realpython](https://realpython.com)
 - medium [python](https://medium.com/tag/python)
-- reddit [python](https://www.reddit.com/r/Python/)  [learn python](https://www.reddit.com/r/learnpython/） [python tips](https://www.reddit.com/r/pythontips/)
+- reddit [python](https://www.reddit.com/r/Python/) | [learn python](https://www.reddit.com/r/learnpython/ | [python tips](https://www.reddit.com/r/pythontips/)
 
 
 ## Python Books
@@ -37,7 +37,7 @@ https://flypython.com
 ## Data Science
 
 #### matplotlib
-- [AnatomyOfMatplotlib] (https://github.com/matplotlib/AnatomyOfMatplotlib）
+- [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib）
 
 
 ## Python书籍列表
