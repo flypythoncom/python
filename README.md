@@ -1,12 +1,38 @@
 # FlyPython
 
+https://flypython.com 
+
+
+## news
+
+- [python official](https://www.python.org/)
+- [realpython](https://realpython.com)
+- medium [python](https://medium.com/tag/python)
+- reddit [python](https://www.reddit.com/r/Python/) [learn python](https://www.reddit.com/r/learnpython/） [python tips](https://www.reddit.com/r/pythontips/)
+
 
 ## Python Books
 
 #### Beginner
--  《PYTHON CRASH COURSE: A HANDS-ON, PROJECT-BASED INTRODUCTION TO PROGRAMMING》
+- 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming》
+   - ※※※※※
+   - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+   
 - 《STARTING OUT WITH PYTHON (4TH EDITION)》
-- 《AUTOMATE THE BORING STUFF WITH PYTHON: PRACTICAL PROGRAMMING FOR TOTAL BEGINNERS》
+  - ※※※※※
+  - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
+
+- 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners 》
+  - ※※※※※
+  - [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593275994)
+
+
+## Course
+
+#### Beginer
+ - [Python for Everybody](https://www.coursera.org/specializations/python)
+
+
 
 
 ## Python书籍列表
@@ -34,9 +60,10 @@
 
 
 
-
 #### 参考资源
 - https://pythonbooks.org/
+
+
 
 
 ## Python课程列表
