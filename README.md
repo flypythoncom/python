@@ -265,7 +265,7 @@ REST API：使用 Python，Flask，Flask-RESTful 和 Flask-SQLAlchemy 构建专�
 Python 算法
 
 
-- 1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
+1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
 
    本文对算法编码和数据结构中的问题提出了简单易懂又切实可行的方案。
 
@@ -275,7 +275,7 @@ Python 算法
 
 
 
-- 2. Python 中算法和数据结构的最小样本
+2. Python 中算法和数据结构的最小样本
 
    如何让 Python 中的数据结构和算法最小、最干净？
 
@@ -285,7 +285,7 @@ Python 算法
 
 
 
-- 3. 最重要的 Python 算法 --Pygorithm
+3. 最重要的 Python 算法 --Pygorithm
 
    Pygorithm 是一个纯 Python 风格编写的模块，通过导入所需的算法，获得相应的代码、时间复杂性等。这是一个开始学习 Python 编程的好方法，能够帮助初学者学习并实现 Python 中所有算法。
 
@@ -297,7 +297,7 @@ Python 算法
 
 Python 综合指南
 
-- 4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
+4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
 
    作者：Satwikkansal；［github－4,933 星］
 
@@ -309,7 +309,7 @@ Python 综合指南
 
 Python 的脚本结构
 
-- 5. 一个关于如何从 Python 脚本到打包项目的标准化指南
+5. 一个关于如何从 Python 脚本到打包项目的标准化指南
 
    作者：Courtesy of Vicki
 
@@ -321,7 +321,7 @@ Python 的脚本结构
 
 Python 中的列表
 
-- 6. Python 列表生成器的教程
+6. Python 列表生成器的教程
 
    在这份教程中，你将能够学习到如何在 Python 中有效地使用列表生成器来创建列表，替换 (嵌套) for 循环以及使用 map (), filter (), reduce () 函数等。
 
@@ -335,7 +335,7 @@ Python 中的列表
 
 Python 中的类
 
-- 7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
+7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
 
    Dunker 是 Python 中的一种特殊方法，通过双下划线开始和结束的形式存在，例如__init__来丰富类的预定义方法。
 
@@ -348,7 +348,7 @@ Python 中的类
 
 Python 中的网页抓取
 
-- 8. 如何使用 Python 中的 Scrapy、SQL 和 Matplotlib 等库进行网页抓取，并获取网页数据分析
+8. 如何使用 Python 中的 Scrapy、SQL 和 Matplotlib 等库进行网页抓取，并获取网页数据分析
 
    你可以通过这篇文章学习到网页爬取知识，并用于实践中。
 
@@ -358,7 +358,7 @@ Python 中的网页抓取
 
 
 
-- 9. 高级的网页抓取教程：绕过 “403 禁止”，验证码等问题
+9. 高级的网页抓取教程：绕过 “403 禁止”，验证码等问题
 
    作者：Evan Sangaline
 
@@ -366,7 +366,7 @@ Python 中的网页抓取
 
 
 
-- 10. 掌握 Python 的网页抓取技巧来获取你所需要的数据
+10. 掌握 Python 的网页抓取技巧来获取你所需要的数据
 
    作者：Lauren Glass 和 Hackernoon
 
@@ -378,7 +378,7 @@ Python 中的网页抓取
 
 Python 中的自动化操作
 
-- 11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
+11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
 
 作者：Thomas Curtis
 
@@ -1023,19 +1023,11 @@ https://coolpythoncodes.com/best-way-learn-python-programming
 
 45. 如何用 Python 实现强大的数据分析
 
-
-
 Python 是数据分析的最佳编程语言，这得益于它自带的依赖库。依赖库能够存储，操纵数据，并从数据中获得核心信息，因而在数据科学领域被广泛使用并展现出强大的功能。本文介绍了 Python 在数据科学领域的应用历史以及最新发展。
 
+作者：Jake VanderPlas
 
-
-作者：
-
-Jake VanderPlas
-
-链接：
-
-https://www.youtube.com/watch?v=9by46AAqz70
+链接：https://www.youtube.com/watch?v=9by46AAqz70
 
 
 #### 飞蟒Python训练营
