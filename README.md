@@ -47,7 +47,6 @@ https://flypython.com
 
 <br>
 
-
 1. [Algorithm](#algorithm)
 1. [Guide](#guide)
 1. [Structure](#structure)
@@ -246,88 +245,63 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 
 REST API：使用 Python，Flask，Flask-RESTful 和 Flask-SQLAlchemy 构建专业的 REST API ［12,602 个推荐，4.6 / 5 星］
 
-链接：
-
-https://www.udemy.com/rest-api-flask-and-python/
+链接：https://www.udemy.com/rest-api-flask-and-python/
 
 
 
 算法交易：用于财务分析和算法交易的 Python，主要学习包括 numpy，pandas，matplotlib，quantopian，finance ［8,077 个推荐，4.6 / 5 星］
 
-链接：
+链接：https://www.udemy.com/python-for-finance-and-trading-algorithms/
 
-https://www.udemy.com/python-for-finance-and-trading-algorithms/
 
 
 年度开源 Python 项目 ［平均 4,078 星］
 
 
-链接：
-
-https://medium.mybridge.co/30-amazing-python-projects-for-the-past-year-v-2018-9c310b04cdb3
+链接：https://medium.mybridge.co/30-amazing-python-projects-for-the-past-year-v-2018-9c310b04cdb3
 
 
 
 Python 算法
 
 
-1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
+- 1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
 
+   本文对算法编码和数据结构中的问题提出了简单易懂又切实可行的方案。
 
-本文对算法编码和数据结构中的问题提出了简单易懂又切实可行的方案。
+   作者：Donne Martin；［github－11811 星］
 
-
-作者：
-
-Donne Martin；［github－11811 星］
-
-链接：
-
-https://github.com/donnemartin/interactive-coding-challenges
+   链接：https://github.com/donnemartin/interactive-coding-challenges
 
 
 
-2. Python 中算法和数据结构的最小样本
+- 2. Python 中算法和数据结构的最小样本
 
-如何让 Python 中的数据结构和算法最小、最干净？
+   如何让 Python 中的数据结构和算法最小、最干净？
 
-作者：
+   作者：keon；［github－10271 星］
 
-keon；［github－10271 星］
-
-链接：
-
-https://github.com/keon/algorithms
+   链接：https://github.com/keon/algorithms
 
 
 
-3. 最重要的 Python 算法 --Pygorithm
+- 3. 最重要的 Python 算法 --Pygorithm
 
-Pygorithm 是一个纯 Python 风格编写的模块，通过导入所需的算法，获得相应的代码、时间复杂性等。这是一个开始学习 Python 编程的好方法，能够帮助初学者学习并实现 Python 中所有算法。
+   Pygorithm 是一个纯 Python 风格编写的模块，通过导入所需的算法，获得相应的代码、时间复杂性等。这是一个开始学习 Python 编程的好方法，能够帮助初学者学习并实现 Python 中所有算法。
 
-作者：
+   作者：Satwik Kansal；［github－3156 星］
 
-Satwik Kansal；［github－3156 星］
-
-链接：
-
-http://pygorithm.readthedocs.io/en/latest/
-
-
+   链接：http://pygorithm.readthedocs.io/en/latest/
 
 
 
 Python 综合指南
 
-4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
+- 4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
 
-作者：
+   作者：Satwikkansal；［github－4,933 星］
 
-Satwikkansal；［github－4,933 星］
-
-链接：
-
-https://github.com/satwikkansal/wtfPython
+   链接：https://github.com/satwikkansal/wtfPython
 
 
 
@@ -335,11 +309,11 @@ https://github.com/satwikkansal/wtfPython
 
 Python 的脚本结构
 
-5. 一个关于如何从 Python 脚本到打包项目的标准化指南
+- 5. 一个关于如何从 Python 脚本到打包项目的标准化指南
 
-作者：Courtesy of Vicki
+   作者：Courtesy of Vicki
 
-链接：http://veekaybee.github.io/2017/09/26/python-packaging
+   链接：http://veekaybee.github.io/2017/09/26/python-packaging
 
 
 
@@ -347,58 +321,56 @@ Python 的脚本结构
 
 Python 中的列表
 
-6. Python 列表生成器的教程
+- 6. Python 列表生成器的教程
 
-在这份教程中，你将能够学习到如何在 Python 中有效地使用列表生成器来创建列表，替换 (嵌套) for 循环以及使用 map (), filter (), reduce () 函数等。
+   在这份教程中，你将能够学习到如何在 Python 中有效地使用列表生成器来创建列表，替换 (嵌套) for 循环以及使用 map (), filter (), reduce () 函数等。
 
-文章首先简单回顾了 Python 中列表的基本概念，并与 Python 中其他的数据结构进行比较。接着讲解了列表生成器的学习。文章还讲解了 Python 列表背后的数学知识，创建列表生成器的方法，以及如何在 for 循环或 lambda 隐函数中重写它们。
+   文章首先简单回顾了 Python 中列表的基本概念，并与 Python 中其他的数据结构进行比较。接着讲解了列表生成器的学习。文章还讲解了 Python 列表背后的数学知识，创建列表生成器的方法，以及如何在 for 循环或 lambda 隐函数中重写它们。
 
-作者：Karlijn Willems
+   作者：Karlijn Willems
 
-链接：https://www.datacamp.com/community/tutorials/python-list-comprehension
-
-
+   链接：https://www.datacamp.com/community/tutorials/python-list-comprehension
 
 
 
 Python 中的类
 
-7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
+- 7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
 
-Dunker 是 Python 中的一种特殊方法，通过双下划线开始和结束的形式存在，例如__init__来丰富类的预定义方法。
+   Dunker 是 Python 中的一种特殊方法，通过双下划线开始和结束的形式存在，例如__init__来丰富类的预定义方法。
 
-作者：Dan Bader
+   作者：Dan Bader
 
-链接：https://dbader.org/blog/python-dunder-methods
+   链接：https://dbader.org/blog/python-dunder-methods
 
 
 
 
 Python 中的网页抓取
 
-8. 如何使用 Python 中的 Scrapy、SQL 和 Matplotlib 等库进行网页抓取，并获取网页数据分析
+- 8. 如何使用 Python 中的 Scrapy、SQL 和 Matplotlib 等库进行网页抓取，并获取网页数据分析
 
-你可以通过这篇文章学习到网页爬取知识，并用于实践中。
+   你可以通过这篇文章学习到网页爬取知识，并用于实践中。
 
-作者：ScrapingAuthority
+   作者：ScrapingAuthority
 
-链接：http://www.scrapingauthority.com/python-scrapy-mysql-and-matplotlib-to-gain-web-data-insights/
-
-
-
-9. 高级的网页抓取教程：绕过 “403 禁止”，验证码等问题
-
-作者：Evan Sangaline
-
-链接：http://sangaline.com/post/advanced-web-scraping-tutorial/
+   链接：http://www.scrapingauthority.com/python-scrapy-mysql-and-matplotlib-to-gain-web-data-insights/
 
 
 
-10. 掌握 Python 的网页抓取技巧来获取你所需要的数据
+- 9. 高级的网页抓取教程：绕过 “403 禁止”，验证码等问题
 
-作者：Lauren Glass 和 Hackernoon
+   作者：Evan Sangaline
 
-链接：https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88
+   链接：http://sangaline.com/post/advanced-web-scraping-tutorial/
+
+
+
+- 10. 掌握 Python 的网页抓取技巧来获取你所需要的数据
+
+   作者：Lauren Glass 和 Hackernoon
+
+   链接：https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88
 
 
 
@@ -406,7 +378,7 @@ Python 中的网页抓取
 
 Python 中的自动化操作
 
-11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
+- 11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
 
 作者：Thomas Curtis
 
