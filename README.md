@@ -3,7 +3,7 @@
 
 ## 课程规划
 
-![](https://tva1.sinaimg.cn/large/006tNbRwly1gabdk901hcj30qs0sy412.jpg)
+![](https://tva1.sinaimg.cn/small/006tNbRwly1gabdk901hcj30qs0sy412.jpg)
 
 
 ## 课程目录
