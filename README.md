@@ -25,4 +25,4 @@
 
 #### 公众号
 
-![flypython微信公众号](https://flypython.com/images/wechat.png)
+![flypython微信公众号](https://tva1.sinaimg.cn/large/006tNbRwly1gb1q8emoktj309k09k749.jpg)
