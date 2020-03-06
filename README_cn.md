@@ -2,14 +2,6 @@
 
 https://flypython.com 
 
-#### 飞蟒Python训练营
-
-飞蟒Python训练营内测中，欢迎大家参加免费的内测
-
-扫描下面的二维码，回复『训练营』关键字加群
-
-<img src="qrcode.jpg" width="258" height="258">
-
 
 ## Python新闻
 
