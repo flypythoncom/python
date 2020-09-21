@@ -1,6 +1,6 @@
 # FlyPython
 
-https://flypython.com 
+http://flypython.com 
 
 [中文版](./README_cn.md)
 
