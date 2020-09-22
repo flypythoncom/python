@@ -31,6 +31,9 @@ http://flypython.com
   - ※※※※※
   - [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593275994)
 
+- 《Python Cookbook: Recipes for Mastering Python 3 Paperback 》
+  - ※※※※※
+  - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
 ## Course
 
