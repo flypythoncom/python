@@ -1,4 +1,4 @@
-# FlyPython
+# FLYPython
 
 http://flypython.com 
 
@@ -123,7 +123,7 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 
 <br>
 
-### Bot
+### Bots
 * [Making a Reddit + Facebook Messenger Bot](https://pythontips.com/2017/04/13/making-a-reddit-facebook-messenger-bot?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [My open source Instagram bot (written in Python) got me 2,500 real followers for $5 in server costs](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
