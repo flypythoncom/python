@@ -426,7 +426,7 @@ https://medium.freecodecamp.org/million-requests-per-second-with-python-95c137af
 
 作者：
 
-Nick Humrich
+Nick  Humrich
 
 链接：
 
@@ -836,6 +836,6 @@ Python 是数据分析的最佳编程语言，这得益于它自带的依赖库�
 
 作者：Jake VanderPlas
 
-链接：https://www.youtube.com/watch?v=9by46AAqz70
+链接：  https://www.youtube.com/watch?v=9by46AAqz70
 
 
