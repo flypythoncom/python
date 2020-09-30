@@ -199,7 +199,7 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 <br>
 
 ### Get Started
-* [Learning Python: From Zero to Hero](https://medium.freecodecamp.org/learning-python-from-zero-to-hero-120ea540b567?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [Learning Python: From scratch to Hero](https://medium.freecodecamp.org/learning-python-from-zero-to-hero-120ea540b567?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [A List of Non Trivial Python Exercises](https://www.ynonperek.com/2017/09/21/python-exercises?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [API Design: Think First, Code Later](https://www.ckl.io/blog/api-design-think-first-code-later?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
