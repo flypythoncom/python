@@ -206,3 +206,5 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
+
+You can also download python book pdf from here - https://www.java67.com/2017/05/top-7-free-python-programming-books-pdf-online-download.html?m=1. It's totally free.
