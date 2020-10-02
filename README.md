@@ -35,6 +35,10 @@ http://flypython.com
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
+-<<fluent python>>
+   
+   [oreilly(https://www.oreilly.com/library/view/fluent-python/9781491946237/)]
+   
 ## Course
 
 #### Beginer
