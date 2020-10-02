@@ -1,4 +1,4 @@
-# FlyPython
+# Fly with Python in this technological universe
 
 http://flypython.com 
 
@@ -20,7 +20,7 @@ http://flypython.com
 ## Python Books
 
 #### Beginner
-- 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming》
+- 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》
    - ※※※※※
    - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
    
@@ -36,15 +36,26 @@ http://flypython.com
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
-##Youtube
+
+## YouTube
 
 - [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
 
+
+
+## Courses
+
+-<<fluent python>>
+   
+   [oreilly(https://www.oreilly.com/library/view/fluent-python/9781491946237/)]
+   
 ## Course
+
 
 #### Beginer
  - [Python for Everybody](https://www.coursera.org/specializations/python)
+ - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
 
 
 
@@ -154,7 +165,7 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 
 <br>
 
-### Video Sythesizer
+### Video Synthesizer
 * [Building a Video Synthesizer in Python](https://www.makeartwithpython.com/blog/video-synthesizer-in-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
 <br>
@@ -210,5 +221,9 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [API Design: Think First, Code Later](https://www.ckl.io/blog/api-design-think-first-code-later?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [ you can find out How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
+### Net Practice (for Python)
+"It's better to sweat now than to bleed later"
+*[Practice Here on Hackerrank](https://www.hackerrank.com/domains/python)
+*[Practice Here on Hackerearth](https://www.hackerearth.com/practice/python/getting-started/input-and-output/tutorial/)
