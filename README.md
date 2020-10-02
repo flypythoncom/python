@@ -1,4 +1,4 @@
-# FlyPython
+# Fly with Python in this technological universe
 
 http://flypython.com 
 
@@ -35,14 +35,19 @@ http://flypython.com
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
+
+## Courses
+
 -<<fluent python>>
    
    [oreilly(https://www.oreilly.com/library/view/fluent-python/9781491946237/)]
    
 ## Course
 
+
 #### Beginer
  - [Python for Everybody](https://www.coursera.org/specializations/python)
+ - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
 
 
 
