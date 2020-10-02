@@ -152,7 +152,7 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 
 <br>
 
-### Video Sythesizer
+### Video Synthesizer
 * [Building a Video Synthesizer in Python](https://www.makeartwithpython.com/blog/video-synthesizer-in-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
 <br>
