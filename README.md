@@ -14,6 +14,7 @@ http://flypython.com
    - [python](https://www.reddit.com/r/Python/)
    - [learn python](https://www.reddit.com/r/learnpython/)
    - [python tips](https://www.reddit.com/r/pythontips/)
+   - [.python coding](https://www.reddit.com/r/pythoncoding?utm_medium=android_app&utm_source=share)
 
 
 ## Python Books
@@ -34,6 +35,13 @@ http://flypython.com
 - 《Python Cookbook: Recipes for Mastering Python 3 Paperback 》
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
+
+
+## YouTube
+
+- [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
+- [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
+
 
 
 ## Courses
