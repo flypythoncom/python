@@ -1,4 +1,4 @@
-# Fly with Python in this technological universe
+# FlyPython 
 
 http://flypython.com 
 
@@ -14,7 +14,7 @@ http://flypython.com
    - [python](https://www.reddit.com/r/Python/)
    - [learn python](https://www.reddit.com/r/learnpython/)
    - [python tips](https://www.reddit.com/r/pythontips/)
-   - [.python coding](https://www.reddit.com/r/pythoncoding?utm_medium=android_app&utm_source=share)
+   - [python coding](https://www.reddit.com/r/pythoncoding)
 
 
 ## Python Books
