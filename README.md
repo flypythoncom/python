@@ -1,4 +1,4 @@
-# FlyPython
+# FlyingPython
 
 http://flypython.com 
 
