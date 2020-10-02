@@ -210,3 +210,7 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [ you can find out How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
+### Net Practice (for Python)
+"It's better to sweat now than to bleed later"
+*[Practice Here on Hackerrank](https://www.hackerrank.com/domains/python)
+*[Practice Here on Hackerearth](https://www.hackerearth.com/practice/python/getting-started/input-and-output/tutorial/)
