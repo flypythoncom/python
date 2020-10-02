@@ -41,6 +41,7 @@ http://flypython.com
 
 - [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
+- [Code for Cause](https://www.youtube.com/c/CodeforCause/playlists)
 
 
 
@@ -56,6 +57,8 @@ http://flypython.com
 #### Beginer
  - [Python for Everybody](https://www.coursera.org/specializations/python)
  - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
+ - [Introduction to Python](https://olympus.greatlearning.in/courses/13684)
+ -
 
 
 
@@ -227,3 +230,4 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 "It's better to sweat now than to bleed later"
 *[Practice Here on Hackerrank](https://www.hackerrank.com/domains/python)
 *[Practice Here on Hackerearth](https://www.hackerearth.com/practice/python/getting-started/input-and-output/tutorial/)
+*[Practice Here on Codechef](https://www.codechef.com/)
