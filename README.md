@@ -5,7 +5,7 @@ http://flypython.com
 [中文版](./README_cn.md)
 
 
-## Python News
+## Interesting Python News
 
 - [python official](https://www.python.org/)
 - [realpython](https://realpython.com)
@@ -17,7 +17,7 @@ http://flypython.com
    - [python coding](https://www.reddit.com/r/pythoncoding)
 
 
-## Python Books
+## Best Python Books
 
 #### Beginner
 - 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》
@@ -37,7 +37,7 @@ http://flypython.com
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
 
-## YouTube
+## YouTube 
 
 - [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
@@ -50,7 +50,7 @@ http://flypython.com
    
    [oreilly(https://www.oreilly.com/library/view/fluent-python/9781491946237/)]
    
-## Course
+## Specialization Course
 
 
 #### Beginer
