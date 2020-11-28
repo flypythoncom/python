@@ -43,12 +43,6 @@ http://flypython.com
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
 
 
-
-## Courses
-
--<<fluent python>>
-   
-   [oreilly(https://www.oreilly.com/library/view/fluent-python/9781491946237/)]
    
 ## Course
 
