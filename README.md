@@ -36,11 +36,16 @@ http://flypython.com
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
+- 《Head First Python: A Brain-Friendly Guide 》
+  - ※※※※※
+  - [Amazon](https://www.amazon.com/Head-First-Python-Brain-Friendly-Guide/dp/1491919531/)
+
 
 ## YouTube
 
 - [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
+- [Telusko](https://www.youtube.com/playlist?list=PLsyeobzWxl7poL9JTVyndKe62ieoN-MZ3)
 
 
    
