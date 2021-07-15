@@ -70,6 +70,7 @@ http://flypython.com
 1. [Class](#class)
 1. [Web Scraping](#web-scraping)
 1. [Automation](#automation)
+1. [Authentication](#authentication)
 1. [Bot](#bot)
 1. [Spreasheet](#spreasheet)
 1. [Finance](#finance)
@@ -131,6 +132,11 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 ### Automation
 * [Wedding at Scale: How I Used Twilio, Python and Google to Automate My Wedding](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [How I used Python to find interesting people to follow on Medium](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+
+<br>
+
+### Authentication
+* [Implementing User Authentication in a Python Application](https://www.loginradius.com/blog/async/guest-post/user-authentication-in-python/?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
 <br>
 
