@@ -1,6 +1,6 @@
-# FlyPython 
+# FlyPython
 
-http://flypython.com 
+http://flypython.com
 
 [中文版](./README_cn.md)
 
@@ -23,7 +23,7 @@ http://flypython.com
 - 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》
    - ※※※※※
    - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
-   
+
 - 《STARTING OUT WITH PYTHON (4TH EDITION)》
   - ※※※※※
   - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
@@ -43,7 +43,7 @@ http://flypython.com
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
 
 
-   
+
 ## Course
 
 
@@ -150,6 +150,8 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [Python For Finance: Algorithmic Trading](https://www.datacamp.com/community/tutorials/finance-python-trading?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [Intro and Getting Stock Price Data - Python Programming for Finance p.1 - Sentdex](https://www.youtube.com/watch?v=2BrpKpWwT2A?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [Analyzing Cryptocurrency Markets Using Python](https://blog.patricktriest.com/analyzing-cryptocurrencies-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [Python For Finance](https://pythonforfinance.net/)
+* [Python and Statistics for Financial Ananlysis](https://www.coursera.org/learn/python-statistics-financial-analysis)
 
 <br>
 
