@@ -28,29 +28,29 @@ http://flypython.com
   - ※※※※※
   - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
 
-- 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners 》
+- 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners》
   - ※※※※※
   - [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593275994)
 
-- 《Python Cookbook: Recipes for Mastering Python 3 Paperback 》
+- 《Python Cookbook: Recipes for Mastering Python 3 Paperback》
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
+- 《Python Beginner's Textbook: Beginning of Making Programs and Understanding Python》
+  - ※※※※※
+  - [Mega Download] (https://mega.nz/folder/Edc2zYpa#xZ1EEKXDk0479SPtmEKXwA)
 
 ## YouTube
 
 - [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
 - [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
-
-
+   
    
 ## Course
-
 
 #### Beginer
  - [Python for Everybody](https://www.coursera.org/specializations/python)
  - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
-
 
 
 ## Data Science
