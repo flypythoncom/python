@@ -216,7 +216,7 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [ you can find out How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
+<br>
 <br>
 ### Free books for python 
 *[THINK PYTHON ](https://pythonbooks.org/think-python-how-to-think-like-a-computer-scientist/)
