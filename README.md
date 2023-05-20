@@ -217,6 +217,22 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [ you can find out How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
+<br>
+### Free books for python 
+*[THINK PYTHON ](https://pythonbooks.org/think-python-how-to-think-like-a-computer-scientist/)
+*[AUTOMATE THE BORING STUFF](https://pythonbooks.org/automate-the-boring-stuff-with-python-2nd-edition-practical-programming-for-total-beginners/)
+*[PYTHON FOR EVERYDAY](https://pythonbooks.org/python-for-everybody-exploring-data-in-python-3/)
+*[THINK STATS](https://pythonbooks.org/think-stats-exploratory-data-analysis/)
+*[INVENT YOUR OWN COMPUTER GAMES WITH PYTHON](https://pythonbooks.org/invent-your-own-computer-games-with-python/)
+*[THE HITCHHIKER'S GUIDE TO PYTHON](https://pythonbooks.org/the-hitchhikers-guide-to-python-best-practices-for-development/)
+*[LEARN MORE PYTHON 3 THE HARD WAY](https://pythonbooks.org/learn-more-python-3-the-hard-way-the-next-step-for-new-python-programmers-zed-shaws-hard-way-series/)
+*[BEYOND THE BASIC STUFF WITH PYTHON](https://pythonbooks.org/beyond-the-basic-stuff-with-python-best-practices-for-writing-clean-code/)
+*[THE RECURSIVE BOOK OF RECURSION](https://pythonbooks.org/the-recursive-book-of-recursion-ace-the-coding-interview-with-python-and-javascript/)
+<br>
+
+
+
+
 ### Net Practice (for Python)
 "It's better to sweat now than to bleed later"
 *[Practice Here on Hackerrank](https://www.hackerrank.com/domains/python)
