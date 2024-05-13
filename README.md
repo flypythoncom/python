@@ -50,6 +50,7 @@ http://flypython.com
 #### Beginer
  - [Python for Everybody](https://www.coursera.org/specializations/python)
  - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
+ - [Learn Python Basics](https://programiz.pro/course/learn-python-basics)
 
 
 
