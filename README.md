@@ -1,8 +1,7 @@
 # FlyPython 
 
-http://flypython.com 
+[https://python.flypython.com](https://python.flypython.com )
 
-[中文版](./README_cn.md)
 
 
 ## Python News
