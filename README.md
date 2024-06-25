@@ -1,19 +1,21 @@
 # FlyPython 
 
-[https://python.flypython.com](https://python.flypython.com )
-
+[python.flypython.com](https://python.flypython.com )
 
 
 ## Python News
 
 - [python official](https://www.python.org/)
-- [realpython](https://realpython.com)
 - [medium](https://medium.com/tag/python)
 - reddit
    - [python](https://www.reddit.com/r/Python/)
    - [learn python](https://www.reddit.com/r/learnpython/)
    - [python tips](https://www.reddit.com/r/pythontips/)
    - [python coding](https://www.reddit.com/r/pythoncoding)
+
+
+
+## Python for LLM 
 
 
 ## Python Books
@@ -35,11 +37,6 @@
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
-
-## YouTube
-
-- [Code with Harry](https://youtu.be/IMGzzK9Wn4w)
-- [Code with Harry](https://www.youtube.com/playlist?list=PLu0W_9lII9agK8pojo23OHiNz3Jm6VQCH)(hindi)
 
 
    
@@ -216,7 +213,3 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 * [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [ you can find out How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
-### Net Practice (for Python)
-"It's better to sweat now than to bleed later"
-*[Practice Here on Hackerrank](https://www.hackerrank.com/domains/python)
-*[Practice Here on Hackerearth](https://www.hackerearth.com/practice/python/getting-started/input-and-output/tutorial/)
