@@ -50,9 +50,12 @@
 
 
 ## Data Science
+- [Python for data science](https://cognitiveclass.ai/courses/python-for-data-science)
 
 #### matplotlib
 - [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
+
+
 
 
 ## Github Top 45
