@@ -1,1 +1,129 @@
 python.flypython.com
+
+import os
+import sys
+from collections import Counter
+
+def count_words(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            text = file.read()
+        words = text.split()
+        word_counts = Counter(words)
+        return word_counts
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+        return None
+
+def print_word_counts(word_counts):
+    for word, count in word_counts.items():
+        print(f"{word}: {count}")
+
+def save_word_counts(word_counts, output_file):
+    with open(output_file, 'w') as file:
+        for word, count in word_counts.items():
+            file.write(f"{word}: {count}\n")
+    print(f"Word counts saved to {output_file}")
+
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: python word_frequency_counter.py <file_path> <output_file>")
+        return
+
+    file_path = sys.argv[1]
+    output_file = sys.argv[2]
+    word_counts = count_words(file_path)
+
+    if word_counts:
+        print_word_counts(word_counts)
+        save_word_counts(word_counts, output_file)
+
+if __name__ == "__main__":
+    main()
+python.flypython.com
+
+import os
+import sys
+from collections import Counter
+import matplotlib.pyplot as plt
+
+def count_words(file_path):
+    try:
+        with open(file_path, 'r') as file:
+            text = file.read()
+        words = text.split()
+        word_counts = Counter(words)
+        return word_counts
+    except FileNotFoundError:
+        print(f"File not found: {file_path}")
+        return None
+
+def print_word_counts(word_counts):
+    for word, count in word_counts.items():
+        print(f"{word}: {count}")
+
+def save_word_counts(word_counts, output_file):
+    with open(output_file, 'w') as file:
+        for word, count in word_counts.items():
+            file.write(f"{word}: {count}\n")
+    print(f"Word counts saved to {output_file}")
+
+def plot_word_frequencies(word_counts):
+    words = list(word_counts.keys())
+    counts = list(word_counts.values())
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(words, counts)
+    plt.xlabel('Words')
+    plt.ylabel('Frequencies')
+    plt.title('Word Frequency Distribution')
+    plt.xticks(rotation=90)
+    plt.tight_layout()
+    plt.savefig('word_frequencies.png')
+    plt.show()
+    print("Word frequency plot saved as 'word_frequencies.png'")
+
+def main():
+    if len(sys.argv) < 3:
+        print("Usage: python word_frequency_counter.py <file_path> <output_file>")
+        return
+
+    file_path = sys.argv[1]
+    output_file = sys.argv[2]
+    word_counts = count_words(file_path)
+
+    if word_counts:
+        print_word_counts(word_counts)
+        save_word_counts(word_counts, output_file)
+        plot_word_frequencies(word_counts)
+
+if __name__ == "__main__":
+    main()
+
+def summarize_word_frequencies(word_counts, top_n=10):
+    most_common = word_counts.most_common(top_n)
+    print(f"\nTop {top_n} most common words:")
+    for word, count in most_common:
+        print(f"{word}: {count}")
+
+def filter_short_words(word_counts, min_length=5):
+    filtered_counts = {word: count for word, count in word_counts.items() if len(word) >= min_length}
+    return filtered_counts
+
+# Extended functionalities
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: python word_frequency_counter.py <file_path> <output_file>")
+    else:
+        file_path = sys.argv[1]
+        output_file = sys.argv[2]
+        word_counts = count_words(file_path)
+
+        if word_counts:
+            print_word_counts(word_counts)
+            save_word_counts(word_counts, output_file)
+            plot_word_frequencies(word_counts)
+            summarize_word_frequencies(word_counts)
+            filtered_counts = filter_short_words(word_counts)
+            print("\nFiltered word counts (words with 5+ characters):")
+            print_word_counts(filtered_counts)
