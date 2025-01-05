@@ -1,1 +1,108 @@
 theme: jekyll-theme-minimal
+
+# Site settings
+title: Your Site Title
+description: >- 
+  This is an example site built with Jekyll.
+  It serves as a demonstration of how to add a comprehensive configuration.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://your-site-domain.com" # the base hostname & protocol for your site
+timezone: "Asia/Kolkata"
+
+# Author
+author:
+  name: Your Name
+  email: your-email@example.com
+  url: "https://your-site-domain.com/about/"
+
+# Social links
+social_links:
+  twitter: your_twitter_handle
+  github: your_github_handle
+  linkedin: your_linkedin_handle
+  facebook: your_facebook_handle
+
+# Navigation
+nav:
+  - name: "Home"
+    url: "/"
+  - name: "About"
+    url: "/about/"
+  - name: "Blog"
+    url: "/blog/"
+  - name: "Contact"
+    url: "/contact/"
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  toc_levels: 1..6
+  entity_output: as_char
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Permalinks
+permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-coffeescript
+  - jekyll-gist
+
+# Pagination settings
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Include/Exclude files and directories
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+
+# Default settings for collections
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+
+# GitHub Pages settings
+github:
+  is_project_page: false
+
+# SEO settings
+seo:
+  title_separator: "-"
+  description_limit: 160
+  twitter:
+    card: "summary"
+    site: "@your_twitter_handle"
+    creator: "@your_twitter_handle"
+  open_graph:
+    type: "website"
+    title: "Your Site Title"
+    description: "This is an example site built with Jekyll."
+
+# RSS feed settings
+feed:
+  path: "feed.xml"
+
+# Sitemap settings
+sitemap:
+  changefreq: "daily"
+  priority: 0.8
+
+# Build settings
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+keep_files:
+  - "CNAME"
+  - ".well-known"
