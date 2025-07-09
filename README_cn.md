@@ -13,6 +13,7 @@ https://flypython.com
 ## 📚 快速导航
 
 1. [Python新闻](#python新闻)
+1. [Python for LLM](#python-for-llm)
 1. [Python书籍列表](#python书籍列表)
 1. [Python课程列表](#python课程列表)
 1. [数据科学](#数据科学)
@@ -52,6 +53,13 @@ https://flypython.com
    - [python](https://www.reddit.com/r/Python/)
    - [learn python](https://www.reddit.com/r/learnpython/)
    - [python tips](https://www.reddit.com/r/pythontips/)
+
+### Python for LLM
+
+- [Python人工智能和机器学习学习路径](https://realpython.com/learning-paths/machine-learning-python/)
+- [LangChain Python文档](https://python.langchain.com/docs/get_started/introduction/)
+- [OpenAI Python库](https://github.com/openai/openai-python)
+- [使用Python构建LLM应用程序](https://www.deeplearning.ai/short-courses/)
 
 ### Python书籍列表
 
