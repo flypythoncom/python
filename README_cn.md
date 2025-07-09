@@ -36,6 +36,7 @@ https://flypython.com
 1. [NumPy](#numpy)
 1. [NashPy](#nashpy)
 1. [马尔可夫过程](#马尔可夫过程)
+1. [数据分析](#数据分析)
 1. [入门指南](#入门指南)
 
 ---
