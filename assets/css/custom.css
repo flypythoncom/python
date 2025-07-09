@@ -22,6 +22,9 @@ body {
   border-radius: 0.3rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.2s ease;
+  /* 确保按钮不受通用 .btn 样式影响 */
+  transform: none !important;
+  box-shadow: none;
 }
 
 .btn-lang:hover {
@@ -29,12 +32,16 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   color: white;
+  /* 禁用悬浮时的变形效果 */
+  transform: none !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .btn-lang.active {
   background-color: rgba(255, 255, 255, 0.9);
   color: #333;
   border-color: rgba(255, 255, 255, 0.9);
+  transform: none !important;
 }
 
 /* Enhanced Header */
@@ -54,12 +61,12 @@ body {
   opacity: 0.9;
 }
 
-/* Enhanced Buttons */
-.btn {
+/* Enhanced Buttons - 只影响GitHub按钮，不影响语言切换按钮 */
+.btn:not(.btn-lang) {
   transition: all 0.3s ease;
 }
 
-.btn:hover {
+.btn:not(.btn-lang):hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
