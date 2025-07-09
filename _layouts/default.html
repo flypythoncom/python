@@ -27,13 +27,16 @@
         <a href="{{ '/README_cn.html' | relative_url }}" class="btn-lang {% if page.url contains 'README_cn' %}active{% endif %}">🇨🇳 中文</a>
       </div>
       
-      {% if site.github.is_project_page %}
-        <a href="{{ site.github.repository_url }}" class="btn">View on GitHub</a>
-      {% endif %}
-      {% if site.show_downloads %}
-        <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
-        <a href="{{ site.github.tar_url }}" class="btn">Download .tar.gz</a>
-      {% endif %}
+      <!-- Header Stats -->
+      <div class="header-stats">
+        <p>📊 Last updated: {{ site.time | date: "%Y-%m-%d" }} | 
+           🔗 Total Resources: 100+ | 
+           ⭐ GitHub Stars: 
+           <a href="{{ site.github.repository_url }}/stargazers">
+             <img src="https://img.shields.io/github/stars/{{ site.github.repository_nwo }}?style=social" alt="GitHub stars">
+           </a>
+        </p>
+      </div>
     </header>
 
     <main id="content" class="main-content" role="main">
@@ -58,15 +61,7 @@
           Powered by <a href="https://pages.github.com">GitHub Pages</a> and 
           <a href="https://jekyllrb.com">Jekyll</a> with ❤️
         </span>
-        <div class="footer-stats">
-          <p>📊 Last updated: {{ site.time | date: "%Y-%m-%d" }} | 
-             🔗 Total Resources: 100+ | 
-             ⭐ GitHub Stars: 
-             <a href="{{ site.github.repository_url }}/stargazers">
-               <img src="https://img.shields.io/github/stars/{{ site.github.repository_nwo }}?style=social" alt="GitHub stars">
-             </a>
-          </p>
-        </div>
+
       </footer>
     </main>
 
