@@ -1,229 +1,183 @@
-# 🐍 FlyPython 
+# 🐍 FlyPython - LLM Agent & AI Development Hub
 
-[python.flypython.com](https://python.flypython.com )
+[python.flypython.com](https://python.flypython.com)
 
-## 📚 Quick Navigation
+## 🤖 LLM Agent Python - Core Focus
+
+### 🚀 Leading LLM Agent Frameworks
+
+#### **OpenAI Agents SDK**
+- [OpenAI Agents Python Documentation](https://openai.github.io/openai-agents-python/) - Official OpenAI Agents SDK for building AI agents
+- [OpenAI Python Library](https://github.com/openai/openai-python) - Official OpenAI Python library
+
+#### **CrewAI - Multi-Agent Systems**
+- [CrewAI Framework](https://github.com/joaomdmoura/crewAI) - Cutting-edge framework for orchestrating role-playing, autonomous AI agents
+- [CrewAI Documentation](https://docs.crewai.com/) - Official CrewAI documentation
+- [CrewAI Examples](https://github.com/joaomdmoura/crewAI-examples) - Real-world CrewAI implementations
+- [Learn Agentic AI with CrewAI](https://github.com/panaversity/learn-agentic-ai) - Comprehensive CrewAI learning resources
+
+#### **LangGraph - Advanced Agent Workflows**
+- [LangGraph](https://github.com/langchain-ai/langgraph) - Build stateful, multi-actor applications with LLMs
+- [LangChain Agent Framework](https://python.langchain.com/docs/modules/agents/) - LangChain agents and tools
+
+#### **AutoGen - Conversational AI Agents**
+- [Microsoft AutoGen](https://github.com/microsoft/autogen) - Multi-agent conversation framework
+
+#### **Dapr Agents**
+- [Dapr Agents](https://github.com/dapr/python-sdk) - Stateful virtual actors for multi-agent workflows
+
+### 🛠️ Latest Open Source LLM Agent Projects (2024)
+
+#### **Minimal & Educational**
+- [min-agent](https://github.com/zhouzaida/min-agent) - Minimal 200-line LLM Agent for understanding agent principles
+- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - ReAct agent with Python REPL and DuckDuckGo Search
+- [OpenSource LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - Open source LLM agents implementation
+
+#### **Production-Ready Frameworks**
+- [SuperModels](https://github.com/JohannesVC/SuperModels) - Desktop app for running LLM agents with reflection mechanisms
+- [AgentKit](https://github.com/japanvik/agentkit) - Simple framework for creating distributed LLM agents over networks
+
+#### **Specialized Applications**
+- [CrewAI Platform Examples](https://github.com/genaiworks/crewai) - Multi-agent systems with various real-world applications
+- [CrewAI Lenox](https://github.com/samurayy99/crewai_lenox) - Advanced CrewAI implementations
+
+### 📚 LLM Agent Learning Resources
+
+#### **Comprehensive Guides**
+- [Building Multi-Agent AI Systems with CrewAI](https://medium.com/neural-engineer/understanding-crewai-building-multi-agent-ai-systems-15d0236d5cbf)
+- [Agent Development Best Practices](https://cookbook.openai.com/examples/gpt4-1_prompting_guide)
+
+#### **Courses & Tutorials**
+- [Agentic AI Development Course](https://github.com/panaversity/learn-agentic-ai) - Complete course on Dapr Agentic Cloud Ascent (DACA)
+- [Python for AI and Machine Learning](https://realpython.com/learning-paths/machine-learning-python/)
+- [LangChain Agent Tutorials](https://python.langchain.com/docs/tutorials/)
+
+## 📖 Python Learning & Development
+
+### 🎯 Quick Navigation
 
 1. [Python News](#python-news)
-1. [Python for LLM](#python-for-llm)
-1. [Python Books](#python-books)
-1. [Courses](#course)
-1. [Data Science](#data-science)
-1. [Recommended Learning](#recommended-learning)
-1. [Algorithms](#algorithm)
-1. [Python Guides](#guide)
-1. [Project Structure](#structure)
-1. [List Comprehensions](#list)
-1. [Python Classes](#class)
-1. [Web Scraping](#web-scraping)
-1. [Automation](#automation)
-1. [Bots](#bot)
-1. [Spreadsheets](#spreadsheet)
-1. [Finance](#finance)
-1. [Blockchain](#blockchain)
-1. [Video Synthesizer](#video-synthesizer)
-1. [Performance](#performance)
-1. [Django](#django)
-1. [Flask & Code Quality](#flask--code-quality)
-1. [NumPy](#numpy)
-1. [NashPy](#nashpy)
-1. [Markov Process](#markov-process)
-1. [Data Analysis](#data-analysis)
-1. [Getting Started](#get-started)
+2. [Python Books](#python-books)
+3. [Courses](#courses)
+4. [Algorithms & Data Structures](#algorithms)
+5. [Web Development](#web-development)
+6. [Data Science & Analysis](#data-science)
+7. [Automation & Bots](#automation--bots)
+8. [Finance & Trading](#finance--trading)
+9. [Performance Optimization](#performance)
 
 ---
 
-## Github Top 45
-
 ### Python News
 
-- [python official](https://www.python.org/)
-- [medium](https://medium.com/tag/python)
-- reddit
-   - [python](https://www.reddit.com/r/Python/)
-   - [learn python](https://www.reddit.com/r/learnpython/)
-   - [python tips](https://www.reddit.com/r/pythontips/)
-   - [python coding](https://www.reddit.com/r/pythoncoding)
-
-### Python for LLM 
-
-- [Python for AI and Machine Learning](https://realpython.com/learning-paths/machine-learning-python/)
-- [LangChain Python Documentation](https://python.langchain.com/docs/get_started/introduction/)
-- [OpenAI Python Library](https://github.com/openai/openai-python)
-- [Building LLM Applications with Python](https://www.deeplearning.ai/short-courses/)
+- [Python Official](https://www.python.org/)
+- [Medium Python](https://medium.com/tag/python)
+- **Reddit Communities:**
+  - [r/Python](https://www.reddit.com/r/Python/)
+  - [r/learnpython](https://www.reddit.com/r/learnpython/)
+  - [r/pythontips](https://www.reddit.com/r/pythontips/)
+  - [r/pythoncoding](https://www.reddit.com/r/pythoncoding)
 
 ### Python Books
 
-#### Beginner
-- 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》 (3rd Edition, 2023)
-
-   - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
-   
-- 《STARTING OUT WITH PYTHON (4TH EDITION)》
+#### **For Beginners**
+- **Python Crash Course: A Hands-On, Project-Based Introduction to Programming** (3rd Edition, 2023)
+  - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
+  
+- **Starting Out with Python** (4th Edition)
   - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
 
-- 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners》 (2nd Edition)
+- **Automate the Boring Stuff with Python** (2nd Edition)
   - [Free Online](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
 
-- 《Python Cookbook: Recipes for Mastering Python 3》 
-
+- **Python Cookbook: Recipes for Mastering Python 3**
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
-#### Modern Python (2023-2024)
-- 《Effective Python: 90 Specific Ways to Write Better Python》 (2nd Edition)
-  - ※※※※※
+#### **Advanced Python (2023-2024)**
+- **Effective Python: 90 Specific Ways to Write Better Python** (2nd Edition) ⭐⭐⭐⭐⭐
   - [Amazon](https://www.amazon.com/Effective-Python-Specific-Software-Development/dp/0134853989)
 
-- 《Clean Code in Python》
-  - ※※※※※
+- **Clean Code in Python** ⭐⭐⭐⭐⭐
   - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
 
-### Course
+### Courses
 
-#### Beginer
- - [Python for Everybody](https://www.coursera.org/specializations/python)
- - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
+#### **Beginner Courses**
+- [Python for Everybody](https://www.coursera.org/specializations/python)
+- [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
+
+#### **Advanced Learning**
+- [REST APIs with Flask and Python in 2024](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) - Professional Flask Development
+- [Financial Analysis with YFinance](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a) - Modern Python Finance Tools
+
+### Algorithms
+
+- [Interactive Python Coding Interview Challenges](https://github.com/donnemartin/interactive-coding-challenges) - Algorithms and data structures
+- [Algorithms: Minimal Examples in Python](https://github.com/keon/algorithms) - Data structures and algorithms
+- [Pygorithm: Learn Python Algorithms](http://pygorithm.readthedocs.io/en/latest) - Fun way to learn algorithms
+
+### Web Development
+
+#### **FastAPI**
+- [FastAPI Documentation](https://fastapi.tiangolo.com/) - Modern, fast web framework for building APIs
+- [FastAPI Best Practices](https://github.com/zhanymkanov/fastapi-best-practices)
+
+#### **Flask**
+- [REST APIs with Flask and Python in 2024](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
+- [Developing RESTful APIs with Python and Flask](https://auth0.com/blog/developing-restful-apis-with-python-and-flask)
+- [Flask & Code Quality](https://flake8.pycqa.org/en/latest/user/error-codes.html)
+
+#### **Django**
+- [Complete Beginner's Guide to Django - Part 1](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
+- [Build a REST API with Django](https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1)
 
 ### Data Science
 
-#### matplotlib
-- [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
+#### **NumPy**
+- [From Python to Numpy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
+- [Exploring Line Lengths in Python Packages](http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages)
 
-### Recommended Learning
+#### **Matplotlib**
+- [Anatomy of Matplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
 
-A) REST APIs: [REST APIs with Flask and Python in 2024 - Complete Course](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) [Professional Flask Development with Modern Tools]
+#### **Data Analysis Projects**
+- [Exploring United States Policing Data](https://blog.patricktriest.com/police-data-python)
+- [Analyzing 1000+ Greek Wines](https://tselai.com/greek-wines-analysis.html)
+- [Generate FiveThirtyEight Graphs](https://www.dataquest.io/blog/making-538-plots)
+- [Amazon Product Review Analysis](http://minimaxir.com/2017/01/amazon-spark)
 
-B) Financial Analysis: [The 2024 Guide to Using YFinance with Python for Stock Analysis](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a) [Modern Python Finance Tools]
+### Automation & Bots
 
-<br>
+#### **Web Scraping**
+- [Web Scraping with Scrapy, SQL, Matplotlib](http://www.scrapingauthority.com/python-scrapy-mysql-and-matplotlib-to-gain-web-data-insights)
+- [Advanced Web Scraping: Bypassing 403 Forbidden](http://sangaline.com/post/advanced-web-scraping-tutorial)
+- [Mastering Python Web Scraping](https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88)
 
-### Algorithm
-* [Interactive Python coding interview challenges (algorithms and data structures)](https://github.com/donnemartin/interactive-coding-challenges?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Algorithms: Minimal examples of data structures and algorithms in Python](https://github.com/keon/algorithms?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Pygorithm: A fun way to learn all major Python algorithms](http://pygorithm.readthedocs.io/en/latest?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+#### **Automation Projects**
+- [Wedding Automation with Twilio and Python](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html)
+- [Finding Interesting People on Medium](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0)
 
-<br>
+#### **Bots**
+- [Reddit + Facebook Messenger Bot](https://pythontips.com/2017/04/13/making-a-reddit-facebook-messenger-bot)
+- [Instagram Bot Success Story](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340)
 
-### Guide
-* [wtfPython: A collection of interesting, subtle, and tricky Python snippets](https://github.com/satwikkansal/wtfPython?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+#### **Spreadsheets Integration**
+- [Python Excel Tutorial: The Definitive Guide](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
+- [Data Analysis with Python in Excel](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
+- [Google Sheets and Python](https://www.youtube.com/watch?v=vISRn5qFrkM)
 
-<br>
+### Finance & Trading
 
-### Structure
-* [Python Packaging User Guide: Creating a Project](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
-* [Real Python: Python Modules and Packages](https://realpython.com/python-modules-packages/)
+- [2024 Guide to YFinance for Stock Analysis](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a)
+- [Quantitative Trading with Python](https://medium.com/@deepml1818/quantitative-trading-with-python-analyzing-financial-data-7c829d447e0a)
+- [Financial Data with Alpha Vantage 2024](https://medium.com/@datavisiondallas/navigating-financial-data-with-python-and-alpha-vantage-in-2024-a-beginners-guide-ca005bb1a6c2)
+- [Stock Price Data - Python for Finance](https://www.youtube.com/watch?v=2BrpKpWwT2A)
+- [Analyzing Cryptocurrency Markets](https://blog.patricktriest.com/analyzing-cryptocurrencies-python)
 
-<br>
 
-### List
-* [Python List Comprehension Tutorial](https://realpython.com/list-comprehension-python/)
-* [Beginner's Guide To List Comprehensions In Python](https://zerotomastery.io/blog/list-comprehension-python/)
-
-<br>
-
-### Class
-* [Enriching Your Python Classes With Dunder (Magic, Special) Methods](https://dbader.org/blog/python-dunder-methods?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Web Scraping
-* [Web Scraping With Python: Scrapy, SQL, Matplotlib To Gain Web Data Insights](http://www.scrapingauthority.com/python-scrapy-mysql-and-matplotlib-to-gain-web-data-insights?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Advanced Web Scraping: Bypassing "403 Forbidden," captchas, and more](http://sangaline.com/post/advanced-web-scraping-tutorial?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Mastering Python Web Scraping: Get Your Data Back](https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Automation
-* [Wedding at Scale: How I Used Twilio, Python and Google to Automate My Wedding](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [How I used Python to find interesting people to follow on Medium](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Bot
-* [Making a Reddit + Facebook Messenger Bot](https://pythontips.com/2017/04/13/making-a-reddit-facebook-messenger-bot?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [My open source Instagram bot (written in Python) got me 2,500 real followers for $5 in server costs](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Spreadsheet
-* [Python Excel Tutorial: The Definitive Guide](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
-* [Data Analysis with Python in Excel](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
-* [Google Sheets and Python](https://www.youtube.com/watch?v=vISRn5qFrkM?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Finance
-* [The 2024 Guide to Using YFinance with Python for Stock Analysis](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a)
-* [Quantitative Trading with Python: Analyzing Financial Data](https://medium.com/@deepml1818/quantitative-trading-with-python-analyzing-financial-data-7c829d447e0a)
-* [Navigating Financial Data with Python and Alpha Vantage in 2024](https://medium.com/@datavisiondallas/navigating-financial-data-with-python-and-alpha-vantage-in-2024-a-beginners-guide-ca005bb1a6c2)
-* [Intro and Getting Stock Price Data - Python Programming for Finance p.1 - Sentdex](https://www.youtube.com/watch?v=2BrpKpWwT2A?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Analyzing Cryptocurrency Markets Using Python](https://blog.patricktriest.com/analyzing-cryptocurrencies-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Blockchain
-* [Learn Blockchains by Building One](https://hackernoon.com/learn-blockchains-by-building-one-117428612f46?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Let’s Build the Tiniest Blockchain](https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Video Synthesizer
-* [Building a Video Synthesizer in Python](https://www.makeartwithpython.com/blog/video-synthesizer-in-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
 
 ### Performance
-* [A million requests per second with Python](https://medium.freecodecamp.com/million-requests-per-second-with-python-95c137af319?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Yes, Python is Slow, and I Don’t Care](https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Memoization in Python: How to Cache Function Results – Dan Bader](https://dbader.org/blog/python-memoization?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
-<br>
-
-### Django
-* [A Complete Beginner's Guide to Django - Part 1](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Build a REST API with Django – A Test Driven Approach: Part 1](https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Flask & Code Quality
-* [Flake8 Error Codes Documentation](https://flake8.pycqa.org/en/latest/user/error-codes.html)
-* [REST APIs with Flask and Python in 2024](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
-* [Developing RESTful APIs with Python and Flask](https://auth0.com/blog/developing-restful-apis-with-python-and-flask?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [REST APIs with Flask and Python - Complete Guide](https://rest-apis-flask.teclado.com/)
-
-<br>
-
-### NumPy
-* [From Python to Numpy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Exploring Line Lengths in Python Packages](http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### NashPy
-* [Nashpy - Tutorial: building and finding the equilibrium for a simple game](http://nashpy.readthedocs.io/en/latest/tutorial?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Markov Process
-* [Simulating Chutes & Ladders in Python](https://jakevdp.github.io/blog/2017/12/18/simulating-chutes-and-ladders?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Data Analysis
-* [Exploring United States Policing Data Using Python](https://blog.patricktriest.com/police-data-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Analyzing 1000+ Greek Wines With Python](https://tselai.com/greek-wines-analysis.html?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [How to Generate FiveThirtyEight Graphs in Python](https://www.dataquest.io/blog/making-538-plots?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Playing with 80 Million Amazon Product Review Ratings Using Apache Spark with Python](http://minimaxir.com/2017/01/amazon-spark?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Fast GeoSpatial Analysis in Python](https://matthewrocklin.com/blog//work/2017/09/21/accelerating-geopandas-1?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [Planet: Understanding the Amazon from Space, 1st Place Winner's Interview](http://blog.kaggle.com/2017/10/17/planet-understanding-the-amazon-from-space-1st-place-winners-interview?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
-<br>
-
-### Get Started
-* [Learning Python: From Zero to Hero](https://medium.freecodecamp.org/learning-python-from-zero-to-hero-120ea540b567?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [A List of Non Trivial Python Exercises](https://www.ynonperek.com/2017/09/21/python-exercises?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [API Design: Think First, Code Later](https://www.ckl.io/blog/api-design-think-first-code-later?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [The Hitchhiker’s Guide to Machine Learning in Python](https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [How to learn Python programming: 6 experienced Python developers share their learning tips](https://coolpythoncodes.com/best-way-learn-python-programming?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-* [ you can find out How Did Python Become A Data Science Powerhouse?](https://www.youtube.com/watch?v=9by46AAqz70?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
-
+- [Million Requests per Second with Python](https://medium.freecodecamp.com/million-requests-per-second-with-python-95c137af319)
+- [Yes, Python is Slow, and I Don't Care](https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1)
+- [Memoization in Python](https://dbader.org/blog/python-memoization)

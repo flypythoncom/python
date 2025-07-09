@@ -1,883 +1,184 @@
-# 🐍 FlyPython
+# 🐍 FlyPython - LLM Agent 与 AI 开发中心
 
-https://flypython.com 
+[python.flypython.com](https://python.flypython.com)
 
-## 📚 快速导航
+## 🤖 LLM Agent Python - 核心重点
 
-1. [Python新闻](#python新闻)
-1. [Python for LLM](#python-for-llm)
-1. [Python书籍列表](#python书籍列表)
-1. [Python课程列表](#python课程列表)
-1. [数据科学](#数据科学)
-1. [推荐学习](#推荐学习)
-1. [算法](#算法)
-1. [指南](#指南)
-1. [项目结构](#项目结构)
-1. [列表推导式](#列表推导式)
-1. [类](#类)
-1. [数据处理与分析](#数据处理与分析)
-1. [网页抓取](#网页抓取)
-1. [自动化](#自动化)
-1. [机器人](#机器人)
-1. [电子表格](#电子表格)
-1. [金融](#金融)
-1. [区块链](#区块链)
-1. [视频合成](#视频合成)
-1. [性能优化](#性能优化)
-1. [Django](#django)
-1. [Flask](#flask)
-1. [NumPy](#numpy)
-1. [NashPy](#nashpy)
-1. [马尔可夫过程](#马尔可夫过程)
-1. [数据分析](#数据分析)
-1. [入门指南](#入门指南)
+### 🚀 主流 LLM Agent 框架
+
+#### **OpenAI Agents SDK**
+- [OpenAI Agents Python 文档](https://openai.github.io/openai-agents-python/) - 官方 OpenAI Agents SDK 用于构建 AI 智能体
+- [OpenAI Python 库](https://github.com/openai/openai-python) - 官方 OpenAI Python 库
+
+#### **CrewAI - 多智能体系统**
+- [CrewAI 框架](https://github.com/joaomdmoura/crewAI) - 用于协调角色扮演、自主 AI 智能体的尖端框架
+- [CrewAI 文档](https://docs.crewai.com/) - 官方 CrewAI 文档
+- [CrewAI 示例](https://github.com/joaomdmoura/crewAI-examples) - 真实世界 CrewAI 实现案例
+- [使用 CrewAI 学习 Agentic AI](https://github.com/panaversity/learn-agentic-ai) - 综合 CrewAI 学习资源
+
+#### **LangGraph - 高级智能体工作流**
+- [LangGraph](https://github.com/langchain-ai/langgraph) - 使用 LLM 构建有状态的多角色应用程序
+- [LangChain Agent 框架](https://python.langchain.com/docs/modules/agents/) - LangChain 智能体和工具
+
+#### **AutoGen - 对话式 AI 智能体**
+- [Microsoft AutoGen](https://github.com/microsoft/autogen) - 多智能体对话框架
+
+#### **Dapr Agents**
+- [Dapr Agents](https://github.com/dapr/python-sdk) - 用于多智能体工作流的有状态虚拟角色
+
+### 🛠️ 最新开源 LLM Agent 项目 (2024)
+
+#### **极简与教育性项目**
+- [min-agent](https://github.com/zhouzaida/min-agent) - 极简 200 行 LLM Agent，用于理解智能体原理
+- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - 带有 Python REPL 和 DuckDuckGo 搜索的 ReAct 智能体
+- [开源 LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - 开源 LLM 智能体实现
+
+#### **生产就绪框架**
+- [SuperModels](https://github.com/JohannesVC/SuperModels) - 具有反思机制的 LLM 智能体桌面应用
+- [AgentKit](https://github.com/japanvik/agentkit) - 用于创建网络分布式 LLM 智能体的简单框架
+
+#### **专业应用**
+- [CrewAI 平台示例](https://github.com/genaiworks/crewai) - 多种真实世界应用的多智能体系统
+- [CrewAI Lenox](https://github.com/samurayy99/crewai_lenox) - 高级 CrewAI 实现
+
+### 📚 LLM Agent 学习资源
+
+#### **综合指南**
+- [使用 CrewAI 构建多智能体 AI 系统](https://medium.com/neural-engineer/understanding-crewai-building-multi-agent-ai-systems-15d0236d5cbf)
+- [智能体开发最佳实践](https://cookbook.openai.com/examples/gpt4-1_prompting_guide)
+
+#### **课程与教程**
+- [Agentic AI 开发课程](https://github.com/panaversity/learn-agentic-ai) - Dapr Agentic Cloud Ascent (DACA) 完整课程
+- [Python 人工智能和机器学习](https://realpython.com/learning-paths/machine-learning-python/)
+- [LangChain Agent 教程](https://python.langchain.com/docs/tutorials/)
+
+## 📖 Python 学习与开发
+
+### 🎯 快速导航
+
+1. [Python 新闻](#python-新闻)
+2. [Python 书籍](#python-书籍)
+3. [课程](#课程)
+4. [算法与数据结构](#算法)
+5. [Web 开发](#web-开发)
+6. [数据科学与分析](#数据科学)
+7. [自动化与机器人](#自动化与机器人)
+8. [金融与交易](#金融与交易)
+9. [性能优化](#性能优化)
 
 ---
 
-## Github Top 45
+### Python 新闻
 
-### Python新闻
+- [Python 官方](https://www.python.org/)
+- [Medium Python](https://medium.com/tag/python)
+- **Reddit 社区：**
+  - [r/Python](https://www.reddit.com/r/Python/)
+  - [r/learnpython](https://www.reddit.com/r/learnpython/)
+  - [r/pythontips](https://www.reddit.com/r/pythontips/)
+  - [r/pythoncoding](https://www.reddit.com/r/pythoncoding)
 
-- [python官方](https://www.python.org/)
-- [realpython](https://realpython.com)
-- [medium](https://medium.com/tag/python)
-- reddit
-   - [python](https://www.reddit.com/r/Python/)
-   - [learn python](https://www.reddit.com/r/learnpython/)
-   - [python tips](https://www.reddit.com/r/pythontips/)
+### Python 书籍
 
-### Python for LLM
+#### **初学者**
+- **Python 编程从入门到实践** (第3版, 2023)
+  - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
+  
+- **Python 编程入门** (第4版)
+  - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
 
-- [Python人工智能和机器学习学习路径](https://realpython.com/learning-paths/machine-learning-python/)
-- [LangChain Python文档](https://python.langchain.com/docs/get_started/introduction/)
-- [OpenAI Python库](https://github.com/openai/openai-python)
-- [使用Python构建LLM应用程序](https://www.deeplearning.ai/short-courses/)
+- **Python 编程快速上手：让繁琐工作自动化** (第2版)
+  - [免费在线](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
 
-### Python书籍列表
+- **Python Cookbook：掌握 Python 3 的秘诀**
+  - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
-#### 初学者
-- 《Python编程从入门到实践》（第3版，2023年）
-- 《Python编程快速上手-让繁琐工作自动化》（第2版）
-- 《Python学习手册》（第5版）
+#### **高级 Python (2023-2024)**
+- **Effective Python：编写高质量 Python 代码的 90 个建议** (第2版) ⭐⭐⭐⭐⭐
+  - [Amazon](https://www.amazon.com/Effective-Python-Specific-Software-Development/dp/0134853989)
 
-#### 中级
-- 《流畅的Python》（第2版）
-- 《Python技巧：充分利用Python的特性》
-- 《Effective Python: 编写高质量Python代码的90个建议》（第2版）
+- **Python 代码整洁之道** ⭐⭐⭐⭐⭐
+  - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
 
-#### 实践
-- 《Python编程：从入门到实践》
-- 《Python极客项目编程》
-- 《Python核心编程》（第3版）
+### 课程
 
-#### 高级
-- 《Python Cookbook》（第3版）
-- 《Python高性能编程》
-- 《架构整洁之道：Python编程》
-
-#### 现代Python（2023-2024）
-- 《Python数据科学手册》（第2版）
-- 《Python机器学习实战》
-- 《深度学习入门：基于Python的理论与实现》
-
-#### 参考资源
-- https://pythonbooks.org/
-
-### Python课程列表
-
-#### 初学者
+#### **初学者课程**
 - [Python for Everybody](https://www.coursera.org/specializations/python)
-- [Python基础教程 - 菜鸟教程](https://www.runoob.com/python/python-tutorial.html)
-- [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [Python 3 编程](https://www.coursera.org/specializations/python-3-programming)
 
-#### 进阶课程
-- [Python数据科学实战](https://www.coursera.org/specializations/python-data-science-university-of-michigan)
-- [Python机器学习课程](https://www.coursera.org/learn/machine-learning-with-python)
-
-#### 专业领域
-- [Python Web开发](https://www.coursera.org/learn/django-web-framework)
-- [Python自动化测试](https://testdriven.io/courses/)
-- [Python爬虫开发](https://realpython.com/web-scraping-with-scrapy-and-mongodb/)
-
-### 数据科学
-
-#### matplotlib
-- [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
-
-### 推荐学习
-
-**现代化REST API开发：**使用 Python 和 Flask 构建2024年专业级 REST API ［现代工具和最佳实践］
-
-链接：https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az
-
-**Python金融分析：**2024年使用YFinance进行股票分析的完整指南 ［现代Python金融工具］
-
-链接：https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a
-
-年度开源 Python 项目 ［平均 4,078 星］
-
-链接：https://medium.mybridge.co/30-amazing-python-projects-for-the-past-year-v-2018-9c310b04cdb3
+#### **高级学习**
+- [2024 年 Flask 和 Python REST API](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) - 专业 Flask 开发
+- [YFinance 金融分析](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a) - 现代 Python 金融工具
 
 ### 算法
 
-1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
-
-   本文对算法编码和数据结构中的问题提出了简单易懂又切实可行的方案。
-
-   作者：Donne Martin；［github－11811 星］
-
-   链接：https://github.com/donnemartin/interactive-coding-challenges
-
-
-
-2. Python 中算法和数据结构的最小样本
-
-   如何让 Python 中的数据结构和算法最小、最干净？
-
-   作者：keon；［github－10271 星］
-
-   链接：https://github.com/keon/algorithms
-
-
-
-3. 最重要的 Python 算法 --Pygorithm
-
-   Pygorithm 是一个纯 Python 风格编写的模块，通过导入所需的算法，获得相应的代码、时间复杂性等。这是一个开始学习 Python 编程的好方法，能够帮助初学者学习并实现 Python 中所有算法。
-
-   作者：Satwik Kansal；［github－3156 星］
-
-   链接：http://pygorithm.readthedocs.io/en/latest/
-
-
-
-### 指南
-
-4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
-
-   作者：Satwikkansal；［github－4,933 星］
-
-   链接：https://github.com/satwikkansal/wtfPython
-
-
-
-
-
-### 项目结构
-
-5. 一个关于如何从 Python 脚本到打包项目的标准化指南
-
-   作者：Courtesy of Vicki
-
-   链接：http://veekaybee.github.io/2017/09/26/python-packaging
-
-
-
-
-
-### 列表推导式
-
-6. Python 列表推导式完整指南
-
-   Real Python提供的深入教程，详细介绍如何在Python中有效使用列表推导式。包含条件逻辑、性能优化、最佳实践等高级主题。
-
-   链接：https://realpython.com/list-comprehension-python/
-
-7. Python 列表推导式初学者指南
-
-   Zero to Mastery提供的实用教程，通过6个真实案例展示列表推导式的强大功能，包括数据过滤、转换和生成等常见用例。
-
-   链接：https://zerotomastery.io/blog/list-comprehension-python/
-
-
-
-### 类
-
-7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
-
-   Dunker 是 Python 中的一种特殊方法，通过双下划线开始和结束的形式存在，例如__init__来丰富类的预定义方法。
-
-   作者：Dan Bader
-
-   链接：https://dbader.org/blog/python-dunder-methods
-
-
-
-
-### 数据处理与分析
-
-8. Python Excel 数据分析完整指南
-
-   HackerNoon提供的详细教程，展示如何使用Python处理Excel文件，包括pandas、openpyxl等主要库的使用方法。
-
-   链接：https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0
-
-9. Python 在 Excel 中的数据分析认证课程
-
-   Anaconda官方认证课程，学习如何在Excel中使用Python进行专业级数据分析。
-
-   链接：https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel
-
-### 网页抓取
-
-10. 高级的网页抓取教程：绕过 "403 禁止"，验证码等问题
-
-   作者：Evan Sangaline
-
-   链接：http://sangaline.com/post/advanced-web-scraping-tutorial/
-
-11. 掌握 Python 的网页抓取技巧来获取你所需要的数据
-
-   作者：Lauren Glass 和 Hackernoon
-
-   链接：https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88
-
-
-
-
-
-### 自动化
-
-11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
-
-作者：Thomas Curtis
-
-链接：https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html
-
-
-
-12. 如何用 Python 在 Medium 上找到有趣的人
-
-作者：Radu Raicea 和 freeCodeCamp。
-
-链接：https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0
-
-
-
-
-
-### 机器人
-13. 制作 Reddit+Facebook 的信息箱
-
-作者：
-
-Yasoob Khalid
-
-链接：
-
-https://pythontips.com/2017/04/13/making-a-reddit-facebook-messenger-bot/
-
-
-
-14. 我在 Instagram 上用 Python 写的开源机器人 (让我拥有了 2500 个粉丝，所花的服务器成本只有 5 美元)
-
-作者：
-
-TimG
-
-链接：
-
-https://medium.freecodecamp.org/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340
-
-
-
-### 电子表格
-
-15. 权威指南：Python 的 Excel 教程
-
-通过这个教程，你可以了解如何使用 Python 读取和导入 Excel 文件，如何将数据写入这些电子表格。
-
-作者：
-
-Karlijn Willems
-
-链接：
-
-https://www.datacamp.com/community/tutorials/python-excel-tutorial
-
-
-
-16. Python 和 Googgle 电子表格
-
-作者：
-
-Brent Schooley
-
-链接：
-
-https://www.youtube.com/watch?v=vISRn5qFrkM
-
-
-
-
-
-### 金融
-
-17.  Python 中的金融：算法交易
-
-这是一份 Python 与金融应用的教程，在此你能学习到算法交易的基本知识及相关内容。
-
-作者：
-
-Karlijn Willems
-
-链接：
-
-https://www.datacamp.com/community/tutorials/finance-python-trading
-
-
-
-18. Python 中的金融教程 — 股票价格及相关数据介绍
-
-作者：
-
-Harrison Kinsley
-
-链接：
-
-https://www.youtube.com/watch?v=2BrpKpWwT2A
-
-
-
-19. 用 Python 分析加密货币市场
-
-
-
-比特币市场是如何表现？加密货币价值突然出现高峰和低谷的原因是什么？不同 altcoins 市场是不可分割的或基本独立的？我们如何预测接下来会发生什么？
-
-
-
-这篇文章将简单地介绍如何使用 Python 来分析加密货币。文章通过一个简单的 Python 脚本来检索，分析和可视化不同加密货币上的数据。在这个过程中，文章还将揭示这些波动剧烈的市场行为以及一个有趣的演变趋势。
-
-
-
-作者：
-
-Patrick Triest
-
-链接：
-
-https://blog.patricktriest.com/analyzing-cryptocurrencies-python/
-
-
-
-
-
-### 区块链
-
-
-
-20. 学习并构建一个区块链
-
-
-
-毫无疑问，区块链这项新颖的技术是计算的奇迹。区块链技术的出现引发了新的全数字货币，如比特币和莱特币，而这些货币并非由中央当局发行或管理。区块链也以 Ethereum 这样的技术形式革命化了分布式计算，并引入了智能合约等有趣的概念。
-
-
-
-这篇文章将会帮助你学习并理解区块链的工作原理。通过这篇教程，你将学习到一个功能强大的区块链，并掌握它们的工作流程。
-
-
-
-作者：
-
-Daniel van Flymen 和 Hackernoon
-
-链接：
-
-https://hackernoon.com/learn-blockchains-by-building-one-117428612f46
-
-
-
-21. 如何构建一个最小的区块链
-
-
-
-本文将用少于 50 行的代码 (Python2) 来创建一个最简单、最小的区块链。
-
-
-
-作者：
-
-Gerald Nash
-
-链接：
-
-https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b
-
-
-
-
-
-### 视频合成
-
-
-
-22. 用 Python 构建一个视频合成器
-
-
-
-﻿视频合成器是利用音频输入来创建视觉信号的设备，自上世纪 60 年代以来，已有很长的历史。
-
-
-
-这篇文章将用 Python 编写一个基本的视频合成器，并使用 aubio 进行 Onset 目标检测。
-
-
-
-作者：
-
-Kirk Kaiser
-
-链接：
-
-https://www.makeartwithpython.com/blog/video-synthesizer-in-python/
-
-
-
+- [Python 交互式编程面试挑战](https://github.com/donnemartin/interactive-coding-challenges) - 算法和数据结构
+- [算法：Python 中的最小示例](https://github.com/keon/algorithms) - 数据结构和算法
+- [Pygorithm：学习 Python 算法](http://pygorithm.readthedocs.io/en/latest) - 学习算法的有趣方式
+
+### Web 开发
+
+#### **FastAPI**
+- [FastAPI 文档](https://fastapi.tiangolo.com/) - 现代、快速的 API 构建 Web 框架
+- [FastAPI 最佳实践](https://github.com/zhanymkanov/fastapi-best-practices)
+
+#### **Flask**
+- [2024 年 Flask 和 Python REST API](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
+- [使用 Python 和 Flask 开发 RESTful API](https://auth0.com/blog/developing-restful-apis-with-python-and-flask)
+- [Flask 与代码质量](https://flake8.pycqa.org/en/latest/user/error-codes.html)
+
+#### **Django**
+- [Django 完全初学者指南 - 第1部分](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
+- [使用 Django 构建 REST API](https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1)
+
+### 数据科学
+
+#### **NumPy**
+- [从 Python 到 Numpy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
+- [探索 Python 包中的行长度](http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages)
+
+#### **Matplotlib**
+- [Matplotlib 剖析](https://github.com/matplotlib/AnatomyOfMatplotlib)
+
+#### **数据分析项目**
+- [探索美国警务数据](https://blog.patricktriest.com/police-data-python)
+- [分析 1000+ 希腊葡萄酒](https://tselai.com/greek-wines-analysis.html)
+- [生成 FiveThirtyEight 图表](https://www.dataquest.io/blog/making-538-plots)
+- [亚马逊产品评论分析](http://minimaxir.com/2017/01/amazon-spark)
+
+### 自动化与机器人
+
+#### **网页抓取**
+- [使用 Scrapy、SQL、Matplotlib 进行网页抓取](http://www.scrapingauthority.com/python-scrapy-mysql-and-matplotlib-to-gain-web-data-insights)
+- [高级网页抓取：绕过 403 禁止](http://sangaline.com/post/advanced-web-scraping-tutorial)
+- [掌握 Python 网页抓取](https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88)
+
+#### **自动化项目**
+- [使用 Twilio 和 Python 的婚礼自动化](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html)
+- [在 Medium 上寻找有趣的人](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0)
+
+#### **机器人**
+- [Reddit + Facebook Messenger 机器人](https://pythontips.com/2017/04/13/making-a-reddit-facebook-messenger-bot)
+- [Instagram 机器人成功故事](https://medium.freecodecamp.com/my-open-source-instagram-bot-got-me-2-500-real-followers-for-5-in-server-costs-e40491358340)
+
+#### **电子表格集成**
+- [Python Excel 教程：权威指南](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
+- [在 Excel 中使用 Python 进行数据分析](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
+- [Google Sheets 和 Python](https://www.youtube.com/watch?v=vISRn5qFrkM)
+
+### 金融与交易
+
+- [2024 年 YFinance 股票分析指南](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a)
+- [使用 Python 进行量化交易](https://medium.com/@deepml1818/quantitative-trading-with-python-analyzing-financial-data-7c829d447e0a)
+- [2024 年 Alpha Vantage 金融数据](https://medium.com/@datavisiondallas/navigating-financial-data-with-python-and-alpha-vantage-in-2024-a-beginners-guide-ca005bb1a6c2)
+- [股票价格数据 - Python 金融编程](https://www.youtube.com/watch?v=2BrpKpWwT2A)
+- [分析加密货币市场](https://blog.patricktriest.com/analyzing-cryptocurrencies-python)
 
 
 ### 性能优化
 
-
-
-23. 用 Python 处理每秒 100 万个请求
-
-
-
-用 Python 每秒能够达到 100 万个请求吗？为了节省服务器价格，最近很多公司正在从 Python 向其他编程语言中迁移。但实际并不需要。
-
-
-
-Python 社区最近在性能提升方面做了很多工作。CPython 3.6 通过新的字典提高了整体解释器的性能。由于引入了更快的调用约定和字典查找缓存，CPython 3.7 将会更快。
-
-
-
-对于数字处理任务，你可以使用 PyPy 进行代码编译。你还可以运行 NumPy 的测试套件，该测试套件现在已经改进了 Python 与 C 语言扩展的整体兼容性。在随后的更新版本中，PyPy 预计将与 Python 3.5 兼容。
-
-
-
-作者：
-
-Paweł Piotr Przeradowski。
-
-链接：
-
-https://medium.freecodecamp.org/million-requests-per-second-with-python-95c137af319
-
-
-
-24. “Python 很慢，但我不在乎”
-
-
-
-这篇文章将介绍一些关于 Python 中 asyncio 的内容，并讨论有关 Python 速度的问题。
-
-
-
-作者：
-
-Nick Humrich
-
-链接：
-
-https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1
-
-
-
-25. Python 中的缓存：如何缓存函数的结果
-
-
-
-文章将介绍一种快捷的方法来加速 Python 记忆代码。你将看到何时以及如何运用 Python 记忆代码。记忆代码优化你的程序，在某些情况下会加速你的代码运行。
-
-
-
-链接：
-
-https://dbader.org/blog/python-memoization
-
-
-
-
-
-### Django
-
-
-
-26. 七步骤带你完整地学习 Django
-
-
-
-Django 是用 Python 编写的一个 Web 框架。这篇文章是介绍 Django 基础知识的系列教程，共分为七个部分，将分别从安装，准备开发环境，模型，视图，模板，URL 到更高级的主题（如迁移，测试和部署）出发，详细探讨所有的基本概念。
-
-
-
-作者：
-
-Vitor Freitas
-
-链接：
-
-https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html
-
-
-
-27. 使用 Django 构建 REST API 的测试驱动方法：第一部分
-
-
-
-这篇文章将介绍如何利用 Django 来构建一个 REST API 的测试驱动，并详细介绍了每个步骤。
-
-
-
-作者：
-
-Jee Githinji Gikera 和 Scotch Development
-
-链接：
-
-https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-part-1
-
-
-
-
-
-### Flask
-
-
-
-28. OI’List 规则
-
-
-
-这篇博文中我们将介绍 Flake8（pyflakes，pycodestyle 和 mccabe）中的每个规则及相对应的示例。
-
-
-
-链接：
-
-https://lintlyci.github.io/Flake8Rules/
-
-
-
-29.  使用 Python 和 Flask 开发 RESTful API
-
-
-
-本文包括以下几部分：为什么用 Python；什么是 Flask；引导 Flask 应用程序
-
-用 Flask 创建一个 RESTful 端点；用 Python 类映射模型；用 Marshmallow 进行序列化和反序列化对象；Dockerizing Flask 应用程序；用 Auth0 保护 Python API
-
-
-
-作者：
-
-Bruno Krebs
-
-链接：
-
-https://auth0.com/blog/developing-restful-apis-with-python-and-flask/
-
-
-
-
-
-### NumPy
-
-
-
-30.  从 Python 到 Numpy
-
-
-
-本文通过一种新颖的方式，向量化地集中讲解了如何从 Python 迁移到 Numpy 的学习。另外，本文还包括一些很少提到的使用技巧。
-
-
-
-链接：
-
-http://www.labri.fr/perso/nrougier/from-python-to-numpy/
-
-
-
-31. 探索 Python 每种工具包的行长度
-
-
-
-本文探索了 Python 的流行包，如 NumPy，SciPy，Pandas，Scikit-Learn，Matplotlib，AstroPy 等。
-
-
-
-作者：
-
-Jake VanderPlas
-
-链接：
-
-http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages/
-
-### NashPy
-
-32.  NashPy 教程 — 建立并找到一种简单的游戏平衡
-
-
-
-博弈论是用来研究理性主体之间的战略互动：当双方试图采用对各自最有益的方式来完成某件事情时，对双方互动行为的研究。这篇文章将采用 Python 中的 NashPy 来研究这种双方博弈的互动行为。
-
-
-
-链接：
-
-http://nashpy.readthedocs.io/en/latest/tutorial/
-
-
-
-
-
-### 马尔可夫过程
-
-
-
-33.  用 Python 模拟 Chutes 和 Ladders
-
-
-
-这篇文章将通过 Chutes 和 Ladders 游戏的例子，建立模型并阐述马尔可夫过程的原理。整个分析过程附有 Python 源码，感兴趣的读者可以尝试一下。
-
-
-
-作者：
-
-Jake VanderPlas
-
-链接：
-
-http://jakevdp.github.io/blog/2017/12/18/simulating-chutes-and-ladders/
-
-
-
-
-
-### 数据分析
-
-34.  用 Python 分析美国联邦政治行为
-
-
-
-科学，政治，个人意见和社会政策的交集可能呈现相当复杂的情况。思想和学科的交汇点通常充斥着有争议的观点和基于信仰但缺乏经验证据的议程。这时，数据科学在这方面就显得特别重要，因为它提供了一种以实际事实为基础的考察世界的方法，能够深入了解我们今天所面临的一些最重要的问题。
-
-
-
-这篇文章我们将用 Python 来分析美国联邦政府的一些政治行为，深入了解政治背后所隐藏的故事。
-
-
-
-作者：
-
-Patrick Triest
-
-链接：
-
-https://blog.patricktriest.com/police-data-python/
-
-
-
-35. 用 Python 分析 1000 + 的希腊葡萄酒
-
-
-
-作者：
-
-Florents Tselai
-
-链接：
-
-https://tselai.com/greek-wines-analysis.html
-
-
-
-
-
-36. 如何用 Python 生成 FiveThirtyEight 图
-
-
-
-这篇文章将用 Python 的 matplotlib 和 pandas，来学习并查看 FiveThirtyEight（FTE）可视化的核心部分，并教会你使用 Python 来为自己的数据进行可视化。
-
-
-
-作者：
-
-Josh Devlin
-
-链接：
-
-https://www.dataquest.io/blog/making-538-plots/、
-
-
-
-
-
-37. 使用 Apache Spark 和 Python 为 8000 万 Amazon 产品进行评价打分
-
-
-
-作者编写了一个简单的 Python 脚本，将亚马逊产品评论数据集中的每类评分数据进行整合，并对这些 Amazon 产品评论数据进行分析打分，以发现用户的喜好。
-
-
-
-作者：
-
-Max Woolf
-
-链接：
-
-http://minimaxir.com/2017/01/amazon-spark/
-
-
-
-
-
-38. 使用 Python 进行地理空间分析
-
-
-
-作者：
-
-Matthew Rocklin
-
-链接：
-
-https://matthewrocklin.com/blog//work/2017/09/21/accelerating-geopandas-1
-
-
-
-
-
-39. 星球：从太空中了解亚马逊，来自 Kaggle 头奖获奖者的采访
-
-
-
-文章采访了 Kaggle 的 “星球：从太空中了解亚马逊” 竞赛的获奖者，内容包括他如何使用 11 个微调的卷积神经网络，标签关联的结构模型，以及如何避免过拟合现象等。
-
-
-
-作者：
-
-Edwin Chen
-
-链接：
-
-http://blog.kaggle.com/2017/10/17/planet-understanding-the-amazon-from-space-1st-place-winners-interview/
-
-
-
-
-
-### 入门指南
-
-
-
-40. 从零开始学习 Python
-
-
-
-Python 的创建者 Guido van Rossum 曾说过，“Python 是一个高级编程语言，其核心设计理念是让代码具有高度的可读性和简单的语法，程序员可以用几行代码表达自己的想法。”
-
-
-
-作者：
-
-TK
-
-链接：
-
-https://medium.freecodecamp.org/learning-python-from-zero-to-hero-120ea540b567
-
-
-
-
-
-41.  重要的 Python 练习清单
-
-
-
-这篇文章列出了一些重要的练习项目，包括 Python 语言本身和标准库的练习。文章中还有 Python 中不同主题模块的知识。
-
-
-
-作者：
-
-Ynon Perek
-
-链接：
-
-https://www.ynonperek.com/2017/09/21/python-exercises/
-
-
-
-
-
-42.  API 的设计原则：先思考再编码
-
-
-
-API 是定义应用程序接口的通用术语，换句话说，就是用户（人或机器）与程序的交互接口。在 Web 开发世界中，API 通常是一个网站，其中包含一系列端点，用于响应客户端请求和结构化文本数据。这篇文章将告诉你为什么以及如何设计一个正确的 API，如何将自己的思想植入到 API 的设计中来构建属于你自己的 API。
-
-
-
-作者：
-
-Jonatas Baldin
-
-链接：
-
-https://www.ckl.io/blog/api-design-think-first-code-later
-
-
-
-
-
-43. Python 机器学习指南
-
-
-
-本文将通过清晰地解释和有效的练习，来帮助你深度理解相关的机器学习算法。
-
-
-
-作者：
-
-Conor Dewey
-
-链接：
-
-https://medium.freecodecamp.org/the-hitchhikers-guide-to-machine-learning-algorithms-in-python-bfad66adb378
-
-
-
-
-
-44.  如何学习 Python 编程：6 位经验丰富的 Python 开发者分享了他们的观点
-
-
-
-对于当下热门的 Python 语言，有太多的教程、书籍、视频和博客文章资源，然而如此多的冗余资料，你该如何选择最佳的方式开始你的 Python 学习之旅呢？这篇文章列出了 6 位 Python 专家分享的学习经验，相信这对于迷茫中的你来说，将受益匪浅。
-
-
-
-链接：
-
-https://coolpythoncodes.com/best-way-learn-python-programming
-
-
-
-45. 如何用 Python 实现强大的数据分析
-
-Python 是数据分析的最佳编程语言，这得益于它自带的依赖库。依赖库能够存储，操纵数据，并从数据中获得核心信息，因而在数据科学领域被广泛使用并展现出强大的功能。本文介绍了 Python 在数据科学领域的应用历史以及最新发展。
-
-作者：Jake VanderPlas
-
-链接：https://www.youtube.com/watch?v=9by46AAqz70
+- [Python 每秒百万请求](https://medium.freecodecamp.com/million-requests-per-second-with-python-95c137af319)
+- [是的，Python 很慢，但我不在乎](https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1)
+- [Python 中的记忆化](https://dbader.org/blog/python-memoization)
 
 
