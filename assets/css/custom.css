@@ -22,7 +22,7 @@ body {
   border-radius: 0.3rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   transition: all 0.2s ease;
-  /* 确保按钮不受通用 .btn 样式影响 */
+  /* Ensure buttons are not affected by generic .btn styles */
   transform: none !important;
   box-shadow: none;
 }
@@ -32,7 +32,7 @@ body {
   border-color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
   color: white;
-  /* 禁用悬浮时的变形效果 */
+  /* Disable transform effects on hover */
   transform: none !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -95,7 +95,7 @@ body {
   opacity: 0.9;
 }
 
-/* Enhanced Buttons - 只影响GitHub按钮，不影响语言切换按钮 */
+/* Enhanced Buttons - Only affects GitHub buttons, not language toggle buttons */
 .btn:not(.btn-lang) {
   transition: all 0.3s ease;
 }

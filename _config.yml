@@ -1,9 +1,10 @@
 # Site settings
 title: FlyPython
-subtitle: Python 学习资源聚合
+subtitle: Python Learning Resource Hub
 description: >-
-  FlyPython 是一个精心策划的 Python 学习资源集合，包含教程、书籍、课程、
-  工具和最佳实践，帮助从初学者到高级开发者的 Python 学习之旅。
+  FlyPython is a carefully curated collection of Python learning resources, 
+  including tutorials, books, courses, tools, and best practices to support 
+  Python learners from beginners to advanced developers.
 
 # Site information
 url: "https://python.flypython.com"
@@ -34,7 +35,7 @@ plugins:
   - jekyll-relative-links
 
 # SEO settings
-lang: zh-CN
+lang: en
 logo: /assets/images/logo.png
 
 # Social links
