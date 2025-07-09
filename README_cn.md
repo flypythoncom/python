@@ -10,6 +10,35 @@ permalink: /README_cn.html
 
 https://flypython.com 
 
+## 📚 快速导航
+
+1. [Python新闻](#python新闻)
+1. [Python书籍列表](#python书籍列表)
+1. [Python课程列表](#python课程列表)
+1. [数据科学](#数据科学)
+1. [推荐学习](#推荐学习)
+1. [算法](#算法)
+1. [指南](#指南)
+1. [项目结构](#项目结构)
+1. [列表推导式](#列表推导式)
+1. [类](#类)
+1. [数据处理与分析](#数据处理与分析)
+1. [网页抓取](#网页抓取)
+1. [自动化](#自动化)
+1. [机器人](#机器人)
+1. [电子表格](#电子表格)
+1. [金融](#金融)
+1. [区块链](#区块链)
+1. [视频合成](#视频合成)
+1. [性能优化](#性能优化)
+1. [Django](#django)
+1. [Flask](#flask)
+1. [NumPy](#numpy)
+1. [NashPy](#nashpy)
+1. [马尔可夫过程](#马尔可夫过程)
+1. [入门指南](#入门指南)
+
+---
 
 ## Github Top 45
 
@@ -69,30 +98,12 @@ https://flypython.com
 - [Python自动化测试](https://testdriven.io/courses/)
 - [Python爬虫开发](https://realpython.com/web-scraping-with-scrapy-and-mongodb/)
 
-### Python学习资源集合
+### 数据科学
 
-**📚 快速导航：**
-1. [Python新闻](#python新闻)
-1. [Python书籍列表](#python书籍列表)
-1. [Python课程列表](#python课程列表)
-1. [推荐学习](#推荐学习)
-1. [算法](#算法)
-1. [指南](#指南)
-1. [项目结构](#项目结构)
-1. [列表推导式](#列表推导式)
-1. [类](#类)
-1. [数据处理与分析](#数据处理与分析)
-1. [网页抓取](#网页抓取)
-1. [自动化](#自动化)
-1. [机器人](#机器人)
-1. [金融](#金融)
-1. [区块链](#区块链)
-1. [性能优化](#性能优化)
-1. [Django](#django)
-1. [Flask](#flask)
-1. [数据科学](#数据科学)
+#### matplotlib
+- [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
 
-#### 推荐学习
+### 推荐学习
 
 **现代化REST API开发：**使用 Python 和 Flask 构建2024年专业级 REST API ［现代工具和最佳实践］
 
@@ -106,7 +117,7 @@ https://flypython.com
 
 链接：https://medium.mybridge.co/30-amazing-python-projects-for-the-past-year-v-2018-9c310b04cdb3
 
-#### 算法
+### 算法
 
 1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
 
@@ -138,7 +149,7 @@ https://flypython.com
 
 
 
-#### 指南
+### 指南
 
 4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
 
@@ -150,7 +161,7 @@ https://flypython.com
 
 
 
-#### 项目结构
+### 项目结构
 
 5. 一个关于如何从 Python 脚本到打包项目的标准化指南
 
@@ -162,7 +173,7 @@ https://flypython.com
 
 
 
-#### 列表推导式
+### 列表推导式
 
 6. Python 列表推导式完整指南
 
@@ -178,7 +189,7 @@ https://flypython.com
 
 
 
-#### 类
+### 类
 
 7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
 
@@ -191,7 +202,7 @@ https://flypython.com
 
 
 
-#### 数据处理与分析
+### 数据处理与分析
 
 8. Python Excel 数据分析完整指南
 
@@ -205,7 +216,7 @@ https://flypython.com
 
    链接：https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel
 
-#### 网页抓取
+### 网页抓取
 
 10. 高级的网页抓取教程：绕过 "403 禁止"，验证码等问题
 
@@ -223,7 +234,7 @@ https://flypython.com
 
 
 
-#### 自动化
+### 自动化
 
 11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
 
@@ -243,7 +254,7 @@ https://flypython.com
 
 
 
-#### 机器人
+### 机器人
 13. 制作 Reddit+Facebook 的信息箱
 
 作者：
@@ -268,7 +279,7 @@ https://medium.freecodecamp.org/my-open-source-instagram-bot-got-me-2-500-real-f
 
 
 
-#### 电子表格
+### 电子表格
 
 15. 权威指南：Python 的 Excel 教程
 
@@ -298,7 +309,7 @@ https://www.youtube.com/watch?v=vISRn5qFrkM
 
 
 
-#### 金融
+### 金融
 
 17.  Python 中的金融：算法交易
 
@@ -350,7 +361,7 @@ https://blog.patricktriest.com/analyzing-cryptocurrencies-python/
 
 
 
-#### 区块链
+### 区块链
 
 
 
@@ -396,7 +407,7 @@ https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248
 
 
 
-#### 视频合成
+### 视频合成
 
 
 
@@ -424,7 +435,7 @@ https://www.makeartwithpython.com/blog/video-synthesizer-in-python/
 
 
 
-#### 性能优化
+### 性能优化
 
 
 
@@ -488,7 +499,7 @@ https://dbader.org/blog/python-memoization
 
 
 
-#### Django
+### Django
 
 
 
@@ -530,7 +541,7 @@ https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-
 
 
 
-#### Flask
+### Flask
 
 
 
@@ -570,7 +581,7 @@ https://auth0.com/blog/developing-restful-apis-with-python-and-flask/
 
 
 
-#### NumPy
+### NumPy
 
 
 
@@ -604,7 +615,7 @@ Jake VanderPlas
 
 http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages/
 
-#### NashPy
+### NashPy
 
 32.  NashPy 教程 — 建立并找到一种简单的游戏平衡
 
@@ -622,7 +633,7 @@ http://nashpy.readthedocs.io/en/latest/tutorial/
 
 
 
-#### 马尔可夫过程
+### 马尔可夫过程
 
 
 
@@ -646,9 +657,7 @@ http://jakevdp.github.io/blog/2017/12/18/simulating-chutes-and-ladders/
 
 
 
-#### 数据科学
-
-
+### 数据分析
 
 34.  用 Python 分析美国联邦政治行为
 
@@ -764,7 +773,7 @@ http://blog.kaggle.com/2017/10/17/planet-understanding-the-amazon-from-space-1st
 
 
 
-#### 入门指南
+### 入门指南
 
 
 

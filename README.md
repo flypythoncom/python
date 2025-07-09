@@ -10,6 +10,36 @@ permalink: /
 
 [python.flypython.com](https://python.flypython.com )
 
+## 📚 Quick Navigation
+
+1. [Python News](#python-news)
+1. [Python for LLM](#python-for-llm)
+1. [Python Books](#python-books)
+1. [Course](#course)
+1. [Data Science](#data-science)
+1. [Recommended Learning](#recommended-learning)
+1. [Algorithm](#algorithm)
+1. [Guide](#guide)
+1. [Structure](#structure)
+1. [List](#list)
+1. [Class](#class)
+1. [Web Scraping](#web-scraping)
+1. [Automation](#automation)
+1. [Bot](#bot)
+1. [Spreadsheet](#spreadsheet)
+1. [Finance](#finance)
+1. [Blockchain](#blockchain)
+1. [Video Synthesizer](#video-synthesizer)
+1. [Performance](#performance)
+1. [Django](#django)
+1. [Flask & Code Quality](#flask--code-quality)
+1. [NumPy](#numpy)
+1. [NashPy](#nashpy)
+1. [Markov Process](#markov-process)
+1. [Data Analysis](#data-analysis)
+1. [Get Started](#get-started)
+
+---
 
 ## Github Top 45
 
@@ -68,37 +98,6 @@ permalink: /
 
 #### matplotlib
 - [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
-
-### Python Learning Resources
-
-**📚 Quick Navigation:**
-1. [Python News](#python-news)
-1. [Python for LLM](#python-for-llm)
-1. [Python Books](#python-books)
-1. [Course](#course)
-1. [Data Science](#data-science)
-1. [Algorithm](#algorithm)
-1. [Guide](#guide)
-1. [Structure](#structure)
-1. [List](#list)
-1. [Class](#class)
-1. [Web Scraping](#web-scraping)
-1. [Automation](#automation)
-1. [Bot](#bot)
-1. [Spreadsheet](#spreadsheet)
-1. [Finance](#finance)
-1. [Blockchain](#blockchain)
-1. [Video Synthesizer](#video-synthesizer)
-1. [Performance](#performance)
-1. [Django](#django)
-1. [Flask & Code Quality](#flask--code-quality)
-1. [NumPy](#numpy)
-1. [NashPy](#nashpy)
-1. [Markov Process](#markov-process)
-1. [Data Analysis](#data-analysis)
-1. [Get Started](#get-started)
-
-<br>
 
 ### Recommended Learning
 
