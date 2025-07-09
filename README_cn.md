@@ -205,17 +205,15 @@ https://flypython.com
 
    链接：https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel
 
+#### 网页抓取
 
-
-9. 高级的网页抓取教程：绕过 “403 禁止”，验证码等问题
+10. 高级的网页抓取教程：绕过 "403 禁止"，验证码等问题
 
    作者：Evan Sangaline
 
    链接：http://sangaline.com/post/advanced-web-scraping-tutorial/
 
-
-
-10. 掌握 Python 的网页抓取技巧来获取你所需要的数据
+11. 掌握 Python 的网页抓取技巧来获取你所需要的数据
 
    作者：Lauren Glass 和 Hackernoon
 
@@ -426,7 +424,7 @@ https://www.makeartwithpython.com/blog/video-synthesizer-in-python/
 
 
 
-Python 的性能
+#### 性能优化
 
 
 
@@ -490,7 +488,7 @@ https://dbader.org/blog/python-memoization
 
 
 
-Python 中的 Django 框架
+#### Django
 
 
 
@@ -532,7 +530,7 @@ https://scotch.io/tutorials/build-a-rest-api-with-django-a-test-driven-approach-
 
 
 
-Python 中的 Flake
+#### Flask
 
 
 
@@ -572,7 +570,7 @@ https://auth0.com/blog/developing-restful-apis-with-python-and-flask/
 
 
 
-Python 中的 Numpy
+#### NumPy
 
 
 
@@ -606,13 +604,7 @@ Jake VanderPlas
 
 http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages/
 
-
-
-
-
-Python 中的 NashPy
-
-
+#### NashPy
 
 32.  NashPy 教程 — 建立并找到一种简单的游戏平衡
 
@@ -630,7 +622,7 @@ http://nashpy.readthedocs.io/en/latest/tutorial/
 
 
 
-Python 中的马尔可夫过程
+#### 马尔可夫过程
 
 
 
@@ -654,7 +646,7 @@ http://jakevdp.github.io/blog/2017/12/18/simulating-chutes-and-ladders/
 
 
 
-Python 中的数据分析
+#### 数据科学
 
 
 
@@ -772,7 +764,7 @@ http://blog.kaggle.com/2017/10/17/planet-understanding-the-amazon-from-space-1st
 
 
 
-Python 入门
+#### 入门指南
 
 
 
