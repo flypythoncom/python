@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://python.flypython.com/sitemap.xml
+
+# Specific directives
+Disallow: /tools/
+Disallow: /*.json$
+Disallow: /assets/css/
+Disallow: /assets/js/
+
+# Allow all important pages
+Allow: /README.md
+Allow: /README_cn.html
+Allow: /
+
+# Crawl delay (optional)
+Crawl-delay: 1 

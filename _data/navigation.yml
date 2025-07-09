@@ -1,0 +1,46 @@
+main:
+  - title: "🏠 首页 / Home"
+    url: "/"
+  - title: "🇨🇳 中文版"
+    url: "/README_cn.html"
+  - title: "📚 资源库 / Resources"
+    url: "#resources"
+    children:
+      - title: "📖 教程 / Tutorials"
+        url: "#tutorials"
+      - title: "📚 书籍 / Books"
+        url: "#books"
+      - title: "🎓 课程 / Courses"
+        url: "#courses"
+      - title: "🛠️ 工具 / Tools"
+        url: "#tools"
+  - title: "🤖 AI/ML"
+    url: "#ai-ml"
+    children:
+      - title: "🧠 LLM"
+        url: "#python-for-llm"
+      - title: "📊 数据科学 / Data Science"
+        url: "#data-science"
+      - title: "💹 金融 / Finance"
+        url: "#finance"
+  - title: "🔗 GitHub"
+    url: "https://github.com/flypython/python"
+    external: true
+
+footer:
+  - title: "快速链接 / Quick Links"
+    children:
+      - title: "Python 官网 / Python.org"
+        url: "https://python.org"
+      - title: "PyPI"
+        url: "https://pypi.org"
+      - title: "Real Python"
+        url: "https://realpython.com"
+  - title: "社区 / Community"
+    children:
+      - title: "Reddit r/Python"
+        url: "https://reddit.com/r/Python"
+      - title: "Stack Overflow"
+        url: "https://stackoverflow.com/questions/tagged/python"
+      - title: "Python Discord"
+        url: "https://discord.gg/python" 

@@ -1,4 +1,12 @@
-# FlyPython 
+---
+title: "FlyPython - Python Learning Resources"
+description: "A curated collection of Python learning resources including tutorials, books, courses, and best practices for developers at all levels."
+layout: default
+lang: en
+permalink: /
+---
+
+# 🐍 FlyPython 
 
 [python.flypython.com](https://python.flypython.com )
 
@@ -17,25 +25,39 @@
 
 ## Python for LLM 
 
+- [Python for AI and Machine Learning](https://realpython.com/learning-paths/machine-learning-python/)
+- [LangChain Python Documentation](https://python.langchain.com/docs/get_started/introduction/)
+- [OpenAI Python Library](https://github.com/openai/openai-python)
+- [Building LLM Applications with Python](https://www.deeplearning.ai/short-courses/)
+
 
 ## Python Books
 
 #### Beginner
-- 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》
+- 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》 (3rd Edition, 2023)
    - ※※※※※
-   - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1593276036)
+   - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
    
 - 《STARTING OUT WITH PYTHON (4TH EDITION)》
   - ※※※※※
   - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
 
-- 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners 》
+- 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners》 (2nd Edition)
   - ※※※※※
-  - [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593275994)
+  - [Free Online](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
 
-- 《Python Cookbook: Recipes for Mastering Python 3 Paperback 》
+- 《Python Cookbook: Recipes for Mastering Python 3》 
   - ※※※※※
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
+
+#### Modern Python (2023-2024)
+- 《Effective Python: 90 Specific Ways to Write Better Python》 (2nd Edition)
+  - ※※※※※
+  - [Amazon](https://www.amazon.com/Effective-Python-Specific-Software-Development/dp/0134853989)
+
+- 《Clean Code in Python》
+  - ※※※※※
+  - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
 
 
 
@@ -84,9 +106,9 @@
 
 ### Recommended Learning
 
-A) REST APIs: [Build professional REST APIs with Python, Flask, Flask-RESTful, and Flask-SQLAlchemy.](http://bit.ly/2nktytU) [12,602 recommends, 4.6/5 stars]
+A) REST APIs: [REST APIs with Flask and Python in 2024 - Complete Course](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) [Professional Flask Development with Modern Tools]
 
-B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: Learn numpy , pandas , matplotlib , quantopian , finance.](http://bit.ly/2FfVW8G) [18,077 recommends, 4.6/5 stars]
+B) Financial Analysis: [The 2024 Guide to Using YFinance with Python for Stock Analysis](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a) [Modern Python Finance Tools]
 
 <br>
 
@@ -103,12 +125,14 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 <br>
 
 ### Structure
-* [Alice in Python projectland: A comprehensive guide for how to go from Python scripts to a packaged project.](http://veekaybee.github.io/2017/09/26/python-packaging?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [Python Packaging User Guide: Creating a Project](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+* [Real Python: Python Modules and Packages](https://realpython.com/python-modules-packages/)
 
 <br>
 
 ### List
-* [Python List Comprehension Tutorial](http://www.datacamp.com/community/tutorials/python-list-comprehension?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [Python List Comprehension Tutorial](https://realpython.com/list-comprehension-python/)
+* [Beginner's Guide To List Comprehensions In Python](https://zerotomastery.io/blog/list-comprehension-python/)
 
 <br>
 
@@ -136,14 +160,17 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 
 <br>
 
-### Spreasheet
-* [Python Excel Tutorial: The Definitive Guide - Karlijn Willems](http://www.datacamp.com/community/tutorials/python-excel-tutorial?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+### Spreadsheet
+* [Python Excel Tutorial: The Definitive Guide](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
+* [Data Analysis with Python in Excel](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
 * [Google Sheets and Python](https://www.youtube.com/watch?v=vISRn5qFrkM?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
 <br>
 
 ### Finance
-* [Python For Finance: Algorithmic Trading](https://www.datacamp.com/community/tutorials/finance-python-trading?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [The 2024 Guide to Using YFinance with Python for Stock Analysis](https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a)
+* [Quantitative Trading with Python: Analyzing Financial Data](https://medium.com/@deepml1818/quantitative-trading-with-python-analyzing-financial-data-7c829d447e0a)
+* [Navigating Financial Data with Python and Alpha Vantage in 2024](https://medium.com/@datavisiondallas/navigating-financial-data-with-python-and-alpha-vantage-in-2024-a-beginners-guide-ca005bb1a6c2)
 * [Intro and Getting Stock Price Data - Python Programming for Finance p.1 - Sentdex](https://www.youtube.com/watch?v=2BrpKpWwT2A?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 * [Analyzing Cryptocurrency Markets Using Python](https://blog.patricktriest.com/analyzing-cryptocurrencies-python?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
 
@@ -173,9 +200,11 @@ B) Algorithmic Trading: [Python for Financial Analysis and Algorithmic Trading: 
 
 <br>
 
-### Flake
-* [The Big Ol' List of Rules](https://lintlyci.github.io/Flake8Rules?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+### Flask & Code Quality
+* [Flake8 Error Codes Documentation](https://flake8.pycqa.org/en/latest/user/error-codes.html)
+* [REST APIs with Flask and Python in 2024](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
 * [Developing RESTful APIs with Python and Flask](https://auth0.com/blog/developing-restful-apis-with-python-and-flask?utm_source=mybridge&utm_medium=email&utm_campaign=read_more)
+* [REST APIs with Flask and Python - Complete Guide](https://rest-apis-flask.teclado.com/)
 
 <br>
 

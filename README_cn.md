@@ -1,4 +1,12 @@
-# FlyPython
+---
+title: "FlyPython - Python 学习资源"
+description: "精心策划的 Python 学习资源集合，包含教程、书籍、课程和各级别开发者的最佳实践。"
+layout: default
+lang: zh-CN
+permalink: /README_cn.html
+---
+
+# 🐍 FlyPython
 
 https://flypython.com 
 
@@ -17,25 +25,29 @@ https://flypython.com
 ## Python书籍列表
 
 #### 初学者
-- 《Python编程从入门到实践》
-- 《Python编程快速上手-让繁琐工作自动化》
-- 《Python学习手册》
-
+- 《Python编程从入门到实践》（第3版，2023年）
+- 《Python编程快速上手-让繁琐工作自动化》（第2版）
+- 《Python学习手册》（第5版）
 
 #### 中级
-- 《流畅的Python》
-- 《Python Ticks: A Buufect of Awesome》
-- 《Effective Python: 59 Specific ways to 》
--
+- 《流畅的Python》（第2版）
+- 《Python技巧：充分利用Python的特性》
+- 《Effective Python: 编写高质量Python代码的90个建议》（第2版）
 
 #### 实践
-- 《Python编程》
+- 《Python编程：从入门到实践》
 - 《Python极客项目编程》
-- 《Python核心编程》
-
+- 《Python核心编程》（第3版）
 
 #### 高级
-- 《Python Cookbook》
+- 《Python Cookbook》（第3版）
+- 《Python高性能编程》
+- 《架构整洁之道：Python编程》
+
+#### 现代Python（2023-2024）
+- 《Python数据科学手册》（第2版）
+- 《Python机器学习实战》
+- 《深度学习入门：基于Python的理论与实现》
 
 
 
@@ -46,21 +58,29 @@ https://flypython.com
 ## Python课程列表
 
 #### 初学者
-
 - [Python for Everybody](https://www.coursera.org/specializations/python)
+- [Python基础教程 - 菜鸟教程](https://www.runoob.com/python/python-tutorial.html)
+- [廖雪峰Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
+
+#### 进阶课程
+- [Python数据科学实战](https://www.coursera.org/specializations/python-data-science-university-of-michigan)
+- [Python机器学习课程](https://www.coursera.org/learn/machine-learning-with-python)
+
+#### 专业领域
+- [Python Web开发](https://www.coursera.org/learn/django-web-framework)
+- [Python自动化测试](https://testdriven.io/courses/)
+- [Python爬虫开发](https://realpython.com/web-scraping-with-scrapy-and-mongodb/)
 
 
 ## Github Top 45
 
-REST API：使用 Python，Flask，Flask-RESTful 和 Flask-SQLAlchemy 构建专业的 REST API ［12,602 个推荐，4.6 / 5 星］
+**现代化REST API开发：**使用 Python 和 Flask 构建2024年专业级 REST API ［现代工具和最佳实践］
 
-链接：https://www.udemy.com/rest-api-flask-and-python/
+链接：https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az
 
+**Python金融分析：**2024年使用YFinance进行股票分析的完整指南 ［现代Python金融工具］
 
-
-算法交易：用于财务分析和算法交易的 Python，主要学习包括 numpy，pandas，matplotlib，quantopian，finance ［8,077 个推荐，4.6 / 5 星］
-
-链接：https://www.udemy.com/python-for-finance-and-trading-algorithms/
+链接：https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a
 
 
 
@@ -130,15 +150,17 @@ Python 的脚本结构
 
 Python 中的列表
 
-6. Python 列表生成器的教程
+6. Python 列表推导式完整指南
 
-   在这份教程中，你将能够学习到如何在 Python 中有效地使用列表生成器来创建列表，替换 (嵌套) for 循环以及使用 map (), filter (), reduce () 函数等。
+   Real Python提供的深入教程，详细介绍如何在Python中有效使用列表推导式。包含条件逻辑、性能优化、最佳实践等高级主题。
 
-   文章首先简单回顾了 Python 中列表的基本概念，并与 Python 中其他的数据结构进行比较。接着讲解了列表生成器的学习。文章还讲解了 Python 列表背后的数学知识，创建列表生成器的方法，以及如何在 for 循环或 lambda 隐函数中重写它们。
+   链接：https://realpython.com/list-comprehension-python/
 
-   作者：Karlijn Willems
+7. Python 列表推导式初学者指南
 
-   链接：https://www.datacamp.com/community/tutorials/python-list-comprehension
+   Zero to Mastery提供的实用教程，通过6个真实案例展示列表推导式的强大功能，包括数据过滤、转换和生成等常见用例。
+
+   链接：https://zerotomastery.io/blog/list-comprehension-python/
 
 
 
@@ -155,15 +177,19 @@ Python 中的类
 
 
 
-Python 中的网页抓取
+Python 中的数据处理与分析
 
-8. 如何使用 Python 中的 Scrapy、SQL 和 Matplotlib 等库进行网页抓取，并获取网页数据分析
+8. Python Excel 数据分析完整指南
 
-   你可以通过这篇文章学习到网页爬取知识，并用于实践中。
+   HackerNoon提供的详细教程，展示如何使用Python处理Excel文件，包括pandas、openpyxl等主要库的使用方法。
 
-   作者：ScrapingAuthority
+   链接：https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0
 
-   链接：http://www.scrapingauthority.com/python-scrapy-mysql-and-matplotlib-to-gain-web-data-insights/
+9. Python 在 Excel 中的数据分析认证课程
+
+   Anaconda官方认证课程，学习如何在Excel中使用Python进行专业级数据分析。
+
+   链接：https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel
 
 
 

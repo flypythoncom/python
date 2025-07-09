@@ -1,0 +1,366 @@
+/* Custom CSS for FlyPython */
+
+/* Enhanced Typography */
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.8;
+}
+
+/* Language Toggle Styles */
+.language-toggle {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.btn-lang {
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-lang:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  color: white;
+}
+
+.btn-lang.active {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Enhanced Header */
+.page-header {
+  background: linear-gradient(135deg, #157878 0%, #2c3e50 100%);
+}
+
+.project-name {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.project-tagline {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+/* Enhanced Buttons */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Table of Contents Styles */
+.toc {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.toc h3 {
+  margin-top: 0;
+  color: #495057;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #157878;
+  padding-bottom: 0.5rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.toc li {
+  margin: 0.5rem 0;
+}
+
+.toc a {
+  color: #157878;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.toc a:hover {
+  background-color: #157878;
+  color: white;
+  text-decoration: none;
+}
+
+.toc-level-2 {
+  padding-left: 1rem;
+}
+
+.toc-level-3 {
+  padding-left: 2rem;
+}
+
+/* Enhanced Main Content */
+.main-content {
+  line-height: 1.8;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4 {
+  color: #2c3e50;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.main-content h2 {
+  border-bottom: 2px solid #157878;
+  padding-bottom: 0.5rem;
+}
+
+.main-content h3 {
+  border-left: 4px solid #157878;
+  padding-left: 1rem;
+}
+
+/* Code block enhancements */
+.main-content pre {
+  background: #2d3748;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.main-content code {
+  background: #f1f3f4;
+  color: #d73a49;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+.main-content pre code {
+  background: none;
+  color: #e2e8f0;
+  padding: 0;
+}
+
+/* Link styles */
+.main-content a {
+  color: #157878;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.main-content a:hover {
+  border-bottom-color: #157878;
+  text-decoration: none;
+}
+
+/* Enhanced lists */
+.main-content ul li {
+  margin: 0.75rem 0;
+}
+
+.main-content ul li a {
+  font-weight: 500;
+}
+
+.main-content ul li a:hover {
+  background: rgba(21, 120, 120, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  margin: -0.2rem -0.4rem;
+}
+
+/* Footer enhancements */
+.site-footer {
+  border-top: 2px solid #157878;
+  margin-top: 3rem;
+  padding-top: 2rem;
+}
+
+.footer-stats {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+}
+
+.footer-stats p {
+  margin: 0;
+  color: #6c757d;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #157878;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+  font-size: 1.2rem;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+}
+
+.scroll-to-top:hover {
+  background: #2c3e50;
+}
+
+/* Resource cards */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.resource-card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #157878;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Category headers */
+.category-header {
+  display: flex;
+  align-items: center;
+  margin: 3rem 0 1.5rem 0;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(21, 120, 120, 0.1) 0%, rgba(21, 120, 120, 0.05) 100%);
+  border-radius: 0.5rem;
+  border-left: 5px solid #157878;
+}
+
+/* Statistics section */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  border-top: 3px solid #157878;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #157878;
+  display: block;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 768px) {
+  .project-name {
+    font-size: 2rem;
+  }
+  
+  .project-tagline {
+    font-size: 1rem;
+  }
+  
+  .language-toggle {
+    text-align: center;
+  }
+  
+  .btn-lang {
+    display: block;
+    margin: 0.5rem auto;
+    max-width: 200px;
+  }
+  
+  .toc {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+  
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .resource-card {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .stat-card {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+  
+  .footer-stats {
+    background: #2d3748;
+    color: #e2e8f0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .page-header,
+  .site-footer,
+  .scroll-to-top,
+  .toc {
+    display: none !important;
+  }
+  
+  .main-content {
+    max-width: none !important;
+  }
+} 

@@ -1,1 +1,117 @@
-theme: jekyll-theme-minimal
+# Site settings
+title: FlyPython
+subtitle: Python 学习资源聚合
+description: >-
+  FlyPython 是一个精心策划的 Python 学习资源集合，包含教程、书籍、课程、
+  工具和最佳实践，帮助从初学者到高级开发者的 Python 学习之旅。
+
+# Site information
+url: "https://python.flypython.com"
+baseurl: ""
+
+# Author information
+author:
+  name: FlyPython Community
+  email: hello@flypython.com
+  github: flypython
+  twitter: flypython
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Theme configuration - Using GitHub Pages compatible theme
+remote_theme: pages-themes/cayman@v0.2.0
+
+# Plugins (GitHub Pages whitelist)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-relative-links
+
+# SEO settings
+lang: zh-CN
+logo: /assets/images/logo.png
+
+# Social links
+github_username: flypython
+twitter_username: flypython
+
+# Navigation
+header_pages:
+  - README.md
+  - README_cn.md
+
+# GitHub Pages safe collections
+collections:
+  tutorials:
+    output: true
+    permalink: /:collection/:name/
+  resources:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "FlyPython Community"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "tutorials"
+    values:
+      layout: "tutorial"
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+
+# Analytics (optional)
+google_analytics: # UA-XXXXXXXX-X
+
+# Features
+show_downloads: true
+show_github_ribbon: true
+
+# Custom variables
+github:
+  repository_url: https://github.com/flypython/python
+  repository_name: flypython/python
+
+# Content settings
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - tools/
+  - link_audit_report.md
+  - content_update_summary.md
