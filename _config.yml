@@ -63,12 +63,28 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "FlyPython Community"
+      author: "FlyPython"
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
+  - scope:
+      path: "README.md"
+    values:
+      layout: "default"
+      title: "FlyPython - Python Learning Resources"
+      description: "A curated collection of Python learning resources including tutorials, books, courses, and best practices for developers at all levels."
+      lang: "en"
+      permalink: "/"
+  - scope:
+      path: "README_cn.md"
+    values:
+      layout: "default"
+      title: "FlyPython - Python 学习资源"
+      description: "精心策划的 Python 学习资源集合，包含教程、书籍、课程和各级别开发者的最佳实践。"
+      lang: "zh-CN"
+      permalink: "/README_cn.html"
   - scope:
       path: ""
       type: "tutorials"
@@ -84,8 +100,8 @@ defaults:
 google_analytics: # UA-XXXXXXXX-X
 
 # Features
-show_downloads: true
-show_github_ribbon: true
+show_downloads: false
+show_github_ribbon: false
 
 # Custom variables
 github:

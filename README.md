@@ -1,11 +1,3 @@
----
-title: "FlyPython - Python Learning Resources"
-description: "A curated collection of Python learning resources including tutorials, books, courses, and best practices for developers at all levels."
-layout: default
-lang: en
-permalink: /
----
-
 # 🐍 FlyPython 
 
 [python.flypython.com](https://python.flypython.com )
@@ -64,19 +56,17 @@ permalink: /
 
 #### Beginner
 - 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》 (3rd Edition, 2023)
-   - ※※※※※
+
    - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
    
 - 《STARTING OUT WITH PYTHON (4TH EDITION)》
-  - ※※※※※
   - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
 
 - 《Automate the Boring Stuff with Python: Practical Programming for Total Beginners》 (2nd Edition)
-  - ※※※※※
   - [Free Online](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
 
 - 《Python Cookbook: Recipes for Mastering Python 3》 
-  - ※※※※※
+
   - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
 
 #### Modern Python (2023-2024)

@@ -1,11 +1,3 @@
----
-title: "FlyPython - Python 学习资源"
-description: "精心策划的 Python 学习资源集合，包含教程、书籍、课程和各级别开发者的最佳实践。"
-layout: default
-lang: zh-CN
-permalink: /README_cn.html
----
-
 # 🐍 FlyPython
 
 https://flypython.com 
