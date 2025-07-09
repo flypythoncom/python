@@ -11,7 +11,9 @@ permalink: /README_cn.html
 https://flypython.com 
 
 
-## Python新闻
+## Github Top 45
+
+### Python新闻
 
 - [python官方](https://www.python.org/)
 - [realpython](https://realpython.com)
@@ -21,8 +23,7 @@ https://flypython.com
    - [learn python](https://www.reddit.com/r/learnpython/)
    - [python tips](https://www.reddit.com/r/pythontips/)
 
-
-## Python书籍列表
+### Python书籍列表
 
 #### 初学者
 - 《Python编程从入门到实践》（第3版，2023年）
@@ -49,13 +50,10 @@ https://flypython.com
 - 《Python机器学习实战》
 - 《深度学习入门：基于Python的理论与实现》
 
-
-
 #### 参考资源
 - https://pythonbooks.org/
 
-
-## Python课程列表
+### Python课程列表
 
 #### 初学者
 - [Python for Everybody](https://www.coursera.org/specializations/python)
@@ -71,8 +69,30 @@ https://flypython.com
 - [Python自动化测试](https://testdriven.io/courses/)
 - [Python爬虫开发](https://realpython.com/web-scraping-with-scrapy-and-mongodb/)
 
+### Python学习资源集合
 
-## Github Top 45
+**📚 快速导航：**
+1. [Python新闻](#python新闻)
+1. [Python书籍列表](#python书籍列表)
+1. [Python课程列表](#python课程列表)
+1. [推荐学习](#推荐学习)
+1. [算法](#算法)
+1. [指南](#指南)
+1. [项目结构](#项目结构)
+1. [列表推导式](#列表推导式)
+1. [类](#类)
+1. [数据处理与分析](#数据处理与分析)
+1. [网页抓取](#网页抓取)
+1. [自动化](#自动化)
+1. [机器人](#机器人)
+1. [金融](#金融)
+1. [区块链](#区块链)
+1. [性能优化](#性能优化)
+1. [Django](#django)
+1. [Flask](#flask)
+1. [数据科学](#数据科学)
+
+#### 推荐学习
 
 **现代化REST API开发：**使用 Python 和 Flask 构建2024年专业级 REST API ［现代工具和最佳实践］
 
@@ -82,17 +102,11 @@ https://flypython.com
 
 链接：https://kritjunsree.medium.com/the-2024-guide-to-using-yfinance-with-python-for-effective-stock-analysis-668a4a26ee3a
 
-
-
 年度开源 Python 项目 ［平均 4,078 星］
-
 
 链接：https://medium.mybridge.co/30-amazing-python-projects-for-the-past-year-v-2018-9c310b04cdb3
 
-
-
-Python 算法
-
+#### 算法
 
 1. 回顾 Python 交互式编码中所要面对的挑战 (算法和数据结构)
 
@@ -124,7 +138,7 @@ Python 算法
 
 
 
-Python 综合指南
+#### 指南
 
 4. 一个有趣又鲜为人知的 Python 代码片段集合 —wtfPython
 
@@ -136,7 +150,7 @@ Python 综合指南
 
 
 
-Python 的脚本结构
+#### 项目结构
 
 5. 一个关于如何从 Python 脚本到打包项目的标准化指南
 
@@ -148,7 +162,7 @@ Python 的脚本结构
 
 
 
-Python 中的列表
+#### 列表推导式
 
 6. Python 列表推导式完整指南
 
@@ -164,7 +178,7 @@ Python 中的列表
 
 
 
-Python 中的类
+#### 类
 
 7. 如何使用 Dunder (Magic、Special) 方法来丰富你的 Python 类
 
@@ -177,7 +191,7 @@ Python 中的类
 
 
 
-Python 中的数据处理与分析
+#### 数据处理与分析
 
 8. Python Excel 数据分析完整指南
 
@@ -211,7 +225,7 @@ Python 中的数据处理与分析
 
 
 
-Python 中的自动化操作
+#### 自动化
 
 11. 如何使用 Twilio、Python 和 Google 自动化婚礼的进程
 
@@ -231,7 +245,7 @@ Python 中的自动化操作
 
 
 
-Python 中的 Bot
+#### 机器人
 13. 制作 Reddit+Facebook 的信息箱
 
 作者：
@@ -256,7 +270,7 @@ https://medium.freecodecamp.org/my-open-source-instagram-bot-got-me-2-500-real-f
 
 
 
-Python 中的电子表格
+#### 电子表格
 
 15. 权威指南：Python 的 Excel 教程
 
@@ -286,7 +300,7 @@ https://www.youtube.com/watch?v=vISRn5qFrkM
 
 
 
-Python 中的金融应用
+#### 金融
 
 17.  Python 中的金融：算法交易
 
@@ -338,7 +352,7 @@ https://blog.patricktriest.com/analyzing-cryptocurrencies-python/
 
 
 
-Python 中的区块链
+#### 区块链
 
 
 
@@ -384,7 +398,7 @@ https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248
 
 
 
-Python 中的视频合成
+#### 视频合成
 
 
 

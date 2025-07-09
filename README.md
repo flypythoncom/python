@@ -11,7 +11,9 @@ permalink: /
 [python.flypython.com](https://python.flypython.com )
 
 
-## Python News
+## Github Top 45
+
+### Python News
 
 - [python official](https://www.python.org/)
 - [medium](https://medium.com/tag/python)
@@ -21,17 +23,14 @@ permalink: /
    - [python tips](https://www.reddit.com/r/pythontips/)
    - [python coding](https://www.reddit.com/r/pythoncoding)
 
-
-
-## Python for LLM 
+### Python for LLM 
 
 - [Python for AI and Machine Learning](https://realpython.com/learning-paths/machine-learning-python/)
 - [LangChain Python Documentation](https://python.langchain.com/docs/get_started/introduction/)
 - [OpenAI Python Library](https://github.com/openai/openai-python)
 - [Building LLM Applications with Python](https://www.deeplearning.ai/short-courses/)
 
-
-## Python Books
+### Python Books
 
 #### Beginner
 - 《Python Crash Course: A Hands-On, Project-Based Introduction to Programming for begainners》 (3rd Edition, 2023)
@@ -59,28 +58,25 @@ permalink: /
   - ※※※※※
   - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
 
-
-
-   
-## Course
-
+### Course
 
 #### Beginer
  - [Python for Everybody](https://www.coursera.org/specializations/python)
  - [Python 3 Programming](https://www.coursera.org/specializations/python-3-programming)
 
-
-
-## Data Science
+### Data Science
 
 #### matplotlib
 - [AnatomyOfMatplotlib](https://github.com/matplotlib/AnatomyOfMatplotlib)
 
+### Python Learning Resources
 
-## Github Top 45
-
-<br>
-
+**📚 Quick Navigation:**
+1. [Python News](#python-news)
+1. [Python for LLM](#python-for-llm)
+1. [Python Books](#python-books)
+1. [Course](#course)
+1. [Data Science](#data-science)
 1. [Algorithm](#algorithm)
 1. [Guide](#guide)
 1. [Structure](#structure)
@@ -89,13 +85,13 @@ permalink: /
 1. [Web Scraping](#web-scraping)
 1. [Automation](#automation)
 1. [Bot](#bot)
-1. [Spreasheet](#spreasheet)
+1. [Spreadsheet](#spreadsheet)
 1. [Finance](#finance)
 1. [Blockchain](#blockchain)
-1. [Video Sythesizer](#video-sythesizer)
+1. [Video Synthesizer](#video-synthesizer)
 1. [Performance](#performance)
 1. [Django](#django)
-1. [Flake](#flake)
+1. [Flask & Code Quality](#flask--code-quality)
 1. [NumPy](#numpy)
 1. [NashPy](#nashpy)
 1. [Markov Process](#markov-process)
