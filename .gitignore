@@ -43,4 +43,11 @@ pids
 # Temporary files
 tmp/
 temp/
-.tmp/ 
+.tmp/
+
+# Python
+__pycache__/
+*.pyc
+
+# Generated reports
+reports/

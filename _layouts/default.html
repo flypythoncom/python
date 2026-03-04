@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ page.lang | default: site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,6 @@
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
@@ -23,8 +22,8 @@
       
       <!-- Language Toggle -->
       <div class="language-toggle">
-        <a href="{{ '/' | relative_url }}" class="btn-lang {% if page.url == '/' %}active{% endif %}">🇺🇸 English</a>
-        <a href="{{ '/README_cn.html' | relative_url }}" class="btn-lang {% if page.url contains 'README_cn' %}active{% endif %}">🇨🇳 中文</a>
+        <a href="{{ '/' | relative_url }}" class="btn-lang {% if page.lang != 'zh-CN' %}active{% endif %}">🇺🇸 English</a>
+        <a href="{{ '/zh-cn/' | relative_url }}" class="btn-lang {% if page.lang == 'zh-CN' %}active{% endif %}">🇨🇳 中文</a>
       </div>
       
       <!-- Header Stats -->
@@ -74,8 +73,10 @@
           if (headings.length > 0) {
             let tocHTML = '<ul>';
             headings.forEach(function(heading, index) {
-              const id = 'heading-' + index;
-              heading.id = id;
+              const id = heading.id || 'heading-' + index;
+              if (!heading.id) {
+                heading.id = id;
+              }
               const level = heading.tagName.toLowerCase();
               const indent = level === 'h3' ? 'toc-level-2' : level === 'h4' ? 'toc-level-3' : '';
               tocHTML += `<li class="${indent}"><a href="#${id}">${heading.textContent}</a></li>`;

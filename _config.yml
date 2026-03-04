@@ -1,10 +1,9 @@
 # Site settings
 title: FlyPython
-subtitle: Python Learning Resource Hub
+subtitle: LLM Agent & AI Development Hub
 description: >-
-  FlyPython is a carefully curated collection of Python learning resources, 
-  including tutorials, books, courses, tools, and best practices to support 
-  Python learners from beginners to advanced developers.
+  FlyPython is a curated bilingual hub for Python-based AI agent development,
+  applied engineering resources, and durable Python learning references.
 
 # Site information
 url: "https://python.flypython.com"
@@ -31,12 +30,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-optional-front-matter
-  - jekyll-readme-index
   - jekyll-relative-links
 
 # SEO settings
 lang: en
-logo: /assets/images/logo.png
+logo: /assets/images/logo.svg
 
 # Social links
 github_username: flypython
@@ -44,8 +42,8 @@ twitter_username: flypython
 
 # Navigation
 header_pages:
-  - README.md
-  - README_cn.md
+  - index.md
+  - zh-cn.md
 
 # GitHub Pages safe collections
 collections:
@@ -69,22 +67,6 @@ defaults:
       type: "pages"
     values:
       layout: "page"
-  - scope:
-      path: "README.md"
-    values:
-      layout: "default"
-      title: "FlyPython - Python Learning Resources"
-      description: "A curated collection of Python learning resources including tutorials, books, courses, and best practices for developers at all levels."
-      lang: "en"
-      permalink: "/"
-  - scope:
-      path: "README_cn.md"
-    values:
-      layout: "default"
-      title: "FlyPython - Python 学习资源"
-      description: "精心策划的 Python 学习资源集合，包含教程、书籍、课程和各级别开发者的最佳实践。"
-      lang: "zh-CN"
-      permalink: "/README_cn.html"
   - scope:
       path: ""
       type: "tutorials"

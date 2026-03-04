@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">FlyPython logo</title>
+  <desc id="desc">A teal badge with a python glyph and FlyPython wordmark.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#157878" />
+      <stop offset="100%" stop-color="#2c3e50" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" rx="48" fill="url(#bg)" />
+  <circle cx="128" cy="128" r="84" fill="rgba(255,255,255,0.12)" />
+  <text x="128" y="122" text-anchor="middle" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="92" fill="#ffffff">
+    🐍
+  </text>
+  <text x="128" y="188" text-anchor="middle" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="28" font-weight="700" fill="#ffffff">
+    FlyPython
+  </text>
+</svg>

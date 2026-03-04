@@ -214,6 +214,102 @@ body {
   text-decoration: none;
 }
 
+.section-lead {
+  margin: 1rem 0 1.75rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(21, 120, 120, 0.12) 0%, rgba(44, 62, 80, 0.08) 100%);
+  border: 1px solid rgba(21, 120, 120, 0.18);
+  border-radius: 0.75rem;
+  color: #35505f;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-height: 180px;
+  padding: 1.2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f4fbfb 100%);
+  border: 1px solid rgba(21, 120, 120, 0.14);
+  border-radius: 1rem;
+  box-shadow: 0 18px 40px rgba(21, 120, 120, 0.08);
+  text-decoration: none !important;
+  color: #1f3440 !important;
+}
+
+.hub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 48px rgba(21, 120, 120, 0.14);
+  border-color: rgba(21, 120, 120, 0.28);
+}
+
+.hub-card strong {
+  font-size: 1.1rem;
+  line-height: 1.3;
+}
+
+.hub-card span:last-child {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #526674;
+}
+
+.hub-card-eyebrow {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(21, 120, 120, 0.1);
+  color: #157878;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.resource-section {
+  margin: 1.4rem 0;
+  border: 1px solid rgba(21, 120, 120, 0.12);
+  border-radius: 0.9rem;
+  background: #ffffff;
+  box-shadow: 0 8px 28px rgba(44, 62, 80, 0.06);
+  overflow: hidden;
+}
+
+.resource-section summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(21, 120, 120, 0.1) 0%, rgba(44, 62, 80, 0.06) 100%);
+  color: #21404d;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.resource-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.resource-section[open] summary {
+  border-bottom: 1px solid rgba(21, 120, 120, 0.12);
+}
+
+.resource-section > *:not(summary) {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.resource-section > *:last-child {
+  margin-bottom: 1.25rem;
+}
+
 /* Enhanced lists */
 .main-content ul li {
   margin: 0.75rem 0;
@@ -373,6 +469,14 @@ body {
   .toc {
     margin: 1rem 0;
     padding: 1rem;
+  }
+
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-card {
+    min-height: auto;
   }
   
   .resource-grid {

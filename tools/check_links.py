@@ -9,9 +9,11 @@ import re
 import requests
 import time
 import json
-import os
-from urllib.parse import urlparse
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+REPORTS_DIR = ROOT_DIR / 'reports'
 
 class LinkChecker:
     def __init__(self):
@@ -30,6 +32,7 @@ class LinkChecker:
     
     def extract_links_from_file(self, filename):
         """从markdown文件中提取所有外部链接"""
+        filename = str(filename)
         try:
             with open(filename, 'r', encoding='utf-8') as f:
                 content = f.read()
@@ -146,8 +149,8 @@ class LinkChecker:
         print(f"未知状态: {len(self.results['unknown'])}")
         
         # 保存详细结果
-        os.makedirs('../reports', exist_ok=True)
-        with open('../reports/link_check_results.json', 'w', encoding='utf-8') as f:
+        REPORTS_DIR.mkdir(exist_ok=True)
+        with open(REPORTS_DIR / 'link_check_results.json', 'w', encoding='utf-8') as f:
             json.dump(self.results, f, ensure_ascii=False, indent=2)
         
         print(f"\n详细结果已保存到: reports/link_check_results.json")
@@ -156,7 +159,7 @@ def main():
     checker = LinkChecker()
     
     # 从README文件提取链接 (相对于项目根目录)
-    files_to_check = ['../README.md', '../README_cn.md']
+    files_to_check = [ROOT_DIR / 'index.md', ROOT_DIR / 'zh-cn.md']
     all_links = []
     
     for filename in files_to_check:

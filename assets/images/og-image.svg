@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">FlyPython social card</title>
+  <desc id="desc">FlyPython social preview card for Python learning resources and AI development.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#157878" />
+      <stop offset="100%" stop-color="#2c3e50" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="970" cy="145" r="180" fill="rgba(255,255,255,0.08)" />
+  <circle cx="1030" cy="500" r="220" fill="rgba(255,255,255,0.06)" />
+  <text x="96" y="180" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="84" font-weight="700" fill="#ffffff">
+    FlyPython
+  </text>
+  <text x="96" y="270" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="42" fill="#d9f3f3">
+    Python Learning Resources
+  </text>
+  <text x="96" y="332" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="42" fill="#d9f3f3">
+    LLM Agents and AI Development
+  </text>
+  <text x="96" y="470" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="164" fill="#ffffff">
+    🐍
+  </text>
+  <text x="96" y="560" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="30" fill="#d9f3f3">
+    python.flypython.com
+  </text>
+</svg>
