@@ -7,38 +7,38 @@
 ### 🚀 Leading LLM Agent Frameworks
 
 #### **OpenAI Agents SDK**
-- [OpenAI Agents Python Documentation](https://openai.github.io/openai-agents-python/) - Official OpenAI Agents SDK for building Python agents
-- [OpenAI Agents SDK Quickstart](https://openai.github.io/openai-agents-python/quickstart/) - Official quickstart guide
-- [OpenAI Python Library](https://github.com/openai/openai-python) - Official OpenAI Python client
-- [OpenAI Developer Resources](https://developers.openai.com/resources) - Official OpenAI development resource hub
+- [OpenAI Agents Python Documentation](https://openai.github.io/openai-agents-python/) - Official OpenAI Agents SDK for building Python agents.
+- [OpenAI Agents SDK Quickstart](https://openai.github.io/openai-agents-python/quickstart/) - Official quickstart guide.
+- [OpenAI Python Library](https://github.com/openai/openai-python) - Official OpenAI Python client.
+- [OpenAI Developer Resources](https://developers.openai.com/resources) - Official OpenAI development resource hub.
 
 #### **CrewAI - Multi-Agent Systems**
-- [CrewAI Framework](https://github.com/joaomdmoura/crewAI) - Framework for orchestrating role-playing, autonomous AI agents
-- [CrewAI Documentation](https://docs.crewai.com/) - Official CrewAI documentation
-- [CrewAI Examples](https://github.com/crewAIInc/crewAI-examples) - Official example projects
-- [Learn Agentic AI with CrewAI](https://github.com/panaversity/learn-agentic-ai) - Broad CrewAI learning resources
+- [CrewAI Framework](https://github.com/joaomdmoura/crewAI) - Framework for orchestrating role-playing, autonomous AI agents.
+- [CrewAI Documentation](https://docs.crewai.com/) - Official CrewAI documentation.
+- [CrewAI Examples](https://github.com/crewAIInc/crewAI-examples) - Official example projects.
+- [Learn Agentic AI with CrewAI](https://github.com/panaversity/learn-agentic-ai) - Broad CrewAI learning resources.
 
 #### **LangGraph - Advanced Agent Workflows**
-- [LangGraph](https://github.com/langchain-ai/langgraph) - Build stateful, multi-actor applications with LLMs
-- [LangChain Agent Tutorials](https://python.langchain.com/docs/tutorials/) - Official agent and tool-calling tutorials
+- [LangGraph](https://github.com/langchain-ai/langgraph) - Build stateful, multi-actor applications with LLMs.
+- [LangChain Agent Tutorials](https://python.langchain.com/docs/tutorials/) - Official agent and tool-calling tutorials.
 
 #### **AutoGen - Conversational AI Agents**
-- [Microsoft AutoGen](https://github.com/microsoft/autogen) - Multi-agent conversation framework
+- [Microsoft AutoGen](https://github.com/microsoft/autogen) - Multi-agent conversation framework.
 
 #### **Agent Development Infrastructure**
-- [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) - Official guide to tool calling and agent workflows
-- [Google Agent Development Kit](https://google.github.io/adk-docs/) - Official Google ADK docs
-- [Model Context Protocol](https://modelcontextprotocol.io/introduction) - Open protocol for connecting models to tools and external context
-- [PydanticAI](https://ai.pydantic.dev/) - Type-safe Python agent framework
-- [Mastra Docs](https://mastra.ai/docs) - Agent framework with workflows, evals, and observability
-- [Dapr Python SDK](https://github.com/dapr/python-sdk) - Building blocks for distributed and stateful Python services
+- [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) - Official guide to tool calling and agent workflows.
+- [Google Agent Development Kit](https://google.github.io/adk-docs/) - Official Google ADK docs.
+- [Model Context Protocol](https://modelcontextprotocol.io/introduction) - Open protocol for connecting models to tools and external context.
+- [PydanticAI](https://ai.pydantic.dev/) - Type-safe Python agent framework.
+- [Mastra Docs](https://mastra.ai/docs) - Agent framework with workflows, evals, and observability.
+- [Dapr Python SDK](https://github.com/dapr/python-sdk) - Building blocks for distributed and stateful Python services.
 
 ### 🛠️ Open Source LLM Agent Projects
 
 #### **Minimal & Educational**
-- [min-agent](https://github.com/zhouzaida/min-agent) - Minimal 200-line LLM agent for understanding core principles
-- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - ReAct agent with Python REPL and search
-- [OpenSource LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - Open-source ReAct implementation references
+- [min-agent](https://github.com/zhouzaida/min-agent) - Minimal 200-line LLM agent for understanding core principles.
+- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - ReAct agent with Python REPL and search.
+- [OpenSource LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - Open-source ReAct implementation references.
 
 #### **Production-Ready Frameworks**
 - [SuperModels](https://github.com/JohannesVC/SuperModels) - Desktop app for running LLM agents with reflection mechanisms
