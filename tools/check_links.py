@@ -5,10 +5,7 @@ FlyPython 链接检查工具
 用于定期检查README文件中所有外部链接的有效性
 """
 
-import re
-import requests
-import time
-import json
+import re, requests, time, json
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
