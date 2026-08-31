@@ -7,6 +7,7 @@ import pytest
 
 from tools.catalog import (
     CatalogLoadError,
+    canonical_hostname,
     load_catalog,
     normalize_url,
     validate_catalog,
@@ -29,6 +30,13 @@ def test_loader_rejects_duplicate_yaml_keys(tmp_path) -> None:
     catalog = tmp_path / "resources.yml"
     catalog.write_text("catalog: {}\ncatalog: {}\nresources: []\n", encoding="utf-8")
     with pytest.raises(CatalogLoadError, match="duplicate key"):
+        load_catalog(catalog)
+
+
+def test_loader_rejects_non_string_mapping_keys(tmp_path) -> None:
+    catalog = tmp_path / "resources.yml"
+    catalog.write_text("? [catalog]\n: {}\nresources: []\n", encoding="utf-8")
+    with pytest.raises(CatalogLoadError, match="mapping keys must be strings"):
         load_catalog(catalog)
 
 
@@ -69,6 +77,31 @@ def test_resource_ids_and_urls_reject_unsafe_forms(valid_catalog: dict) -> None:
 )
 def test_normalize_url_preserves_ipv6_brackets(url: str, expected: str) -> None:
     assert normalize_url(url) == expected
+
+
+def test_hostname_canonicalization_handles_idna_and_trailing_dot() -> None:
+    assert canonical_hostname("BÜCHER.example.") == "xn--bcher-kva.example"
+
+
+def test_validator_detects_idna_equivalent_duplicate_urls(valid_catalog: dict) -> None:
+    data = deepcopy(valid_catalog)
+    data["resources"][0]["url"] = "https://bücher.example/docs/"
+    data["resources"][1]["url"] = "https://xn--bcher-kva.example/docs"
+
+    codes = {
+        issue.code for issue in validate_catalog(data, today=date(2026, 8, 31))
+    }
+
+    assert "duplicate-url" in codes
+
+
+def test_validator_reports_non_string_mapping_keys(valid_catalog: dict) -> None:
+    data = deepcopy(valid_catalog)
+    data["catalog"][1] = "unexpected"
+
+    issues = validate_catalog(data, today=date(2026, 8, 31))
+
+    assert any(issue.code == "invalid-key" for issue in issues)
 
 
 def test_validator_exit_code_for_invalid_catalog(tmp_path) -> None:

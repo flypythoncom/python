@@ -170,7 +170,8 @@ def test_unsupported_redirect_status_is_fatal() -> None:
 
 @pytest.mark.parametrize("status_code", [403, 408, 425, 429, 500, 503])
 def test_transient_and_access_denied_statuses_need_review(status_code) -> None:
-    session = FakeSession(FakeResponse(status_code), FakeResponse(status_code))
+    head = FakeResponse(status_code)
+    session = FakeSession(head, FakeResponse(status_code))
     checker = LinkChecker(
         guard=guard_for(),
         session_factory=lambda: session,
@@ -179,6 +180,8 @@ def test_transient_and_access_denied_statuses_need_review(status_code) -> None:
         min_interval=0,
     )
     assert checker.check_one(link()).status == "review"
+    assert len(session.calls) == 1
+    assert head.closed is True
 
 
 @pytest.mark.parametrize(
@@ -345,6 +348,7 @@ def test_unexpected_checker_error_is_fatal() -> None:
         guard=guard_for(),
         session_factory=lambda: BrokenSession(FakeResponse(200)),
         workers=1,
+        retries=0,
         min_interval=0,
     )
     result = checker.check_one(link())
@@ -370,6 +374,7 @@ def test_terminal_request_failures_are_fatal(exception) -> None:
         guard=guard_for(),
         session_factory=lambda: BrokenSession(FakeResponse(200)),
         workers=1,
+        retries=0,
         min_interval=0,
     )
 
@@ -385,18 +390,22 @@ def test_timeout_remains_review_needed() -> None:
         guard=guard_for(),
         session_factory=lambda: SlowSession(FakeResponse(200)),
         workers=1,
+        retries=0,
         min_interval=0,
     )
 
     assert checker.check_one(link()).status == "review"
 
 
-def test_retry_configuration_ignores_unbounded_retry_after() -> None:
-    session = build_session(guard_for(), retries=2, backoff_factor=0.5)
+def test_adapter_transport_and_status_retries_are_disabled() -> None:
+    session = build_session(guard_for())
     try:
         retry = session.get_adapter("https://").max_retries
         assert retry.respect_retry_after_header is False
         assert retry.backoff_max == 5.0
+        assert retry.total == 0
+        assert retry.connect == 0
+        assert retry.read == 0
         assert retry.status == 0
         assert not retry.status_forcelist
     finally:
@@ -432,6 +441,108 @@ def test_status_retry_is_manual_and_closes_each_response() -> None:
     assert len(session.calls) == 2
     assert first.closed is True
     assert second.closed is True
+
+
+@pytest.mark.parametrize("retry_after", ["60", "9" * 400])
+def test_large_retry_after_stops_without_get_fallback(
+    monkeypatch, retry_after: str
+) -> None:
+    response = FakeResponse(429, headers={"Retry-After": retry_after})
+    session = FakeSession(response)
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: session,
+        workers=1,
+        retries=2,
+        min_interval=0,
+    )
+    sleeps = []
+    monkeypatch.setattr(check_links.time, "sleep", sleeps.append)
+
+    result = checker.check_one(link())
+
+    assert result.status == "review"
+    assert len(session.calls) == 1
+    assert sleeps == []
+    assert response.closed is True
+
+
+def test_bounded_retry_after_is_honored(monkeypatch) -> None:
+    first = FakeResponse(429, headers={"Retry-After": "2"})
+    second = FakeResponse(200)
+
+    class RetrySession(FakeSession):
+        def __init__(self):
+            super().__init__(first)
+            self.responses = iter([first, second])
+
+        def head(self, url, **kwargs):
+            self.calls.append(("HEAD", url, kwargs))
+            return next(self.responses)
+
+    session = RetrySession()
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: session,
+        workers=1,
+        retries=1,
+        min_interval=0,
+    )
+    sleeps = []
+    monkeypatch.setattr(check_links.time, "sleep", sleeps.append)
+
+    result = checker.check_one(link())
+
+    assert result.status == "working"
+    assert len(session.calls) == 2
+    assert sleeps == [2.0]
+
+
+def test_transport_timeout_retry_is_manual() -> None:
+    response = FakeResponse(200)
+
+    class FlakySession(FakeSession):
+        def __init__(self):
+            super().__init__(response)
+            self.attempt = 0
+
+        def head(self, url, **kwargs):
+            self.calls.append(("HEAD", url, kwargs))
+            self.attempt += 1
+            if self.attempt == 1:
+                raise requests.Timeout("timed out")
+            return response
+
+    session = FlakySession()
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: session,
+        workers=1,
+        retries=1,
+        backoff_factor=0,
+        min_interval=0,
+    )
+
+    result = checker.check_one(link())
+
+    assert result.status == "working"
+    assert len(session.calls) == 2
+
+
+def test_wrapped_timeout_remains_review_needed() -> None:
+    class WrappedTimeoutSession(FakeSession):
+        def head(self, url, **kwargs):
+            raise requests.ConnectionError(TimeoutError("timed out"))
+
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: WrappedTimeoutSession(FakeResponse(200)),
+        workers=1,
+        retries=0,
+        min_interval=0,
+    )
+
+    assert checker.check_one(link()).status == "review"
 
 
 def test_responses_close_when_result_processing_fails(monkeypatch) -> None:

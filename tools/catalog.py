@@ -55,6 +55,13 @@ def _construct_unique_mapping(
     mapping: dict[Any, Any] = {}
     for key_node, value_node in node.value:
         key = loader.construct_object(key_node, deep=deep)
+        if not isinstance(key, str):
+            raise ConstructorError(
+                "while constructing a mapping",
+                node.start_mark,
+                "mapping keys must be strings",
+                key_node.start_mark,
+            )
         if key in mapping:
             raise ConstructorError(
                 "while constructing a mapping",
@@ -97,9 +104,15 @@ def load_catalog(path: str | Path) -> dict[str, Any]:
     return value
 
 
+def canonical_hostname(value: str) -> str:
+    """Return the lowercase IDNA form used for URL equality and host buckets."""
+
+    return value.rstrip(".").encode("idna").decode("ascii").lower()
+
+
 def normalize_url(value: str) -> str:
     parsed = urlsplit(value.strip())
-    host = (parsed.hostname or "").lower()
+    host = canonical_hostname(parsed.hostname or "")
     port = parsed.port
     default_port = (parsed.scheme.lower() == "https" and port == 443) or (
         parsed.scheme.lower() == "http" and port == 80
@@ -131,9 +144,19 @@ def _missing_or_unknown(
     value: Mapping[str, Any], expected: set[str], location: str
 ) -> list[ValidationIssue]:
     issues: list[ValidationIssue] = []
-    for key in sorted(expected - set(value)):
+    string_keys = {key for key in value if isinstance(key, str)}
+    for key in value:
+        if not isinstance(key, str):
+            issues.append(
+                ValidationIssue(
+                    "invalid-key",
+                    f"{location}[{key!r}]",
+                    "mapping keys must be strings",
+                )
+            )
+    for key in sorted(expected - string_keys):
         issues.append(ValidationIssue("missing-field", location, f"missing {key!r}"))
-    for key in sorted(set(value) - expected):
+    for key in sorted(string_keys - expected):
         issues.append(
             ValidationIssue("unknown-field", f"{location}.{key}", "unknown field")
         )

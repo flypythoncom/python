@@ -14,18 +14,32 @@ import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Any, Callable, Iterable, Mapping, Protocol
 from urllib.parse import urljoin, urlsplit
 
 import requests
 from requests.adapters import HTTPAdapter
+from urllib3.exceptions import TimeoutError as Urllib3TimeoutError
 from urllib3.util.retry import Retry
 
 try:
-    from tools.catalog import CatalogLoadError, catalog_resources, load_catalog, validate_catalog
+    from tools.catalog import (
+        CatalogLoadError,
+        canonical_hostname,
+        catalog_resources,
+        load_catalog,
+        validate_catalog,
+    )
 except ModuleNotFoundError:  # Direct ``python tools/check_links.py`` execution.
-    from catalog import CatalogLoadError, catalog_resources, load_catalog, validate_catalog
+    from catalog import (
+        CatalogLoadError,
+        canonical_hostname,
+        catalog_resources,
+        load_catalog,
+        validate_catalog,
+    )
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -103,6 +117,54 @@ def _is_unsafe_ip(address: ipaddress.IPv4Address | ipaddress.IPv6Address) -> boo
     return False
 
 
+def _is_timeout_error(error: BaseException) -> bool:
+    """Recognize timeouts even when requests wraps urllib3 exceptions."""
+
+    pending: list[BaseException] = [error]
+    seen: set[int] = set()
+    timeout_types = (requests.Timeout, TimeoutError, Urllib3TimeoutError)
+    while pending:
+        current = pending.pop()
+        if id(current) in seen:
+            continue
+        seen.add(id(current))
+        if isinstance(current, timeout_types):
+            return True
+        for nested in (
+            current.__cause__,
+            current.__context__,
+            getattr(current, "reason", None),
+            *current.args,
+        ):
+            if isinstance(nested, BaseException):
+                pending.append(nested)
+    return False
+
+
+def _retry_delay(response: Any, attempt: int, backoff_factor: float) -> float | None:
+    """Return a bounded retry delay, or ``None`` when the server asks for longer."""
+
+    raw_retry_after = response.headers.get("Retry-After")
+    retry_after: float | None = None
+    if raw_retry_after:
+        try:
+            retry_after = int(raw_retry_after.strip())
+        except (AttributeError, TypeError, ValueError):
+            try:
+                retry_at = parsedate_to_datetime(raw_retry_after)
+                if retry_at.tzinfo is None:
+                    retry_at = retry_at.replace(tzinfo=timezone.utc)
+                retry_after = (retry_at - datetime.now(timezone.utc)).total_seconds()
+            except (TypeError, ValueError, OverflowError):
+                retry_after = None
+        if retry_after is not None:
+            retry_after = max(0.0, retry_after)
+            if retry_after > MAX_BACKOFF_SECONDS:
+                return None
+            return float(retry_after)
+    return min(backoff_factor * (2**attempt), MAX_BACKOFF_SECONDS)
+
+
 class SafeTargetGuard:
     """Validate targets and return only public IPs for connection pinning."""
 
@@ -122,7 +184,7 @@ class SafeTargetGuard:
         if not parsed.hostname:
             raise UnsafeTarget("URL must include a hostname")
         try:
-            host = parsed.hostname.rstrip(".").encode("idna").decode("ascii").lower()
+            host = canonical_hostname(parsed.hostname)
         except UnicodeError as exc:
             raise UnsafeTarget("hostname is not valid IDNA") from exc
         if host == "localhost" or host.endswith(".localhost"):
@@ -196,17 +258,16 @@ class PinnedDNSHTTPAdapter(HTTPAdapter):
         )
 
 
-def build_session(
-    guard: SafeTargetGuard, *, retries: int, backoff_factor: float
-) -> requests.Session:
+def build_session(guard: SafeTargetGuard) -> requests.Session:
     retry = Retry(
-        total=retries,
-        connect=retries,
-        read=retries,
+        total=0,
+        connect=0,
+        read=0,
+        redirect=0,
         allowed_methods=frozenset({"HEAD", "GET"}),
         status=0,
         status_forcelist=frozenset(),
-        backoff_factor=backoff_factor,
+        backoff_factor=0,
         backoff_max=MAX_BACKOFF_SECONDS,
         respect_retry_after_header=False,
         raise_on_status=False,
@@ -265,7 +326,7 @@ class HostRateLimiter:
     def wait(self, url: str) -> None:
         if self.min_interval <= 0:
             return
-        host = (urlsplit(url).hostname or "").lower()
+        host = canonical_hostname(urlsplit(url).hostname or "")
         with self._master_lock:
             lock = self._locks.setdefault(host, threading.Lock())
         with lock:
@@ -324,14 +385,10 @@ class LinkChecker:
     ) -> None:
         self.timeout = timeout
         self.workers = workers
-        self.status_retries = retries
+        self.retries = retries
         self.backoff_factor = backoff_factor
         self.guard = guard or SafeTargetGuard()
-        factory = session_factory or (
-            lambda: build_session(
-                self.guard, retries=retries, backoff_factor=backoff_factor
-            )
-        )
+        factory = session_factory or (lambda: build_session(self.guard))
         self.sessions = ThreadLocalSessions(factory)
         self.rate_limiter = HostRateLimiter(min_interval)
 
@@ -340,29 +397,58 @@ class LinkChecker:
     ) -> tuple[Any, list[dict[str, Any]]]:
         current_url = url
         history: list[dict[str, Any]] = []
-        status_attempt = 0
+        attempt = 0
         while True:
-            self.guard.resolve_url(current_url)
+            get_adapter = getattr(session, "get_adapter", None)
+            adapter = get_adapter(current_url) if callable(get_adapter) else None
+            if not isinstance(adapter, PinnedDNSHTTPAdapter):
+                self.guard.resolve_url(current_url)
             self.rate_limiter.wait(current_url)
             kwargs: dict[str, Any] = {
                 "timeout": self.timeout,
                 "allow_redirects": False,
                 "stream": True,
             }
-            response = (
-                session.get(current_url, **kwargs)
-                if method == "GET"
-                else session.head(current_url, **kwargs)
-            )
+            try:
+                response = (
+                    session.get(current_url, **kwargs)
+                    if method == "GET"
+                    else session.head(current_url, **kwargs)
+                )
+            except requests.RequestException as exc:
+                retryable = _is_timeout_error(exc) or isinstance(
+                    exc, requests.ConnectionError
+                )
+                terminal = isinstance(
+                    exc,
+                    (
+                        requests.exceptions.InvalidURL,
+                        requests.exceptions.ProxyError,
+                        requests.exceptions.SSLError,
+                    ),
+                )
+                if terminal or not retryable or attempt >= self.retries:
+                    raise
+                delay = min(
+                    self.backoff_factor * (2**attempt), MAX_BACKOFF_SECONDS
+                )
+                attempt += 1
+                if delay > 0:
+                    time.sleep(delay)
+                continue
             if (
                 response.status_code in RETRY_STATUS_CODES
-                and status_attempt < self.status_retries
+                and attempt < self.retries
             ):
-                response.close()
-                delay = min(
-                    self.backoff_factor * (2**status_attempt), MAX_BACKOFF_SECONDS
+                delay = _retry_delay(
+                    response,
+                    attempt,
+                    self.backoff_factor,
                 )
-                status_attempt += 1
+                if delay is None:
+                    return response, history
+                response.close()
+                attempt += 1
                 if delay > 0:
                     time.sleep(delay)
                 continue
@@ -404,14 +490,18 @@ class LinkChecker:
             finally:
                 response.close()
             current_url = next_url
-            status_attempt = 0
+            attempt = 0
 
     def check_one(self, link: CatalogLink) -> LinkResult:
         try:
             session = self.sessions.get()
             head, head_history = self._request(session, "HEAD", link.url)
             try:
-                if head.status_code < 300:
+                if (
+                    head.status_code < 300
+                    or head.status_code in REVIEW_STATUS_CODES
+                    or head.status_code >= 500
+                ):
                     return LinkResult(
                         link.id,
                         link.path,
@@ -449,11 +539,16 @@ class LinkChecker:
             return LinkResult(
                 link.id, link.path, link.title, link.url, "blocked", error=str(exc)
             )
-        except requests.Timeout as exc:
-            return LinkResult(
-                link.id, link.path, link.title, link.url, "review", error=f"timeout: {exc}"
-            )
         except requests.RequestException as exc:
+            if _is_timeout_error(exc):
+                return LinkResult(
+                    link.id,
+                    link.path,
+                    link.title,
+                    link.url,
+                    "review",
+                    error=f"timeout: {exc}",
+                )
             return LinkResult(
                 link.id,
                 link.path,
@@ -490,12 +585,12 @@ class LinkChecker:
 def select_links(
     data: Mapping[str, Any], *, mode: str, base_url: str
 ) -> list[CatalogLink]:
-    base_host = (urlsplit(base_url).hostname or "").lower()
+    base_host = canonical_hostname(urlsplit(base_url).hostname or "")
     links: list[CatalogLink] = []
     for resource in catalog_resources(data):
         raw_url = str(resource.get("url", ""))
         absolute_url = urljoin(base_url, raw_url)
-        host = (urlsplit(absolute_url).hostname or "").lower()
+        host = canonical_hostname(urlsplit(absolute_url).hostname or "")
         is_internal = host == base_host
         if mode == "internal" and not is_internal:
             continue

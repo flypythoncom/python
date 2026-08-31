@@ -49,12 +49,12 @@ it for review and provide repeatable evidence.
 
 ## Local setup
 
-Install Python 3.12, Ruby, Bundler, and the repository dependencies:
+Install the exact Python version from `.python-version`, Ruby, Bundler, and the
+repository dependencies:
 
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install --upgrade pip
 python -m pip install -r requirements-dev.lock.txt
 bundle install
 ```
