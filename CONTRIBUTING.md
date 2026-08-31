@@ -67,17 +67,21 @@ Run the same checks as CI before requesting review:
 python -m pytest
 python tools/validate_catalog.py
 bundle exec jekyll build
+bundle exec ruby tests/render_security_test.rb
 ```
 
 Maintainers can run the networked link audit from GitHub Actions with the
-scheduled **External link audit** workflow. For a deliberate local audit:
+scheduled **Catalog link audit** workflow. For a deliberate local audit of
+every catalog entry, including same-origin URLs:
 
 ```bash
-python tools/check_links.py --mode external --output reports/link-check.json
+python tools/check_links.py --mode all --output reports/link-check.json
 ```
 
-External-link fetching is intentionally excluded from pull-request CI. A pull
+Network link fetching is intentionally excluded from pull-request CI. A pull
 request can contain untrusted URLs, and status checks must remain deterministic.
+Any review-needed link result fails the scheduled audit so a maintainer must
+inspect it; it does not by itself justify removing the resource.
 
 ## Pull request checklist
 

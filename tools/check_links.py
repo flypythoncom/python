@@ -627,13 +627,10 @@ def exit_code_for_report(report: Mapping[str, Any]) -> int:
     counts = report.get("counts", {})
     if not isinstance(counts, Mapping):
         return 2
-    return (
-        1
-        if counts.get("broken", 0)
-        or counts.get("blocked", 0)
-        or counts.get("error", 0)
-        else 0
-    )
+    actionable_statuses = ("review", "broken", "blocked", "error")
+    if any(counts.get(status, 0) for status in actionable_statuses):
+        return 1
+    return 1 if counts.get("total") == 0 else 0
 
 
 def _positive_float(value: str) -> float:

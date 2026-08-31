@@ -1,4 +1,4 @@
-name: External link audit
+name: Catalog link audit
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: external-link-audit
+  group: catalog-link-audit
   cancel-in-progress: false
 
 jobs:
@@ -32,14 +32,14 @@ jobs:
       - name: Prepare report directory
         run: mkdir -p reports
 
-      - name: Check external links
-        run: python tools/check_links.py --mode external --output reports/link-check.json
+      - name: Check every catalog link
+        run: python tools/check_links.py --mode all --output reports/link-check.json
 
       - name: Upload link report
         if: ${{ always() }}
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: external-link-report-${{ github.run_id }}
+          name: catalog-link-report-${{ github.run_id }}
           path: reports/link-check.json
           if-no-files-found: error
           retention-days: 14

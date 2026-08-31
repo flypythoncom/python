@@ -331,12 +331,24 @@ def test_mode_selects_internal_external_or_all() -> None:
     assert len(all_links) == 2
 
 
-def test_exit_code_only_fails_broken_or_blocked_links() -> None:
-    review_report = {"counts": {"review": 2, "broken": 0, "blocked": 0}}
-    assert exit_code_for_report(review_report) == 0
+def test_exit_code_fails_every_actionable_result() -> None:
+    review_report = {
+        "counts": {
+            "working": 0,
+            "redirect": 0,
+            "review": 21,
+            "broken": 0,
+            "blocked": 0,
+            "error": 0,
+            "total": 21,
+        }
+    }
+    assert exit_code_for_report(review_report) == 1
     assert exit_code_for_report({"counts": {"broken": 1, "blocked": 0}}) == 1
     assert exit_code_for_report({"counts": {"broken": 0, "blocked": 1}}) == 1
     assert exit_code_for_report({"counts": {"error": 1}}) == 1
+    assert exit_code_for_report({"counts": {"working": 1, "total": 1}}) == 0
+    assert exit_code_for_report({"counts": {"total": 0}}) == 1
 
 
 def test_unexpected_checker_error_is_fatal() -> None:
@@ -581,7 +593,7 @@ def test_cli_rejects_non_finite_float_arguments(option: str, value: str) -> None
 @pytest.mark.parametrize(
     ("status", "status_code", "expected_exit"),
     [
-        ("review", 408, 0),
+        ("review", 408, 1),
         ("broken", 404, 1),
         ("blocked", None, 1),
         ("error", None, 1),

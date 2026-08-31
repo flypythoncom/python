@@ -16,7 +16,7 @@ history remains the source for changes made before this changelog was added.
 - Contribution, conduct, security, and resource-curation policies.
 - Structured issue forms and a pull request review checklist.
 - Dependency update configuration and validation workflows.
-- Scheduled, manually dispatchable external-link auditing that does not run on
+- Scheduled, manually dispatchable catalog-link auditing that does not run on
   untrusted pull requests.
 
 ### Changed
@@ -30,6 +30,8 @@ history remains the source for changes made before this changelog was added.
 
 - Corrected repository links, dynamic resource counts, bilingual metadata,
   canonical and hreflang output, robots rules, and duplicate heading/meta tags.
+- Escaped catalog-controlled HTML output, audited same-origin catalog links,
+  and made review-needed network results fail the scheduled audit.
 
 ### Removed
 

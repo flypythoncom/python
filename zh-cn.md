@@ -26,7 +26,7 @@ FlyPython 收录官方文档、正式标准和项目的一手资源。通过四�
 <p class="catalog-note">
   <strong>{{ catalog_resources.size }} 条有效资源</strong>
   <span aria-hidden="true">·</span>
-  目录审核于 {{ site.data.resources.catalog.reviewed_on }}
+  目录审核于 {{ site.data.resources.catalog.reviewed_on | escape }}
   <span aria-hidden="true">·</span>
   一手来源优先
 </p>

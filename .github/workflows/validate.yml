@@ -43,3 +43,6 @@ jobs:
 
       - name: Build Jekyll site
         run: bundle exec jekyll build
+
+      - name: Verify catalog output escaping
+        run: bundle exec ruby tests/render_security_test.rb

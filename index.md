@@ -27,7 +27,7 @@ source, then return to the main learning hub for guided projects and context.
 <p class="catalog-note">
   <strong>{{ catalog_resources.size }} active resources</strong>
   <span aria-hidden="true">·</span>
-  Catalog reviewed {{ site.data.resources.catalog.reviewed_on }}
+  Catalog reviewed {{ site.data.resources.catalog.reviewed_on | escape }}
   <span aria-hidden="true">·</span>
   Primary sources first
 </p>

@@ -2,15 +2,15 @@
 <nav class="path-grid" aria-label="{% if page.lang == 'zh-CN' %}学习路径{% else %}Learning paths{% endif %}">
   {% for path in ordered_paths %}
     {% assign path_resources = include.resources | where: "path", path.id %}
-    <a class="path-card" href="#{{ path.id }}">
-      <span class="path-number">0{{ path.order }}</span>
+    <a class="path-card" href="#{{ path.id | escape }}">
+      <span class="path-number">0{{ path.order | escape }}</span>
       {% if page.lang == "zh-CN" %}
-        <strong>{{ path.title_zh }}</strong>
-        <span>{{ path.summary_zh }}</span>
+        <strong>{{ path.title_zh | escape }}</strong>
+        <span>{{ path.summary_zh | escape }}</span>
         <small>{{ path_resources.size }} 条资源</small>
       {% else %}
-        <strong>{{ path.title_en }}</strong>
-        <span>{{ path.summary_en }}</span>
+        <strong>{{ path.title_en | escape }}</strong>
+        <span>{{ path.summary_en | escape }}</span>
         <small>{{ path_resources.size }} resources</small>
       {% endif %}
     </a>
@@ -19,13 +19,13 @@
 
 {% for path in ordered_paths %}
   {% assign path_resources = include.resources | where: "path", path.id %}
-  <section class="path-section" id="{{ path.id }}" aria-labelledby="{{ path.id }}-title">
+  <section class="path-section" id="{{ path.id | escape }}" aria-labelledby="{{ path.id | escape }}-title">
     <header class="section-heading">
       <div>
-        <span class="section-eyebrow">{% if page.lang == "zh-CN" %}路径{% else %}Path{% endif %} 0{{ path.order }}</span>
-        <h2 id="{{ path.id }}-title">{% if page.lang == "zh-CN" %}{{ path.title_zh }}{% else %}{{ path.title_en }}{% endif %}</h2>
+        <span class="section-eyebrow">{% if page.lang == "zh-CN" %}路径{% else %}Path{% endif %} 0{{ path.order | escape }}</span>
+        <h2 id="{{ path.id | escape }}-title">{% if page.lang == "zh-CN" %}{{ path.title_zh | escape }}{% else %}{{ path.title_en | escape }}{% endif %}</h2>
       </div>
-      <p>{% if page.lang == "zh-CN" %}{{ path.summary_zh }}{% else %}{{ path.summary_en }}{% endif %}</p>
+      <p>{% if page.lang == "zh-CN" %}{{ path.summary_zh | escape }}{% else %}{{ path.summary_en | escape }}{% endif %}</p>
     </header>
 
     <div class="resource-grid">
@@ -39,12 +39,12 @@
                 {% when "official-project" %}<span class="source-badge">官方项目</span>
               {% endcase %}
             {% else %}
-              <span class="source-badge">{{ resource.source_type | replace: "-", " " }}</span>
+              <span class="source-badge">{{ resource.source_type | replace: "-", " " | escape }}</span>
             {% endif %}
             {% if resource.featured %}<span class="featured-badge">{% if page.lang == "zh-CN" %}精选{% else %}Featured{% endif %}</span>{% endif %}
           </div>
-          <h3><a href="{{ resource.url }}">{{ resource.title }}</a></h3>
-          <p>{% if page.lang == "zh-CN" %}{{ resource.why_zh }}{% else %}{{ resource.why_en }}{% endif %}</p>
+          <h3><a href="{{ resource.url | escape }}">{{ resource.title | escape }}</a></h3>
+          <p>{% if page.lang == "zh-CN" %}{{ resource.why_zh | escape }}{% else %}{{ resource.why_en | escape }}{% endif %}</p>
           <ul class="resource-meta" aria-label="{% if page.lang == 'zh-CN' %}资源元数据{% else %}Resource metadata{% endif %}">
             {% if page.lang == "zh-CN" %}
               {% case resource.level %}
@@ -58,15 +58,15 @@
                 {% when "zh" %}<li>来源语言：中文</li>
                 {% when "multilingual" %}<li>来源语言：多语言</li>
               {% endcase %}
-              <li>审核于 {{ resource.reviewed_on }}</li>
+              <li>审核于 {{ resource.reviewed_on | escape }}</li>
             {% else %}
-              <li>{{ resource.level | replace: "-", " " }}</li>
+              <li>{{ resource.level | replace: "-", " " | escape }}</li>
               {% case resource.language %}
                 {% when "en" %}<li>English</li>
                 {% when "zh" %}<li>Chinese</li>
                 {% when "multilingual" %}<li>Multilingual</li>
               {% endcase %}
-              <li>Reviewed {{ resource.reviewed_on }}</li>
+              <li>Reviewed {{ resource.reviewed_on | escape }}</li>
             {% endif %}
           </ul>
           {% if resource.requires_key or resource.risk == "medium" %}

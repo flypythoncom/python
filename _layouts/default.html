@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+<html lang="{{ page.lang | default: site.lang | default: 'en' | escape }}">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,14 +34,14 @@
             <p>社区公开维护的 Python 一手资源目录，也是 FlyPython 学习路径的资源基础。</p>
             <ul aria-label="目录状态">
               <li>{{ active_resources.size }} 条有效资源</li>
-              <li>审核于 {{ site.data.resources.catalog.reviewed_on }}</li>
+              <li>审核于 {{ site.data.resources.catalog.reviewed_on | escape }}</li>
               <li><a href="https://github.com/flypythoncom/python">GitHub 仓库 ↗</a></li>
             </ul>
           {% else %}
             <p>A public, community-maintained catalog of primary Python sources behind the FlyPython learning paths.</p>
             <ul aria-label="Catalog status">
               <li>{{ active_resources.size }} active resources</li>
-              <li>Reviewed {{ site.data.resources.catalog.reviewed_on }}</li>
+              <li>Reviewed {{ site.data.resources.catalog.reviewed_on | escape }}</li>
               <li><a href="https://github.com/flypythoncom/python">GitHub repository ↗</a></li>
             </ul>
           {% endif %}

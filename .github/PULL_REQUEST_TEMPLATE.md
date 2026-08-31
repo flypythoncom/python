@@ -28,10 +28,11 @@ List the actual results, not only the commands you intended to run.
 - [ ] `python -m pytest`
 - [ ] `python tools/validate_catalog.py`
 - [ ] `bundle exec jekyll build`
+- [ ] `bundle exec ruby tests/render_security_test.rb`
 - [ ] English and Chinese output remain consistent
 - [ ] No secrets, generated reports, local build output, or analytics IDs were committed
 
-External links are fetched only by the scheduled or manually dispatched
+Catalog links are fetched only by the scheduled or manually dispatched
 workflow, not by pull-request CI.
 
 ## Permissions and review
