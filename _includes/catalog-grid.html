@@ -1,0 +1,82 @@
+<nav class="path-grid" aria-label="{% if page.lang == 'zh-CN' %}学习路径{% else %}Learning paths{% endif %}">
+  {% for path in site.data.resources.catalog.paths %}
+    {% assign path_resources = include.resources | where: "path", path.id %}
+    <a class="path-card" href="#{{ path.id }}">
+      <span class="path-number">0{{ path.order }}</span>
+      {% if page.lang == "zh-CN" %}
+        <strong>{{ path.title_zh }}</strong>
+        <span>{{ path.summary_zh }}</span>
+        <small>{{ path_resources.size }} 条资源</small>
+      {% else %}
+        <strong>{{ path.title_en }}</strong>
+        <span>{{ path.summary_en }}</span>
+        <small>{{ path_resources.size }} resources</small>
+      {% endif %}
+    </a>
+  {% endfor %}
+</nav>
+
+{% for path in site.data.resources.catalog.paths %}
+  {% assign path_resources = include.resources | where: "path", path.id %}
+  <section class="path-section" id="{{ path.id }}" aria-labelledby="{{ path.id }}-title">
+    <header class="section-heading">
+      <div>
+        <span class="section-eyebrow">{% if page.lang == "zh-CN" %}路径{% else %}Path{% endif %} 0{{ path.order }}</span>
+        <h2 id="{{ path.id }}-title">{% if page.lang == "zh-CN" %}{{ path.title_zh }}{% else %}{{ path.title_en }}{% endif %}</h2>
+      </div>
+      <p>{% if page.lang == "zh-CN" %}{{ path.summary_zh }}{% else %}{{ path.summary_en }}{% endif %}</p>
+    </header>
+
+    <div class="resource-grid">
+      {% for resource in path_resources %}
+        <article class="resource-card{% if resource.featured %} featured{% endif %}">
+          <div class="resource-card-header">
+            {% if page.lang == "zh-CN" %}
+              {% case resource.source_type %}
+                {% when "official-docs" %}<span class="source-badge">官方文档</span>
+                {% when "official-standard" %}<span class="source-badge">正式标准</span>
+                {% when "official-project" %}<span class="source-badge">官方项目</span>
+              {% endcase %}
+            {% else %}
+              <span class="source-badge">{{ resource.source_type | replace: "-", " " }}</span>
+            {% endif %}
+            {% if resource.featured %}<span class="featured-badge">{% if page.lang == "zh-CN" %}精选{% else %}Featured{% endif %}</span>{% endif %}
+          </div>
+          <h3><a href="{{ resource.url }}">{{ resource.title }}</a></h3>
+          <p>{% if page.lang == "zh-CN" %}{{ resource.why_zh }}{% else %}{{ resource.why_en }}{% endif %}</p>
+          <ul class="resource-meta" aria-label="{% if page.lang == 'zh-CN' %}资源元数据{% else %}Resource metadata{% endif %}">
+            {% if page.lang == "zh-CN" %}
+              {% case resource.level %}
+                {% when "beginner" %}<li>入门</li>
+                {% when "intermediate" %}<li>进阶</li>
+                {% when "advanced" %}<li>高级</li>
+                {% when "all-levels" %}<li>所有阶段</li>
+              {% endcase %}
+              {% case resource.language %}
+                {% when "en" %}<li>来源语言：英语</li>
+                {% when "zh" %}<li>来源语言：中文</li>
+                {% when "multilingual" %}<li>来源语言：多语言</li>
+              {% endcase %}
+              <li>审核于 {{ resource.reviewed_on }}</li>
+            {% else %}
+              <li>{{ resource.level | replace: "-", " " }}</li>
+              {% case resource.language %}
+                {% when "en" %}<li>English</li>
+                {% when "zh" %}<li>Chinese</li>
+                {% when "multilingual" %}<li>Multilingual</li>
+              {% endcase %}
+              <li>Reviewed {{ resource.reviewed_on }}</li>
+            {% endif %}
+          </ul>
+          {% if resource.requires_key or resource.risk == "medium" %}
+            <p class="resource-caution">
+              {% if resource.requires_key %}<span>{% if page.lang == "zh-CN" %}典型用法需要 API Key{% else %}API key required for typical use{% endif %}</span>{% endif %}
+              {% if resource.requires_key and resource.risk == "medium" %}<span aria-hidden="true">·</span>{% endif %}
+              {% if resource.risk == "medium" %}<span>{% if page.lang == "zh-CN" %}请检查权限与外部副作用{% else %}Review permissions and side effects{% endif %}</span>{% endif %}
+            </p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}

@@ -41,18 +41,6 @@ relative_links:
 titles_from_headings:
   enabled: false
 
-defaults:
-  - scope:
-      path: ""
-      type: pages
-    values:
-      layout: default
-      image:
-        path: /assets/images/og-image.png
-        width: 1200
-        height: 630
-        alt: FlyPython Python Resource Catalog
-
 kramdown:
   input: GFM
   hard_wrap: false
