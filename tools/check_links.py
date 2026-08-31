@@ -36,6 +36,7 @@ REVIEW_STATUS_CODES = {403, 408, 425, 429}
 RETRY_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 REDIRECT_STATUS_CODES = {301, 302, 303, 307, 308}
 MAX_REDIRECTS = 5
+MAX_BACKOFF_SECONDS = 5.0
 KNOWN_METADATA_HOSTS = {
     "instance-data",
     "metadata",
@@ -56,6 +57,10 @@ BLOCKED_IPV6_TRANSLATION_NETWORKS = (
 
 class UnsafeTarget(ValueError):
     """Raised before a request can reach a non-public network target."""
+
+
+class RedirectProtocolError(requests.RequestException):
+    """Raised when a redirect response cannot be followed safely."""
 
 
 @dataclass(frozen=True)
@@ -198,11 +203,11 @@ def build_session(
         total=retries,
         connect=retries,
         read=retries,
-        status=retries,
         allowed_methods=frozenset({"HEAD", "GET"}),
-        status_forcelist=RETRY_STATUS_CODES,
+        status=0,
+        status_forcelist=frozenset(),
         backoff_factor=backoff_factor,
-        backoff_max=5.0,
+        backoff_max=MAX_BACKOFF_SECONDS,
         respect_retry_after_header=False,
         raise_on_status=False,
     )
@@ -319,6 +324,8 @@ class LinkChecker:
     ) -> None:
         self.timeout = timeout
         self.workers = workers
+        self.status_retries = retries
+        self.backoff_factor = backoff_factor
         self.guard = guard or SafeTargetGuard()
         factory = session_factory or (
             lambda: build_session(
@@ -333,6 +340,7 @@ class LinkChecker:
     ) -> tuple[Any, list[dict[str, Any]]]:
         current_url = url
         history: list[dict[str, Any]] = []
+        status_attempt = 0
         while True:
             self.guard.resolve_url(current_url)
             self.rate_limiter.wait(current_url)
@@ -346,9 +354,34 @@ class LinkChecker:
                 if method == "GET"
                 else session.head(current_url, **kwargs)
             )
+            if (
+                response.status_code in RETRY_STATUS_CODES
+                and status_attempt < self.status_retries
+            ):
+                response.close()
+                delay = min(
+                    self.backoff_factor * (2**status_attempt), MAX_BACKOFF_SECONDS
+                )
+                status_attempt += 1
+                if delay > 0:
+                    time.sleep(delay)
+                continue
+
             location = response.headers.get("Location")
-            if response.status_code not in REDIRECT_STATUS_CODES or not location:
+            if not 300 <= response.status_code < 400:
                 return response, history
+            if response.status_code not in REDIRECT_STATUS_CODES:
+                response.close()
+                raise RedirectProtocolError(
+                    f"unsupported redirect status {response.status_code}"
+                )
+            if not location:
+                if method == "HEAD":
+                    return response, history
+                response.close()
+                raise RedirectProtocolError(
+                    f"redirect status {response.status_code} has no Location header"
+                )
 
             try:
                 if len(history) >= MAX_REDIRECTS:
@@ -371,13 +404,14 @@ class LinkChecker:
             finally:
                 response.close()
             current_url = next_url
+            status_attempt = 0
 
     def check_one(self, link: CatalogLink) -> LinkResult:
         try:
             session = self.sessions.get()
             head, head_history = self._request(session, "HEAD", link.url)
             try:
-                if head.status_code < 400:
+                if head.status_code < 300:
                     return LinkResult(
                         link.id,
                         link.path,

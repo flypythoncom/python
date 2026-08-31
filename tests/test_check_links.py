@@ -122,11 +122,61 @@ def test_head_failure_falls_back_to_streaming_get_and_confirms_404() -> None:
     assert session.calls[1][2]["stream"] is True
 
 
+def test_head_redirect_without_location_falls_back_to_get() -> None:
+    head = FakeResponse(301)
+    response = FakeResponse(200)
+    session = FakeSession(head, response)
+    checker = LinkChecker(
+        guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
+    )
+
+    result = checker.check_one(link())
+
+    assert result.status == "working"
+    assert result.method == "GET"
+    assert head.closed is True
+    assert response.closed is True
+
+
+def test_get_redirect_without_location_is_fatal() -> None:
+    head = FakeResponse(301)
+    response = FakeResponse(301)
+    session = FakeSession(head, response)
+    checker = LinkChecker(
+        guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
+    )
+
+    result = checker.check_one(link())
+
+    assert result.status == "error"
+    assert "no Location" in (result.error or "")
+    assert head.closed is True
+    assert response.closed is True
+
+
+def test_unsupported_redirect_status_is_fatal() -> None:
+    response = FakeResponse(304)
+    session = FakeSession(response)
+    checker = LinkChecker(
+        guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
+    )
+
+    result = checker.check_one(link())
+
+    assert result.status == "error"
+    assert "unsupported redirect status 304" in (result.error or "")
+    assert response.closed is True
+
+
 @pytest.mark.parametrize("status_code", [403, 408, 425, 429, 500, 503])
 def test_transient_and_access_denied_statuses_need_review(status_code) -> None:
     session = FakeSession(FakeResponse(status_code), FakeResponse(status_code))
     checker = LinkChecker(
-        guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
+        guard=guard_for(),
+        session_factory=lambda: session,
+        workers=1,
+        retries=0,
+        min_interval=0,
     )
     assert checker.check_one(link()).status == "review"
 
@@ -347,8 +397,41 @@ def test_retry_configuration_ignores_unbounded_retry_after() -> None:
         retry = session.get_adapter("https://").max_retries
         assert retry.respect_retry_after_header is False
         assert retry.backoff_max == 5.0
+        assert retry.status == 0
+        assert not retry.status_forcelist
     finally:
         session.close()
+
+
+def test_status_retry_is_manual_and_closes_each_response() -> None:
+    first = FakeResponse(503)
+    second = FakeResponse(200)
+
+    class RetrySession(FakeSession):
+        def __init__(self):
+            super().__init__(first)
+            self.responses = iter([first, second])
+
+        def head(self, url, **kwargs):
+            self.calls.append(("HEAD", url, kwargs))
+            return next(self.responses)
+
+    session = RetrySession()
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: session,
+        workers=1,
+        retries=1,
+        backoff_factor=0,
+        min_interval=0,
+    )
+
+    result = checker.check_one(link())
+
+    assert result.status == "working"
+    assert len(session.calls) == 2
+    assert first.closed is True
+    assert second.closed is True
 
 
 def test_responses_close_when_result_processing_fails(monkeypatch) -> None:
