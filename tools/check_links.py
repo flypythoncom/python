@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import ipaddress
 import json
+import math
 import socket
 import sys
 import threading
@@ -321,38 +322,39 @@ class LinkChecker:
             self.guard.resolve_url(link.url)
             session = self.sessions.get()
             head = self._request(session, "HEAD", link.url)
-            if head.status_code < 400:
-                history = _history(head)
-                result = LinkResult(
+            try:
+                if head.status_code < 400:
+                    history = _history(head)
+                    return LinkResult(
+                        link.id,
+                        link.path,
+                        link.title,
+                        link.url,
+                        classify_status(head.status_code, redirected=bool(history)),
+                        status_code=head.status_code,
+                        method="HEAD",
+                        final_url=head.url,
+                        history=history,
+                    )
+            finally:
+                head.close()
+
+            response = self._request(session, "GET", link.url)
+            try:
+                history = _history(response)
+                return LinkResult(
                     link.id,
                     link.path,
                     link.title,
                     link.url,
-                    classify_status(head.status_code, redirected=bool(history)),
-                    status_code=head.status_code,
-                    method="HEAD",
-                    final_url=head.url,
+                    classify_status(response.status_code, redirected=bool(history)),
+                    status_code=response.status_code,
+                    method="GET",
+                    final_url=response.url,
                     history=history,
                 )
-                head.close()
-                return result
-            head.close()
-
-            response = self._request(session, "GET", link.url)
-            history = _history(response)
-            result = LinkResult(
-                link.id,
-                link.path,
-                link.title,
-                link.url,
-                classify_status(response.status_code, redirected=bool(history)),
-                status_code=response.status_code,
-                method="GET",
-                final_url=response.url,
-                history=history,
-            )
-            response.close()
-            return result
+            finally:
+                response.close()
         except UnsafeTarget as exc:
             return LinkResult(
                 link.id, link.path, link.title, link.url, "blocked", error=str(exc)
@@ -451,15 +453,15 @@ def exit_code_for_report(report: Mapping[str, Any]) -> int:
 
 def _positive_float(value: str) -> float:
     parsed = float(value)
-    if parsed <= 0:
-        raise argparse.ArgumentTypeError("must be greater than zero")
+    if not math.isfinite(parsed) or parsed <= 0:
+        raise argparse.ArgumentTypeError("must be a finite number greater than zero")
     return parsed
 
 
 def _non_negative_float(value: str) -> float:
     parsed = float(value)
-    if parsed < 0:
-        raise argparse.ArgumentTypeError("must be zero or greater")
+    if not math.isfinite(parsed) or parsed < 0:
+        raise argparse.ArgumentTypeError("must be a finite number zero or greater")
     return parsed
 
 

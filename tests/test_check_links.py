@@ -265,6 +265,39 @@ def test_unexpected_checker_error_is_fatal() -> None:
     assert "programming defect" in (result.error or "")
 
 
+def test_responses_close_when_result_processing_fails(monkeypatch) -> None:
+    head = FakeResponse(404)
+    response = FakeResponse(200)
+    session = FakeSession(head, response)
+    checker = LinkChecker(
+        guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
+    )
+
+    def fail_history(_response):
+        raise RuntimeError("cannot process response")
+
+    monkeypatch.setattr(check_links, "_history", fail_history)
+    result = checker.check_one(link())
+
+    assert result.status == "error"
+    assert head.closed is True
+    assert response.closed is True
+
+
+@pytest.mark.parametrize(
+    ("option", "value"),
+    [
+        ("--timeout", "nan"),
+        ("--timeout", "inf"),
+        ("--backoff", "nan"),
+        ("--min-interval", "inf"),
+    ],
+)
+def test_cli_rejects_non_finite_float_arguments(option: str, value: str) -> None:
+    with pytest.raises(SystemExit, match="2"):
+        check_links.build_parser().parse_args([option, value])
+
+
 @pytest.mark.parametrize(
     ("status", "status_code", "expected_exit"),
     [

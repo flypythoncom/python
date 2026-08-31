@@ -5,7 +5,12 @@ from datetime import date
 
 import pytest
 
-from tools.catalog import CatalogLoadError, load_catalog, validate_catalog
+from tools.catalog import (
+    CatalogLoadError,
+    load_catalog,
+    normalize_url,
+    validate_catalog,
+)
 from tools.validate_catalog import run
 
 
@@ -47,6 +52,23 @@ def test_resource_ids_and_urls_reject_unsafe_forms(valid_catalog: dict) -> None:
         issue.code for issue in validate_catalog(data, today=date(2026, 8, 31))
     }
     assert {"invalid-id", "url-credentials"} <= codes
+
+
+@pytest.mark.parametrize(
+    ("url", "expected"),
+    [
+        (
+            "HTTPS://[2001:4860:4860::8888]:443/docs/",
+            "https://[2001:4860:4860::8888]/docs",
+        ),
+        (
+            "https://[2001:4860:4860::8888]:8443/docs/",
+            "https://[2001:4860:4860::8888]:8443/docs",
+        ),
+    ],
+)
+def test_normalize_url_preserves_ipv6_brackets(url: str, expected: str) -> None:
+    assert normalize_url(url) == expected
 
 
 def test_validator_exit_code_for_invalid_catalog(tmp_path) -> None:

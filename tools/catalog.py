@@ -104,9 +104,10 @@ def normalize_url(value: str) -> str:
     default_port = (parsed.scheme.lower() == "https" and port == 443) or (
         parsed.scheme.lower() == "http" and port == 80
     )
-    netloc = host
+    display_host = f"[{host}]" if ":" in host else host
+    netloc = display_host
     if port and not default_port:
-        netloc = f"{host}:{port}"
+        netloc = f"{display_host}:{port}"
     path = parsed.path or "/"
     if path != "/":
         path = path.rstrip("/")
