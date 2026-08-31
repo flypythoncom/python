@@ -1,0 +1,6 @@
+PyYAML==6.0.3
+certifi==2026.7.22
+charset-normalizer==3.5.1
+idna==3.19
+requests==2.32.5
+urllib3==2.6.3

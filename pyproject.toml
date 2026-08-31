@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flypython-catalog-tools"
+version = "0.1.0"
+description = "Validation and safe link checking for the FlyPython resource catalog"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "PyYAML==6.0.3",
+  "requests==2.32.5",
+  "urllib3==2.6.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+flypython-check-links = "tools.check_links:main"
+flypython-validate-catalog = "tools.validate_catalog:main"
+
+[tool.setuptools]
+packages = ["tools"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

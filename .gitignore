@@ -5,7 +5,6 @@ _site/
 .jekyll-metadata
 
 # Ruby
-Gemfile.lock
 .bundle/
 vendor/
 
