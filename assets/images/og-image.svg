@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
   <title id="title">FlyPython social card</title>
-  <desc id="desc">FlyPython social preview card for Python learning resources and AI development.</desc>
+  <desc id="desc">FlyPython social preview card for the reviewed Python resource catalog.</desc>
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#157878" />
@@ -14,10 +14,10 @@
     FlyPython
   </text>
   <text x="96" y="270" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="42" fill="#d9f3f3">
-    Python Learning Resources
+    Reviewed Python resources for the AI era
   </text>
   <text x="96" y="332" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="42" fill="#d9f3f3">
-    LLM Agents and AI Development
+    Foundations · Web &amp; APIs · Automation · AI agents
   </text>
   <text x="96" y="470" font-family="'Avenir Next', 'Segoe UI', sans-serif" font-size="164" fill="#ffffff">
     🐍

@@ -1,182 +1,98 @@
 ---
 layout: default
-title: FlyPython - Python 学习资源
-description: 精选的 Python、Agent 开发与 AI 工程学习资源导航。
+title: 面向 AI 时代的 Python 资源目录
+description: 经过审核的 Python 一手资源目录，覆盖基础、Web API、自动化与 AI Agent。
 lang: zh-CN
-permalink: /README_cn.html
+permalink: /zh/
+image:
+  path: /assets/images/og-image.png
+  width: 1200
+  height: 630
+  alt: FlyPython Python 资源目录
 ---
-# 🐍 FlyPython - LLM Agent 与 AI 开发中心
+{% assign catalog_resources = site.data.resources.resources | where: "status", "active" %}
 
-[python.flypython.com](https://python.flypython.com)
+# 从值得信任的一手来源学习 Python。
 
-## 🤖 LLM Agent Python - 核心重点
+FlyPython 收录官方文档、正式标准和项目的一手资源。通过四条路径找到下一份可靠资料，
+再回到主学习站，用完整项目和清晰上下文把知识真正用起来。
 
-### 🚀 主流 LLM Agent 框架
+<div class="cta-row" aria-label="主要操作">
+  <a class="button button-primary" href="https://flypython.com/learn">从学习路线开始</a>
+  <a class="button" href="https://flypython.com/resources">浏览主站精选资源</a>
+  <a class="button" href="https://github.com/flypythoncom/python">在 GitHub 参与维护</a>
+</div>
 
-#### **OpenAI Agents SDK**
-- [OpenAI Agents Python 文档](https://openai.github.io/openai-agents-python/) - 官方 OpenAI Agents SDK，用于构建 Python 智能体
-- [OpenAI Agents SDK 快速开始](https://openai.github.io/openai-agents-python/quickstart/) - 官方快速上手指南
-- [OpenAI Python 库](https://github.com/openai/openai-python) - 官方 OpenAI Python 客户端
-- [OpenAI Developer Resources](https://developers.openai.com/resources) - OpenAI 官方开发资源入口
+<p class="catalog-note">
+  <strong>{{ catalog_resources.size }} 条有效资源</strong>
+  <span aria-hidden="true">·</span>
+  目录审核于 {{ site.data.resources.catalog.reviewed_on }}
+  <span aria-hidden="true">·</span>
+  一手来源优先
+</p>
 
-#### **CrewAI - 多智能体系统**
-- [CrewAI 框架](https://github.com/joaomdmoura/crewAI) - 用于协调角色扮演、自主 AI 智能体的框架
-- [CrewAI 文档](https://docs.crewai.com/) - 官方 CrewAI 文档
-- [CrewAI 示例](https://github.com/crewAIInc/crewAI-examples) - 官方示例项目
-- [使用 CrewAI 学习 Agentic AI](https://github.com/panaversity/learn-agentic-ai) - 综合学习资源
+<nav class="path-grid" aria-label="学习路径">
+  {% for path in site.data.resources.catalog.paths %}
+    {% assign path_resources = catalog_resources | where: "path", path.id %}
+    <a class="path-card" href="#{{ path.id }}">
+      <span class="path-number">0{{ path.order }}</span>
+      <strong>{{ path.title_zh }}</strong>
+      <span>{{ path.summary_zh }}</span>
+      <small>{{ path_resources.size }} 条资源</small>
+    </a>
+  {% endfor %}
+</nav>
 
-#### **LangGraph - 高级智能体工作流**
-- [LangGraph](https://github.com/langchain-ai/langgraph) - 使用 LLM 构建有状态的多角色应用
-- [LangChain Agent 教程](https://python.langchain.com/docs/tutorials/) - LangChain Agent 与工具调用教程
+{% for path in site.data.resources.catalog.paths %}
+  {% assign path_resources = catalog_resources | where: "path", path.id %}
+  <section class="path-section" id="{{ path.id }}" aria-labelledby="{{ path.id }}-title">
+    <header class="section-heading">
+      <div>
+        <span class="section-eyebrow">路径 0{{ path.order }}</span>
+        <h2 id="{{ path.id }}-title">{{ path.title_zh }}</h2>
+      </div>
+      <p>{{ path.summary_zh }}</p>
+    </header>
 
-#### **AutoGen - 对话式 AI 智能体**
-- [Microsoft AutoGen](https://github.com/microsoft/autogen) - 多智能体对话框架
+    <div class="resource-grid">
+      {% for resource in path_resources %}
+        <article class="resource-card{% if resource.featured %} featured{% endif %}">
+          <div class="resource-card-header">
+            {% case resource.source_type %}
+              {% when "official-docs" %}<span class="source-badge">官方文档</span>
+              {% when "official-standard" %}<span class="source-badge">正式标准</span>
+              {% when "official-project" %}<span class="source-badge">官方项目</span>
+            {% endcase %}
+            {% if resource.featured %}<span class="featured-badge">精选</span>{% endif %}
+          </div>
+          <h3><a href="{{ resource.url }}">{{ resource.title }}</a></h3>
+          <p>{{ resource.why_zh }}</p>
+          <ul class="resource-meta" aria-label="资源元数据">
+            {% case resource.level %}
+              {% when "beginner" %}<li>入门</li>
+              {% when "intermediate" %}<li>进阶</li>
+              {% when "advanced" %}<li>高级</li>
+              {% when "all-levels" %}<li>所有阶段</li>
+            {% endcase %}
+            <li>来源语言：{{ resource.language | upcase }}</li>
+            <li>审核于 {{ resource.reviewed_on }}</li>
+          </ul>
+          {% if resource.requires_key or resource.risk == "medium" %}
+            <p class="resource-caution">
+              {% if resource.requires_key %}<span>典型用法需要 API Key</span>{% endif %}
+              {% if resource.requires_key and resource.risk == "medium" %}<span aria-hidden="true">·</span>{% endif %}
+              {% if resource.risk == "medium" %}<span>请检查权限与外部副作用</span>{% endif %}
+            </p>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+{% endfor %}
 
-#### **Agent 开发基础设施**
-- [Anthropic Tool Use](https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview) - Claude 官方工具调用与 Agent 工作流指南
-- [Google Agent Development Kit](https://google.github.io/adk-docs/) - Google 官方 Agent Development Kit 文档
-- [Model Context Protocol](https://modelcontextprotocol.io/introduction) - 连接模型、工具与外部上下文的开放协议
-- [PydanticAI](https://ai.pydantic.dev/) - Pydantic 团队推出的类型安全 Python Agent 框架
-- [Mastra 文档](https://mastra.ai/docs) - 带工作流、评测和可观测性的 Agent 框架
-- [Dapr Python SDK](https://github.com/dapr/python-sdk) - 分布式与有状态 Python 服务组件
+## 这个目录与 FlyPython 主站的关系
 
-### 🛠️ 开源 LLM Agent 项目
-
-#### **极简与教育性项目**
-- [min-agent](https://github.com/zhouzaida/min-agent) - 极简 200 行 LLM Agent，用于理解智能体原理
-- [LangChain ReAct Agent](https://github.com/botextractai/ai-langchain-react-agent) - 带 Python REPL 和 DuckDuckGo 搜索的 ReAct 智能体
-- [开源 LLM Agents ReAct](https://github.com/Praveengovianalytics/llm_agents_open_source) - 开源 ReAct 实现参考
-
-#### **生产就绪框架**
-- [SuperModels](https://github.com/JohannesVC/SuperModels) - 具有反思机制的 LLM 智能体桌面应用
-- [AgentKit](https://github.com/japanvik/agentkit) - 面向分布式 Agent 的轻量工具集
-
-### 📚 LLM Agent 学习资源
-
-#### **综合指南**
-- [OpenAI Cookbook](https://cookbook.openai.com/) - OpenAI 官方示例与实践集合
-- [Prompt 优化指南](https://cookbook.openai.com/examples/optimize_prompts) - OpenAI 的提示词优化工作流
-
-#### **课程与教程**
-- [Agentic AI 开发课程](https://github.com/panaversity/learn-agentic-ai) - Dapr Agentic Cloud Ascent (DACA) 完整课程
-- [Python 人工智能和机器学习](https://realpython.com/learning-paths/machine-learning-python/) - Python AI 学习路径
-
-## 📖 Python 学习与开发
-
-### 🎯 快速导航
-
-1. [Python 新闻](#python-新闻)
-2. [Python 书籍](#python-书籍)
-3. [课程](#课程)
-4. [算法与数据结构](#算法)
-5. [Web 开发](#web-开发)
-6. [数据科学与分析](#数据科学)
-7. [自动化与机器人](#自动化与机器人)
-8. [金融与交易](#金融与交易)
-9. [性能优化](#性能优化)
-
----
-
-### Python 新闻
-
-- [Python 官方](https://www.python.org/)
-- [Python Insider](https://blog.python.org/)
-- **Reddit 社区：**
-  - [r/Python](https://www.reddit.com/r/Python/)
-  - [r/learnpython](https://www.reddit.com/r/learnpython/)
-  - [r/pythontips](https://www.reddit.com/r/pythontips/)
-  - [r/pythoncoding](https://www.reddit.com/r/pythoncoding)
-
-### Python 书籍
-
-#### **初学者**
-- **Python 编程从入门到实践** (第 3 版, 2023)
-  - [Amazon](https://www.amazon.com/Python-Crash-Course-Hands-Project-Based/dp/1718502702)
-- **Python 编程入门** (第 4 版)
-  - [Amazon](https://www.amazon.com/Starting-Out-Python-Tony-Gaddis/dp/0134444329)
-- **Python 编程快速上手：让繁琐工作自动化** (第 2 版)
-  - [免费在线](https://automatetheboringstuff.com/) | [Amazon](https://www.amazon.com/Automate-Boring-Stuff-Python-Programming/dp/1593279922)
-
-#### **高级 Python**
-- **Python Cookbook：掌握 Python 3 的秘诀**
-  - [Amazon](https://www.amazon.co.uk/Python-Cookbook-David-Beazley/dp/1449340377)
-- **Effective Python：编写高质量 Python 代码的 90 个建议** (第 2 版)
-  - [Amazon](https://www.amazon.com/Effective-Python-Specific-Software-Development/dp/0134853989)
-- **Python 代码整洁之道**
-  - [Amazon](https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1788835832)
-
-### 课程
-
-#### **初学者课程**
-- [Python for Everybody](https://www.coursera.org/specializations/python)
-- [Python 3 编程](https://www.coursera.org/specializations/python-3-programming)
-
-#### **高级学习**
-- [Flask 和 Python REST API](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az) - 专业 Flask 开发
-- [yfinance 文档](https://ranaroussi.github.io/yfinance/) - Yahoo Finance Python 数据接口官方文档
-
-### 算法
-
-- [Python 交互式编程面试挑战](https://github.com/donnemartin/interactive-coding-challenges) - 算法和数据结构
-- [算法：Python 中的最小示例](https://github.com/keon/algorithms) - 数据结构和算法
-- [Pygorithm](http://pygorithm.readthedocs.io/en/latest) - 学习算法的有趣方式
-
-### Web 开发
-
-#### **FastAPI**
-- [FastAPI 文档](https://fastapi.tiangolo.com/) - 现代、快速的 API 构建 Web 框架
-- [FastAPI 最佳实践](https://github.com/zhanymkanov/fastapi-best-practices)
-
-#### **Flask**
-- [Flask 和 Python REST API](https://www.coursera.org/learn/packt-rest-apis-with-flask-and-python-in-2024-i01az)
-- [使用 Python 和 Flask 开发 RESTful API](https://auth0.com/blog/developing-restful-apis-with-python-and-flask)
-- [Flask 与代码质量](https://flake8.pycqa.org/en/latest/user/error-codes.html)
-
-#### **Django**
-- [Django 完全初学者指南 - 第 1 部分](https://simpleisbetterthancomplex.com/series/2017/09/04/a-complete-beginners-guide-to-django-part-1.html)
-- [Django REST framework 快速入门](https://www.django-rest-framework.org/tutorial/quickstart/)
-
-### 数据科学
-
-#### **NumPy**
-- [从 Python 到 NumPy](http://www.labri.fr/perso/nrougier/from-python-to-numpy/)
-- [探索 Python 包中的行长度](http://jakevdp.github.io/blog/2017/11/09/exploring-line-lengths-in-python-packages)
-
-#### **Matplotlib**
-- [Matplotlib 剖析](https://github.com/matplotlib/AnatomyOfMatplotlib)
-
-#### **数据分析项目**
-- [探索美国警务数据](https://blog.patricktriest.com/police-data-python)
-- [用 pandas 制作成绩册](https://realpython.com/pandas-project-gradebook/)
-- [FiveThirtyEight 风格图表](https://matplotlib.org/stable/gallery/style_sheets/fivethirtyeight.html)
-- [亚马逊产品评论分析](http://minimaxir.com/2017/01/amazon-spark)
-
-### 自动化与机器人
-
-#### **网页抓取**
-- [Scrapy 教程](https://docs.scrapy.org/en/latest/intro/tutorial.html)
-- [高级网页抓取：绕过 403 禁止](http://sangaline.com/post/advanced-web-scraping-tutorial)
-- [掌握 Python 网页抓取](https://hackernoon.com/mastering-python-web-scraping-get-your-data-back-e9a5cc653d88)
-
-#### **自动化项目**
-- [使用 Twilio 和 Python 的婚礼自动化](https://www.twilio.com/blog/2017/04/wedding-at-scale-how-i-used-twilio-python-and-google-to-automate-my-wedding.html)
-- [在 Medium 上寻找有趣的人](https://medium.freecodecamp.org/how-i-used-python-to-find-interesting-people-on-medium-be9261b924b0)
-
-#### **电子表格集成**
-- [Python Excel 教程：权威指南](https://hackernoon.com/python-excel-tutorial-the-definitive-guide-934ee6dd15b0)
-- [在 Excel 中使用 Python 进行数据分析](https://learning.anaconda.cloud/anaconda-certified-data-analysis-with-python-in-excel)
-- [Google Sheets 和 Python](https://www.youtube.com/watch?v=vISRn5qFrkM)
-
-### 金融与交易
-
-- [yfinance 文档](https://ranaroussi.github.io/yfinance/)
-- [使用 pandas 构建量化回测环境](https://www.quantstart.com/articles/Research-Backtesting-Environments-in-Python-with-pandas/)
-- [Alpha Vantage API 文档](https://www.alphavantage.co/documentation/)
-- [股票价格数据 - Python 金融编程](https://www.youtube.com/watch?v=2BrpKpWwT2A)
-- [分析加密货币市场](https://blog.patricktriest.com/analyzing-cryptocurrencies-python)
-
-### 性能优化
-
-- [Python 每秒百万请求](https://medium.freecodecamp.com/million-requests-per-second-with-python-95c137af319)
-- [是的，Python 很慢，但我不在乎](https://hackernoon.com/yes-python-is-slow-and-i-dont-care-13763980b5a1)
-- [Python 中的记忆化](https://dbader.org/blog/python-memoization)
+本仓库公开维护覆盖面更广的社区资源地图；[FlyPython 学习站](https://flypython.com/)
+从中挑选更小的一组来源，组织成实用学习路径、经过测试的示例和清晰的下一步。
+如果你想先完成一个项目再选择 Agent 框架，可以从
+[无需 API Key 的 Python Agent 指南](https://flypython.com/learn/python-ai-agent-roadmap)开始。

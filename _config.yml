@@ -1,116 +1,72 @@
-# Site settings
-title: FlyPython
-subtitle: LLM Agent & AI Development Hub
+title: FlyPython Resource Catalog
 description: >-
-  FlyPython is a curated bilingual hub for Python-based AI agent development,
-  applied engineering resources, and durable Python learning references.
-
-# Site information
+  A reviewed catalog of primary Python sources for foundations, web APIs,
+  automation, and AI agents.
 url: "https://python.flypython.com"
 baseurl: ""
+repository: flypythoncom/python
+timezone: Asia/Shanghai
 
-# Author information
 author:
   name: FlyPython
+  url: https://flypython.com/
   email: hello@flypython.com
-  github: flypython
-  twitter: flypython
+  github: flypythoncom
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-permalink: pretty
-
-# Theme configuration - Using GitHub Pages compatible theme
-remote_theme: pages-themes/cayman@v0.2.0
-
-# Plugins (GitHub Pages whitelist)
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-optional-front-matter
-  - jekyll-relative-links
-
-# SEO settings
 lang: en
 logo: /assets/images/logo.svg
 
-# Social links
-github_username: flypython
-twitter_username: flypython
+social:
+  name: FlyPython
+  links:
+    - https://flypython.com/
+    - https://github.com/flypythoncom
 
-# Navigation
-header_pages:
-  - index.md
-  - zh-cn.md
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# GitHub Pages safe collections
-collections:
-  tutorials:
-    output: true
-    permalink: /:collection/:name/
-  resources:
-    output: true
-    permalink: /:collection/:name/
+optional_front_matter:
+  enabled: false
 
-# Defaults
+readme_index:
+  enabled: false
+
+relative_links:
+  enabled: false
+
+titles_from_headings:
+  enabled: false
+
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: pages
     values:
-      layout: "post"
-      author: "FlyPython"
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "tutorials"
-    values:
-      layout: "tutorial"
-  - scope:
-      path: ""
-      type: "resources"
-    values:
-      layout: "resource"
+      layout: default
+      image:
+        path: /assets/images/og-image.png
+        width: 1200
+        height: 630
+        alt: FlyPython Python Resource Catalog
 
-# Analytics (optional)
-google_analytics: # UA-XXXXXXXX-X
-
-# Features
-show_downloads: false
-show_github_ribbon: false
-
-# Custom variables
-github:
-  repository_url: https://github.com/flypython/python
-  repository_name: flypython/python
-
-# Content settings
 kramdown:
   input: GFM
   hard_wrap: false
   syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
 
-# Exclude from processing
 exclude:
+  - AGENTS.md
+  - README.md
+  - README_cn.md
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - requirements.txt
+  - node_modules/
+  - vendor/
   - tools/
-  - link_audit_report.md
-  - content_update_summary.md
+  - tests/
+  - reports/
