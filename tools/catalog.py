@@ -263,6 +263,19 @@ def validate_catalog(
             )
         )
 
+    expected_path_orders = set(range(1, len(EXPECTED_PATH_IDS) + 1))
+    if path_orders != expected_path_orders:
+        missing = sorted(expected_path_orders - path_orders)
+        extra = sorted(path_orders - expected_path_orders)
+        issues.append(
+            ValidationIssue(
+                "order-parity",
+                "$.catalog.paths",
+                f"expected consecutive path orders 1-{len(EXPECTED_PATH_IDS)}; "
+                f"missing={missing}, extra={extra}",
+            )
+        )
+
     resources = data.get("resources")
     if not isinstance(resources, list):
         issues.append(

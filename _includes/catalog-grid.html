@@ -1,5 +1,6 @@
+{% assign ordered_paths = site.data.resources.catalog.paths | sort: "order" %}
 <nav class="path-grid" aria-label="{% if page.lang == 'zh-CN' %}学习路径{% else %}Learning paths{% endif %}">
-  {% for path in site.data.resources.catalog.paths %}
+  {% for path in ordered_paths %}
     {% assign path_resources = include.resources | where: "path", path.id %}
     <a class="path-card" href="#{{ path.id }}">
       <span class="path-number">0{{ path.order }}</span>
@@ -16,7 +17,7 @@
   {% endfor %}
 </nav>
 
-{% for path in site.data.resources.catalog.paths %}
+{% for path in ordered_paths %}
   {% assign path_resources = include.resources | where: "path", path.id %}
   <section class="path-section" id="{{ path.id }}" aria-labelledby="{{ path.id }}-title">
     <header class="section-heading">

@@ -62,6 +62,17 @@ def test_resource_ids_and_urls_reject_unsafe_forms(valid_catalog: dict) -> None:
     assert {"invalid-id", "url-credentials"} <= codes
 
 
+def test_path_orders_must_be_consecutive(valid_catalog: dict) -> None:
+    data = deepcopy(valid_catalog)
+    data["catalog"]["paths"][-1]["order"] = 5
+
+    codes = {
+        issue.code for issue in validate_catalog(data, today=date(2026, 8, 31))
+    }
+
+    assert "order-parity" in codes
+
+
 @pytest.mark.parametrize(
     ("url", "expected"),
     [
