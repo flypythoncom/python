@@ -17,6 +17,7 @@ from tools.check_links import (
     ThreadLocalSessions,
     UnsafeTarget,
     build_report,
+    build_session,
     classify_status,
     exit_code_for_report,
     select_links,
@@ -84,16 +85,30 @@ def test_status_classification(status_code, expected) -> None:
 
 def test_redirect_history_is_preserved() -> None:
     hop = FakeResponse(301, "https://example.com/old", headers={"Location": "/docs"})
-    response = FakeResponse(200, "https://example.com/docs", history=[hop])
-    session = FakeSession(response)
+    response = FakeResponse(200, "https://example.com/docs")
+
+    class RedirectSession(FakeSession):
+        def __init__(self):
+            super().__init__(hop)
+            self.responses = iter([hop, response])
+
+        def head(self, url, **kwargs):
+            self.calls.append(("HEAD", url, kwargs))
+            return next(self.responses)
+
+    session = RedirectSession()
     checker = LinkChecker(
         guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
     )
-    result = checker.check_one(link())
+    redirect_link = CatalogLink(
+        "docs", "foundations", "Docs", "https://example.com/old"
+    )
+    result = checker.check_one(redirect_link)
     assert result.status == "redirect"
     assert result.history == [
         {"status_code": 301, "url": "https://example.com/old", "location": "/docs"}
     ]
+    assert hop.closed is True
 
 
 def test_head_failure_falls_back_to_streaming_get_and_confirms_404() -> None:
@@ -124,6 +139,10 @@ def test_transient_and_access_denied_statuses_need_review(status_code) -> None:
         "http://169.254.169.254/latest/meta-data/",
         "http://100.100.100.200/latest/meta-data/",
         "http://metadata.google.internal/computeMetadata/v1/",
+        "https://168.63.129.16/",
+        "https://224.0.0.1/",
+        "https://[64:ff9b::7f00:1]/",
+        "https://[::ffff:93.184.216.34]/",
     ],
 )
 def test_literal_local_and_metadata_targets_are_blocked(url) -> None:
@@ -175,6 +194,24 @@ def test_adapter_revalidates_and_blocks_an_unsafe_redirect_hop() -> None:
     with pytest.raises(UnsafeTarget, match="non-public"):
         adapter.get_connection_with_tls_context(redirect, True)
     assert resolved_hosts == ["example.com", "internal.example"]
+
+
+def test_checker_blocks_https_redirect_downgrade() -> None:
+    hop = FakeResponse(
+        302,
+        "https://example.com/start",
+        headers={"Location": "http://example.com/docs"},
+    )
+    session = FakeSession(hop)
+    checker = LinkChecker(
+        guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
+    )
+
+    result = checker.check_one(link())
+
+    assert result.status == "blocked"
+    assert "may not downgrade" in (result.error or "")
+    assert hop.closed is True
 
 
 def test_thread_local_sessions_are_not_shared_between_workers() -> None:
@@ -265,6 +302,55 @@ def test_unexpected_checker_error_is_fatal() -> None:
     assert "programming defect" in (result.error or "")
 
 
+@pytest.mark.parametrize(
+    "exception",
+    [
+        requests.exceptions.ConnectionError("connection failed"),
+        requests.exceptions.SSLError("certificate failed"),
+        requests.exceptions.TooManyRedirects("redirect loop"),
+        requests.exceptions.InvalidURL("invalid redirect"),
+    ],
+)
+def test_terminal_request_failures_are_fatal(exception) -> None:
+    class BrokenSession(FakeSession):
+        def head(self, url, **kwargs):
+            raise exception
+
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: BrokenSession(FakeResponse(200)),
+        workers=1,
+        min_interval=0,
+    )
+
+    assert checker.check_one(link()).status == "error"
+
+
+def test_timeout_remains_review_needed() -> None:
+    class SlowSession(FakeSession):
+        def head(self, url, **kwargs):
+            raise requests.Timeout("timed out")
+
+    checker = LinkChecker(
+        guard=guard_for(),
+        session_factory=lambda: SlowSession(FakeResponse(200)),
+        workers=1,
+        min_interval=0,
+    )
+
+    assert checker.check_one(link()).status == "review"
+
+
+def test_retry_configuration_ignores_unbounded_retry_after() -> None:
+    session = build_session(guard_for(), retries=2, backoff_factor=0.5)
+    try:
+        retry = session.get_adapter("https://").max_retries
+        assert retry.respect_retry_after_header is False
+        assert retry.backoff_max == 5.0
+    finally:
+        session.close()
+
+
 def test_responses_close_when_result_processing_fails(monkeypatch) -> None:
     head = FakeResponse(404)
     response = FakeResponse(200)
@@ -273,10 +359,10 @@ def test_responses_close_when_result_processing_fails(monkeypatch) -> None:
         guard=guard_for(), session_factory=lambda: session, workers=1, min_interval=0
     )
 
-    def fail_history(_response):
+    def fail_classification(_status_code, *, redirected):
         raise RuntimeError("cannot process response")
 
-    monkeypatch.setattr(check_links, "_history", fail_history)
+    monkeypatch.setattr(check_links, "classify_status", fail_classification)
     result = checker.check_one(link())
 
     assert result.status == "error"

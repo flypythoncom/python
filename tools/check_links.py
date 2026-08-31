@@ -34,6 +34,8 @@ DEFAULT_OUTPUT = ROOT_DIR / "reports" / "link_check_results.json"
 DEFAULT_BASE_URL = "https://python.flypython.com/"
 REVIEW_STATUS_CODES = {403, 408, 425, 429}
 RETRY_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
+REDIRECT_STATUS_CODES = {301, 302, 303, 307, 308}
+MAX_REDIRECTS = 5
 KNOWN_METADATA_HOSTS = {
     "instance-data",
     "metadata",
@@ -41,10 +43,15 @@ KNOWN_METADATA_HOSTS = {
     "metadata.google",
 }
 KNOWN_METADATA_IPS = {
+    ipaddress.ip_address("168.63.129.16"),
     ipaddress.ip_address("169.254.169.254"),
     ipaddress.ip_address("100.100.100.200"),
     ipaddress.ip_address("fd00:ec2::254"),
 }
+BLOCKED_IPV6_TRANSLATION_NETWORKS = (
+    ipaddress.ip_network("64:ff9b::/96"),
+    ipaddress.ip_network("64:ff9b:1::/48"),
+)
 
 
 class UnsafeTarget(ValueError):
@@ -71,7 +78,24 @@ def _system_resolver(host: str, port: int) -> Iterable[str]:
 
 
 def _is_unsafe_ip(address: ipaddress.IPv4Address | ipaddress.IPv6Address) -> bool:
-    return address in KNOWN_METADATA_IPS or not address.is_global
+    if address in KNOWN_METADATA_IPS:
+        return True
+    if (
+        not address.is_global
+        or address.is_private
+        or address.is_loopback
+        or address.is_link_local
+        or address.is_multicast
+        or address.is_reserved
+        or address.is_unspecified
+    ):
+        return True
+    if isinstance(address, ipaddress.IPv6Address):
+        if address.ipv4_mapped or address.sixtofour or address.teredo:
+            return True
+        if any(address in network for network in BLOCKED_IPV6_TRANSLATION_NETWORKS):
+            return True
+    return False
 
 
 class SafeTargetGuard:
@@ -100,6 +124,8 @@ class SafeTargetGuard:
             raise UnsafeTarget("localhost targets are blocked")
         if host in KNOWN_METADATA_HOSTS or host.endswith(".metadata.google.internal"):
             raise UnsafeTarget("cloud metadata targets are blocked")
+        if port == 0:
+            raise UnsafeTarget("port must be between 1 and 65535")
         port = port or (443 if parsed.scheme.lower() == "https" else 80)
 
         try:
@@ -176,7 +202,8 @@ def build_session(
         allowed_methods=frozenset({"HEAD", "GET"}),
         status_forcelist=RETRY_STATUS_CODES,
         backoff_factor=backoff_factor,
-        respect_retry_after_header=True,
+        backoff_max=5.0,
+        respect_retry_after_header=False,
         raise_on_status=False,
     )
     adapter = PinnedDNSHTTPAdapter(
@@ -186,7 +213,10 @@ def build_session(
     session.trust_env = False
     session.headers.update(
         {
-            "User-Agent": "FlyPythonCatalogLinkChecker/1.0 (+https://github.com/flypythoncom/python)",
+            "User-Agent": (
+                "FlyPythonCatalogLinkChecker/1.0 "
+                "(+https://github.com/flypythoncom/python)"
+            ),
             "Accept": "text/html,application/xhtml+xml,application/json;q=0.8,*/*;q=0.5",
         }
     )
@@ -263,17 +293,6 @@ class LinkResult:
     error: str | None = None
 
 
-def _history(response: Any) -> list[dict[str, Any]]:
-    return [
-        {
-            "status_code": item.status_code,
-            "url": item.url,
-            "location": item.headers.get("Location"),
-        }
-        for item in getattr(response, "history", [])
-    ]
-
-
 def classify_status(status_code: int, *, redirected: bool) -> str:
     if 200 <= status_code < 300:
         return "redirect" if redirected else "working"
@@ -309,49 +328,86 @@ class LinkChecker:
         self.sessions = ThreadLocalSessions(factory)
         self.rate_limiter = HostRateLimiter(min_interval)
 
-    def _request(self, session: Any, method: str, url: str) -> Any:
-        self.rate_limiter.wait(url)
-        kwargs: dict[str, Any] = {"timeout": self.timeout, "allow_redirects": True}
-        if method == "GET":
-            kwargs["stream"] = True
-            return session.get(url, **kwargs)
-        return session.head(url, **kwargs)
+    def _request(
+        self, session: Any, method: str, url: str
+    ) -> tuple[Any, list[dict[str, Any]]]:
+        current_url = url
+        history: list[dict[str, Any]] = []
+        while True:
+            self.guard.resolve_url(current_url)
+            self.rate_limiter.wait(current_url)
+            kwargs: dict[str, Any] = {
+                "timeout": self.timeout,
+                "allow_redirects": False,
+                "stream": True,
+            }
+            response = (
+                session.get(current_url, **kwargs)
+                if method == "GET"
+                else session.head(current_url, **kwargs)
+            )
+            location = response.headers.get("Location")
+            if response.status_code not in REDIRECT_STATUS_CODES or not location:
+                return response, history
+
+            try:
+                if len(history) >= MAX_REDIRECTS:
+                    raise requests.TooManyRedirects(
+                        f"more than {MAX_REDIRECTS} redirects"
+                    )
+                next_url = urljoin(current_url, location)
+                if (
+                    urlsplit(current_url).scheme.lower() == "https"
+                    and urlsplit(next_url).scheme.lower() == "http"
+                ):
+                    raise UnsafeTarget("HTTPS redirects may not downgrade to HTTP")
+                history.append(
+                    {
+                        "status_code": response.status_code,
+                        "url": current_url,
+                        "location": location,
+                    }
+                )
+            finally:
+                response.close()
+            current_url = next_url
 
     def check_one(self, link: CatalogLink) -> LinkResult:
         try:
-            self.guard.resolve_url(link.url)
             session = self.sessions.get()
-            head = self._request(session, "HEAD", link.url)
+            head, head_history = self._request(session, "HEAD", link.url)
             try:
                 if head.status_code < 400:
-                    history = _history(head)
                     return LinkResult(
                         link.id,
                         link.path,
                         link.title,
                         link.url,
-                        classify_status(head.status_code, redirected=bool(history)),
+                        classify_status(
+                            head.status_code, redirected=bool(head_history)
+                        ),
                         status_code=head.status_code,
                         method="HEAD",
                         final_url=head.url,
-                        history=history,
+                        history=head_history,
                     )
             finally:
                 head.close()
 
-            response = self._request(session, "GET", link.url)
+            response, get_history = self._request(session, "GET", link.url)
             try:
-                history = _history(response)
                 return LinkResult(
                     link.id,
                     link.path,
                     link.title,
                     link.url,
-                    classify_status(response.status_code, redirected=bool(history)),
+                    classify_status(
+                        response.status_code, redirected=bool(get_history)
+                    ),
                     status_code=response.status_code,
                     method="GET",
                     final_url=response.url,
-                    history=history,
+                    history=get_history,
                 )
             finally:
                 response.close()
@@ -369,7 +425,7 @@ class LinkChecker:
                 link.path,
                 link.title,
                 link.url,
-                "review",
+                "error",
                 error=f"request failed: {exc}",
             )
         except Exception as exc:  # Surface checker defects without aborting other workers.

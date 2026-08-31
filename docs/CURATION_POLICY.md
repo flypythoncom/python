@@ -104,10 +104,12 @@ Internal validation runs on every pull request. External-link fetching runs only
 on the scheduled or manually dispatched GitHub Actions workflow.
 
 A 404 or 410 from the canonical resource is strong removal evidence. A 403, 429,
-timeout, DNS failure, or transient 5xx is a review-needed result, not proof that
-the resource is gone. Retry with rate limits and record the observation date.
-Link checks must refuse private, loopback, link-local, and cloud metadata targets,
-including redirect destinations.
+timeout, or transient 5xx is a review-needed result, not proof that the resource
+is gone. DNS, connection, TLS, invalid-URL, and redirect-protocol failures make
+the automated audit fail, but they are still not enough on their own to remove a
+resource. Retry with rate limits and record the observation date. Link checks
+must refuse private, loopback, link-local, multicast, cloud-platform, and cloud
+metadata targets, including redirect destinations.
 
 ## Review cadence and removal
 
