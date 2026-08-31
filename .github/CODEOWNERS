@@ -1,0 +1,7 @@
+# Default review owner
+* @xxg1413
+
+# Release, governance, and catalog policy require maintainer review.
+/.github/ @xxg1413
+/docs/CURATION_POLICY.md @xxg1413
+/_data/ @xxg1413

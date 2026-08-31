@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Python learning questions and discussion
+    url: https://github.com/flypythoncom/python/discussions
+    about: Ask for learning advice, compare resources, or start a general discussion.
+  - name: Private security report
+    url: https://github.com/flypythoncom/python/security/advisories/new
+    about: Report vulnerabilities privately. Do not disclose them in a public issue.

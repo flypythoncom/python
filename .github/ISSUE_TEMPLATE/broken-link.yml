@@ -1,0 +1,66 @@
+name: Broken or moved link
+description: Report a catalog URL that is permanently unavailable or has moved.
+title: "[Broken link]: "
+labels:
+  - broken-link
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A single 403, 429, timeout, or transient 5xx does not prove a resource is broken. Include repeatable evidence so maintainers can distinguish blocking and rate limiting from removal.
+  - type: input
+    id: page
+    attributes:
+      label: FlyPython page or catalog ID
+      placeholder: ai-agents / openai-agents-sdk
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL
+      placeholder: https://example.org/old-page
+    validations:
+      required: true
+  - type: input
+    id: observed-on
+    attributes:
+      label: Observation date
+      description: Use YYYY-MM-DD.
+      placeholder: "2026-08-31"
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Observed result
+      options:
+        - 404 Not Found
+        - 410 Gone
+        - Redirects to unrelated content
+        - DNS or TLS failure
+        - 403 Forbidden
+        - 429 Too Many Requests
+        - Timeout or 5xx
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Reproduction and evidence
+      description: Include what you tried, whether it reproduced, and any final redirect URL. Do not include cookies, tokens, or personal data.
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: Official replacement URL
+      description: Optional. Provide only a canonical replacement from the same publisher or project.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I checked that this report does not expose a credential or security vulnerability.
+          required: true
