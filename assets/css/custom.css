@@ -133,6 +133,9 @@ button:focus-visible {
 }
 
 .language-nav a {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
   padding: 0.35rem 0.7rem;
   color: rgba(255, 255, 255, 0.84);
   border-radius: 999px;
@@ -292,7 +295,7 @@ button:focus-visible {
 
 .path-card > span:not(.path-number) {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .path-card small {
@@ -398,7 +401,7 @@ button:focus-visible {
 .resource-card > p:not(.resource-caution) {
   margin: 0;
   color: var(--muted);
-  font-size: 0.94rem;
+  font-size: 1rem;
 }
 
 .resource-meta {
@@ -428,7 +431,7 @@ button:focus-visible {
   color: var(--caution);
   background: var(--caution-bg);
   border-radius: 0.5rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
 }
 
 .site-footer {

@@ -2,7 +2,7 @@
 layout: default
 title: Python Resource Catalog for the AI Era
 description: A reviewed catalog of primary Python sources for foundations, web APIs, automation, and AI agents.
-lang: en
+lang: en-US
 permalink: /
 image:
   path: /assets/images/og-image.png
@@ -66,7 +66,11 @@ source, then return to the main learning hub for guided projects and context.
           <p>{{ resource.why_en }}</p>
           <ul class="resource-meta" aria-label="Resource metadata">
             <li>{{ resource.level | replace: "-", " " }}</li>
-            <li>{{ resource.language | upcase }}</li>
+            {% case resource.language %}
+              {% when "en" %}<li>English</li>
+              {% when "zh" %}<li>Chinese</li>
+              {% when "multilingual" %}<li>Multilingual</li>
+            {% endcase %}
             <li>Reviewed {{ resource.reviewed_on }}</li>
           </ul>
           {% if resource.requires_key or resource.risk == "medium" %}

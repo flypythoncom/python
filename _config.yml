@@ -13,7 +13,7 @@ author:
   email: hello@flypython.com
   github: flypythoncom
 
-lang: en
+lang: en-US
 logo: /assets/images/logo.svg
 
 social:
@@ -59,11 +59,24 @@ kramdown:
   syntax_highlighter: rouge
 
 exclude:
+  - .github/
+  - .gitignore
+  - .python-version
+  - .ruby-version
   - AGENTS.md
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - CONTRIBUTING.md
   - README.md
   - README_cn.md
+  - SECURITY.md
   - Gemfile
   - Gemfile.lock
+  - docs/
+  - pyproject.toml
+  - requirements-dev.lock.txt
+  - requirements-dev.txt
+  - requirements.lock.txt
   - requirements.txt
   - node_modules/
   - vendor/

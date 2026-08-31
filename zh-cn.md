@@ -74,7 +74,11 @@ FlyPython 收录官方文档、正式标准和项目的一手资源。通过四�
               {% when "advanced" %}<li>高级</li>
               {% when "all-levels" %}<li>所有阶段</li>
             {% endcase %}
-            <li>来源语言：{{ resource.language | upcase }}</li>
+            {% case resource.language %}
+              {% when "en" %}<li>来源语言：英语</li>
+              {% when "zh" %}<li>来源语言：中文</li>
+              {% when "multilingual" %}<li>来源语言：多语言</li>
+            {% endcase %}
             <li>审核于 {{ resource.reviewed_on }}</li>
           </ul>
           {% if resource.requires_key or resource.risk == "medium" %}
