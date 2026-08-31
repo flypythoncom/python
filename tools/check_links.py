@@ -49,6 +49,8 @@ DEFAULT_BASE_URL = "https://python.flypython.com/"
 REVIEW_STATUS_CODES = {403, 408, 425, 429}
 RETRY_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 REDIRECT_STATUS_CODES = {301, 302, 303, 307, 308}
+REPORT_STATUSES = ("working", "redirect", "review", "broken", "blocked", "error")
+ACTIONABLE_STATUSES = ("review", "broken", "blocked", "error")
 MAX_REDIRECTS = 5
 MAX_BACKOFF_SECONDS = 5.0
 KNOWN_METADATA_HOSTS = {
@@ -610,8 +612,10 @@ def select_links(
 def build_report(
     *, catalog: Path, mode: str, results: list[LinkResult]
 ) -> dict[str, Any]:
-    statuses = ("working", "redirect", "review", "broken", "blocked", "error")
-    counts = {status: sum(item.status == status for item in results) for status in statuses}
+    counts = {
+        status: sum(item.status == status for item in results)
+        for status in REPORT_STATUSES
+    }
     counts["total"] = len(results)
     return {
         "schema_version": 1,
@@ -624,13 +628,30 @@ def build_report(
 
 
 def exit_code_for_report(report: Mapping[str, Any]) -> int:
+    if not isinstance(report, Mapping):
+        return 2
     counts = report.get("counts", {})
     if not isinstance(counts, Mapping):
         return 2
-    actionable_statuses = ("review", "broken", "blocked", "error")
-    if any(counts.get(status, 0) for status in actionable_statuses):
+    expected_keys = {*REPORT_STATUSES, "total"}
+    if set(counts) != expected_keys:
+        return 2
+    values = [counts[status] for status in REPORT_STATUSES]
+    total = counts["total"]
+    if (
+        not isinstance(total, int)
+        or isinstance(total, bool)
+        or total <= 0
+        or any(
+            not isinstance(value, int) or isinstance(value, bool) or value < 0
+            for value in values
+        )
+        or sum(values) != total
+    ):
+        return 2
+    if any(counts[status] for status in ACTIONABLE_STATUSES):
         return 1
-    return 1 if counts.get("total") == 0 else 0
+    return 0
 
 
 def _positive_float(value: str) -> float:

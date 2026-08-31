@@ -332,23 +332,68 @@ def test_mode_selects_internal_external_or_all() -> None:
 
 
 def test_exit_code_fails_every_actionable_result() -> None:
-    review_report = {
-        "counts": {
-            "working": 0,
-            "redirect": 0,
-            "review": 21,
-            "broken": 0,
-            "blocked": 0,
-            "error": 0,
-            "total": 21,
-        }
-    }
-    assert exit_code_for_report(review_report) == 1
-    assert exit_code_for_report({"counts": {"broken": 1, "blocked": 0}}) == 1
-    assert exit_code_for_report({"counts": {"broken": 0, "blocked": 1}}) == 1
-    assert exit_code_for_report({"counts": {"error": 1}}) == 1
-    assert exit_code_for_report({"counts": {"working": 1, "total": 1}}) == 0
-    assert exit_code_for_report({"counts": {"total": 0}}) == 1
+    for status in ("review", "broken", "blocked", "error"):
+        result = LinkResult("id", "path", "Title", "https://example.com", status)
+        report = build_report(catalog=Path("catalog.yml"), mode="all", results=[result])
+        assert exit_code_for_report(report) == 1
+
+    working = LinkResult(
+        "id", "path", "Title", "https://example.com", "working"
+    )
+    report = build_report(catalog=Path("catalog.yml"), mode="all", results=[working])
+    assert exit_code_for_report(report) == 0
+
+
+@pytest.mark.parametrize(
+    "report",
+    [
+        {},
+        {"counts": {}},
+        {"counts": {"total": 0}},
+        {
+            "counts": {
+                "working": 1,
+                "redirect": 0,
+                "review": 0,
+                "broken": 0,
+                "blocked": 0,
+                "error": 0,
+            }
+        },
+        {
+            "counts": {
+                "working": 1,
+                "redirect": 0,
+                "review": 0,
+                "broken": 0,
+                "blocked": 0,
+                "error": 0,
+                "unknown": 1,
+                "total": 1,
+            }
+        },
+        {
+            "counts": {
+                "working": 0,
+                "redirect": 0,
+                "review": 0,
+                "broken": 0,
+                "blocked": 0,
+                "error": 0,
+                "total": 1,
+            }
+        },
+    ],
+)
+def test_exit_code_rejects_malformed_reports(report: dict) -> None:
+    assert exit_code_for_report(report) == 2
+
+
+def test_unknown_result_status_cannot_fail_open() -> None:
+    result = LinkResult("id", "path", "Title", "https://example.com", "typo")
+    report = build_report(catalog=Path("catalog.yml"), mode="all", results=[result])
+
+    assert exit_code_for_report(report) == 2
 
 
 def test_unexpected_checker_error_is_fatal() -> None:
