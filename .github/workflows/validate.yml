@@ -38,3 +38,12 @@ jobs:
 
       - name: Verify public JSON export
         run: python tools/export_catalog.py --check
+
+      - name: Verify browsable README indexes
+        run: python tools/render_readmes.py --check
+
+      - name: Verify first-party content manifest
+        run: python tools/build_content_manifest.py --check
+
+      - name: Verify runnable examples
+        run: python tools/verify_examples.py

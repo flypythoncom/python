@@ -2,15 +2,17 @@
 
 ## Mission
 
-This repository is the broad, community-maintained data catalog behind
-FlyPython. It is not a website. Keep `flypython.com` focused on editorial
-learning paths, task playbooks, and presentation; keep this repository focused
-on reviewed catalog data, its public JSON contract, and its contribution
-workflow.
+This repository is the community-maintained source for building good Python
+products in the AI-coding era. It is not a website. Keep `flypython.com`
+focused on presentation, discovery, and conversion; keep this repository
+focused on practical guides, playbooks, runnable examples, reusable templates,
+reviewed catalog data, and stable public JSON contracts.
 
 ## Content rules
 
 - Prefer official documentation and primary sources.
+- Keep first-party Python engineering and AI-coding guidance specific, testable,
+  and honest about what automation can and cannot prove.
 - Every catalog entry must include a stable ID, path, path-local order, source
   type, level, rationale, review date, status, and any key or safety requirements.
 - Do not call a project production-ready without current maintenance, licensing,
@@ -19,6 +21,10 @@ workflow.
   Descriptions and classifications require human review.
 - Keep English and Chinese website output generated from the same canonical
   resource data. Do not hand-copy catalog content into website source files.
+- Keep paired English and Chinese first-party guides aligned in scope, version,
+  review date, and factual meaning.
+- Add first-party guides and playbooks to `content-manifest.json`; keep each
+  locale pair aligned and verify its source checksum.
 - Treat HTTP 403, 429, and transient 5xx responses as review-needed states, not
   automatic proof that a resource is broken.
 
@@ -28,6 +34,11 @@ workflow.
 - Run the repository validation workflow before committing.
 - Regenerate `catalog.json` after source changes and verify it with
   `python tools/export_catalog.py --check`.
+- Regenerate both README catalog indexes and verify them with
+  `python tools/render_readmes.py --check`.
+- Regenerate `content-manifest.json` and verify it with
+  `python tools/build_content_manifest.py --check`.
+- Verify every runnable example with `python tools/verify_examples.py`.
 - Website consumers must pin a full repository commit and verify the catalog
   checksum. Do not make production builds depend on a moving branch.
 - Keep external-link checks read-only, rate-limited, retryable, and blocked from

@@ -28,6 +28,9 @@ List the actual results, not only the commands you intended to run.
 - [ ] `python -m pytest`
 - [ ] `python tools/validate_catalog.py`
 - [ ] `python tools/export_catalog.py --check`
+- [ ] `python tools/render_readmes.py --check`
+- [ ] `python tools/build_content_manifest.py --check`
+- [ ] `python tools/verify_examples.py`
 - [ ] English and Chinese output remain consistent
 - [ ] No secrets, generated reports, local build output, or analytics IDs were committed
 

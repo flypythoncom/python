@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "documents": [
+    {
+      "id": "add-a-python-api",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/add-an-api/README.md",
+          "title": "Add or Change a Python API",
+          "summary": "Define the public contract first, then implement and verify success, error, and compatibility behavior.",
+          "sha256": "d9efffbe8b88d308cbbef3fdbe278dab711cfc5c055b3208b95be5cf947a1599"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/add-an-api/README_cn.md",
+          "title": "增加或修改 Python API",
+          "summary": "先定义公共契约，再实现并验证成功、错误和兼容性行为。",
+          "sha256": "3b853bb8c24f794001efaf4a62491b597e035757442e31698adb3876dd06d3cd"
+        }
+      ]
+    },
+    {
+      "id": "fix-a-python-bug",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/fix-a-bug/README.md",
+          "title": "Fix a Python Bug with a Regression Test",
+          "summary": "Reproduce the behavior, constrain the cause, make the smallest fix, and prove the regression stays fixed.",
+          "sha256": "14936929bae9110e0769102ba6b09da86f281accfcc3a7fa05f9435206f228ac"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/fix-a-bug/README_cn.md",
+          "title": "用回归测试修复 Python Bug",
+          "summary": "复现行为、缩小原因、完成最小修复，并证明回归问题不会再次出现。",
+          "sha256": "34484371bb774ccf45a4e54a53d957eef5a9e76db815923d8e30736da45b0a18"
+        }
+      ]
+    },
+    {
+      "id": "integrate-an-external-api",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/integrate-an-external-api/README.md",
+          "title": "Integrate an External API",
+          "summary": "Wrap a third-party API behind a typed boundary with safe credentials, timeouts, retries, and deterministic tests.",
+          "sha256": "3424fcdceb5dd256895106e3f8eed94765b4892b7fc1c935604b2d86b2f9efcb"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/integrate-an-external-api/README_cn.md",
+          "title": "接入外部 API",
+          "summary": "用类型边界封装第三方 API，并安全处理凭据、超时、重试和确定性测试。",
+          "sha256": "bf6466c0f044221392ed9d74091fb60363dbb6fc5a3eb6e875d724d0f30e4d4c"
+        }
+      ]
+    },
+    {
+      "id": "product-slug-example",
+      "type": "example",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "examples/product-slug/README.md",
+          "title": "Three-minute AI-coding change",
+          "summary": "Reproduce a Python text-boundary bug, make a bounded fix, and verify it with the standard library.",
+          "sha256": "b826e674fd150ab442dede1d27333a01ecb228eb5c2cec4e631f803a86d61c5c"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "examples/product-slug/README_cn.md",
+          "title": "3 分钟完成一次 AI Coding 修改",
+          "summary": "复现 Python 文本边界 Bug，完成范围明确的修复，并只用标准库验证结果。",
+          "sha256": "2e871dbbe21ad845c7e8e6c2a4b6634f020b23238e2da622ca8ee282a45d018f"
+        }
+      ]
+    },
+    {
+      "id": "python-ai-coding-workflow",
+      "type": "guide",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "guides/ai-coding/workflow.md",
+          "title": "Use Python Well with AI Coding",
+          "summary": "A contract-first workflow for using coding agents to make small, testable, and safe Python changes.",
+          "sha256": "7d99719b0b434161e43401f91217e6df5393d182ad2da87eff059fa58d17a09a"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "guides/ai-coding/workflow_cn.md",
+          "title": "用 AI Coding 写好 Python",
+          "summary": "一套契约优先的工作方法，用 coding agent 完成小而可测、能够安全交付的 Python 修改。",
+          "sha256": "bbe4a1872736bcb81b5c47a65e186266d228beaf067c5d341eca791ba872e9f7"
+        }
+      ]
+    },
+    {
+      "id": "python-product-quality",
+      "type": "guide",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "guides/python-engineering/product-quality.md",
+          "title": "Build a Python Product That Can Be Changed Safely",
+          "summary": "A practical quality model for moving from a useful script to an operable Python product.",
+          "sha256": "3df02b7151a9d2c513fa2498a91974621c1832e59d60942735b218504111db67"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "guides/python-engineering/product-quality_cn.md",
+          "title": "构建能够持续修改的 Python 产品",
+          "summary": "从有用脚本走向可运行、可维护 Python 产品的一套实用质量模型。",
+          "sha256": "d45aafe9d51a0e21e2af5f84857efc43cf9987f86ebe6b5b0313152914deced7"
+        }
+      ]
+    },
+    {
+      "id": "ship-a-python-release",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/ship-a-release/README.md",
+          "title": "Ship a Python Release",
+          "summary": "Produce a traceable package or service release and verify the real deployed behavior and rollback path.",
+          "sha256": "b078b641f74d35d6fa679327b6e086951ed17657a3ed7254d4963358c7c8460e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/ship-a-release/README_cn.md",
+          "title": "发布 Python 版本",
+          "summary": "交付可追踪的包或服务版本，并验证真实线上行为与回退路径。",
+          "sha256": "857b99331cdfd08aca6c9b10bbd05425037279ea0a98b9aad8026c3fe7d8cc5a"
+        }
+      ]
+    },
+    {
+      "id": "upgrade-python-dependencies",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/upgrade-dependencies/README.md",
+          "title": "Upgrade Python Dependencies",
+          "summary": "Upgrade dependencies in a bounded change with lockfile, compatibility, security, and runtime evidence.",
+          "sha256": "ce8f11dc5371a004fb22f7b1823e58926c34358d9003ace1818f88eb83498680"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/upgrade-dependencies/README_cn.md",
+          "title": "升级 Python 依赖",
+          "summary": "在边界明确的修改中，用锁文件、兼容性、安全和运行证据完成依赖升级。",
+          "sha256": "48e6c7ed41e2d51ac087d801b189616cc6f27e14db3f4e1b9498f7a4d4f9e2da"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+# Guides
+
+Guides explain the engineering decisions behind reliable Python products. Start
+with the outcome you need:
+
+- [Use Python well with AI Coding](ai-coding/workflow.md): give a coding agent
+  enough context, constrain the change, test behavior, and review side effects.
+- [Build a Python product that can be changed safely](python-engineering/product-quality.md):
+  turn a script into a product with contracts, boundaries, observability, and a
+  release path.
+
+For task-sized instructions, use the [playbooks](../playbooks/README.md). For
+code you can run immediately, use the [examples](../examples/README.md).
+
+[中文索引](README_cn.md)

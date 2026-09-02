@@ -6,6 +6,13 @@ This file records notable catalog-contract and maintenance changes.
 
 ### Added
 
+- A complete bilingual Python AI-coding workflow covering task contracts,
+  repository inspection, reproducible environments, bounded changes, tests,
+  runtime verification, side-effect review, and evidence-based delivery.
+- Browsable English and Chinese README indexes containing every reviewed
+  resource, its rationale, level, access requirements, risk, and review date.
+- Deterministic README generation and drift checks backed by canonical catalog
+  data.
 - One source file per reviewed resource under `catalog/resources/`.
 - A deterministic, versioned `catalog.json` export for pinned website consumers.
 - A JSON Schema describing the public catalog v1 contract.
@@ -15,11 +22,21 @@ This file records notable catalog-contract and maintenance changes.
 - Catalog validation and a safe external-link auditor with retry, report, and
   SSRF/DNS-rebinding protection.
 - Contribution, conduct, security, issue, and resource-curation policies.
+- A product-quality guide and five bilingual task playbooks for bug fixes, API
+  work, external integrations, dependency upgrades, and releases.
+- A standard-library-only example with a deliberately failing starter, verified
+  solution, and task contract.
+- Reusable task, plan, review, verification, agent-instruction, and pyproject
+  templates.
+- A versioned `content-manifest.json` with bilingual paths, summaries, review
+  state, and source checksums for pinned website consumers.
+- A human-review contribution queue for current Python Project Radar entries.
 
 ### Changed
 
-- Defined this repository as the canonical catalog-data and review layer behind
-  flypython.com, rather than a second public website.
+- Defined this repository as the canonical Python product-engineering content,
+  catalog-data, and review layer behind flypython.com, rather than a second
+  public website.
 - Split catalog metadata, paths, and resources into independently reviewable
   files while preserving the 21 existing human-reviewed resource records.
 - Required website consumers to pin a full repository commit and verify the

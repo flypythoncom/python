@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://flypython.com/schemas/content-manifest-v1.schema.json",
+  "title": "FlyPython first-party content manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "documents"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "type", "content_version", "status", "reviewed_on", "locales"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$"},
+          "type": {"enum": ["guide", "playbook", "example"]},
+          "content_version": {"type": "integer", "minimum": 1},
+          "status": {"const": "reviewed"},
+          "reviewed_on": {"type": "string", "format": "date"},
+          "locales": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["lang", "path", "title", "summary", "sha256"],
+              "properties": {
+                "lang": {"enum": ["en-US", "zh-CN"]},
+                "path": {"type": "string"},
+                "title": {"type": "string", "minLength": 1},
+                "summary": {"type": "string", "minLength": 1},
+                "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

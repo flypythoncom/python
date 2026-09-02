@@ -1,9 +1,11 @@
-# Contributing to the FlyPython catalog
+# Contributing to FlyPython
 
-FlyPython maintains a bilingual, reviewed source catalog used by
-[flypython.com](https://flypython.com/). Contributions should improve source
-quality, factual accuracy, or the maintenance workflow. General Python questions
-belong in [GitHub Discussions](https://github.com/flypythoncom/python/discussions).
+FlyPython maintains bilingual Python engineering guides, task playbooks,
+runnable examples, templates, and a reviewed source catalog used by
+[flypython.com](https://flypython.com/). Contributions should help a visitor
+complete a real Python task or improve factual accuracy and maintainability.
+General Python questions belong in
+[GitHub Discussions](https://github.com/flypythoncom/python/discussions).
 
 Read the [curation policy](docs/CURATION_POLICY.md) before contributing.
 
@@ -19,11 +21,19 @@ to submit and retain required third-party notices.
 Use the matching issue form before a larger change:
 
 - **Resource proposal** for a new official source.
+- **Project proposal** for a current Python project that should receive human
+  review for Project Radar.
 - **Broken link** for an unreachable or replaced resource.
 - **Security report** for a vulnerability; follow [SECURITY.md](SECURITY.md)
   instead of opening a public issue.
 
 Small typo, metadata, or tooling fixes may go directly to a focused pull request.
+
+First-party guides and playbooks must remain practical, testable, and aligned
+in English and Chinese. A content change must update both language files with
+the same content version and review date, then regenerate
+`content-manifest.json`. Do not present generated code, a passing test, or a
+deployment command as proof of user value or production readiness.
 
 ## Catalog sources
 
@@ -67,6 +77,8 @@ After changing catalog sources, regenerate the public export:
 
 ```bash
 python tools/export_catalog.py
+python tools/render_readmes.py
+python tools/build_content_manifest.py
 ```
 
 Run the same deterministic checks as CI:
@@ -75,6 +87,9 @@ Run the same deterministic checks as CI:
 python -m pytest
 python tools/validate_catalog.py
 python tools/export_catalog.py --check
+python tools/render_readmes.py --check
+python tools/build_content_manifest.py --check
+python tools/verify_examples.py
 ```
 
 Maintainers can run the networked link audit through GitHub Actions. For a
@@ -90,7 +105,7 @@ justify removing a resource.
 
 ## Pull request checklist
 
-- Keep source data and the generated `catalog.json` consistent.
+- Keep source content and generated JSON exports consistent.
 - Preserve English and Chinese meaning.
 - Include evidence for maintenance, ownership, access, and safety claims.
 - Do not call a project production-ready without current evidence.

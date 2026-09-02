@@ -1,0 +1,46 @@
+name: Propose a Python project
+description: Suggest a maintained Python project for human review in Project Radar.
+title: "[Project]: "
+labels: ["project-proposal"]
+body:
+  - type: input
+    id: source
+    attributes:
+      label: Official project URL
+      description: Link to the source repository or official project home.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What can a Python developer accomplish with it?
+      description: Describe a concrete user outcome, not marketing copy.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Maintenance and quality evidence
+      description: Include release, documentation, tests, license, and security evidence you checked.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Python engineering
+        - Web and APIs
+        - Automation
+        - AI coding
+        - AI agents
+        - Skills and MCP
+    validations:
+      required: true
+  - type: checkboxes
+    id: declaration
+    attributes:
+      label: Declaration
+      options:
+        - label: I disclosed any affiliation and wrote this proposal from sources I checked.
+          required: true
