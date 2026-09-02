@@ -36,13 +36,5 @@ jobs:
       - name: Validate catalog
         run: python tools/validate_catalog.py
 
-      - name: Set up Ruby and Bundler
-        uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1.321.0
-        with:
-          bundler-cache: true
-
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
-
-      - name: Verify catalog output escaping
-        run: bundle exec ruby tests/render_security_test.rb
+      - name: Verify public JSON export
+        run: python tools/export_catalog.py --check

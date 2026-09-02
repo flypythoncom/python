@@ -1,0 +1,16 @@
+id: uv-docs
+path: foundations
+title: uv documentation
+url: https://docs.astral.sh/uv/
+source_type: official-project
+level: all-levels
+language: en
+why_en: A modern workflow for Python versions, virtual environments, dependencies,
+  lockfiles, and project commands.
+why_zh: 现代 Python 工作流，统一管理版本、虚拟环境、依赖、锁文件和项目命令。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: true
+order: 4

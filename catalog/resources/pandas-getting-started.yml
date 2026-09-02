@@ -1,0 +1,16 @@
+id: pandas-getting-started
+path: automation
+title: pandas getting started guides
+url: https://pandas.pydata.org/docs/getting_started/index.html
+source_type: official-docs
+level: beginner
+language: en
+why_en: The primary entry point for tabular data loading, cleaning, transformation,
+  analysis, and export.
+why_zh: 表格数据读取、清洗、转换、分析和导出的官方入门入口。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 5

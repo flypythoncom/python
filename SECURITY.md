@@ -2,9 +2,9 @@
 
 ## Supported versions
 
-Security fixes apply to the default branch and the currently deployed
-`python.flypython.com` site. Historical commits, forks, and archived catalog
-entries are not supported releases.
+Security fixes apply to the default branch, the current catalog schema, and the
+checked-in public export. Historical commits, forks, and copied exports are not
+supported releases.
 
 ## Report a vulnerability privately
 
@@ -29,11 +29,10 @@ coordinate disclosure after a fix is available.
 
 Examples include:
 
-- Script injection or unsafe rendered catalog content
+- Catalog parsing or export behavior that permits unsafe or ambiguous data
 - A link-checking path that can reach private, loopback, or metadata services
 - Workflow permission escalation or untrusted-code execution
-- Exposed credentials, DNS takeover, or custom-domain control issues
-- Dependency or build-chain compromise with a demonstrated impact
+- Exposed credentials or dependency-chain compromise with demonstrated impact
 
 Broken links, outdated descriptions, ordinary 403/429 responses, and resource
 quality disagreements are not security vulnerabilities. Use the broken-link or

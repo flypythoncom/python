@@ -1,0 +1,16 @@
+id: subprocess-docs
+path: automation
+title: subprocess — Subprocess management
+url: https://docs.python.org/3/library/subprocess.html
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The standard-library contract for launching processes, capturing output, handling
+  failures, and avoiding unsafe shell usage.
+why_zh: 启动进程、捕获输出、处理失败并避免不安全 shell 用法的标准库契约。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: medium
+featured: false
+order: 2

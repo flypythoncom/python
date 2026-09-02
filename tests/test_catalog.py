@@ -2,8 +2,10 @@ from __future__ import annotations
 
 from copy import deepcopy
 from datetime import date
+from pathlib import Path
 
 import pytest
+import yaml
 
 from tools.catalog import (
     CatalogLoadError,
@@ -71,6 +73,66 @@ def test_path_orders_must_be_consecutive(valid_catalog: dict) -> None:
     }
 
     assert "order-parity" in codes
+
+
+def test_resource_orders_must_be_unique_and_consecutive(valid_catalog: dict) -> None:
+    data = deepcopy(valid_catalog)
+    duplicate = deepcopy(data["resources"][0])
+    duplicate["id"] = "another-foundation-resource"
+    duplicate["url"] = "https://another.example.com/docs/"
+    data["resources"].append(duplicate)
+
+    codes = {
+        issue.code for issue in validate_catalog(data, today=date(2026, 8, 31))
+    }
+
+    assert {"duplicate-resource-order", "resource-order-parity"} <= codes
+
+
+def test_directory_loader_composes_catalog_sources(
+    tmp_path: Path, valid_catalog: dict
+) -> None:
+    catalog_dir = tmp_path / "catalog"
+    resources_dir = catalog_dir / "resources"
+    resources_dir.mkdir(parents=True)
+    metadata = {
+        "reviewed_on": valid_catalog["catalog"]["reviewed_on"],
+        "status": valid_catalog["catalog"]["status"],
+    }
+    (catalog_dir / "catalog.yml").write_text(
+        yaml.safe_dump(metadata, sort_keys=False), encoding="utf-8"
+    )
+    (catalog_dir / "paths.yml").write_text(
+        yaml.safe_dump(valid_catalog["catalog"]["paths"], sort_keys=False),
+        encoding="utf-8",
+    )
+    for resource in reversed(valid_catalog["resources"]):
+        (resources_dir / f"{resource['id']}.yml").write_text(
+            yaml.safe_dump(resource, sort_keys=False), encoding="utf-8"
+        )
+
+    loaded = load_catalog(catalog_dir)
+
+    assert loaded == valid_catalog
+
+
+def test_directory_loader_requires_resource_id_to_match_filename(
+    tmp_path: Path, valid_catalog: dict
+) -> None:
+    catalog_dir = tmp_path / "catalog"
+    resources_dir = catalog_dir / "resources"
+    resources_dir.mkdir(parents=True)
+    (catalog_dir / "catalog.yml").write_text(
+        "reviewed_on: 2026-08-31\nstatus: active\n", encoding="utf-8"
+    )
+    (catalog_dir / "paths.yml").write_text("[]\n", encoding="utf-8")
+    (resources_dir / "wrong-name.yml").write_text(
+        yaml.safe_dump(valid_catalog["resources"][0], sort_keys=False),
+        encoding="utf-8",
+    )
+
+    with pytest.raises(CatalogLoadError, match="resource id must match filename"):
+        load_catalog(catalog_dir)
 
 
 @pytest.mark.parametrize(

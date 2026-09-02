@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://python.flypython.com/sitemap.xml

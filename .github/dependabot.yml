@@ -1,25 +1,11 @@
 version: 2
 updates:
-  - package-ecosystem: bundler
-    directory: "/"
-    schedule:
-      interval: weekly
-      day: monday
-      time: "09:00"
-      timezone: Asia/Shanghai
-    open-pull-requests-limit: 5
-    groups:
-      jekyll-dependencies:
-        patterns:
-          - "github-pages"
-          - "jekyll-*"
-
   - package-ecosystem: pip
     directory: "/"
     schedule:
       interval: weekly
       day: monday
-      time: "09:15"
+      time: "09:00"
       timezone: Asia/Shanghai
     open-pull-requests-limit: 5
     groups:
@@ -32,7 +18,7 @@ updates:
     schedule:
       interval: weekly
       day: monday
-      time: "09:30"
+      time: "09:15"
       timezone: Asia/Shanghai
     open-pull-requests-limit: 5
     groups:

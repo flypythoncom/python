@@ -1,0 +1,16 @@
+id: pathlib-docs
+path: automation
+title: pathlib — Object-oriented filesystem paths
+url: https://docs.python.org/3/library/pathlib.html
+source_type: official-docs
+level: beginner
+language: en
+why_en: The standard-library reference for readable, cross-platform file and directory
+  automation.
+why_zh: 使用可读、跨平台的对象式路径完成文件与目录自动化的标准库参考。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 1

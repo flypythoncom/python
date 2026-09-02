@@ -1,0 +1,16 @@
+id: google-adk
+path: ai-agents
+title: Google Agent Development Kit
+url: https://adk.dev/
+source_type: official-docs
+level: advanced
+language: en
+why_en: Google's official documentation for developing, evaluating, and deploying
+  modular agent systems.
+why_zh: Google 官方模块化 Agent 系统开发、评测与部署文档。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: true
+risk: medium
+featured: false
+order: 5

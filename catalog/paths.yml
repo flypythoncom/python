@@ -1,0 +1,28 @@
+- id: foundations
+  order: 1
+  title_en: Python foundations
+  title_zh: Python 基础
+  summary_en: Learn the language, environments, dependencies, typing, and tests that
+    reliable Python work depends on.
+  summary_zh: 掌握语言基础、环境、依赖、类型与测试，为可靠的 Python 项目打好根基。
+- id: web-apis
+  order: 2
+  title_en: Web and APIs
+  title_zh: Web 与 API
+  summary_en: Build typed services and applications that connect Python logic to users
+    and other systems.
+  summary_zh: 构建有类型约束的服务和应用，把 Python 逻辑连接到用户与其他系统。
+- id: automation
+  order: 3
+  title_en: Automation
+  title_zh: 自动化
+  summary_en: Turn repeatable work into maintainable scripts, browser workflows, and
+    data pipelines.
+  summary_zh: 把重复工作变成可维护的脚本、浏览器工作流和数据管道。
+- id: ai-agents
+  order: 4
+  title_en: AI agents
+  title_zh: AI Agent
+  summary_en: Learn tools, structured output, state, evaluation, and the safety boundaries
+    of agent systems.
+  summary_zh: 理解工具调用、结构化输出、状态、评测以及 Agent 系统的安全边界。

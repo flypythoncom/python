@@ -1,0 +1,16 @@
+id: pydantic-ai
+path: ai-agents
+title: Pydantic AI
+url: https://pydantic.dev/docs/ai/overview/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: Typed agent development built around validated inputs, structured output,
+  tools, testing, and model portability.
+why_zh: 以输入验证、结构化输出、工具、测试和模型可移植性为核心的类型安全 Agent 开发。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: true
+risk: medium
+featured: true
+order: 2

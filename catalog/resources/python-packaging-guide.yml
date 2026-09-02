@@ -1,0 +1,16 @@
+id: python-packaging-guide
+path: foundations
+title: Python Packaging User Guide
+url: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The PyPA tutorial for project layout, build metadata, distributions, and publishing
+  Python packages.
+why_zh: PyPA 官方教程，覆盖项目结构、构建元数据、分发包与 Python 包发布。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 3

@@ -39,6 +39,7 @@ def valid_catalog() -> dict[str, Any]:
                 "requires_key": False,
                 "risk": "low",
                 "featured": order == 1,
+                "order": 1,
             }
         )
     return {

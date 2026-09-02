@@ -1,49 +1,87 @@
-# FlyPython Python Resource Catalog
+# FlyPython Python Catalog
 
 [![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/flypythoncom/python?style=flat-square&label=forks)](https://github.com/flypythoncom/python/forks)
-[![Catalog](https://img.shields.io/badge/catalog-reviewed-157878?style=flat-square)](https://python.flypython.com/)
+[![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
 
 [English](README.md) · [中文](README_cn.md)
 
-FlyPython is the broad, community-maintained resource catalog behind the
-[FlyPython learning hub](https://flypython.com/). It keeps the larger source map
-public and reviewable while the main site provides editorial learning paths and a
-smaller featured collection.
+This repository is the reviewed data source behind Python resources shown on
+[flypython.com](https://flypython.com/). It is not a second website and does not
+contain a site renderer, theme, or deployment configuration.
 
-## Start here
+## What belongs here
 
-- [Follow the practical Python roadmap](https://flypython.com/learn)
-- [Browse the featured resource index](https://flypython.com/resources)
-- [Build and test a no-key Python agent loop](https://flypython.com/learn/python-ai-agent-roadmap)
-- [Explore the full community catalog](https://python.flypython.com/)
+- Canonical links to official documentation, standards, and project sources.
+- Human-reviewed English and Chinese rationales.
+- Learning-path, level, access, review-date, and safety metadata.
+- Deterministic validation, JSON export, and safe link-audit tooling.
+- Public contribution and curation rules.
 
-## Four paths
+The main website owns learning guides, task playbooks, navigation, and visual
+presentation. This repository owns the broader catalog and its evidence-backed
+maintenance workflow.
 
-1. **Python foundations** — language, environments, dependencies, typing, and tests
-2. **Web and APIs** — typed services, validation, HTTP clients, and applications
-3. **Automation** — files, processes, browsers, crawling, and data workflows
-4. **AI agents** — tools, structured output, state, evaluation, and safety boundaries
+## Repository structure
 
-The canonical catalog lives in [`_data/resources.yml`](_data/resources.yml).
-The English and Chinese site pages read from that same file; the full resource
-list is not copied into the README files.
-
-## Quality bar
-
-- Prefer official documentation, standards, and first-party project sources.
-- Explain why each resource matters instead of publishing an unranked link dump.
-- Record the review date, API-key requirement, and relevant safety boundary.
-- Label experiments honestly; do not infer production readiness from popularity.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a resource or changing
-its classification.
-
-## Local preview
-
-```bash
-bundle install
-bundle exec jekyll serve
+```text
+catalog/
+  catalog.yml        catalog status and review date
+  paths.yml          bilingual learning-path definitions
+  resources/         one reviewed resource per YAML file
+schema/
+  catalog-v1.schema.json
+catalog.json         deterministic public export for consumers
+tools/               validation, export, and link-audit commands
+tests/               catalog and network-safety tests
+docs/                curation policy
 ```
 
-The catalog is published at [python.flypython.com](https://python.flypython.com/).
+`catalog.json` is generated from `catalog/`; do not edit it by hand. Consumer
+repositories should read the export from a pinned commit, verify its checksum,
+and record that revision in their own lock file. They should not fetch a moving
+`master` branch during a production build.
+
+Example immutable URL:
+
+```text
+https://raw.githubusercontent.com/flypythoncom/python/<full-commit-sha>/catalog.json
+```
+
+The export intentionally includes the bilingual path summaries and resource
+rationales that flypython.com may render. Editorial guides and task-specific
+playbooks remain in the website repository.
+
+## Validate a change
+
+Use the Python version declared in `.python-version`, then install the locked
+development dependencies:
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-dev.lock.txt
+```
+
+Run the deterministic checks:
+
+```bash
+python -m pytest
+python tools/validate_catalog.py
+python tools/export_catalog.py --check
+```
+
+After changing catalog sources, regenerate the public export before running the
+checks:
+
+```bash
+python tools/export_catalog.py
+```
+
+Network link fetching is intentionally excluded from pull-request validation.
+Maintainers run it through the scheduled or manual **Catalog link audit**
+workflow.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[curation policy](docs/CURATION_POLICY.md) before proposing a resource or
+changing its classification. Website integrations should also follow the
+[consumer contract](docs/CONSUMING.md).

@@ -1,0 +1,16 @@
+id: scrapy-tutorial
+path: automation
+title: Scrapy tutorial
+url: https://docs.scrapy.org/en/latest/intro/tutorial.html
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The official introduction to crawl structure, extraction, item pipelines,
+  persistence, and responsible operation.
+why_zh: 爬虫结构、数据提取、item pipeline、持久化与负责任运行的官方入门。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: medium
+featured: false
+order: 4

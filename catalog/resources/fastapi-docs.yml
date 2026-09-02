@@ -1,0 +1,16 @@
+id: fastapi-docs
+path: web-apis
+title: FastAPI documentation
+url: https://fastapi.tiangolo.com/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: A direct route from typed Python functions to tested APIs with validation
+  and generated documentation.
+why_zh: 从带类型的 Python 函数出发，构建具备验证、测试和自动文档的 API。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: true
+order: 1

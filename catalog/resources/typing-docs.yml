@@ -1,0 +1,16 @@
+id: typing-docs
+path: foundations
+title: Python typing documentation
+url: https://typing.python.org/en/latest/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The canonical home for Python's type-system specification, guides, and typing
+  best practices.
+why_zh: Python 类型系统规范、指南与类型标注实践的权威入口。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 6

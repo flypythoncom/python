@@ -1,0 +1,16 @@
+id: python-tutorial
+path: foundations
+title: The Python Tutorial
+url: https://docs.python.org/3/tutorial/
+source_type: official-docs
+level: beginner
+language: en
+why_en: The primary introduction to Python syntax, data structures, modules, errors,
+  classes, and the standard library.
+why_zh: Python 官方入门教程，覆盖语法、数据结构、模块、异常、类与标准库。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: true
+order: 1

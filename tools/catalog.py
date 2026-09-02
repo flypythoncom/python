@@ -1,4 +1,4 @@
-"""Loading and validation helpers for ``_data/resources.yml``."""
+"""Loading and validation helpers for the FlyPython catalog directory."""
 
 from __future__ import annotations
 
@@ -32,6 +32,7 @@ RESOURCE_KEYS = {
     "requires_key",
     "risk",
     "featured",
+    "order",
 }
 SOURCE_TYPES = {"official-docs", "official-standard", "official-project"}
 LEVELS = {"beginner", "intermediate", "advanced", "all-levels"}
@@ -93,14 +94,89 @@ class ValidationIssue:
 
 
 def load_catalog(path: str | Path) -> dict[str, Any]:
+    """Load either a composed catalog directory or a single YAML mapping.
+
+    The public catalog uses three source layers under ``catalog/``:
+    ``catalog.yml`` for metadata, ``paths.yml`` for ordered paths, and one
+    file per reviewed resource under ``resources/``. Single-file loading is
+    retained for focused validation tests and custom tooling inputs.
+    """
+
     catalog_path = Path(path)
+    if catalog_path.is_dir():
+        metadata = _load_yaml(catalog_path / "catalog.yml")
+        paths = _load_yaml(catalog_path / "paths.yml")
+        resources_dir = catalog_path / "resources"
+
+        if not isinstance(metadata, dict):
+            metadata_path = catalog_path / "catalog.yml"
+            raise CatalogLoadError(
+                f"{metadata_path} must contain a YAML mapping"
+            )
+        if not isinstance(paths, list):
+            paths_path = catalog_path / "paths.yml"
+            raise CatalogLoadError(f"{paths_path} must contain a YAML list")
+        if not resources_dir.is_dir():
+            raise CatalogLoadError(f"missing resource directory: {resources_dir}")
+
+        resources: list[dict[str, Any]] = []
+        for resource_path in sorted(resources_dir.glob("*.yml")):
+            resource = _load_yaml(resource_path)
+            if not isinstance(resource, dict):
+                raise CatalogLoadError(f"{resource_path} must contain a YAML mapping")
+            resource_id = resource.get("id")
+            if resource_id != resource_path.stem:
+                raise CatalogLoadError(
+                    f"{resource_path}: resource id must match filename "
+                    f"{resource_path.stem!r}"
+                )
+            resources.append(resource)
+
+        path_orders: dict[str, int] = {}
+        for entry in paths:
+            if not isinstance(entry, dict):
+                continue
+            path_id = entry.get("id")
+            path_order = entry.get("order")
+            if (
+                isinstance(path_id, str)
+                and isinstance(path_order, int)
+                and not isinstance(path_order, bool)
+            ):
+                path_orders[path_id] = path_order
+
+        def resource_sort_key(resource: Mapping[str, Any]) -> tuple[int, int, str]:
+            path_id = resource.get("path")
+            resource_order = resource.get("order")
+            return (
+                path_orders.get(path_id, 10_000)
+                if isinstance(path_id, str)
+                else 10_000,
+                resource_order
+                if isinstance(resource_order, int)
+                and not isinstance(resource_order, bool)
+                else 10_000,
+                str(resource.get("id", "")),
+            )
+
+        resources.sort(key=resource_sort_key)
+        return {
+            "catalog": {**metadata, "paths": paths},
+            "resources": resources,
+        }
+
+    value = _load_yaml(catalog_path)
+    if not isinstance(value, dict):
+        raise CatalogLoadError(f"{catalog_path} must contain a YAML mapping")
+    return value
+
+
+def _load_yaml(catalog_path: Path) -> Any:
     try:
         with catalog_path.open("r", encoding="utf-8") as handle:
             value = yaml.load(handle, Loader=UniqueKeyLoader)
     except (OSError, yaml.YAMLError) as exc:
         raise CatalogLoadError(f"cannot load {catalog_path}: {exc}") from exc
-    if not isinstance(value, dict):
-        raise CatalogLoadError(f"{catalog_path} must contain a YAML mapping")
     return value
 
 
@@ -286,6 +362,9 @@ def validate_catalog(
     seen_ids: set[str] = set()
     seen_urls: dict[str, str] = {}
     resources_per_path = {path_id: 0 for path_id in EXPECTED_PATH_IDS}
+    resource_orders: dict[str, set[int]] = {
+        path_id: set() for path_id in EXPECTED_PATH_IDS
+    }
     for index, resource in enumerate(resources):
         location = f"$.resources[{index}]"
         if not isinstance(resource, dict):
@@ -321,6 +400,26 @@ def validate_catalog(
                 )
             if path_id in resources_per_path:
                 resources_per_path[path_id] += 1
+
+        order = resource.get("order")
+        if not isinstance(order, int) or isinstance(order, bool) or order < 1:
+            issues.append(
+                ValidationIssue(
+                    "invalid-order",
+                    f"{location}.order",
+                    "must be a positive integer",
+                )
+            )
+        elif isinstance(path_id, str) and path_id in resource_orders:
+            if order in resource_orders[path_id]:
+                issues.append(
+                    ValidationIssue(
+                        "duplicate-resource-order",
+                        f"{location}.order",
+                        f"duplicate order {order} in path {path_id!r}",
+                    )
+                )
+            resource_orders[path_id].add(order)
 
         url = resource.get("url")
         if isinstance(url, str) and url.strip():
@@ -422,6 +521,15 @@ def validate_catalog(
             issues.append(
                 ValidationIssue(
                     "empty-path", "$.resources", f"path {path_id!r} has no resources"
+                )
+            )
+        expected_orders = set(range(1, count + 1))
+        if resource_orders[path_id] != expected_orders:
+            issues.append(
+                ValidationIssue(
+                    "resource-order-parity",
+                    "$.resources",
+                    f"path {path_id!r} must use consecutive resource orders 1-{count}",
                 )
             )
     return issues

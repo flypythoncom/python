@@ -1,0 +1,16 @@
+id: httpx-docs
+path: web-apis
+title: HTTPX documentation
+url: https://www.python-httpx.org/
+source_type: official-project
+level: intermediate
+language: en
+why_en: The official reference for synchronous and asynchronous HTTP clients, timeouts,
+  streaming, and transport control.
+why_zh: 同步与异步 HTTP 客户端、超时、流式响应和传输控制的官方参考。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 5

@@ -20,7 +20,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--catalog", type=Path, default=ROOT_DIR / "_data" / "resources.yml"
+        "--catalog", type=Path, default=ROOT_DIR / "catalog"
     )
     parser.add_argument("--output", type=Path, help="optional JSON report path")
     parser.add_argument("--max-review-age-days", type=int, default=366)

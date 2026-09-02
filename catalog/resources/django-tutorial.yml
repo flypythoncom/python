@@ -1,0 +1,16 @@
+id: django-tutorial
+path: web-apis
+title: 'Django documentation: First steps'
+url: https://docs.djangoproject.com/en/stable/intro/tutorial01/
+source_type: official-docs
+level: beginner
+language: en
+why_en: The official path through Django projects, models, views, templates, forms,
+  tests, and reusable apps.
+why_zh: Django 官方入门路径，覆盖项目、模型、视图、模板、表单、测试和可复用应用。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 2

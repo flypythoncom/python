@@ -6,7 +6,7 @@ Describe the problem, the change, and the reader or maintainer outcome.
 
 - [ ] Catalog resource or classification
 - [ ] Bilingual editorial content
-- [ ] Site or build code
+- [ ] Catalog export or consumer contract
 - [ ] Tests, tooling, or workflow
 - [ ] Governance or documentation
 
@@ -14,7 +14,7 @@ Describe the problem, the change, and the reader or maintainer outcome.
 
 - Related issue:
 - Source or maintenance evidence:
-- User-visible pages affected:
+- Website consumer impact:
 - Intentionally out of scope:
 
 For catalog changes, explain the official source, review date, license or
@@ -27,8 +27,7 @@ List the actual results, not only the commands you intended to run.
 
 - [ ] `python -m pytest`
 - [ ] `python tools/validate_catalog.py`
-- [ ] `bundle exec jekyll build`
-- [ ] `bundle exec ruby tests/render_security_test.rb`
+- [ ] `python tools/export_catalog.py --check`
 - [ ] English and Chinese output remain consistent
 - [ ] No secrets, generated reports, local build output, or analytics IDs were committed
 

@@ -1,13 +1,3 @@
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Ruby
-.bundle/
-vendor/
-
 # OS
 .DS_Store
 .DS_Store?

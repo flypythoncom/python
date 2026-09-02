@@ -1,0 +1,16 @@
+id: flask-docs
+path: web-apis
+title: Flask documentation
+url: https://flask.palletsprojects.com/en/stable/
+source_type: official-docs
+level: beginner
+language: en
+why_en: The maintained reference and tutorial for Flask applications, requests, templates,
+  testing, and deployment.
+why_zh: Flask 官方参考与教程，覆盖应用、请求、模板、测试和部署。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 3

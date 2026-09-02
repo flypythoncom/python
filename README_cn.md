@@ -1,45 +1,71 @@
 # FlyPython Python 资源目录
 
-[![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/flypythoncom/python?style=flat-square&label=forks)](https://github.com/flypythoncom/python/forks)
-[![Catalog](https://img.shields.io/badge/catalog-reviewed-157878?style=flat-square)](https://python.flypython.com/zh/)
-
 [English](README.md) · [中文](README_cn.md)
 
-FlyPython 是 [FlyPython 学习站](https://flypython.com/)背后的社区公开资源目录。
-本仓库维护覆盖面更广、可公开审核的来源地图；主站负责编辑型学习路径和更精简的精选资源。
+这个仓库是 [flypython.com](https://flypython.com/) 展示 Python 资源时使用的、经过
+审核的数据源。它不是第二个网站，也不再包含网站渲染器、主题或部署配置。
 
-## 从这里开始
+## 这里维护什么
 
-- [查看实用 Python 学习路线](https://flypython.com/learn)
-- [浏览主站精选资源](https://flypython.com/resources)
-- [构建并测试无需 API Key 的 Python Agent 循环](https://flypython.com/learn/python-ai-agent-roadmap)
-- [浏览完整中文目录](https://python.flypython.com/zh/)
+- 官方文档、正式标准和项目一手来源的规范链接；
+- 经过人工审核的中英文收录理由；
+- 学习路径、难度、访问要求、审核日期与安全信息；
+- 确定性的校验、JSON 导出和安全链接审计工具；
+- 公开的贡献与策展规则。
 
-## 四条路径
+主站负责学习指南、任务型 Playbook、导航和视觉展示；本仓库负责覆盖面更广的目录数据
+及其可审查的维护流程。
 
-1. **Python 基础** — 语言、环境、依赖、类型与测试
-2. **Web 与 API** — 类型化服务、数据验证、HTTP 客户端与应用
-3. **自动化** — 文件、进程、浏览器、爬取与数据工作流
-4. **AI Agent** — 工具、结构化输出、状态、评测与安全边界
+## 仓库结构
 
-唯一的目录数据源是 [`_data/resources.yml`](_data/resources.yml)。英文页和中文页
-都读取同一份数据，不再在多个 Markdown 文件中复制完整资源清单。
-
-## 收录标准
-
-- 优先选择官方文档、正式标准与项目的一手来源。
-- 说明每条资源为什么值得使用，而不是堆放未经筛选的链接。
-- 记录审核日期、API Key 要求与需要关注的安全边界。
-- 如实标记实验性内容，不用流行度推断“生产可用”。
-
-提交新资源或修改分类前，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
-## 本地预览
-
-```bash
-bundle install
-bundle exec jekyll serve
+```text
+catalog/
+  catalog.yml        目录状态和审核日期
+  paths.yml          中英文学习路径定义
+  resources/         每项资源一个 YAML 文件
+schema/
+  catalog-v1.schema.json
+catalog.json         提供给网站使用的确定性公开导出
+tools/               校验、导出和链接审计工具
+tests/               目录与网络安全测试
+docs/                策展政策
 ```
 
-目录发布在 [python.flypython.com/zh/](https://python.flypython.com/zh/)。
+`catalog.json` 由 `catalog/` 生成，不能手工修改。消费方应从完整 commit SHA 读取导出、
+校验文件摘要，并在自己的锁文件中记录该版本；生产构建不能直接追随持续变化的
+`master`。
+
+固定版本地址示例：
+
+```text
+https://raw.githubusercontent.com/flypythoncom/python/<full-commit-sha>/catalog.json
+```
+
+导出包含主站可以直接使用的中英文路径说明、资源理由、级别、访问条件和风险字段。
+第一方教程和任务 Playbook 仍然只放在网站仓库。
+
+## 本地校验
+
+使用 `.python-version` 指定的 Python，并安装锁定的开发依赖：
+
+```bash
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-dev.lock.txt
+```
+
+修改目录源文件后重新生成导出并运行校验：
+
+```bash
+python tools/export_catalog.py
+python -m pytest
+python tools/validate_catalog.py
+python tools/export_catalog.py --check
+```
+
+网络链接检查不会在 Pull Request 中运行，而是由维护者通过定时或手动的
+**Catalog link audit** 工作流执行。
+
+提交资源或修改分类前，请先阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 和
+[策展政策](docs/CURATION_POLICY.md)。网站接入还应遵循
+[消费方契约](docs/CONSUMING.md)。

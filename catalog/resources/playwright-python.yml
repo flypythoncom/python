@@ -1,0 +1,16 @@
+id: playwright-python
+path: automation
+title: Playwright for Python
+url: https://playwright.dev/python/docs/intro
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The official Python guide to reliable browser automation, locators, assertions,
+  traces, and isolated contexts.
+why_zh: 可靠浏览器自动化、定位器、断言、追踪和隔离上下文的 Python 官方指南。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: medium
+featured: false
+order: 3

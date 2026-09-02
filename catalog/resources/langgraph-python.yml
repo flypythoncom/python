@@ -1,0 +1,16 @@
+id: langgraph-python
+path: ai-agents
+title: LangGraph overview
+url: https://docs.langchain.com/oss/python/langgraph/overview
+source_type: official-docs
+level: advanced
+language: en
+why_en: The official Python guide to stateful graph workflows, durable execution,
+  memory, interrupts, and human review.
+why_zh: 有状态图工作流、持久执行、记忆、中断与人工审核的 Python 官方指南。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: true
+risk: medium
+featured: false
+order: 4

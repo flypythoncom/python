@@ -1,0 +1,16 @@
+id: pydantic-docs
+path: web-apis
+title: Pydantic documentation
+url: https://pydantic.dev/docs/validation/latest/get-started/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The primary guide to validating untrusted data and expressing typed contracts
+  at Python system boundaries.
+why_zh: 在 Python 系统边界验证不可信数据、定义类型契约的官方指南。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 4

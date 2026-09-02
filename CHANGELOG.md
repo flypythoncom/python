@@ -1,39 +1,33 @@
 # Changelog
 
-This file records notable repository and catalog-process changes. The Git
-history remains the source for changes made before this changelog was added.
+This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
 ### Added
 
-- A single bilingual catalog source with 21 reviewed primary resources across
-  Python foundations, web and APIs, automation, and AI-agent paths.
-- Catalog schema validation and a safe external-link auditor with tests,
-  retry/backoff behavior, JSON reports, and SSRF/DNS-rebinding protection.
-- English and Chinese catalog pages generated from the same resource data,
-  plus a 1200x630 social preview image.
-- Contribution, conduct, security, and resource-curation policies.
-- Structured issue forms and a pull request review checklist.
-- Dependency update configuration and validation workflows.
-- Scheduled, manually dispatchable catalog-link auditing that does not run on
-  untrusted pull requests.
+- One source file per reviewed resource under `catalog/resources/`.
+- A deterministic, versioned `catalog.json` export for pinned website consumers.
+- A JSON Schema describing the public catalog v1 contract.
+- A pinned-revision and checksum contract for website consumers.
+- Export drift checks in tests and pull-request validation.
+- Positive, unique, consecutive ordering within each learning path.
+- Catalog validation and a safe external-link auditor with retry, report, and
+  SSRF/DNS-rebinding protection.
+- Contribution, conduct, security, issue, and resource-curation policies.
 
 ### Changed
 
-- Reframed the repository as the broad, community-maintained catalog behind
-  FlyPython while keeping the README files as short entry points.
-- Pinned the Python 3.12 and Ruby 3.3 build toolchains and their validation
-  dependencies for reproducible local and CI checks.
-
-### Fixed
-
-- Corrected repository links, dynamic resource counts, bilingual metadata,
-  canonical and hreflang output, robots rules, and duplicate heading/meta tags.
-- Escaped catalog-controlled HTML output, audited same-origin catalog links,
-  and made review-needed network results fail the scheduled audit.
+- Defined this repository as the canonical catalog-data and review layer behind
+  flypython.com, rather than a second public website.
+- Split catalog metadata, paths, and resources into independently reviewable
+  files while preserving the 21 existing human-reviewed resource records.
+- Required website consumers to pin a full repository commit and verify the
+  exported catalog checksum instead of following a moving branch.
+- Reduced the required local toolchain to Python 3.12 and locked Python
+  dependencies.
 
 ### Removed
 
-- Removed the legacy `README_cn` site route without adding a redirect, along
-  with unused feed, navigation, collection, theme, and inline-style config.
+- Removed Jekyll, Ruby, page templates, styles, scripts, social assets, CNAME,
+  robots configuration, and site-rendering tests.

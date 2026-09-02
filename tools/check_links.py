@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Safely check links declared in ``_data/resources.yml``."""
+"""Safely check links declared in the FlyPython catalog directory."""
 
 from __future__ import annotations
 
@@ -43,9 +43,9 @@ except ModuleNotFoundError:  # Direct ``python tools/check_links.py`` execution.
 
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
-DEFAULT_CATALOG = ROOT_DIR / "_data" / "resources.yml"
+DEFAULT_CATALOG = ROOT_DIR / "catalog"
 DEFAULT_OUTPUT = ROOT_DIR / "reports" / "link_check_results.json"
-DEFAULT_BASE_URL = "https://python.flypython.com/"
+DEFAULT_BASE_URL = "https://flypython.com/"
 REVIEW_STATUS_CODES = {403, 408, 425, 429}
 RETRY_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
 REDIRECT_STATUS_CODES = {301, 302, 303, 307, 308}

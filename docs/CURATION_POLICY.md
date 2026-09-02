@@ -9,7 +9,12 @@ resource proposals and catalog pull requests.
 FlyPython catalogs durable resources for Python learning and Python-based AI
 agent development. The catalog favors material that helps readers build skills
 or use a maintained tool safely. It is not a general link directory, product
-launch feed, or hosting location for unrelated applications.
+launch feed, website renderer, or hosting location for unrelated applications.
+
+This repository is the canonical data and review layer. The separate
+flypython.com repository owns the public website, learning guides, task
+playbooks, and visual presentation. Website consumers must use a pinned catalog
+commit rather than a moving branch.
 
 Current learning paths are:
 
@@ -35,8 +40,9 @@ unmaintained mirrors are excluded unless the policy is deliberately expanded.
 
 ## Required catalog fields
 
-`_data/resources.yml` is the canonical source. It contains a `catalog` object
-and a `resources` list.
+The `catalog/` directory is the canonical source. It contains catalog metadata,
+the path definitions, and one YAML file per resource. `catalog.json` is a
+deterministic generated export for consumers and must not be edited by hand.
 
 The `catalog` object records:
 
@@ -45,9 +51,9 @@ The `catalog` object records:
 - `paths`, where every path has `id`, `title_en`, `title_zh`, `summary_en`,
   `summary_zh`, and `order`
 
-Every resource records:
+Every resource file records:
 
-- Identity: `id`, `path`, `title`, `url`
+- Identity and ordering: `id`, `path`, `order`, `title`, `url`
 - Classification: `source_type`, `level`, `language`
 - Editorial rationale: `why_en`, `why_zh`
 - Review state: `reviewed_on`, `status`
@@ -67,8 +73,9 @@ Allowed classifications are:
 | `requires_key`, `featured` | Boolean |
 
 IDs must be stable, lowercase, and unique. A rename needs an explicit migration
-plan because external links or generated anchors may depend on the old ID.
-Review dates use ISO `YYYY-MM-DD` format.
+plan because website consumers and downstream data may depend on the old ID.
+The resource filename must match its ID. Orders must be positive, unique, and
+consecutive within each path. Review dates use ISO `YYYY-MM-DD` format.
 
 ## Acceptance criteria
 
@@ -92,8 +99,9 @@ assigned path. Do not copy marketing claims or large passages from the source.
 Do not use an LLM or web-search API to generate descriptions or classifications.
 A human reviewer remains responsible for each statement.
 
-English and Chinese views must come from the same catalog record. A translation
-should preserve the meaning and limits of the source, not add new claims.
+English and Chinese website views must come from the same exported catalog
+record. A translation should preserve the meaning and limits of the source, not
+add new claims.
 
 Self-promotion must be disclosed. Maintainers assess it under the same criteria
 as every other proposal.

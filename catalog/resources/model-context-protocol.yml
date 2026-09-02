@@ -1,0 +1,16 @@
+id: model-context-protocol
+path: ai-agents
+title: Model Context Protocol
+url: https://modelcontextprotocol.io/docs/getting-started/intro
+source_type: official-standard
+level: intermediate
+language: en
+why_en: The open protocol and reference documentation for connecting AI applications
+  to tools, data, and reusable context.
+why_zh: 连接 AI 应用、工具、数据与可复用上下文的开放协议和权威参考。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: medium
+featured: true
+order: 3

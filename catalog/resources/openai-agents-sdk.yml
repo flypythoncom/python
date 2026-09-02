@@ -1,0 +1,16 @@
+id: openai-agents-sdk
+path: ai-agents
+title: OpenAI Agents SDK
+url: https://openai.github.io/openai-agents-python/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The official Python toolkit for agents, tools, handoffs, guardrails, sessions,
+  tracing, and orchestration.
+why_zh: 面向 Agent、工具、handoff、guardrail、session、追踪与编排的官方 Python 工具包。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: true
+risk: medium
+featured: true
+order: 1

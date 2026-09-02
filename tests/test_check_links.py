@@ -323,9 +323,9 @@ def test_mode_selects_internal_external_or_all() -> None:
             },
         ]
     }
-    internal = select_links(data, mode="internal", base_url="https://python.flypython.com/")
-    external = select_links(data, mode="external", base_url="https://python.flypython.com/")
-    all_links = select_links(data, mode="all", base_url="https://python.flypython.com/")
+    internal = select_links(data, mode="internal", base_url="https://flypython.com/")
+    external = select_links(data, mode="external", base_url="https://flypython.com/")
+    all_links = select_links(data, mode="all", base_url="https://flypython.com/")
     assert [item.id for item in internal] == ["internal"]
     assert [item.id for item in external] == ["external"]
     assert len(all_links) == 2

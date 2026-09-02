@@ -1,0 +1,16 @@
+id: pytest-docs
+path: foundations
+title: pytest documentation
+url: https://docs.pytest.org/en/stable/
+source_type: official-project
+level: intermediate
+language: en
+why_en: The official guide to test discovery, assertions, fixtures, parametrization,
+  and maintainable test suites.
+why_zh: pytest 官方指南，覆盖测试发现、断言、fixture、参数化和可维护测试套件。
+reviewed_on: '2026-08-31'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 5
