@@ -1,6 +1,10 @@
 # FlyPython：用 Python 和 AI Coding 做出好产品
 
-[English](README.md) · [中文](README_cn.md)
+[![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
+[![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
+[![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)
+
+[English](README.md) · [中文](README_cn.md) · [🌐 官方在线门户](https://flypython.com)
 
 FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把代码变成用户可以依赖的
 产品。这里同时提供 AI Coding 方法、任务 Playbook、可运行示例、复用模板，以及 API、

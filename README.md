@@ -2,8 +2,9 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
 [![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
+[![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)
 
-[English](README.md) · [中文](README_cn.md)
+[English](README.md) · [中文](README_cn.md) · [🌐 Online Portal](https://flypython.com)
 
 FlyPython is a practical, bilingual repository for writing good Python and
 turning it into products people can rely on. It combines AI-coding methods,

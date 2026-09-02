@@ -1,0 +1,24 @@
+name: Dispatch Website Build
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    tags:
+      - "v*"
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Website Workflow
+        uses: peter-evans/repository-dispatch@v3
+        if: env.SYNC_TOKEN != ''
+        with:
+          token: ${{ secrets.WEBSITE_SYNC_TOKEN }}
+          repository: flypythoncom/flypython.com
+          event-type: python-repo-updated
+          client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
+        env:
+          SYNC_TOKEN: ${{ secrets.WEBSITE_SYNC_TOKEN }}
