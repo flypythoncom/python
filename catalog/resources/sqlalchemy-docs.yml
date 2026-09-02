@@ -1,0 +1,15 @@
+id: sqlalchemy-docs
+path: web-apis
+title: SQLAlchemy documentation
+url: https://docs.sqlalchemy.org/en/20/
+source_type: official-project
+level: intermediate
+language: en
+why_en: The definitive Python SQL toolkit and Object Relational Mapper, providing type-safe database access and migrations.
+why_zh: Python 权威的 SQL 工具包与对象关系映射器（ORM），提供类型安全的数据持久化与访问。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 6

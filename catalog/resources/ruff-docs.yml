@@ -1,0 +1,15 @@
+id: ruff-docs
+path: foundations
+title: Ruff documentation
+url: https://docs.astral.sh/ruff/
+source_type: official-project
+level: all-levels
+language: en
+why_en: An extremely fast Python linter and code formatter written in Rust, replacing Flake8, Black, isort, and more.
+why_zh: 极速的 Rust 驱动 Python 代码检查与格式化工具，统一替代 Flake8、Black 与 isort。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: low
+featured: true
+order: 7

@@ -19,6 +19,6 @@ def test_relative_markdown_links_resolve() -> None:
             if not path_text or "://" in path_text or path_text.startswith("mailto:"):
                 continue
             destination = (document.parent / path_text).resolve()
-            if not destination.exists() or ROOT not in destination.parents:
+            if not destination.exists() or (destination != ROOT and ROOT not in destination.parents):
                 missing.append(f"{document.relative_to(ROOT)} -> {target}")
     assert not missing, "broken relative Markdown links:\n" + "\n".join(missing)

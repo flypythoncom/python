@@ -1,0 +1,15 @@
+id: polars-docs
+path: automation
+title: Polars documentation
+url: https://docs.pola.rs/
+source_type: official-project
+level: intermediate
+language: en
+why_en: Lightning-fast DataFrame library built on Apache Arrow and Rust, optimized for efficient data pipelines and parallel processing.
+why_zh: 基于 Apache Arrow 和 Rust 构建的极速 DataFrame 库，专为并行计算与现代数据管道优化。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 6

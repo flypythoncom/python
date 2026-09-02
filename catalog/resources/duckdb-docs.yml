@@ -1,0 +1,15 @@
+id: duckdb-docs
+path: automation
+title: DuckDB Python API documentation
+url: https://duckdb.org/docs/api/python/overview
+source_type: official-project
+level: intermediate
+language: en
+why_en: Fast in-process analytical SQL engine for automated data transformation, Parquet querying, and embedded analytics.
+why_zh: 进程内高性能分析型 SQL 引擎，适用于自动化数据转换、Parquet 文件快速查询与嵌入式分析。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 7

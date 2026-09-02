@@ -1,0 +1,15 @@
+id: mypy-docs
+path: foundations
+title: Mypy documentation
+url: https://mypy.readthedocs.io/en/stable/
+source_type: official-project
+level: intermediate
+language: en
+why_en: The standard static type checker for Python to catch bugs and verify type contracts before running code.
+why_zh: Python 官方与社区主流的静态类型检查器，在运行前拦截类型错误并验证代码契约。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 8

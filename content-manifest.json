@@ -25,6 +25,98 @@
       ]
     },
     {
+      "id": "ai-coding-context-budget",
+      "type": "guide",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "guides/ai-coding/context-budget.md",
+          "title": "Context Budgeting and Bounded Tasks for Coding Agents",
+          "summary": "Maximize coding agent accuracy by controlling context size, writing explicit task contracts, and enforcing automated verification loops.",
+          "sha256": "c16c950ea2dbfdc92bd196f911ad339409d2f839beb67b15b8904a24d478c0d2"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "guides/ai-coding/context-budget_cn.md",
+          "title": "Coding Agent 上下文预算与精准任务设计",
+          "summary": "通过控制上下文体积、编写明确任务契约与建立自动化验证闭环，最大化 Agent 编码准确率。",
+          "sha256": "870e68b9b9acc84316a228302bd47953336756f3b7c88a084461c4bdca0e8ff5"
+        }
+      ]
+    },
+    {
+      "id": "example-async-fetcher",
+      "type": "example",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "examples/async-fetcher/README.md",
+          "title": "Async Batch Fetcher with Bounded Concurrency and Retries",
+          "summary": "Implement a resilient async task batcher with Semaphore concurrency control, exponential backoff, and error isolation.",
+          "sha256": "ba13c77cb8303fdf718f5fc87a9def3c913797d2e62d1f39360a3deafcc24a3d"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "examples/async-fetcher/README_cn.md",
+          "title": "带受控并发与重试的异步抓取器",
+          "summary": "使用 Semaphore 信号量控制并发、指数退避重试与错误隔离，实现韧性异步任务批处理。",
+          "sha256": "13ecde2237d10509cf6c12b8ca1804a12fa89557eef3b88fc317b7fdb2435c76"
+        }
+      ]
+    },
+    {
+      "id": "example-mcp-server",
+      "type": "example",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "examples/mcp-server/README.md",
+          "title": "Model Context Protocol (MCP) Tool Server",
+          "summary": "Build a safe, compliant JSON-RPC 2.0 MCP tool server with parameter validation and structured error boundaries.",
+          "sha256": "12cbb64484ad5ccccb05d50566ef7c3c92eb9043641bf299b94b5247adaf12b2"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "examples/mcp-server/README_cn.md",
+          "title": "Model Context Protocol (MCP) 工具服务",
+          "summary": "构建规范安全的 JSON-RPC 2.0 MCP 工具服务，实现参数校验与结构化错误边界。",
+          "sha256": "ec1a70a7cb3304df5a1dd69412bf892f81dace748a7a3f56a811d3146c45b19f"
+        }
+      ]
+    },
+    {
+      "id": "example-pydantic-validation",
+      "type": "example",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "examples/pydantic-validation/README.md",
+          "title": "Validate Untrusted Boundary Payloads",
+          "summary": "Parse, sanitize, and validate messy external payloads with field normalization and structured error contracts.",
+          "sha256": "8afecd11555872f344a09ae3d62ce12dae3247eab733ed51345f3a25206845ee"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "examples/pydantic-validation/README_cn.md",
+          "title": "验证不可信边界请求体",
+          "summary": "使用字段规范化与结构化错误契约，清洗并验证混乱的外部数据载荷。",
+          "sha256": "75d9d1c4ff41306b8448a219cbb0c882d57cb56f7b0a52ef4341d567f093685d"
+        }
+      ]
+    },
+    {
       "id": "fix-a-python-bug",
       "type": "playbook",
       "content_version": 1,
@@ -67,6 +159,29 @@
           "title": "接入外部 API",
           "summary": "用类型边界封装第三方 API，并安全处理凭据、超时、重试和确定性测试。",
           "sha256": "bf6466c0f044221392ed9d74091fb60363dbb6fc5a3eb6e875d724d0f30e4d4c"
+        }
+      ]
+    },
+    {
+      "id": "manage-database-migrations",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/manage-database-migrations/README.md",
+          "title": "Manage Database Schema Migrations",
+          "summary": "Plan, execute, and verify reversible database migrations with zero-downtime compatibility and rollback safety.",
+          "sha256": "efb8820374e6369565e1d376e81f5c4b0d6382259faf13a76277d1db3bca1da1"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/manage-database-migrations/README_cn.md",
+          "title": "管理数据库架构迁移",
+          "summary": "规划、执行并验证具备零停机兼容性与回滚安全性的可逆数据库迁移。",
+          "sha256": "f9bc0131fcadc6f3a07ffd5df2c5adc13eb291845599d46dcd0ddacf5fdaec68"
         }
       ]
     },
@@ -117,6 +232,52 @@
       ]
     },
     {
+      "id": "python-async-patterns",
+      "type": "guide",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "guides/python-engineering/async-patterns.md",
+          "title": "Reliable Async Python Patterns and Pitfalls",
+          "summary": "Build resilient concurrent Python applications by avoiding common async antipatterns and managing task lifecycles.",
+          "sha256": "f3f3c8980e0022b0349ddd7f90732bc36e7cd702d4662f77fb85351e34841450"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "guides/python-engineering/async-patterns_cn.md",
+          "title": "异步 Python 可靠模式与避坑指南",
+          "summary": "通过避免常见异步反模式与规范管理任务生命周期，构建高韧性的并发 Python 应用。",
+          "sha256": "f292b703593c66c408467cf5aa3c230ed37e0d58151c41505c057642a900d671"
+        }
+      ]
+    },
+    {
+      "id": "python-modern-typing",
+      "type": "guide",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "guides/python-engineering/modern-typing.md",
+          "title": "Modern Python Typing in Practice",
+          "summary": "Use explicit Python types as machine-checkable contracts for reliable AI-assisted engineering.",
+          "sha256": "ae7c6b003704066069ba32d929ee9a6a1682898681200d5da1713987947aed8a"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "guides/python-engineering/modern-typing_cn.md",
+          "title": "现代 Python 类型系统实战",
+          "summary": "将明确的 Python 类型作为机器可读的契约，指导可靠的 AI 辅助编程与工程交付。",
+          "sha256": "2f9912b1479c4594910e8bfae15783fe7f4a164ee9c414a8429708bb201cdd8f"
+        }
+      ]
+    },
+    {
       "id": "python-product-quality",
       "type": "guide",
       "content_version": 1,
@@ -136,6 +297,29 @@
           "title": "构建能够持续修改的 Python 产品",
           "summary": "从有用脚本走向可运行、可维护 Python 产品的一套实用质量模型。",
           "sha256": "d45aafe9d51a0e21e2af5f84857efc43cf9987f86ebe6b5b0313152914deced7"
+        }
+      ]
+    },
+    {
+      "id": "setup-structured-logging",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/setup-structured-logging/README.md",
+          "title": "Set Up Production Structured Logging",
+          "summary": "Configure structured JSON logging with context propagation, sensitive data redaction, and environment isolation.",
+          "sha256": "192b0c083b34c5656c611a9db5da09af682bf1bb9e79a4d2ee7c049681ae078c"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/setup-structured-logging/README_cn.md",
+          "title": "搭建生产级结构化日志",
+          "summary": "配置具备上下文贯穿、敏感数据脱敏与环境隔离的 JSON 结构化日志体系。",
+          "sha256": "53291eb05225349ddb6705673bdafd233e2e113df67755d5edac662a858a3926"
         }
       ]
     },
@@ -182,6 +366,29 @@
           "title": "升级 Python 依赖",
           "summary": "在边界明确的修改中，用锁文件、兼容性、安全和运行证据完成依赖升级。",
           "sha256": "48e6c7ed41e2d51ac087d801b189616cc6f27e14db3f4e1b9498f7a4d4f9e2da"
+        }
+      ]
+    },
+    {
+      "id": "write-llm-evals",
+      "type": "playbook",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "playbooks/write-llm-evals/README.md",
+          "title": "Write Deterministic Evals for LLMs and Agents",
+          "summary": "Build regression test suites for LLM prompt changes and tool-calling agents with golden datasets and schema assertions.",
+          "sha256": "1d047d98d304b05696daf0bd437509eb6090d52907d6579fc72144c255f02b64"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "playbooks/write-llm-evals/README_cn.md",
+          "title": "为大模型与 Agent 编写确定性评测",
+          "summary": "结合黄金测试集与 Schema 断言，为 Prompt 调整与工具调用 Agent 构建防劣化回归测试套件。",
+          "sha256": "a46889efd6019759cdb839470d222e9b94d4aa9ac4f9e3f80bcc8d096db77b28"
         }
       ]
     }

@@ -1,0 +1,15 @@
+id: anthropic-mcp-docs
+path: ai-agents
+title: Model Context Protocol Python SDK
+url: https://github.com/modelcontextprotocol/python-sdk
+source_type: official-project
+level: intermediate
+language: en
+why_en: Official Python implementation of the Model Context Protocol for building MCP servers and clients.
+why_zh: Model Context Protocol 官方 Python SDK，用于快速构建和集成标准的 MCP 工具与服务。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: medium
+featured: false
+order: 7

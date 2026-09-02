@@ -1,0 +1,15 @@
+id: instructor-docs
+path: ai-agents
+title: Instructor documentation
+url: https://python.useinstructor.com/
+source_type: official-project
+level: intermediate
+language: en
+why_en: Structured outputs and validation for LLMs powered by Pydantic, enabling predictable tool calling and schema enforcement.
+why_zh: 基于 Pydantic 的大模型结构化输出与严格验证框架，确保工具调用与数据提取的确定性。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: true
+risk: medium
+featured: false
+order: 6

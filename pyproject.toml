@@ -1,3 +1,41 @@
+[project]
+name = "flypython"
+version = "0.1.0"
+description = "Community-maintained source for building reliable Python products in the AI-coding era."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "PyYAML>=6.0.2",
+    "requests>=2.32.3",
+    "urllib3>=2.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.9.0",
+    "mypy>=1.14.0",
+    "types-PyYAML>=6.0.12.20241230",
+    "types-requests>=2.32.0.20241016",
+]
+
 [tool.pytest.ini_options]
 addopts = "-q"
 testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = false
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

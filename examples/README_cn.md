@@ -1,9 +1,11 @@
 # 可运行示例
 
-这里的示例刻意保持很小。每个示例都有任务契约、有问题的 starter、完成后的 solution 和
-验证器，帮助你练习 AI Coding 工作循环，而不是直接相信生成结果。
+这些示例规模都很小。每一个都包含任务契约、带有缺陷的 starter、完整的 solution 以及
+自动化验证脚本，让你可以在不盲目信任生成的代码的前提下练习 AI-coding 循环。
 
-- [Product slug 回归问题](product-slug/README_cn.md)：复现文本边界 Bug，让 agent 完成
-  最小修复并验证结果。只用标准库，约三分钟。
+- [商品 Slug 边界回归](product-slug/README_cn.md)：复现文本边界 Bug，要求 Agent 给出最小修复，并验证方案。仅依赖标准库，约需 3 分钟。
+- [不可信数据清洗校验](pydantic-validation/README_cn.md)：处理驼峰与下划线混杂入参、带符号金额清洗与结构化错误响应。
+- [MCP 工具服务](mcp-server/README_cn.md)：构建符合规范的 JSON-RPC 2.0 Model Context Protocol 服务端，包含参数模式校验与错误隔离。
+- [受控并发异步抓取器](async-fetcher/README_cn.md)：使用 Semaphore 限制最大并发，对瞬时网络故障进行指数退避重试并聚合结构化结果。
 
 [English index](README.md)

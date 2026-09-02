@@ -1,0 +1,15 @@
+id: alembic-docs
+path: web-apis
+title: Alembic documentation
+url: https://alembic.sqlalchemy.org/en/latest/
+source_type: official-project
+level: intermediate
+language: en
+why_en: Database migration tool for SQLAlchemy, providing transactional schema changes and rollback support.
+why_zh: 基于 SQLAlchemy 的数据库迁移事实标准工具，提供事务性架构演进与版本回滚支持。
+reviewed_on: '2026-09-02'
+status: active
+requires_key: false
+risk: medium
+featured: false
+order: 7
