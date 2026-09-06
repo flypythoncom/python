@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 import asyncio
-from typing import Any, Awaitable, Callable
+from collections.abc import Awaitable, Callable
+from typing import Any
 
 
 async def async_batch_fetch(
@@ -17,7 +18,7 @@ async def async_batch_fetch(
     responses = await asyncio.gather(*tasks)
 
     results = []
-    for item, resp in zip(items, responses):
+    for item, resp in zip(items, responses, strict=False):
         results.append({
             "item": item,
             "success": resp.get("status_code") == 200,

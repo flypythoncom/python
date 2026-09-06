@@ -5,8 +5,9 @@ from pathlib import Path
 from typing import Any
 
 import yaml
+
 from tools.catalog import load_catalog
-from tools.content_manifest import CONTENT_GLOBS, build_manifest
+from tools.content_manifest import build_manifest
 
 ROOT = Path(__file__).resolve().parents[1]
 

@@ -6,9 +6,10 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from collections.abc import Mapping
 from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any
 
 try:
     from tools.catalog import CatalogLoadError, load_catalog, validate_catalog

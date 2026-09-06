@@ -6,9 +6,10 @@ from __future__ import annotations
 import argparse
 import html
 import sys
+from collections.abc import Mapping, Sequence
 from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any
 from urllib.parse import quote
 
 try:

@@ -347,6 +347,29 @@
       ]
     },
     {
+      "id": "structured-pipeline-example",
+      "type": "example",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-02",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "examples/structured-pipeline/README.md",
+          "title": "Resilient batch data pipeline",
+          "summary": "Build an isolated, bounded data batch processing pipeline with error recovery using the standard library.",
+          "sha256": "366cb8a04f17b1f5f80d49889cc4268b7a941e31d789f784b0c5f0b54eb158dd"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "examples/structured-pipeline/README_cn.md",
+          "title": "鲁棒批处理数据流水线",
+          "summary": "使用标准库实现具备错误隔离、类型校验与批处理统计的鲁棒数据流水线。",
+          "sha256": "21b24d351993b947cde9a36c147a4111690204de858cb07f25436d57853f3dd8"
+        }
+      ]
+    },
+    {
       "id": "upgrade-python-dependencies",
       "type": "playbook",
       "content_version": 1,

@@ -8,5 +8,6 @@ loop without trusting generated code on sight.
 - [Untrusted payload validation](pydantic-validation/README.md): handle messy camelCase and snake_case inputs, dirty amount strings, and structured error responses.
 - [MCP tool server](mcp-server/README.md): build a standard JSON-RPC 2.0 Model Context Protocol tool server with schema validation and isolated runtime errors.
 - [Async batch fetcher](async-fetcher/README.md): control concurrency with Semaphore, back off and retry transient HTTP failures, and collect structured results.
+- [Resilient batch pipeline](structured-pipeline/README.md): process semi-structured data safely with batch error isolation and field validation using the standard library.
 
 [中文索引](README_cn.md)

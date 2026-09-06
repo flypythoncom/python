@@ -11,12 +11,13 @@ import socket
 import sys
 import threading
 import time
+from collections.abc import Callable, Iterable, Mapping
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict, dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from typing import Any, Callable, Iterable, Mapping, Protocol
+from typing import Any, Protocol
 from urllib.parse import urljoin, urlsplit
 
 import requests
@@ -155,8 +156,8 @@ def _retry_delay(response: Any, attempt: int, backoff_factor: float) -> float | 
             try:
                 retry_at = parsedate_to_datetime(raw_retry_after)
                 if retry_at.tzinfo is None:
-                    retry_at = retry_at.replace(tzinfo=timezone.utc)
-                retry_after = (retry_at - datetime.now(timezone.utc)).total_seconds()
+                    retry_at = retry_at.replace(tzinfo=UTC)
+                retry_after = (retry_at - datetime.now(UTC)).total_seconds()
             except (TypeError, ValueError, OverflowError):
                 retry_after = None
         if retry_after is not None:
@@ -205,7 +206,7 @@ class SafeTargetGuard:
             except OSError as exc:
                 raise requests.ConnectionError(f"DNS lookup failed for {host}: {exc}") from exc
             if not raw_addresses:
-                raise requests.ConnectionError(f"DNS lookup returned no addresses for {host}")
+                raise requests.ConnectionError(f"DNS lookup returned no addresses for {host}") from None
         else:
             raw_addresses = (str(literal),)
 
@@ -619,7 +620,7 @@ def build_report(
     counts["total"] = len(results)
     return {
         "schema_version": 1,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "generated_at": datetime.now(UTC).isoformat(),
         "catalog": str(catalog),
         "mode": mode,
         "counts": counts,

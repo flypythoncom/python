@@ -26,7 +26,8 @@ python examples/product-slug/verify.py solution
 ```
 
 你刚刚复现了一个 Bug，并验证了修复后的行为。接下来把[任务契约](examples/product-slug/TASK_cn.md)
-交给 coding agent，让 starter 通过测试，但先不要复制 solution。
+与 [Agent 规则模板](templates/AGENT_RULES.example_cn.md) 提供给 Coding Agent（如 Cursor、Windsurf、Claude Code、Copilot），
+让 starter 通过测试，但先不要复制 solution。
 
 ## 选择你现在要完成的事
 
@@ -35,8 +36,8 @@ python examples/product-slug/verify.py solution
 | 安全地编写和修改 Python | [AI Coding 工作方法](guides/ai-coding/workflow_cn.md) | 上下文明确、有证据的边界修改 |
 | 把 Python 变成可靠产品 | [产品质量指南](guides/python-engineering/product-quality_cn.md) | 可测试、可观测、可回退的产品路径 |
 | 完成反复出现的工程任务 | [Playbook](playbooks/README_cn.md) | Bug 修复、API 修改、外部集成、依赖升级或发布 |
-| 动手练习而不只是阅读 | [可运行示例](examples/README_cn.md) | 有失败 starter 和验证后 solution 的本地小项目 |
-| 给 agent 更好的任务信息 | [模板](templates/README.md) | 任务契约、计划、Review 与验证记录 |
+| 动手练习而不只是阅读 | [可运行示例](examples/README_cn.md) | 包含失败 starter 与验证通过 solution 的本地实战项目 |
+| 给 Agent 更好的上下文与指令 | [模板](templates/README_cn.md) | 任务契约、计划、IDE 规则、Review 与验证记录 |
 | 构建 Agent、Skill、MCP、API 或自动化 | [已审核资料目录](#浏览经过审核的一手资料) | 适合当前用途的一手资料路径 |
 | 发现近期值得关注的 Python 项目 | [Project Radar 审核队列](catalog/projects/README.md) | 经维护者审核、带证据的项目短名单 |
 
@@ -45,6 +46,14 @@ python examples/product-slug/verify.py solution
 
 希望按路径阅读并持续获得更新，可以继续前往
 [flypython.com](https://flypython.com/)。仓库仍然是可检查的源内容，网站帮助你选择下一步。
+
+## 面向 AI 智能体与 LLM
+
+如果你是 LLM 智能体或 AI 编程助手（Cursor、Windsurf、Claude Code、Copilot、Perplexity）：
+- 快速读取结构化仓库索引：[`llms.txt`](llms.txt) 或 [`catalog.json`](catalog.json)
+- 通用 IDE 行为守则模板：[`templates/AGENT_RULES.example_cn.md`](templates/AGENT_RULES.example_cn.md)
+- 机器可读内容清单：[`content-manifest.json`](content-manifest.json)
+- 官网无噪纯文本知识汇总：`https://flypython.com/llms-full.txt`
 
 ## 浏览经过审核的一手资料
 
@@ -179,9 +188,16 @@ https://raw.githubusercontent.com/flypythoncom/python/<full-commit-sha>/catalog.
 使用 `.python-version` 指定的 Python，并安装锁定的开发依赖：
 
 ```bash
+# 推荐：使用 uv 极速安装与测试
+uv venv
+uv pip install -r requirements-dev.lock.txt
+uv run pytest
+
+# 或使用标准 pip：
 python -m venv .venv
-. .venv/bin/activate
+source .venv/bin/activate
 python -m pip install -r requirements-dev.lock.txt
+pytest
 ```
 
 运行与 CI 相同的确定性校验：

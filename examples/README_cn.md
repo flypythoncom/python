@@ -7,5 +7,6 @@
 - [不可信数据清洗校验](pydantic-validation/README_cn.md)：处理驼峰与下划线混杂入参、带符号金额清洗与结构化错误响应。
 - [MCP 工具服务](mcp-server/README_cn.md)：构建符合规范的 JSON-RPC 2.0 Model Context Protocol 服务端，包含参数模式校验与错误隔离。
 - [受控并发异步抓取器](async-fetcher/README_cn.md)：使用 Semaphore 限制最大并发，对瞬时网络故障进行指数退避重试并聚合结构化结果。
+- [鲁棒批处理数据流水线](structured-pipeline/README_cn.md)：使用标准库实现具备错误隔离、字段校验与统计汇总的安全批处理流水线。
 
 [English index](README.md)

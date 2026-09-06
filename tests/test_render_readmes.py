@@ -14,7 +14,6 @@ from tools.render_readmes import (
     run,
 )
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 

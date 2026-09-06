@@ -6,8 +6,8 @@ from pathlib import Path
 
 import pytest
 import requests
-import tools.check_links as check_links
 
+import tools.check_links as check_links
 from tools.check_links import (
     CatalogLink,
     LinkChecker,
@@ -22,7 +22,6 @@ from tools.check_links import (
     exit_code_for_report,
     select_links,
 )
-
 
 PUBLIC_IP = "93.184.216.34"
 

@@ -8,7 +8,11 @@ import sys
 from pathlib import Path
 
 try:
-    from tools.content_manifest import ContentManifestError, build_manifest, dump_manifest
+    from tools.content_manifest import (
+        ContentManifestError,
+        build_manifest,
+        dump_manifest,
+    )
 except ModuleNotFoundError:
     from content_manifest import ContentManifestError, build_manifest, dump_manifest
 

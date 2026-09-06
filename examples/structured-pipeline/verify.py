@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the pydantic-validation contract against the starter or solution."""
+"""Run the structured-pipeline contract against starter or solution."""
 
 from __future__ import annotations
 
@@ -42,14 +42,14 @@ def main() -> int:
             return 1
         output = (result.stdout or "") + (result.stderr or "")
         expected_failures = (
-            "test_handles_camel_case_and_dirty_amount",
-            "test_rejects_missing_fields_without_crashing",
+            "test_invalid_batch_size_raises",
+            "test_isolates_and_records_malformed_records",
         )
         if not any(failure in output for failure in expected_failures):
             print("Starter failed for an unexpected reason:", file=sys.stderr)
             print(output, file=sys.stderr)
             return 1
-        print("Expected boundary regression reproduced: unhandled keys and schema errors fail.")
+        print("Expected batch pipeline regression reproduced: unhandled malformed items and invalid batch size fail.")
         return 0
     return result.returncode
 

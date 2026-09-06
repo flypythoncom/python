@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import unittest
+
 from mcp_server import MCPServer
 
 

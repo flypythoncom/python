@@ -7,7 +7,6 @@ import yaml
 
 from tools.catalog import load_catalog
 
-
 ROOT = Path(__file__).resolve().parents[1]
 GUIDES = {
     "en-US": ROOT / "guides" / "ai-coding" / "workflow.md",

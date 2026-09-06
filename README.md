@@ -28,8 +28,8 @@ python examples/product-slug/verify.py solution
 ```
 
 You just reproduced a bug and verified its fixed behavior. Now give the
-[task contract](examples/product-slug/TASK.md) to a coding agent and make the
-starter pass without copying the solution.
+[task contract](examples/product-slug/TASK.md) and [agent rules](templates/AGENT_RULES.example.md)
+to a coding agent (Cursor, Windsurf, Claude Code, Copilot) and make the starter pass without copying the solution.
 
 ## Choose what you need to accomplish
 
@@ -38,8 +38,8 @@ starter pass without copying the solution.
 | Write and change Python safely | [AI Coding workflow](guides/ai-coding/workflow.md) | A bounded change with explicit context and evidence |
 | Turn Python into a reliable product | [Product quality guide](guides/python-engineering/product-quality.md) | A tested, observable, reversible product path |
 | Finish a recurring engineering task | [Playbooks](playbooks/README.md) | A bug fix, API change, integration, dependency upgrade, or release |
-| Practice instead of only reading | [Runnable examples](examples/README.md) | A small local project with a failing starter and verified solution |
-| Give an agent better instructions | [Templates](templates/README.md) | A task contract, plan, review, and verification record |
+| Practice instead of only reading | [Runnable examples](examples/README.md) | Local testable projects with failing starters and verified solutions |
+| Give an agent better instructions | [Templates](templates/README.md) | Task contracts, plans, reviews, IDE rules, and verification records |
 | Build agents, Skills, MCP, APIs, or automation | [Reviewed source catalog](#browse-the-reviewed-source-catalog) | A primary-source path selected for your use case |
 | Find current Python projects | [Project Radar review queue](catalog/projects/README.md) | An evidence-backed shortlist after maintainer review |
 
@@ -51,6 +51,14 @@ engineering judgment.
 Prefer a guided reading path and ongoing updates? Continue on
 [flypython.com](https://flypython.com/). The repository remains the inspectable
 source; the website helps you choose the next useful step.
+
+## For AI Agents and LLMs
+
+If you are an LLM agent or coding assistant (Cursor, Windsurf, Claude Code, Copilot, Perplexity):
+- Ingest repository index: [`llms.txt`](llms.txt) or [`catalog.json`](catalog.json)
+- Universal IDE rules template: [`templates/AGENT_RULES.example.md`](templates/AGENT_RULES.example.md)
+- Machine-readable manifest: [`content-manifest.json`](content-manifest.json)
+- Official web knowledge dump: `https://flypython.com/llms-full.txt`
 
 ## Browse the reviewed source catalog
 
@@ -190,9 +198,16 @@ Use the Python version declared in `.python-version`, then install the locked
 development dependencies:
 
 ```bash
+# Fast setup using uv (recommended):
+uv venv
+uv pip install -r requirements-dev.lock.txt
+uv run pytest
+
+# Or using standard pip:
 python -m venv .venv
-. .venv/bin/activate
+source .venv/bin/activate
 python -m pip install -r requirements-dev.lock.txt
+pytest
 ```
 
 Run the deterministic checks:

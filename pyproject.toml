@@ -14,6 +14,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=8.3.0",
+    "jsonschema>=4.20.0",
     "ruff>=0.9.0",
     "mypy>=1.14.0",
     "types-PyYAML>=6.0.12.20241230",

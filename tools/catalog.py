@@ -3,16 +3,16 @@
 from __future__ import annotations
 
 import re
+from collections.abc import Mapping, Sequence
 from dataclasses import dataclass
 from datetime import date, datetime
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any
 from urllib.parse import urlsplit, urlunsplit
 
 import yaml
 from yaml.constructor import ConstructorError
 from yaml.resolver import BaseResolver
-
 
 EXPECTED_PATH_IDS = {"foundations", "web-apis", "automation", "ai-agents"}
 CATALOG_KEYS = {"reviewed_on", "status", "paths"}

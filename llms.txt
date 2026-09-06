@@ -1,0 +1,36 @@
+# FlyPython Repository Index for LLMs and AI Agents
+
+> FlyPython provides production-tested Python engineering playbooks, verifiable test-driven starter examples, task contracts, and agent IDE rules.
+
+## Quick API and Automation Commands
+
+- Run full test suite with uv: `uv run pytest`
+- Verify runnable examples: `python tools/verify_examples.py`
+- Validate and inspect resource catalog: `python tools/validate_catalog.py`
+- Structured Content Manifest: `content-manifest.json`
+- Full curated catalog data: `catalog.json`
+
+## Machine-Readable Directories
+
+- `catalog/resources/`: YAML files representing verified libraries, tools, and platforms.
+- `examples/`: Reproducible test projects with failing starters and verified solutions:
+  - `examples/product-slug/`: String normalization edge cases and regex safety.
+  - `examples/pydantic-validation/`: Model boundaries and custom validators.
+  - `examples/mcp-server/`: JSON-RPC 2.0 Model Context Protocol tool server with schema validation.
+  - `examples/async-fetcher/`: Async concurrency control with Semaphore and backoff retry.
+  - `examples/structured-pipeline/`: Batch data pipeline with error isolation and schema checking.
+- `templates/`:
+  - `templates/AGENT_RULES.example.md`: Universal rule set for Cursor (.cursorrules), Windsurf, and Copilot.
+  - `templates/AGENT_RULES.example_cn.md`: Universal rule set in Chinese.
+  - `templates/AGENTS.example.md`: Repository instruction policy for coding agents.
+  - `templates/AGENTS.example_cn.md`: Repository instruction policy in Chinese.
+  - `templates/TASK_CONTRACT.example.md`: Scoped specification template for coding agents.
+  - `templates/TASK_PLAN.example.md`: Implementation plan template.
+  - `templates/TASK_REVIEW.example.md`: Code change review template.
+  - `templates/VERIFICATION_RECORD.example.md`: Evidence record for reproducible tests.
+
+## Official Portal
+
+- Official Website: https://flypython.com
+- Website LLMs Index: https://flypython.com/llms.txt
+- Complete Text Knowledge Dump: https://flypython.com/llms-full.txt

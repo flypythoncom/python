@@ -5,7 +5,6 @@ from pathlib import Path
 
 from tools.export_catalog import build_export, render_export, run
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 

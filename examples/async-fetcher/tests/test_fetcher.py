@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 import unittest
+
 from fetcher import async_batch_fetch
 
 

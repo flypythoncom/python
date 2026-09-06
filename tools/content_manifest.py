@@ -9,7 +9,6 @@ from typing import Any
 
 import yaml
 
-
 CONTENT_GLOBS = ("guides/**/*.md", "playbooks/**/*.md", "examples/**/*.md")
 REQUIRED = {
     "id",

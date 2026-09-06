@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import pytest
+
 from tools.verify_examples import discover_example_verifiers
 
 ROOT = Path(__file__).resolve().parents[1]

@@ -7,7 +7,6 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 from tools.content_manifest import build_manifest
 
-
 ROOT = Path(__file__).resolve().parents[1]
 
 
