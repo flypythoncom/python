@@ -1,4 +1,8 @@
-"""Naive MCP server implementation that crashes on missing tools and lacks schema validation."""
+"""Naive MCP server implementation that crashes on missing tools and lacks schema validation.
+
+Also ignores the stateless 2026-07-28 specification: it has no input_required
+flow, so tools that need client input cannot finish safely.
+"""
 
 from __future__ import annotations
 

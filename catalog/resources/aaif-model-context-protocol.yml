@@ -1,0 +1,15 @@
+id: aaif-model-context-protocol
+path: ai-agents
+title: MCP under the Agentic AI Foundation
+url: https://aaif.io/projects/model-context-protocol
+source_type: official-project
+level: intermediate
+language: en
+why_en: The Agentic AI Foundation project page for MCP, the neutral governance home for specification development and roadmaps.
+why_zh: Agentic AI Foundation 的 MCP 项目主页，是规范开发与路线图的中立治理入口。
+reviewed_on: '2026-09-06'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 11

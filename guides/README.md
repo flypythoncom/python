@@ -8,6 +8,7 @@ with the outcome you need:
 - [Build a Python product that can be changed safely](python-engineering/product-quality.md): turn a script into a product with contracts, boundaries, observability, and a release path.
 - [Modern Python typing in practice](python-engineering/modern-typing.md): use Protocol, TypedDict, generics, and static type checking as machine-enforced contracts.
 - [Reliable async Python patterns](python-engineering/async-patterns.md): avoid event loop blocking, leverage TaskGroup, and manage concurrency with Semaphore.
+- [Migrate a Python MCP server to 2026-07-28](mcp/migrate-2026-07-28.md): remove the initialize handshake, adopt the input_required round-trip, and drop deprecated features.
 
 For task-sized instructions, use the [playbooks](../playbooks/README.md). For
 code you can run immediately, use the [examples](../examples/README.md).

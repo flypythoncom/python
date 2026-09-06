@@ -1,0 +1,15 @@
+id: mcp-2026-07-28-release-candidate
+path: ai-agents
+title: MCP 2026-07-28 release candidate overview
+url: https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The official release-candidate post that enumerates the 2026-07-28 breaking changes and the migration window for SDK maintainers.
+why_zh: 官方 RC 发布说明，逐项列出 2026-07-28 的破坏性变更以及留给 SDK 维护者的迁移窗口。
+reviewed_on: '2026-09-06'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 9

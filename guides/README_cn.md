@@ -7,6 +7,7 @@
 - [把 Python 变成可以安全修改的产品](python-engineering/product-quality_cn.md)：用契约、边界、可观测性和发布路径把脚本变成可靠产品。
 - [现代 Python 类型系统实战](python-engineering/modern-typing_cn.md)：使用 Protocol、TypedDict、泛型与静态检查构建机器可验证契约。
 - [异步 Python 可靠模式与避坑指南](python-engineering/async-patterns_cn.md)：杜绝阻塞事件循环，掌握 TaskGroup 与 Semaphore 并发控制。
+- [将 Python MCP 服务端迁移到 2026-07-28 规范](mcp/migrate-2026-07-28_cn.md)：移除 initialize 握手、采用 input_required 多轮交互并放弃废弃特性。
 
 需要可操作的任务步骤，请查看 [Playbook](../playbooks/README_cn.md)。需要可立即运行的代码，请查看 [可运行示例](../examples/README_cn.md)。
 

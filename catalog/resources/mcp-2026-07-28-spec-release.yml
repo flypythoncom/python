@@ -1,0 +1,15 @@
+id: mcp-2026-07-28-spec-release
+path: ai-agents
+title: MCP 2026-07-28 specification release
+url: https://blog.modelcontextprotocol.io/posts/2026-07-28/
+source_type: official-docs
+level: intermediate
+language: en
+why_en: The official release announcement for the 2026-07-28 Model Context Protocol specification, covering the stateless redesign and breaking changes.
+why_zh: Model Context Protocol 2026-07-28 规范的官方发布公告，说明无状态重构与破坏性变更。
+reviewed_on: '2026-09-06'
+status: active
+requires_key: false
+risk: low
+featured: false
+order: 8

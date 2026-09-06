@@ -73,23 +73,23 @@
     {
       "id": "example-mcp-server",
       "type": "example",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-02",
+      "reviewed_on": "2026-09-06",
       "locales": [
         {
           "lang": "en-US",
           "path": "examples/mcp-server/README.md",
           "title": "Model Context Protocol (MCP) Tool Server",
-          "summary": "Build a safe, compliant JSON-RPC 2.0 MCP tool server with parameter validation and structured error boundaries.",
-          "sha256": "12cbb64484ad5ccccb05d50566ef7c3c92eb9043641bf299b94b5247adaf12b2"
+          "summary": "Build a stateless 2026-07-28 MCP tool server with JSON-RPC 2.0 dispatch, no initialize handshake, schema validation, error isolation, and the input_required round-trip.",
+          "sha256": "989d76f36d383a73fde46c5e9a88df6efc6466b44f1b7a867c0745d1bdb1a0d6"
         },
         {
           "lang": "zh-CN",
           "path": "examples/mcp-server/README_cn.md",
           "title": "Model Context Protocol (MCP) 工具服务",
-          "summary": "构建规范安全的 JSON-RPC 2.0 MCP 工具服务，实现参数校验与结构化错误边界。",
-          "sha256": "ec1a70a7cb3304df5a1dd69412bf892f81dace748a7a3f56a811d3146c45b19f"
+          "summary": "构建符合 2026-07-28 无状态规范的 MCP 工具服务，实现无需 initialize 握手的 JSON-RPC 2.0 分发、参数校验、错误隔离与 input_required 多轮交互。",
+          "sha256": "e29cb70049b5bc5220226ab411b75c7a898242a061490a88fa1d7ef8ca7e9fa1"
         }
       ]
     },
@@ -182,6 +182,29 @@
           "title": "管理数据库架构迁移",
           "summary": "规划、执行并验证具备零停机兼容性与回滚安全性的可逆数据库迁移。",
           "sha256": "f9bc0131fcadc6f3a07ffd5df2c5adc13eb291845599d46dcd0ddacf5fdaec68"
+        }
+      ]
+    },
+    {
+      "id": "mcp-2026-07-28-migration",
+      "type": "guide",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-06",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "guides/mcp/migrate-2026-07-28.md",
+          "title": "Migrate a Python MCP server to the 2026-07-28 specification",
+          "summary": "Update a Python MCP server for the stateless 2026-07-28 specification by removing the initialize handshake, adopting the input_required round-trip, dropping deprecated features, and hardening authorization.",
+          "sha256": "47a96d64e7f2a86c39fcc716b1e65527961256ae44cb79e2817a13c3eb7feaa2"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "guides/mcp/migrate-2026-07-28_cn.md",
+          "title": "将 Python MCP 服务端迁移到 2026-07-28 规范",
+          "summary": "面向 2026-07-28 无状态规范更新 Python MCP 服务端，移除 initialize 握手、采用 input_required 多轮交互、放弃废弃特性并强化授权。",
+          "sha256": "bb9eb48393dccc469b6ffcdd52248e82d71daf85dd9b891d00b3adf9b8027425"
         }
       ]
     },

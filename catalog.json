@@ -2,7 +2,7 @@
   "$schema": "./schema/catalog-v1.schema.json",
   "schema_version": 1,
   "catalog": {
-    "reviewed_on": "2026-09-02",
+    "reviewed_on": "2026-09-06",
     "status": "active"
   },
   "paths": [
@@ -532,6 +532,74 @@
       "risk": "medium",
       "featured": false,
       "order": 7
+    },
+    {
+      "id": "mcp-2026-07-28-spec-release",
+      "path": "ai-agents",
+      "title": "MCP 2026-07-28 specification release",
+      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+      "source_type": "official-docs",
+      "level": "intermediate",
+      "language": "en",
+      "why_en": "The official release announcement for the 2026-07-28 Model Context Protocol specification, covering the stateless redesign and breaking changes.",
+      "why_zh": "Model Context Protocol 2026-07-28 规范的官方发布公告，说明无状态重构与破坏性变更。",
+      "reviewed_on": "2026-09-06",
+      "status": "active",
+      "requires_key": false,
+      "risk": "low",
+      "featured": false,
+      "order": 8
+    },
+    {
+      "id": "mcp-2026-07-28-release-candidate",
+      "path": "ai-agents",
+      "title": "MCP 2026-07-28 release candidate overview",
+      "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/",
+      "source_type": "official-docs",
+      "level": "intermediate",
+      "language": "en",
+      "why_en": "The official release-candidate post that enumerates the 2026-07-28 breaking changes and the migration window for SDK maintainers.",
+      "why_zh": "官方 RC 发布说明，逐项列出 2026-07-28 的破坏性变更以及留给 SDK 维护者的迁移窗口。",
+      "reviewed_on": "2026-09-06",
+      "status": "active",
+      "requires_key": false,
+      "risk": "low",
+      "featured": false,
+      "order": 9
+    },
+    {
+      "id": "anthropic-mcp-aaif-donation",
+      "path": "ai-agents",
+      "title": "Anthropic donating MCP to the Agentic AI Foundation",
+      "url": "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation",
+      "source_type": "official-docs",
+      "level": "intermediate",
+      "language": "en",
+      "why_en": "Anthropic's announcement establishing neutral Linux Foundation governance for MCP under the Agentic AI Foundation.",
+      "why_zh": "Anthropic 官方公告，宣布将 MCP 交由 Linux 基金会旗下的 Agentic AI Foundation 中立治理。",
+      "reviewed_on": "2026-09-06",
+      "status": "active",
+      "requires_key": false,
+      "risk": "low",
+      "featured": false,
+      "order": 10
+    },
+    {
+      "id": "aaif-model-context-protocol",
+      "path": "ai-agents",
+      "title": "MCP under the Agentic AI Foundation",
+      "url": "https://aaif.io/projects/model-context-protocol",
+      "source_type": "official-project",
+      "level": "intermediate",
+      "language": "en",
+      "why_en": "The Agentic AI Foundation project page for MCP, the neutral governance home for specification development and roadmaps.",
+      "why_zh": "Agentic AI Foundation 的 MCP 项目主页，是规范开发与路线图的中立治理入口。",
+      "reviewed_on": "2026-09-06",
+      "status": "active",
+      "requires_key": false,
+      "risk": "low",
+      "featured": false,
+      "order": 11
     }
   ]
 }
