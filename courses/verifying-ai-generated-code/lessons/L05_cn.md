@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "给你自己的发布装门禁：把 ship check 接进一个真实项目，让记录成为交付的一部分。"
+  - title: "先写 ship.json"
+    body: "给项目一个 `ship.json`：真实的检查命令加诚实的 `unverified` 清单——文件是契约，脚本只是执行者。"
+  - title: "诚实的记录"
+    body: "留一份 `SHIP-RECORD.json`，写下它刻意不声明什么——假装完整的记录恰恰违背了本课初衷。"
 ---
 
 # 给你的下一次发布装上门禁

@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "定出唯一真源：`AGENTS.md` 是 Agent 真正读的文件，其余规则文件只能是薄指针或逐字节副本。"
+  - title: "指针还是副本"
+    body: "指针最多 10 个非空行且引用 `AGENTS.md`；副本与真源逐字节一致。其余都是 `diverged`。写下你自己仓库里每个文件会被判成哪类。"
+  - title: "完成标准"
+    body: "你的决定落了字：谁是真源，其余文件允许装什么。"
 ---
 
 # 确定唯一真源

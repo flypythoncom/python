@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "先定义发布记录必须证明什么再动手：命令、退出码、解析出的测试数、结果、未验证清单，以及拒绝零测试项目的判定。"
+  - title: "逐字段抠契约"
+    body: "字面理解 `build_record` 的契约——`all_passed` 只有在每个检查都是退出码 0 且结果 'ok' 时才为真。先在纸上画出 JSON。"
+  - title: "未验证清单"
+    body: "它是诚实的内核：说不出自己没查什么的记录是广告，不是证据。"
 ---
 
 # 定义发布记录必须证明什么

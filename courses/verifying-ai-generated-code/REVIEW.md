@@ -20,4 +20,20 @@
 
 ## Deviation log
 
-(none recorded yet — first agent-taught run-through pending)
+### 2026-09-13 — agent solvability run (challenge mode, not taught mode)
+
+- Agent: Devin (SWE-2 Max), CLI session on macOS arm64, system Python
+  3.14 (stdlib only — this course needs no third-party deps).
+- Method: implemented `starter/ship_check.py` from `TASK.md` and the
+  test expectations only; did not read or copy `solution/`.
+- Result: `python verify.py starter` exits 0 (all ten tests);
+  `verify.py progress` printed all five claim codes (l03/l04
+  `[passed]`, l01/l02/l05 `[attest]`).
+- Observed deviations: none — contract landed on the first pass. The
+  naive-starter traps (exit-code-only evidence, no-tests blessed,
+  non-atomic write, dropped unverified list) were all exercised by the
+  suite.
+- Limitations: challenge-mode run (TASK.md → tests), not the taught
+  COURSE.md walkthrough — teaching quality remains separately pending.
+- Starter restored to the deliberately-unfinished state after the run
+  (`--expect-failure` verified again).

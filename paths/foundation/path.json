@@ -33,7 +33,10 @@
       "course": "hands-on-python-with-claude-code",
       "title_en": "Claude Code hands-on",
       "title_zh": "Claude Code 实战",
-      "points": 100
+      "points": 100,
+      "branch": "first-agent",
+      "branch_label_en": "pick your first agent",
+      "branch_label_zh": "选你的第一个 Agent"
     },
     {
       "order": 2,
@@ -42,7 +45,10 @@
       "course": "hands-on-with-openai-codex-cli",
       "title_en": "Codex CLI hands-on",
       "title_zh": "Codex CLI 实战",
-      "points": 100
+      "points": 100,
+      "branch": "first-agent",
+      "branch_label_en": "pick your first agent",
+      "branch_label_zh": "选你的第一个 Agent"
     },
     {
       "order": 3,

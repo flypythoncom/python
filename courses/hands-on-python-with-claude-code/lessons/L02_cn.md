@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "考你能不能把 `TASK.md` 读成可测试的语句而不是散文。每个以函数名开头的句子都是套件能断言的契约行。"
+  - title: "把一行契约对到一个测试"
+    body: "挑一行契约——比如 `total = valid + invalid must hold`——在 `tests/test_report_tool.py` 里找到断言它的测试。然后为你自己的一个脚本写一行契约：输入、输出、错误路径，以及『完成 = 某命令退出 0』。"
+  - title: "可测试性检查"
+    body: "判断一句话是否可测试：套件能否不读你的心思就断言它？看数字、退出码、磁盘上的文件——不看感觉。"
 ---
 
 # 第 2 课：动手之前先写任务契约

@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "双套件——`input_required` 多轮交互：工具能在调用中向客户端提问，客户端带着 `params.inputResponses` 重试时完成。"
+  - title: "异常即机制"
+    body: "在处理函数里抛 `InputRequired(requests)`；`handle_request` 捕获并返回 `resultType: 'input_required'` 和请求列表。客户端携带答案重试同一调用。"
+  - title: "不需要状态"
+    body: "服务端保持无状态——重试是一次新的 `tools/call`，答案在 `params.inputResponses` 里。别存挂起的问题。"
 ---
 
 # input_required 多轮交互

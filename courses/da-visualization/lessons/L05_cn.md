@@ -1,3 +1,21 @@
+---
+id: course-da-visualization-l05
+type: course
+title: "挑战 05：诚实边界"
+summary: "套件查文件与数字——不查可读性与刻度诚实；写清没验证什么。"
+lang: zh-CN
+content_version: 1
+status: reviewed
+reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "说出验证看不到什么：套件查文件存在、是真 PNG、数字对——不管可读性、刻度诚实、设计好坏。"
+  - title: "写下边界句"
+    body: "一句话说清验证了什么（文件、PNG 有效性、数字）和没验证什么（图在视觉上是否诚实），本检查点就完成了。"
+  - title: "带到以后"
+    body: "同一条边界适用于你今后写的每个自动化检查：说清它证明什么、不证明什么。"
+---
+
 # 挑战 05：诚实边界
 
 **判卷：** 自我声明 · **积分：** 10

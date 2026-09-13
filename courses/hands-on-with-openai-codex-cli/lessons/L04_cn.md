@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "双套件加真审查：两个方向都验证、三个皮肤都跑、像怀疑者一样读最终 diff。"
+  - title: "拿契约审 diff"
+    body: "每个函数对照它的 `TASK.md` 契约行——多做是范围蔓延，少做是还没被发现的红测。"
+  - title: "诚实的记录"
+    body: "写下绿了之后仍未证明的部分——『已验证』的记录加上未覆盖清单，才是这份交付物。"
 ---
 
 # 第 4 课：像工程师一样验证，像怀疑者一样审查

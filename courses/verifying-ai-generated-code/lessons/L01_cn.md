@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "考你亲眼看到 starter 放行了不该放行的：在 `scenario/no-tests` 和 `scenario/red-project` 上跑它，看到本该失败的地方显示『通过』。"
+  - title: "给盲点命名"
+    body: "starter 只看退出码——零测试的项目能『通过』，失败的套件看着也像没问题。修任何东西之前先写下这两种失效模式。"
+  - title: "完成标准"
+    body: "一句话说清为什么只看退出码的验证会说谎。"
 ---
 
 # “能跑”不是证据

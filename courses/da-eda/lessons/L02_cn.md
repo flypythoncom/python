@@ -1,3 +1,21 @@
+---
+id: course-da-eda-l02
+type: course
+title: "挑战 02：先定答案"
+summary: "先勾出 results.json 的键、类型与舍入规则，再让 Agent 写 eda.py。"
+lang: zh-CN
+content_version: 1
+status: reviewed
+reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "先定义答案再让 Agent 生成：动手写 `eda.py` 之前先勾出 `results.json` 的键、类型和舍入规则。"
+  - title: "契约先行"
+    body: "定清楚 `total_revenue` 怎么舍入、`revenue_by_region` 键长什么样、`rows_total` 等于输入行数——套件比对的是精确数字。"
+  - title: "完成标准"
+    body: "你的草图列出 `results.json` 每个键和它的来源列。"
+---
+
 # 挑战 02：先定答案
 
 **判卷：** 自我声明 · **积分：** 10

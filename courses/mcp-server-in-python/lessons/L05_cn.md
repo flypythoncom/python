@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "暴露一个真实工具：把你自己一个函数包进刚建好的、带校验和隔离的边界后面。"
+  - title: "如实写 schema"
+    body: "给工具一个真实的 `inputSchema` 并标明必填参数——schema 说真话，边界才值得信任。"
+  - title: "诚实的记录"
+    body: "写下你的工具能做什么不能做什么——夸大的 schema 会抵消你刚证明过的隔离。"
 ---
 
 # 给你的 Agent 暴露一个真实工具

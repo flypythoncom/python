@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "分发契约：合法请求回显 `id`，畸形请求得 -32600，未知或已删除的方法得 -32601。"
+  - title: "版本门"
+    body: "携带非 `2026-07-28` 的 `_meta.protocolVersion` 的请求得 -32600——请求自我声明版本而不是协商版本。"
+  - title: "完成标准"
+    body: "凭记忆能填真值表：正常请求、坏 jsonrpc、未知方法、已删方法、错版本。"
 ---
 
 # JSON-RPC 分发契约
