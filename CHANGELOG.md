@@ -4,6 +4,30 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+0.1.0 — companion-repository half of the public launch (website
+`docs/product-and-growth-plan-0.1.0.md`; see the website `CHANGELOG.md`
+for the platform half).
+
+### Changed
+
+- FP-1012: `docs/repo-plan-0.1.0.md` renamed to `docs/repo-plan-0.1.x.md`
+  — community courses are a 0.1.x track that starts after 0.1.0 ships,
+  not part of the launch version.
+
+0.0.9 — optional entry points (companion-repository half; see the
+website plan `docs/product-and-growth-plan-0.0.9.md`).
+
+### Changed
+
+- FP-983: all six agent-tool courses' lesson 1 (EN+ZH) makes the
+  FlyPython Skill install step optional-but-recommended, and the named
+  failure count is unified as "five categories plus two end-to-end —
+  seven named failures" everywhere.
+- FP-984: the foundation path's M0 orientation module is optional
+  extra credit (`paths/foundation/path.json`, `tools/verify_paths.py`
+  badge math updated); the route challenge moved off repository files
+  onto the site's `/tracks/<slug>/<module>` pages.
+
 0.0.8 — Skill as the main entry (companion-repository half; see the
 website plan `docs/product-and-growth-plan-0.0.8.md`).
 
