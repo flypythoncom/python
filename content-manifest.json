@@ -326,138 +326,276 @@
     {
       "id": "course-codex-cli",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
-          "path": "courses/hands-on-with-openai-codex-cli/COURSE.md",
-          "title": "Hands-on with OpenAI Codex CLI",
-          "summary": "The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on with the OpenAI Codex CLI instead.",
-          "sha256": "48e81f530f58ef69fe92e6312b08f01b4661f311cf07371809ce206e2eecd474"
+          "path": "courses/hands-on-with-openai-codex/COURSE.md",
+          "title": "Hands-on with the OpenAI Codex App",
+          "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the Codex desktop app, where an agent thread runs the loop and you supervise diffs and approvals.",
+          "sha256": "7a0648d4b0547e4b8a39ccf7dea8de2aae02908d24c26880a2520e50c2252651"
         },
         {
           "lang": "zh-CN",
-          "path": "courses/hands-on-with-openai-codex-cli/COURSE_cn.md",
-          "title": "OpenAI Codex CLI 实战",
-          "summary": "与 Claude Code 课程相同的已验证 Python 工作流——任务契约、最小变更、客观 verify.py 证据——改用 OpenAI Codex CLI 完成实战。",
-          "sha256": "bbdf5d8a71d8243f1cb7a3c30d2aa4ddb656cb932d36aaae3d543e3b5f7ea3c2"
+          "path": "courses/hands-on-with-openai-codex/COURSE_cn.md",
+          "title": "上手 OpenAI Codex 应用",
+          "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Codex 桌面应用里手把手教：由 Agent 线程跑闭环，你监督 diff 与审批。",
+          "sha256": "68338e68b7145fc324472e05c6b8e649fae10cd88861510f8e7fe3dba0be6121"
         }
       ]
     },
     {
       "id": "course-codex-cli-l01",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L01.md",
-          "title": "Lesson 1: Reproduce the failure with Codex in the loop",
-          "summary": "Run the verifier both ways, map each failing test to a real-world failure class, and learn how to hand the folder to Codex.",
-          "sha256": "1c316f7b5575741ce42c299d89e2075e10a162099c53cd6344e75ccf2487a5cf"
+          "path": "courses/hands-on-with-openai-codex/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure in a Codex thread",
+          "summary": "Open the folder as a Codex project, start your first thread, and make the failure objective with verify.py — inside the app, not beside it.",
+          "sha256": "8ff98ae641562d417a00c68650c5a4b48d4d04af52fc97f1368ad566e620d25b"
         },
         {
           "lang": "zh-CN",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L01_cn.md",
-          "title": "第 1 课：让 Codex 进环，先复现故障",
-          "summary": "双向运行验证器，把每个失败测试对应到真实故障，并学会如何把文件夹交给 Codex。",
-          "sha256": "878513b4bb6218655088cdec3fa873c4318e9c729b86ce176e5b14a93b8eee9a"
+          "path": "courses/hands-on-with-openai-codex/lessons/L01_cn.md",
+          "title": "第 1 课：在 Codex 线程里复现故障",
+          "summary": "把文件夹作为 Codex 项目打开，开启第一个线程，用 verify.py 让失败变得客观——在应用内完成，而不是在应用旁边。",
+          "sha256": "d8758b7e3ba9ba3dcc8bb731f84035128d4bfec826615467ee9ca4331c773268"
         }
       ]
     },
     {
       "id": "course-codex-cli-l02",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L02.md",
-          "title": "Lesson 2: Write the task contract before the change",
-          "summary": "Turn \"make it better\" into bounded, testable statements — the single highest-leverage skill for driving Codex.",
-          "sha256": "e3d75d35a8585c4765f76f506d907c65136359306657943b1c657239495bab07"
+          "path": "courses/hands-on-with-openai-codex/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract, let AGENTS.md carry the rules",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — then make it durable so every Codex thread starts with the same rules.",
+          "sha256": "d7180997e42e69bd8c80976287f4f9fc394492a729a2e87ff7f8134ea98e5d33"
         },
         {
           "lang": "zh-CN",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L02_cn.md",
-          "title": "第 2 课：动手之前先写任务契约",
-          "summary": "把“优化一下”变成有边界、可测试的陈述——驱动 Codex 杠杆最大的一项技能。",
-          "sha256": "9c0cc619fe1e9c4ec07733e02d7832c11709dcb491cbf0e3a2f574dc2dc47ea2"
+          "path": "courses/hands-on-with-openai-codex/lessons/L02_cn.md",
+          "title": "第 2 课：写任务契约，让 AGENTS.md 承载规则",
+          "summary": "把「改好一点」变成有边界、可测试的契约——再让它持久化，让每个 Codex 线程都从同一套规则开始。",
+          "sha256": "3c817a30bd204b6b6907336616f5c88228f3bb0d9aa1561e08a77f345f9971e8"
         }
       ]
     },
     {
       "id": "course-codex-cli-l03",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L03.md",
-          "title": "Lesson 3: Drive a bounded change, test by test",
-          "summary": "Supervise Codex through seven small diffs — smallest change, no new dependencies, one failing test group at a time.",
-          "sha256": "41adb2f3560d29b38d7d1a8254a51197323637e589aa463e4c8417f9c61e8686"
+          "path": "courses/hands-on-with-openai-codex/lessons/L03.md",
+          "title": "Lesson 3: The bounded change, reviewed hunk by hunk",
+          "summary": "Drive the starter to green through bounded turns — and use the app's diff review and approvals to keep every change yours.",
+          "sha256": "0cb1e5e60b38236ac2c477155d422417e692c038a210f995922c0e7dc387c6cd"
         },
         {
           "lang": "zh-CN",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L03_cn.md",
-          "title": "第 3 课：按测试驱动一次有边界的变更",
-          "summary": "监督 Codex 完成七个小 diff——最小变更、不新增依赖、一次一组失败测试。",
-          "sha256": "4f440f36af4c3eba76bd307085a3bf48020931b168b5a04edc9a6c190ec02c10"
+          "path": "courses/hands-on-with-openai-codex/lessons/L03_cn.md",
+          "title": "第 3 课：有界改动，逐块审 diff",
+          "summary": "通过有界的轮次把 starter 推到全绿——并用应用内的 diff 审查与审批机制守住每一处改动。",
+          "sha256": "be8d68a96423506755e081aca4729ca7011cfc576f3998cad69abd8062760480"
         }
       ]
     },
     {
       "id": "course-codex-cli-l04",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L04.md",
-          "title": "Lesson 4: Verify like an engineer, review like a skeptic",
-          "summary": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
-          "sha256": "ac228870e7c4ef0df522664c27fb7895535c72090833c59c86e8b33e527a2703"
+          "path": "courses/hands-on-with-openai-codex/lessons/L04.md",
+          "title": "Lesson 4: Verify like a reviewer, not a spectator",
+          "summary": "Green tests are the floor, not the ceiling — run both suites, walk the scenario skins, and review the diff the way you would review a colleague's.",
+          "sha256": "b99b86470990cc15cd9d740cc88e0076b6cc7f51793e26627f98cb2bfff45506"
         },
         {
           "lang": "zh-CN",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L04_cn.md",
-          "title": "第 4 课：像工程师一样验证，像怀疑者一样审查",
-          "summary": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。",
-          "sha256": "cb9d5ba62f101fa47d03740f5806930dd51986e310be04f255e93b422f9e1edc"
+          "path": "courses/hands-on-with-openai-codex/lessons/L04_cn.md",
+          "title": "第 4 课：像评审者一样验证，别当观众",
+          "summary": "测试全绿是地板不是天花板——两个套件都跑、三个皮肤都走一遍、按评审同事的标准审这份 diff。",
+          "sha256": "5e9994c4288119ddc388d9b75fb739ef13ac13255304903c8f9d6fb12df9645f"
         }
       ]
     },
     {
       "id": "course-codex-cli-l05",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L05.md",
-          "title": "Lesson 5: Apply this to your own project",
-          "summary": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
-          "sha256": "352ea47aa0ae5093e3d4f38f0f82218323fadf393dcc4da0f63a6851ea9dd6b4"
+          "path": "courses/hands-on-with-openai-codex/lessons/L05.md",
+          "title": "Lesson 5: Take the workflow to your own project",
+          "summary": "The tool generalizes: task contract, bounded thread, approvals, diff review — run the same loop on a script you actually own.",
+          "sha256": "8964d7d543353de4cebaba40229e945a45aca208b6bbb4881443a0f2603e690a"
         },
         {
           "lang": "zh-CN",
-          "path": "courses/hands-on-with-openai-codex-cli/lessons/L05_cn.md",
-          "title": "第 5 课：把这套方法带回你自己的项目",
-          "summary": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。",
-          "sha256": "61565be72cae4e5ff14b5059bb108363d750a41e22073003d0d4de357a6944eb"
+          "path": "courses/hands-on-with-openai-codex/lessons/L05_cn.md",
+          "title": "第 5 课：把工作流带回自己的项目",
+          "summary": "工具会泛化：任务契约、有界线程、审批、diff 评审——在你真正拥有的脚本上跑同一套闭环。",
+          "sha256": "8517bc536fedc8c79e0ff68b7209a91456d4f745107e2793f41b8978841d373c"
+        }
+      ]
+    },
+    {
+      "id": "course-cursor",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-cursor/COURSE.md",
+          "title": "Hands-on with Cursor",
+          "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Cursor, where Agent mode runs the loop and you supervise diffs and project rules.",
+          "sha256": "e4543bbb100c2f4dd645c135b0f140cc09c51051c09a5825c229022cb985bdf4"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-cursor/COURSE_cn.md",
+          "title": "上手 Cursor",
+          "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Cursor 里手把手教：由 Agent 模式跑闭环，你监督 diff 与项目规则。",
+          "sha256": "a40bf93f87c12fbbc46c0895db42279caa74e0325518f3d4a6561efd7518b338"
+        }
+      ]
+    },
+    {
+      "id": "course-cursor-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-cursor/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure inside Cursor",
+          "summary": "Open the folder as a Cursor project, let Agent mode read the teaching contract, and make the failure objective with verify.py — inside the editor, not beside it.",
+          "sha256": "176848098e3b8a64cbd312c6a2e4a2cb49e4fcaa855b17ea43cc9be651922ab0"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-cursor/lessons/L01_cn.md",
+          "title": "第 1 课：在 Cursor 里复现故障",
+          "summary": "把文件夹作为 Cursor 项目打开，让 Agent 模式读教学契约，用 verify.py 让失败变得客观——在编辑器内完成，而不是在编辑器旁边。",
+          "sha256": "c07cec1f61a0ac751f50804e793ddb1a4de6026fd7d2b87f2955a2cabf27d3b2"
+        }
+      ]
+    },
+    {
+      "id": "course-cursor-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-cursor/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract, let .cursor/rules carry the rules",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — then make it durable so every Cursor session starts with the same rules.",
+          "sha256": "aaf059429373464079c242dcf7946616bc7b40b0a1ba07480950ed5f8ba0dfaa"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-cursor/lessons/L02_cn.md",
+          "title": "第 2 课：写任务契约，让 .cursor/rules 承载规则",
+          "summary": "把「改好一点」变成有边界、可测试的契约——再让它持久化，让每个 Cursor 会话都从同一套规则开始。",
+          "sha256": "dd6012d7884e95644dd5ea59896cade1e8d572b503639a832445d141d9e475b1"
+        }
+      ]
+    },
+    {
+      "id": "course-cursor-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-cursor/lessons/L03.md",
+          "title": "Lesson 3: The bounded change, reviewed hunk by hunk",
+          "summary": "Drive the starter to green through bounded turns — and use Cursor's diff review to keep every change yours.",
+          "sha256": "ff0006c574cee6f659e8ab72f4462b3c069bb858556819f9ba1ec83ea4bf7a66"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-cursor/lessons/L03_cn.md",
+          "title": "第 3 课：有界改动，逐块审 diff",
+          "summary": "通过有界的轮次把 starter 推到全绿——并用 Cursor 的 diff 审查守住每一处改动。",
+          "sha256": "753c49006c87d870fd5927ce91b52324f321f67cde01dbafcc263c320fdacad9"
+        }
+      ]
+    },
+    {
+      "id": "course-cursor-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-cursor/lessons/L04.md",
+          "title": "Lesson 4: Verify like a reviewer, not a spectator",
+          "summary": "Green tests are the floor, not the ceiling — run both suites, walk the scenario skins, and review the accumulated diff the way you would review a colleague's.",
+          "sha256": "13ae3ea383d7dfd939d5a02028a6fa2e813cc5893b4a4bbdf1b294ff539141ef"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-cursor/lessons/L04_cn.md",
+          "title": "第 4 课：像评审者一样验证，别当观众",
+          "summary": "测试全绿是地板不是天花板——两个套件都跑、三个皮肤都走一遍、按评审同事的标准审这份累积 diff。",
+          "sha256": "54b31f4c2b8438d71a2c0dd4504deca2496c861d2e92e935f9a65e8c665f8d05"
+        }
+      ]
+    },
+    {
+      "id": "course-cursor-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-cursor/lessons/L05.md",
+          "title": "Lesson 5: Take the workflow to your own project",
+          "summary": "The tool generalizes: task contract, bounded agent work, diff review — run the same loop on a script you actually own.",
+          "sha256": "b9e9dbad4f6de5b72497220eeaa0866170fa64b5cc1d1e2b548878d9d008d94d"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-cursor/lessons/L05_cn.md",
+          "title": "第 5 课：把工作流带回自己的项目",
+          "summary": "工具会泛化：任务契约、有界 Agent 工作、diff 评审——在你真正拥有的脚本上跑同一套闭环。",
+          "sha256": "263f61fe5e52141fc8e8a7e8ad8d72b187e6d203c6f47a4ae76ac8c938dd4e3c"
         }
       ]
     },
@@ -876,6 +1014,282 @@
       ]
     },
     {
+      "id": "course-deepseek-harness",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-deepseek-harness/COURSE.md",
+          "title": "Hands-on with DeepSeek Harness",
+          "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in DeepSeek Harness, where the agent loop is composed from plugins and every step lands in an inspectable trajectory.",
+          "sha256": "5d98c134e69fa157738bf06e558460a5a698f08e12d07560d56a9f8b2855252a"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-deepseek-harness/COURSE_cn.md",
+          "title": "上手 DeepSeek Harness",
+          "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 DeepSeek Harness 里手把手教：Agent 闭环由插件组装，每一步都落进可检查的轨迹日志。",
+          "sha256": "04664097ac975bea0316aee9091f76d70f491045b40bc90e63f816c2c193d761"
+        }
+      ]
+    },
+    {
+      "id": "course-deepseek-harness-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure, read it back from the trajectory",
+          "summary": "Run a harness-composed agent on the course folder, make the failure objective with verify.py — then read the append-only trajectory to see exactly what the agent did.",
+          "sha256": "7b5ef7dc5536e049372b58a4a36915bbeba4713c6bc3a4ec8ee0de3a62fc8b5c"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L01_cn.md",
+          "title": "第 1 课：复现故障，从轨迹里读回来",
+          "summary": "让 Harness 组装的 Agent 跑在课程文件夹上，用 verify.py 让失败变得客观——再读只增轨迹，看清 Agent 到底做了什么。",
+          "sha256": "ffbe560ec8df1b9940dc078630408a84514aaa1702c9d52b1b6e8fc07222b806"
+        }
+      ]
+    },
+    {
+      "id": "course-deepseek-harness-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract, let cordis.yml carry the setup",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — then make the working rules part of the composed agent, not a forgotten prompt.",
+          "sha256": "52c04fb47a4b0667b64632f872857f276f8f9001c80601d95475ec38b67c3bd3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L02_cn.md",
+          "title": "第 2 课：写任务契约，让 cordis.yml 承载配置",
+          "summary": "把「改好一点」变成有边界、可测试的契约——再把工作规则放进组装出来的 Agent 里，而不是会被遗忘的提示词。",
+          "sha256": "e681aec8275c6762a41c92e8a96efd161696069a2d33f4669066179bdf72579f"
+        }
+      ]
+    },
+    {
+      "id": "course-deepseek-harness-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L03.md",
+          "title": "Lesson 3: The bounded change, audited from the trajectory",
+          "summary": "Drive the starter to green through bounded steps — then prove the agent stayed in bounds by inspecting the append-only trajectory.",
+          "sha256": "0c361ebd8dc019b1b12c8877e76c6ba372d10276c741acaac9999f8832f0da7b"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L03_cn.md",
+          "title": "第 3 课：有界改动，用轨迹做审计",
+          "summary": "通过有界的步骤把 starter 推到全绿——再检查只增轨迹，证明 Agent 没有越界。",
+          "sha256": "305088bf5a3833bab6055230328f666075742095809be20a119c7b53eeede903"
+        }
+      ]
+    },
+    {
+      "id": "course-deepseek-harness-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L04.md",
+          "title": "Lesson 4: Verify like a reviewer, not a spectator",
+          "summary": "Green tests are the floor, not the ceiling — run both suites, walk the scenario skins, and review the trajectory the way you would review a colleague's work.",
+          "sha256": "10163a3baeee6756ef8f3b60fc11d46fdb427e79c789a9e3312e25b9e1f6a5cc"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L04_cn.md",
+          "title": "第 4 课：像评审者一样验证，别当观众",
+          "summary": "测试全绿是地板不是天花板——两个套件都跑、三个皮肤都走一遍、按评审同事工作的标准审这条轨迹。",
+          "sha256": "ea979e9b3827458f408fea3e7d7c8f83b8ed9e209e36d8682417ac31a6adb15d"
+        }
+      ]
+    },
+    {
+      "id": "course-deepseek-harness-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L05.md",
+          "title": "Lesson 5: Take the workflow to your own project",
+          "summary": "The pattern generalizes: task contract, composed agent, bounded steps, trajectory audit — run the same loop on a script you actually own.",
+          "sha256": "0e76a3df730783e55b3a0faa07aa8bd974f905c262f9f52bbc81db634d931cc6"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-deepseek-harness/lessons/L05_cn.md",
+          "title": "第 5 课：把工作流带回自己的项目",
+          "summary": "模式会泛化：任务契约、组装 Agent、有界步骤、轨迹审计——在你真正拥有的脚本上跑同一套闭环。",
+          "sha256": "428b9c925dcf232c238e3a7e8a44934e8d74f960b8126be38941b43aecc87dc8"
+        }
+      ]
+    },
+    {
+      "id": "course-kimi-code",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-kimi-code/COURSE.md",
+          "title": "Hands-on with Kimi Code",
+          "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code, where built-in subagents split read-only exploration, planning, and the edits you approve.",
+          "sha256": "21c176b260918802fd71e2065b8fdfeef334f2ba896f98a6407f5d753500dbe1"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-kimi-code/COURSE_cn.md",
+          "title": "上手 Kimi Code",
+          "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里手把手教：内置子代理把只读勘察、规划和经你批准的编辑分在三条道上。",
+          "sha256": "9ecaf4e7cf782ada0a71201a2132c5f635c296568ce94f0573d8960516926e2a"
+        }
+      ]
+    },
+    {
+      "id": "course-kimi-code-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-kimi-code/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure, survey it with the read-only lane",
+          "summary": "Run kimi in the course folder, let the read-only explore subagent map the code, and make the failure objective with verify.py.",
+          "sha256": "1f22cfd82fa640440e2cba270490ccdb9b92f7b4e3d129879530f8d79b48b16e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-kimi-code/lessons/L01_cn.md",
+          "title": "第 1 课：复现故障，用只读道做勘察",
+          "summary": "在课程文件夹里运行 kimi，让只读的 explore 子代理摸清代码，用 verify.py 让失败变得客观。",
+          "sha256": "f42a1d5a7898d710edb683c780c4638f262947d30f47e9463741d94523b35814"
+        }
+      ]
+    },
+    {
+      "id": "course-kimi-code-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-kimi-code/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract, plan it in the planning lane",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — then let the plan subagent (no write, no shell) turn it into steps before anything edits.",
+          "sha256": "a6099e33340091887fad8b39743f7831809756a26830b638039c572b3f856dcb"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-kimi-code/lessons/L02_cn.md",
+          "title": "第 2 课：写任务契约，在规划道里拆步",
+          "summary": "把「改好一点」变成有边界、可测试的契约——再让 plan 子代理（无写无 shell）先把它拆成步骤，然后才许动文件。",
+          "sha256": "07296ecbd33c9bcfa38a392b8bdc10ca869f2cd9f1436c983df1f69036946b95"
+        }
+      ]
+    },
+    {
+      "id": "course-kimi-code-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-kimi-code/lessons/L03.md",
+          "title": "Lesson 3: The bounded change, one contract line at a time",
+          "summary": "Drive the starter to green through the coder lane in bounded steps — and review every edit before the next one lands.",
+          "sha256": "c9a411e86737ee10dbfc9e1c5a600e22b27b85f355da7f8570bf42b8e6e8dfb3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-kimi-code/lessons/L03_cn.md",
+          "title": "第 3 课：有界改动，一次一条契约行",
+          "summary": "通过 coder 道的有界步骤把 starter 推到全绿——下一处编辑落地前，先审完这一处。",
+          "sha256": "840c27b463e7b25555cf45b41c97849624265887e5777f0d6eb941cafad91aaf"
+        }
+      ]
+    },
+    {
+      "id": "course-kimi-code-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-kimi-code/lessons/L04.md",
+          "title": "Lesson 4: Verify like a reviewer, not a spectator",
+          "summary": "Green tests are the floor, not the ceiling — run both suites, walk the scenario skins, and review the accumulated diff the way you would review a colleague's.",
+          "sha256": "ccb695a57c39ca61d5c412b54b50cf83cb1984a783178605997626a95d2fde2d"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-kimi-code/lessons/L04_cn.md",
+          "title": "第 4 课：像评审者一样验证，别当观众",
+          "summary": "测试全绿是地板不是天花板——两个套件都跑、三个皮肤都走一遍、按评审同事的标准审这份累积 diff。",
+          "sha256": "590857d8349d73071796a856601ac34508ae8291792b10887e45ad1e5e475f8f"
+        }
+      ]
+    },
+    {
+      "id": "course-kimi-code-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-kimi-code/lessons/L05.md",
+          "title": "Lesson 5: Take the workflow to your own project",
+          "summary": "The pattern generalizes: contract first, read-only survey, planning lane, bounded edits, written verification — run the same loop on a script you actually own.",
+          "sha256": "e3b502add27090e1fd6730d0e4ca0c70b55c18d66bcb3ade452beb2513f95c24"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-kimi-code/lessons/L05_cn.md",
+          "title": "第 5 课：把工作流带回自己的项目",
+          "summary": "模式会泛化：契约先行、只读勘察、规划道拆步、有界编辑、书面验证——在你真正拥有的脚本上跑同一套闭环。",
+          "sha256": "e1403c1fc31c8304f82219c214afe574ff5dc69f41b3cab7a0c5002c8b8774f2"
+        }
+      ]
+    },
+    {
       "id": "course-mcp-tools",
       "type": "course",
       "content_version": 2,
@@ -1152,6 +1566,144 @@
       ]
     },
     {
+      "id": "course-zcode",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-zcode/COURSE.md",
+          "title": "Hands-on with ZCode",
+          "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the ZCode desktop workspace, where Goal Mode decomposes the work and the Git state shows every change.",
+          "sha256": "e8a90d90aa5daa83d3dd116eb53676f2d3c9bdf78d6cb12da4b732b703c976eb"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-zcode/COURSE_cn.md",
+          "title": "上手 ZCode",
+          "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 ZCode 桌面工作区里手把手教：Goal 模式拆解任务，Git 状态展示每一处改动。",
+          "sha256": "2d33bc8c5b449b929de8d0de7628e2fa8aa900efb58683b373ea9b0013a48e3d"
+        }
+      ]
+    },
+    {
+      "id": "course-zcode-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-zcode/lessons/L01.md",
+          "title": "Lesson 1: Reproduce the failure inside the workspace",
+          "summary": "Open the folder as a ZCode workspace, give the agent its first task, and make the failure objective with verify.py — inside the app, not beside it.",
+          "sha256": "f3ba2aeff5234732dd2f6d72d99eee7635956584a7f1ce270a0569dc34c4c628"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-zcode/lessons/L01_cn.md",
+          "title": "第 1 课：在工作区里复现故障",
+          "summary": "把文件夹作为 ZCode 工作区打开，给 Agent 第一个任务，用 verify.py 让失败变得客观——在应用内完成，而不是在应用旁边。",
+          "sha256": "fa359a53e2743a7f55076a0a1b046db7d0fb340579becf3d8ad538e1a41ce4f2"
+        }
+      ]
+    },
+    {
+      "id": "course-zcode-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-zcode/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract, let Goal Mode hold the plan",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — then let Goal Mode decompose it into tasks you can watch land one by one.",
+          "sha256": "d6ae0f3b3a62a196f3f2b476ced1b7f8c7ad2b87e26be82fd0e62667c15e3710"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-zcode/lessons/L02_cn.md",
+          "title": "第 2 课：写任务契约，让 Goal 模式承载计划",
+          "summary": "把「改好一点」变成有边界、可测试的契约——再让 Goal 模式把它拆成你能看着逐一落地的任务。",
+          "sha256": "afdbf2423f916b2dbae40e7a94d7d6b6d65d73ad3fc7536cab19b3a678cf8a8e"
+        }
+      ]
+    },
+    {
+      "id": "course-zcode-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-zcode/lessons/L03.md",
+          "title": "Lesson 3: The bounded change, watched task by task",
+          "summary": "Drive the starter to green through the goal's task list — and use the workspace Git state to review every change that lands.",
+          "sha256": "448c845acb70a0d4c18334d6f216f80a3a47e8aa9d6b7d39518d136567112d8e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-zcode/lessons/L03_cn.md",
+          "title": "第 3 课：有界改动，逐任务盯守",
+          "summary": "沿着目标的任务列表把 starter 推到全绿——用工作区 Git 状态审每一处落地的改动。",
+          "sha256": "e571522f7b5ab9e68b5c1c854029e36fea64b278dcd75373dbd78129b679ab2a"
+        }
+      ]
+    },
+    {
+      "id": "course-zcode-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-zcode/lessons/L04.md",
+          "title": "Lesson 4: Verify like a reviewer, not a spectator",
+          "summary": "Green tests are the floor, not the ceiling — run both suites, walk the scenario skins, and review the accumulated Git diff the way you would review a colleague's.",
+          "sha256": "005f3a1f1fb638f9751b87e459988f22b4d4058f4d9e89d069ba90c949779f16"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-zcode/lessons/L04_cn.md",
+          "title": "第 4 课：像评审者一样验证，别当观众",
+          "summary": "测试全绿是地板不是天花板——两个套件都跑、三个皮肤都走一遍、按评审同事的标准审这份累积 Git diff。",
+          "sha256": "657f9b5f3b31b9ba7f0ca1d15b9e5a58e1aac5971343ae049fe5425783638471"
+        }
+      ]
+    },
+    {
+      "id": "course-zcode-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-09-13",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-zcode/lessons/L05.md",
+          "title": "Lesson 5: Take the workflow to your own project",
+          "summary": "The pattern generalizes: contract as goal, task list, bounded execution, Git-state review — run the same loop on a project you actually own.",
+          "sha256": "60e68f537ddfd30ff271e995d9be15e962ad641ca02cdababf1d1cf363773ca3"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-zcode/lessons/L05_cn.md",
+          "title": "第 5 课：把工作流带回自己的项目",
+          "summary": "模式会泛化：契约变目标、任务列表、有界执行、Git 状态审查——在你真正拥有的项目上跑同一套闭环。",
+          "sha256": "1adee0b75e4d418005cc9aafdba92a0cd70d6d4f9175ef0972cd874258670602"
+        }
+      ]
+    },
+    {
       "id": "example-async-fetcher",
       "type": "example",
       "content_version": 1,
@@ -1338,46 +1890,46 @@
     {
       "id": "path-foundation-challenge",
       "type": "path",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
           "path": "paths/foundation/modules/route-challenge.md",
           "title": "Route challenge: dual-agent, double-verified",
-          "summary": "Foundation path capstone — run the same task through Claude Code and Codex CLI and verify both outputs yourself.",
-          "sha256": "0c56353b6b98acb6a15f575ab57fc513f367716754c27aae7a042cccfeabdbc4"
+          "summary": "Foundation path capstone — run the same task through any two of the six path agents and verify both outputs yourself.",
+          "sha256": "5dd9a96fb85e3582b57455b1714827ff8503a53cef65eaf5159666771542bf7f"
         },
         {
           "lang": "zh-CN",
           "path": "paths/foundation/modules/route-challenge_cn.md",
           "title": "路线挑战：双 Agent、双重验证",
-          "summary": "基础路线收官挑战——同一任务分别用 Claude Code 与 Codex CLI 完成并亲手双重验证。",
-          "sha256": "efb3d075163c2051dc8908072bc9da63ac13df17b4380f2ceac3fe17db6f2f33"
+          "summary": "基础路线收官——把同一个任务分别交给六个路线 Agent 中任选的两个，并亲手验证两份产出。",
+          "sha256": "eafb3dc130a96a8ba6b8128c4353c689f2590abbfe2ecd8c06fd00940f7e0ea5"
         }
       ]
     },
     {
       "id": "path-foundation-m0",
       "type": "path",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-09-13",
       "locales": [
         {
           "lang": "en-US",
           "path": "paths/foundation/modules/m0-orientation.md",
           "title": "The agent tool landscape",
-          "summary": "Foundation path module 0 — orientation on Claude Code, Codex CLI, and Cursor; install one agent and observe its evidence habits.",
-          "sha256": "2c40a01bff3ab9cf40c6f453201a381d4a4d02ebc7246af46984b2548496f40f"
+          "summary": "Foundation path module 0 — orientation across six agentic coding tools; pick the one that fits your environment and observe its evidence habits.",
+          "sha256": "16f44353eb09b2292d3ff49af6bde9906a865a471a8818301ebb9b7260454e1a"
         },
         {
           "lang": "zh-CN",
           "path": "paths/foundation/modules/m0-orientation_cn.md",
           "title": "Agent 工具生态总览",
-          "summary": "基础路线模块 0——Claude Code、Codex CLI、Cursor 生态导览；装一个 Agent 并观察它的证据习惯。",
-          "sha256": "4d6b4ecbc2eb0d0ef5c2e9522466f0c9ace056bd4ad8db4a9e116aa5916e64bb"
+          "summary": "基础路线模块 0——六个 Agentic 编程工具生态导览；按你的工作环境选一个，并观察它的证据习惯。",
+          "sha256": "9d416d3f68766ee6d241dff0e00edb21a654ba27c8013ff4de8e23ff90852a1e"
         }
       ]
     },

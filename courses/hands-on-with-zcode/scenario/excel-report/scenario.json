@@ -1,0 +1,8 @@
+{
+  "skin": "excel-report",
+  "data_file": "orders.csv",
+  "required_fields": ["order_id", "region", "amount"],
+  "numeric_field": "amount",
+  "group_field": "region",
+  "report_file": "report.json"
+}

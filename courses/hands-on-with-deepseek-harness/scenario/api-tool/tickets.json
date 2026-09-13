@@ -1,0 +1,9 @@
+[
+  {"ticket_id": "T-101", "priority": "high", "minutes": "45"},
+  {"ticket_id": "T-102", "priority": "normal", "minutes": "20"},
+  {"ticket_id": "T-103", "priority": "low", "minutes": "10"},
+  {"ticket_id": "T-104", "priority": "high", "minutes": "90"},
+  {"ticket_id": "T-105", "priority": "", "minutes": "30"},
+  {"ticket_id": "T-106", "priority": "normal", "minutes": "n/a"},
+  {"ticket_id": "T-107", "priority": "low", "minutes": "25"}
+]

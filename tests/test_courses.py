@@ -13,7 +13,11 @@ def test_courses_directory_is_discovered() -> None:
     names = {course.name for course in courses}
     assert {
         "hands-on-python-with-claude-code",
-        "hands-on-with-openai-codex-cli",
+        "hands-on-with-openai-codex",
+        "hands-on-with-cursor",
+        "hands-on-with-deepseek-harness",
+        "hands-on-with-kimi-code",
+        "hands-on-with-zcode",
         "agent-rules-single-source",
         "verifying-ai-generated-code",
         "mcp-server-in-python",
@@ -54,6 +58,10 @@ def test_course_documents_enter_the_content_manifest() -> None:
     expected_courses = {
         "course-claude-code",
         "course-codex-cli",
+        "course-cursor",
+        "course-deepseek-harness",
+        "course-kimi-code",
+        "course-zcode",
         "course-agent-rules",
         "course-verify-ship",
         "course-mcp-tools",

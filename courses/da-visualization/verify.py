@@ -21,6 +21,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 
+# Optional shared claim-receipt producer (docs/CLAIM-RECEIPT.md). The course
+# folder still verifies standalone — without the tools/ sibling or without
+# FLYPYTHON_CLAIM_SECRET set, verify.py behaves exactly as before.
+try:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+    import claim_receipt
+except ImportError:
+    claim_receipt = None
+
 EXPECTED_STARTER_FAILURES = (
     "test_load_returns_rows",
     "test_region_totals",
@@ -73,13 +82,22 @@ def _run_suite(implementation):
     )
 
 
-def run_progress(as_json):
+def run_progress(as_json, receipt_out=None):
+    starter = solution = None
+    starter_ms = solution_ms = 0
     if not _deps_available():
         _deps_hint()
         starter_ok = solution_ok = False
     else:
-        starter_ok = _run_suite("starter").returncode == 0
-        solution_ok = _run_suite("solution").returncode == 0
+        import time
+        t0 = time.monotonic()
+        starter = _run_suite("starter")
+        starter_ms = int((time.monotonic() - t0) * 1000)
+        t0 = time.monotonic()
+        solution = _run_suite("solution")
+        solution_ms = int((time.monotonic() - t0) * 1000)
+        starter_ok = starter.returncode == 0
+        solution_ok = solution.returncode == 0
     rows = []
     for checkpoint in CHECKPOINTS:
         gate = checkpoint["gate"]
@@ -97,11 +115,33 @@ def run_progress(as_json):
         row["kind"] = kind
         row["claim_code"] = code
         rows.append(row)
+    secret = claim_receipt.receipts_enabled() if claim_receipt else None
+    receipts = []
+    if secret:
+        starter_tests = claim_receipt.count_tests(starter.stderr) if starter else 0
+        solution_tests = claim_receipt.count_tests(solution.stderr) if solution else 0
+        solution_hash = claim_receipt.solution_sha256(ROOT)
+        for checkpoint in CHECKPOINTS:
+            gate = checkpoint["gate"]
+            if gate == "starter-suite":
+                passed, tests, ms = starter_ok, starter_tests, starter_ms
+            elif gate == "both-suites":
+                passed = starter_ok and solution_ok
+                tests, ms = starter_tests + solution_tests, starter_ms + solution_ms
+            else:
+                continue
+            receipts.append(claim_receipt.make_receipt(
+                COURSE_ID, checkpoint["id"], passed=passed, tests=tests,
+                duration_ms=ms, impl_dir=ROOT / "starter",
+                solution_hash=solution_hash, secret=secret))
     if as_json:
-        print(json.dumps({"course": COURSE_ID,
+        document = {"course": COURSE_ID,
             "starter_suite_passed": starter_ok,
             "solution_suite_passed": solution_ok,
-            "checkpoints": rows}, ensure_ascii=False, indent=2))
+            "checkpoints": rows}
+        if secret:
+            document["receipts"] = receipts
+        print(json.dumps(document, ensure_ascii=False, indent=2))
     else:
         starter_state = "passed" if starter_ok else "not passed"
         solution_state = "passed" if solution_ok else "not passed"
@@ -109,9 +149,17 @@ def run_progress(as_json):
         print("Suites: starter " + starter_state + " / solution " + solution_state)
         for row in rows:
             state = row["status"] + (" (self-attested)" if row["kind"] == "attested" else "")
-            code = "claim " + row["claim_code"] if row["claim_code"] else "—"
+            code = "claim code " + row["claim_code"] if row["claim_code"] else "—"
             print("  " + row["id"] + "  " + row["title"] + "  [" + state + "]  " + code)
-        print("Claim codes are self-reported evidence recorded on flypython.com — never a certificate.")
+        print("Claim codes are self-reported evidence, recorded at flypython.com; never a certificate.")
+        if secret:
+            print(f"Signed run receipts prepared for {len(receipts)} gated checkpoint(s);"
+                  " submit each with its claim to mark them as a local-run receipt.")
+    if receipt_out and secret:
+        Path(receipt_out).write_text(
+            json.dumps({"receipts": receipts}, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8")
+        print(f"Wrote {len(receipts)} receipt(s) to {receipt_out}", file=sys.stderr)
     return 0
 
 
@@ -120,10 +168,11 @@ def main() -> int:
     parser.add_argument("implementation", choices=("progress", "starter", "solution"))
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--expect-failure", action="store_true")
+    parser.add_argument("--receipt-out", metavar="PATH", help="write signed run receipts JSON (requires FLYPYTHON_CLAIM_SECRET)")
     args = parser.parse_args()
 
     if args.implementation == "progress":
-        return run_progress(args.json)
+        return run_progress(args.json, args.receipt_out)
 
     if not _deps_available():
         _deps_hint()
@@ -149,6 +198,10 @@ def main() -> int:
             return 1
         print("Expected starter state reproduced: chart functions unimplemented.")
         return 0
+    if result.returncode == 0:
+        print(f"{args.implementation}: all tests passed")
+    else:
+        sys.stderr.write((result.stderr or "") or (result.stdout or ""))
     return result.returncode
 
 

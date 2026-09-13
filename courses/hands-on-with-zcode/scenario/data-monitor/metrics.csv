@@ -1,0 +1,8 @@
+host,service,latency_ms
+web-1,api,182
+web-2,api,205
+db-1,postgres,44
+web-3,frontend,96
+db-2,,51
+web-4,api,too-slow
+cache-1,redis,12

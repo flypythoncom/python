@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "courses": [
+    {
+      "slug": "agent-rules-single-source",
+      "course_id": "course-agent-rules",
+      "solution_sha256": "92757cc9943502021864bab3d508a168a4239b369b8a8ce55d6d3df5d1ca1fb8"
+    },
+    {
+      "slug": "da-eda",
+      "course_id": "course-da-eda",
+      "solution_sha256": "9eb0075ac148b788d9756ed4bf45242cb1c085601669cc7f0fe84f3af015397d"
+    },
+    {
+      "slug": "da-report",
+      "course_id": "course-da-report",
+      "solution_sha256": "f825baf3a1d4aac1292b5a24f3f2b3465cb02b5e9f79ebda6843c5e560f38629"
+    },
+    {
+      "slug": "da-visualization",
+      "course_id": "course-da-visualization",
+      "solution_sha256": "04d39d6f0c09e8c46d83835cf8d838b59a6ea3933828233f59b1b6ea2d935f69"
+    },
+    {
+      "slug": "hands-on-python-with-claude-code",
+      "course_id": "course-claude-code",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
+      "slug": "hands-on-with-cursor",
+      "course_id": "course-cursor",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
+      "slug": "hands-on-with-deepseek-harness",
+      "course_id": "course-deepseek-harness",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
+      "slug": "hands-on-with-kimi-code",
+      "course_id": "course-kimi-code",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
+      "slug": "hands-on-with-openai-codex",
+      "course_id": "course-codex-cli",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
+      "slug": "hands-on-with-zcode",
+      "course_id": "course-zcode",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
+      "slug": "mcp-server-in-python",
+      "course_id": "course-mcp-tools",
+      "solution_sha256": "e9a0c348e12bd1f04d83783689f299e3ece8884f3f8a5be2f8a40655e211b790"
+    },
+    {
+      "slug": "verifying-ai-generated-code",
+      "course_id": "course-verify-ship",
+      "solution_sha256": "3426cef9b1a5ee074e3839bb152b0ddff186e3c9a18928d99099795654073e16"
+    }
+  ]
+}

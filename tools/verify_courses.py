@@ -8,7 +8,10 @@ lesson has a paired ``*_cn.md`` file (and vice versa), and the course's own
 
 from __future__ import annotations
 
+import hashlib
+import hmac
 import json
+import os
 import re
 import subprocess
 import sys
@@ -16,6 +19,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 LESSON_NAME = re.compile(r"^L\d{2,}\.md$")
+
+sys.path.insert(0, str(ROOT / "tools"))
+import claim_receipt  # noqa: E402
 
 
 def discover_courses(root: Path) -> list[Path]:
@@ -74,6 +80,7 @@ def run_course_verifier(course: Path) -> list[str]:
                 f"\n{(result.stdout or '') + (result.stderr or '')}".rstrip()
             )
     problems.extend(check_progress_contract(course))
+    problems.extend(check_receipt_contract(course))
     return problems
 
 
@@ -123,6 +130,132 @@ def check_progress_contract(course: Path) -> list[str]:
     return problems
 
 
+def check_receipt_contract(course: Path) -> list[str]:
+    """FP-704: under FLYPYTHON_CLAIM_SECRET, progress --json must attach one
+    spec-shaped receipt per gated checkpoint with a verifiable HMAC."""
+    verify = course / "verify.py"
+    if not verify.exists():
+        return []
+    name = course.name
+    secret = "contract-test-secret"
+    env = dict(os.environ, FLYPYTHON_CLAIM_SECRET=secret)
+    result = subprocess.run(
+        [sys.executable, str(verify), "progress", "--json"],
+        check=False, capture_output=True, text=True, env=env,
+    )
+    if result.returncode != 0:
+        return [f"{name}: progress with {claim_receipt.SECRET_ENV} failed\n"
+                f"{(result.stdout or '') + (result.stderr or '')}".rstrip()]
+    try:
+        document = json.loads(result.stdout)
+    except ValueError:
+        return [f"{name}: progress --json with secret did not emit valid JSON"]
+
+    receipts = document.get("receipts")
+    if not isinstance(receipts, list) or not receipts:
+        return [f"{name}: progress --json emitted no receipts under {claim_receipt.SECRET_ENV}"]
+
+    gated = {item["id"] for item in document.get("checkpoints", [])
+             if item.get("kind") == "objective"}
+    problems: list[str] = []
+    if {receipt.get("checkpoint") for receipt in receipts} != gated:
+        problems.append(f"{name}: receipts must cover exactly the gated checkpoints")
+    for receipt in receipts:
+        sig = receipt.pop("sig", None)
+        expected = hmac.new(
+            secret.encode(), claim_receipt.canonical_json(receipt), hashlib.sha256
+        ).hexdigest()
+        if not isinstance(sig, str) or not hmac.compare_digest(sig, expected):
+            problems.append(f"{name}: receipt for {receipt.get('checkpoint')} has a bad signature")
+        for field in ("v", "course", "checkpoint", "suite", "impl_sha256",
+                      "solution_match", "created_at", "nonce"):
+            if field not in receipt:
+                problems.append(f"{name}: receipt for {receipt.get('checkpoint')} missing {field!r}")
+        suite = receipt.get("suite")
+        if not isinstance(suite, dict) or not all(
+            key in suite for key in ("passed", "tests", "duration_ms")
+        ):
+            problems.append(f"{name}: receipt for {receipt.get('checkpoint')} has a malformed suite block")
+    return problems
+
+
+# ── Shared-core enforcement (docs/courses/README.md §5.2, FP-711) ─────────
+# Agent-tool courses share one exercise — the report-tool scenario skins,
+# starter/solution pair, tests, and task contract. Folders stay
+# self-contained (a copied course still verifies alone), so instead of a
+# shared directory the members carry a `core-group` marker file and this
+# check enforces byte-for-byte equality of the core. verify.py is exempt
+# only inside its marked PER-COURSE BLOCK (course id, salt, titles).
+
+SKIP_PARTS = {"__pycache__", ".git", ".venv", "venv", "node_modules"}
+CORE_FILES = ("TASK.md", "TASK_cn.md")
+CORE_DIRS = ("tests", "starter", "solution", "scenario")
+BLOCK_RE = re.compile(
+    r"# ── PER-COURSE BLOCK ─+\n.*?# ── END PER-COURSE BLOCK ─+", re.S
+)
+
+
+def _core_payloads(course: Path) -> dict[str, bytes]:
+    payloads: dict[str, bytes] = {}
+    for name in CORE_FILES:
+        path = course / name
+        if path.exists():
+            payloads[name] = path.read_bytes()
+    for dirname in CORE_DIRS:
+        base = course / dirname
+        if not base.is_dir():
+            continue
+        for path in sorted(base.rglob("*")):
+            rel = path.relative_to(course)
+            if not path.is_file() or any(part in SKIP_PARTS for part in rel.parts):
+                continue
+            payloads[rel.as_posix()] = path.read_bytes()
+    verify = course / "verify.py"
+    if verify.exists():
+        normalized = BLOCK_RE.sub("# <per-course block stripped>", verify.read_text(encoding="utf-8"))
+        payloads["verify.py(normalized)"] = normalized.encode("utf-8")
+    return payloads
+
+
+def check_shared_core(courses: list[Path]) -> list[str]:
+    groups: dict[str, list[Path]] = {}
+    for course in courses:
+        marker = course / "core-group"
+        if marker.exists():
+            groups.setdefault(marker.read_text(encoding="utf-8").strip(), []).append(course)
+
+    problems: list[str] = []
+    for group, members in groups.items():
+        if len(members) < 2:
+            problems.append(f"core-group {group}: only one member ({members[0].name})")
+            continue
+        reference = _core_payloads(members[0])
+        for member in members[1:]:
+            other = _core_payloads(member)
+            for name in sorted(set(reference) | set(other)):
+                if reference.get(name) != other.get(name):
+                    problems.append(
+                        f"core-group {group}: {members[0].name} vs {member.name} differ on {name}"
+                    )
+        # Inside the per-course block, checkpoint ids and gates are core —
+        # only the display titles may differ. Compare (id, gate) shapes.
+        shapes = []
+        for member in members:
+            verify = (member / "verify.py").read_text(encoding="utf-8") if (member / "verify.py").exists() else ""
+            if verify and not BLOCK_RE.search(verify):
+                problems.append(f"{member.name}: verify.py has no marked PER-COURSE BLOCK")
+            shapes.append(list(zip(
+                re.findall(r'"id":\s*"(l\d+|capstone)"', verify),
+                re.findall(r'"gate":\s*"([a-z-]+)"', verify),
+            )))
+        for member, shape in zip(members[1:], shapes[1:]):
+            if shape != shapes[0]:
+                problems.append(
+                    f"core-group {group}: {member.name} checkpoint ids/gates differ from {members[0].name}"
+                )
+    return problems
+
+
 def main() -> int:
     courses = discover_courses(ROOT)
     if not courses:
@@ -133,6 +266,7 @@ def main() -> int:
     for course in courses:
         problems.extend(check_bilingual_contract(course))
         problems.extend(run_course_verifier(course))
+    problems.extend(check_shared_core(courses))
 
     if problems:
         for problem in problems:

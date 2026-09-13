@@ -1,0 +1,8 @@
+{
+  "skin": "data-monitor",
+  "data_file": "metrics.csv",
+  "required_fields": ["host", "service", "latency_ms"],
+  "numeric_field": "latency_ms",
+  "group_field": "service",
+  "report_file": "report.json"
+}
