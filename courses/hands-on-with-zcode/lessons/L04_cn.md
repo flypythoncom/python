@@ -9,7 +9,7 @@ status: reviewed
 reviewed_on: 2026-09-13
 hints:
   - title: "本检查点考察什么"
-    body: "starter 和 solution 双双通过——`verify.py progress` 只在两个套件都绿时打印本检查点的码。门槛是一对结果，不是一次运行。"
+    body: "starter 和 solution 双双通过——`verify.py` 只在两个套件都绿时打印本检查点的码。门槛是一对结果，不是一次运行。"
   - title: "审增量，不凭感觉"
     body: "工作区 Git 状态把整份累积改动放在一处——通过远程控制甚至能在手机上看。按评审者的方式读：每个 hunk 对上一条契约行、没有多余挪动、没有测试被放松。"
   - title: "完成的标志"
@@ -64,7 +64,7 @@ python verify.py solution    # 评审过的参考实现
 
 ## 检查点
 
-运行 `python verify.py progress`。本检查点的码只在两个套件都过
+运行 `python verify.py`。本检查点的码只在两个套件都过
 时打印。不看材料能回答即算通过：
 
 1. 你手工重算的分组总计结果如何？

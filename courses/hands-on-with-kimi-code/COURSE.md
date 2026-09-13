@@ -4,7 +4,7 @@ type: course
 title: Hands-on with Kimi Code
 summary: The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code, where built-in subagents split read-only exploration, planning, and the edits you approve.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-13
 badge:
@@ -17,8 +17,9 @@ course_id: course-kimi-code
 
 # Hands-on with Kimi Code
 
-> TL;DR: download this folder, run `kimi` in it, and say **"start lesson 1"**.
-> You finish with a working report tool, a reproducible pass/fail command,
+> TL;DR: set up the `kimi` CLI, install the FlyPython Skill, and let the
+> agent fetch this course — lesson 1 walks you through all three steps and
+> you download nothing. Say **"start lesson 1"**. You finish with a working report tool, a reproducible pass/fail command,
 > and the Kimi Code workflow: the built-in `explore`/`plan`/`coder`
 > subagents that keep reading, planning, and editing in separate lanes. The
 > exercise core is the same one the other agent-tool courses use — only the
@@ -68,12 +69,12 @@ If you are the Kimi Code agent teaching this course, follow these rules:
 - **When to stop:** a lesson is done when its checkpoint command runs and
   the learner can say, in their own words, what failed and why. If the
   learner cannot, re-teach from the failing test, not from the solution.
-- **How to use `verify.py`:** run it in a terminal or through the agent's
-  shell tool — `python verify.py starter --expect-failure` must reproduce
-  the listed failures; `python verify.py solution` must pass. "Done" means
-  the starter implementation passes the same suite after the learner's
-  bounded change.
-- **Honesty rules:** say what you did not verify. Do not claim the code is
+- **How to use `verify.py`:** the learner's command is plain
+  `python verify.py` — it runs the suites, prints per-checkpoint status
+  and earned claim codes, and exits non-zero while the gated checkpoints
+  (l03, l04) are still open. `starter --expect-failure` and `solution`
+  remain maintainer checks. "Done" means the default command shows every
+  gate `[passed]` after the learner's bounded change.- **Honesty rules:** say what you did not verify. Do not claim the code is
   production-ready. Do not promise learning or career outcomes.
 
 ## What this course does NOT cover
@@ -86,7 +87,7 @@ guides and playbooks — link, don't improvise.
 
 - Badge: **Reproduce with Kimi Code in the loop Badge** (badge id `course-kimi-code`) — earned by claiming all five checkpoints.
 - Challenges: L01–L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
-- Evidence: `python verify.py progress` — L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Evidence: `python verify.py` — L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
 - Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
 
 ## Folder map

@@ -31,4 +31,4 @@ Agent；它写的每一行都要过目。
 - `groupby().sum()` 会悄悄丢掉 NaN——清洗*之前*就要数清楚。
 
 **检查点：** `python verify.py starter` 退出 0——12 个测试全过。
-用 `python verify.py progress` 打印认领码。
+用 `python verify.py` 打印认领码。

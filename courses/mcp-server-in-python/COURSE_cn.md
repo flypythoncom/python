@@ -4,7 +4,7 @@ type: course
 title: 用 MCP 给你的 Agent 装上工具（Python）
 summary: 用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
@@ -17,7 +17,8 @@ course_id: course-mcp-tools
 
 # 用 MCP 给你的 Agent 装上工具（Python）
 
-> 摘要：下载本文件夹，在你的编码 Agent 中打开，说一句 **“开始第 1 课”**。
+> 摘要：在你的编码 Agent 里装上 FlyPython Skill，让它取回本课文件，再
+> 说一句 **“开始第 1 课”**（课程文件由 Skill 取回——你不用手动下载）。
 > 课程结束时你拥有一个实现无状态 2026-07-28 规范的 MCP 工具服务——
 > 无 initialize 握手、参数校验、处理异常隔离、input_required 多轮交互
 > ——由一个失败的 starter 和一个通过的 solution 共同证明。仅用标准库；
@@ -65,7 +66,7 @@ course_id: course-mcp-tools
 
 - 徽章：**MCP 工具服务徽章**（徽章 id `course-mcp-tools`）——认领全部五个检查点后获得。
 - 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
-- 证据：`python verify.py progress` —— L03（校验与错误隔离）与 L04（多轮交互）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 证据：`python verify.py` —— L03（校验与错误隔离）与 L04（多轮交互）由测试套件客观判定；L01/L02/L05 为学习者自报。
 - 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
 
 ## 文件夹结构

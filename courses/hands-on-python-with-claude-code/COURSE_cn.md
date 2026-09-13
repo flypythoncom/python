@@ -4,7 +4,7 @@ type: course
 title: 用 Claude Code 实战 Python
 summary: 一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
@@ -17,7 +17,8 @@ course_id: course-claude-code
 
 # 用 Claude Code 实战 Python
 
-> 摘要：下载本文件夹，在 Claude Code 中打开，说一句 **"开始第 1 课"**，Agent
+> 摘要：装好 Claude Code、装上 FlyPython Skill、让 Agent 取回本课文件（第 1 课
+> 就是这三步，你什么都不用下载），说一句 **"开始第 1 课"**，Agent
 > 就会带你走完一套经过验证的 AI 写 Python 工作流：任务契约 → 最小变更 →
 > 测试 → 客观验证。课程结束时你会得到一个可运行的报表工具、一条可复现的
 > 通过/失败命令，以及能迁移到自己项目里的模式。课程以 Claude Code 为教学
@@ -56,10 +57,10 @@ course_id: course-claude-code
 - **何时停止：** 当检查点命令运行通过、且学习者能用自己的话说清"什么
   失败了、为什么"时，一课才算完成。说不出来就基于失败的测试重新讲，
   而不是直接看答案。
-- **`verify.py` 用法：** `python verify.py starter --expect-failure` 必须
-  复现列出的失败；`python verify.py solution` 必须全部通过。"完成"指
-  学习者的最小变更让 starter 实现通过同一套测试。
-- **诚实规则：** 说明哪些内容没有验证过。不要宣称代码已达到生产可用。
+- **如何使用 `verify.py`：** 学员命令就是 `python verify.py`——它跑套件、
+  打印逐检查点状态与已获认领码，在门控检查点（l03、l04）未全通过时以
+  非零退出。`starter --expect-failure` 与 `solution` 留作维护者检查。
+  「完成」指学习者做完有界改动后，默认命令把所有门显示为 `[passed]`。- **诚实规则：** 说明哪些内容没有验证过。不要宣称代码已达到生产可用。
   不承诺任何学习或职业结果。
 
 ## 本课程不涉及的内容
@@ -73,7 +74,7 @@ Claude Code 安装、提示词技巧、多文件架构、pandas 或真正的 Exc
 
 - 徽章：**复现故障徽章**（徽章 id `course-claude-code`）——认领全部五个检查点后获得。
 - 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
-- 证据：`python verify.py progress` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 证据：`python verify.py` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
 - 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
 
 ## 文件夹结构

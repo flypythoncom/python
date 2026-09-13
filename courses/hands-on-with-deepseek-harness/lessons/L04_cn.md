@@ -9,7 +9,7 @@ status: reviewed
 reviewed_on: 2026-09-13
 hints:
   - title: "本检查点考察什么"
-    body: "starter 和 solution 双双通过——`verify.py progress` 只在两个套件都绿时打印本检查点的码。门槛是一对结果，不是一次运行。"
+    body: "starter 和 solution 双双通过——`verify.py` 只在两个套件都绿时打印本检查点的码。门槛是一对结果，不是一次运行。"
   - title: "审记录，不听自述"
     body: "只增轨迹是每条命令、每处编辑的可审计记录。从头审到尾：每处编辑对上一条契约行、每条命令真的跑过、没有测试被放松。"
   - title: "完成的标志"
@@ -65,7 +65,7 @@ python verify.py solution    # 评审过的参考实现
 
 ## 检查点
 
-运行 `python verify.py progress`。本检查点的码只在两个套件都过
+运行 `python verify.py`。本检查点的码只在两个套件都过
 时打印。不看材料能回答即算通过：
 
 1. 你手工重算的分组总计结果如何？

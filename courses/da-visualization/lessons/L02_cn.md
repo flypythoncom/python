@@ -25,4 +25,4 @@ hints:
 你要做的是定义它必须渲染的数字。
 
 **检查点：** 你已写下规格，把每个输出文件映射到它的聚合来源。
-自我声明；用 `python verify.py progress` 记录。
+自我声明；用 `python verify.py` 记录。

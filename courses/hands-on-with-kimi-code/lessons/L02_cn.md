@@ -66,7 +66,7 @@ hints:
 
 ## 检查点
 
-运行 `python verify.py progress`——能回答下面三题时，本检查点的
+运行 `python verify.py`——能回答下面三题时，本检查点的
 认领码就会显示：
 
 1. 用你自己的话说，`test_invalid_records_are_isolated_with_reasons`

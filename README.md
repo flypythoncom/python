@@ -25,8 +25,24 @@ versions into a browsable learning experience.
 
 ## Start in three minutes
 
-No installation is required beyond Python 3.11+ (development pins 3.12
-through `.python-version`):
+You need a coding agent that can run commands and reach the network
+(Claude Code, the Codex app, Cursor, DeepSeek Harness, Kimi Code, or
+ZCode — chat-only web AIs cannot run these courses). Install the
+[FlyPython Skill](https://flypython.com/skills/flypython/SKILL.md) in
+your agent, then paste this one sentence:
+
+> Read https://flypython.com/skills/flypython/SKILL.md and start the FlyPython course `da-eda`.
+
+The agent authorizes you with a one-time link (you never hand it a
+password), fetches the course files itself — you download nothing — and
+drives the challenges with you. New to driving an agent? Start with the
+tool course for *your* agent: [Hands-on Python with Claude Code](courses/hands-on-python-with-claude-code/COURSE.md),
+[Codex app](courses/hands-on-with-openai-codex/COURSE.md), [Cursor](courses/hands-on-with-cursor/COURSE.md),
+[DeepSeek Harness](courses/hands-on-with-deepseek-harness/COURSE.md),
+[Kimi Code](courses/hands-on-with-kimi-code/COURSE.md), or
+[ZCode](courses/hands-on-with-zcode/COURSE.md).
+
+Maintainers can still reproduce an example locally without any agent:
 
 ```bash
 git clone https://github.com/flypythoncom/python.git
@@ -34,10 +50,6 @@ cd python
 python examples/product-slug/verify.py starter --expect-failure
 python examples/product-slug/verify.py solution
 ```
-
-You just reproduced a bug and verified its fixed behavior. Now give the
-[task contract](examples/product-slug/TASK.md) and [agent rules](templates/AGENT_RULES.example.md)
-to a coding agent (Cursor, Windsurf, Claude Code, Copilot) and make the starter pass without copying the solution.
 
 ## Choose what you need to accomplish
 

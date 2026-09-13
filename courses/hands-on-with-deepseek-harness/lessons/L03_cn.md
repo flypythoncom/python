@@ -9,7 +9,7 @@ status: reviewed
 reviewed_on: 2026-09-13
 hints:
   - title: "本检查点考察什么"
-    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py progress` 只在 starter 套件变绿后显示本检查点的码。"
+    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py` 只在 starter 套件变绿后显示本检查点的码。"
   - title: "轨迹就是审计"
     body: "日志是只增的，事后可以逐条检查每次工具调用与文件编辑——某步走偏了就从那步之前分叉会话。"
   - title: "完成的标志"
@@ -66,7 +66,7 @@ DeepSeek Harness 让监督可审计：会话轨迹是只增的，Agent 做了什
 
 ## 检查点
 
-运行 `python verify.py progress`。本检查点的码只在 starter 套件
+运行 `python verify.py`。本检查点的码只在 starter 套件
 全绿时出现。不看材料能回答即算通过：
 
 1. 这次有界改动走了几步，是什么让每步保持有界？

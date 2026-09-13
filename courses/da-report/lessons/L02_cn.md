@@ -25,4 +25,4 @@ hints:
 永远替代不了结构。
 
 **检查点：** 动 `starter/report.py` 之前，章节计划已经写在纸上。
-自我声明；用 `python verify.py progress` 记录。
+自我声明；用 `python verify.py` 记录。

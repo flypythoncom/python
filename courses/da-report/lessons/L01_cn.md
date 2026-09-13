@@ -25,4 +25,4 @@ hints:
 `revenue_by_region`——以及它们在 `results.json` 里的出处。
 
 **检查点：** 每个必需数字你都能回溯到来源字段。自我声明；用
-`python verify.py progress` 记录。
+`python verify.py` 记录。

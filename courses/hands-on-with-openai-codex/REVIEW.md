@@ -37,6 +37,20 @@
   source material.
 - Whether a free ChatGPT tier lasts the whole course is unverified.
 
+## 2026-09-13 — 0.0.8 rework: lesson 1 is now tool → Skill → agent fetch (FP-822)
+
+- L01 (EN+ZH) rewritten around the fixed order: get the tool running →
+  install the FlyPython Skill (network access included) → let the agent
+  fetch this course's files via the files endpoint. All "download this
+  folder" wording removed from `COURSE.md` and lessons.
+- The learner's check command across lessons is now the bare
+  `python verify.py` (FP-820): per-checkpoint status + claim codes,
+  non-zero exit while gated checkpoints are open. `solution` is no longer
+  presented as a completion standard.
+- Tool-specific Skill install and network steps are authored from the
+  same official documentation as the course; **not yet exercised inside
+  the tool** — the pending live run-through below still stands.
+
 ## Deviation log
 
 ### 2026-09-13 — agent solvability run (challenge mode, not taught mode)

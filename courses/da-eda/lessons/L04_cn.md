@@ -29,5 +29,5 @@ hints:
 （starter 已不处于未完成状态）。再跑 `python verify.py solution`——
 全绿。
 
-**检查点：** 两道门禁都过。用 `python verify.py progress` 取客观
+**检查点：** 两道门禁都过。用 `python verify.py` 取客观
 认领码。

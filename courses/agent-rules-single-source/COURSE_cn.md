@@ -4,7 +4,7 @@ type: course
 title: Agent 规则的单一真源
 summary: 不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
@@ -17,7 +17,8 @@ course_id: course-agent-rules
 
 # Agent 规则的单一真源
 
-> 摘要：下载本文件夹，在你的编码 Agent 中打开，说一句 **“开始第 1 课”**。
+> 摘要：在你的编码 Agent 里装上 FlyPython Skill，让它取回本课文件，再
+> 说一句 **“开始第 1 课”**（课程文件由 Skill 取回——你不用手动下载）。
 > 课程结束时你拥有一个可运行的规则一致性检查器（`rules_check.py`）——
 > 任何规则文件偏离 AGENTS.md 的那一刻，CI 就会失败——外加应用到你自己
 > 仓库的单一真源配置。天然工具无关：Claude Code、Codex CLI、Cursor
@@ -64,7 +65,7 @@ flypython.com 上的 AGENTS.md 指南）、多仓库配置、机器策略强制�
 
 - 徽章：**量化漂移徽章**（徽章 id `course-agent-rules`）——认领全部五个检查点后获得。
 - 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
-- 证据：`python verify.py progress` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 证据：`python verify.py` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
 - 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
 
 ## 文件夹结构

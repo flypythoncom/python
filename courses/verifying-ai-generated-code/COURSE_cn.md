@@ -4,7 +4,7 @@ type: course
 title: "从「能跑」到「能上线」：验证 AI 写的代码"
 summary: 为你的 AI 项目补上缺失的发布证据机器——一个 ship check：运行测试、解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
@@ -17,7 +17,8 @@ course_id: course-verify-ship
 
 # 从「能跑」到「能上线」：验证 AI 写的代码
 
-> 摘要：下载本文件夹，在你的编码 Agent 中打开，说一句 **“开始第 1 课”**。
+> 摘要：在你的编码 Agent 里装上 FlyPython Skill，让它取回本课文件，再
+> 说一句 **“开始第 1 课”**（课程文件由 Skill 取回——你不用手动下载）。
 > 课程结束时你拥有 `ship_check.py`：一条命令把“演示能跑”变成一份书面
 > 交付记录——命令、退出码、解析出的测试数、一个拒绝零测试项目的判定，
 > 以及一份显式的未验证清单。工具无关；仅用 Python 标准库。
@@ -61,7 +62,7 @@ course_id: course-verify-ship
 
 - 徽章：**「能跑」不是证据徽章**（徽章 id `course-verify-ship`）——认领全部五个检查点后获得。
 - 挑战：L01–L05 检查点各 10 分；五项全部在 flypython.com 认领后另加 50 分课程徽章奖励。
-- 证据：`python verify.py progress` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
+- 证据：`python verify.py` —— L03（边界修改）与 L04（验证与审查）由测试套件客观判定；L01/L02/L05 为学习者自报。
 - 提交：每个通过的检查点会打印确定性认领码，在 flypython.com 上记入你的账号。这是自我报告的证据，绝不是证书。
 
 ## 文件夹结构

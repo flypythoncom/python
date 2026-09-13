@@ -9,7 +9,7 @@ status: reviewed
 reviewed_on: 2026-09-13
 hints:
   - title: "本检查点考察什么"
-    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py progress` 只在 starter 套件变绿后显示本检查点的码。"
+    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py` 只在 starter 套件变绿后显示本检查点的码。"
   - title: "coder 是唯一能编辑的道"
     body: "只有 `coder` 子代理能写文件、跑命令——每处改动都汇进你盯着的这一条道。每步守住一条契约行，步间跑验证。"
   - title: "完成的标志"
@@ -63,7 +63,7 @@ Kimi Code 的分道帮了忙：`explore` 和 `plan` 根本碰不了文件——
 
 ## 检查点
 
-运行 `python verify.py progress`。本检查点的码只在 starter 套件
+运行 `python verify.py`。本检查点的码只在 starter 套件
 全绿时出现。不看材料能回答即算通过：
 
 1. 这次有界改动走了几步，是什么让每步保持有界？

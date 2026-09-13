@@ -13,8 +13,10 @@ import hmac
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -179,6 +181,107 @@ def check_receipt_contract(course: Path) -> list[str]:
     return problems
 
 
+# ── Default command contract (FP-820) ──────────────────────────────────────
+# Bare ``python verify.py`` is the learner's command: it runs the same engine
+# as ``progress``, prints English-first output with the Chinese lines after,
+# and exits 1 while objective gates are open (a shipped starter intentionally
+# fails). The published ``progress --json`` / ``--receipt-out`` formats must
+# stay byte-compatible with 0.0.7 — check_progress/check_receipt above own
+# those; this check owns the new surface.
+
+
+def check_default_command(course: Path) -> list[str]:
+    verify = course / "verify.py"
+    if not verify.exists():
+        return []
+    name = course.name
+    problems: list[str] = []
+    result = subprocess.run(
+        [sys.executable, str(verify)],
+        check=False, capture_output=True, text=True,
+    )
+    if result.returncode != 1:
+        problems.append(
+            f"{name}: default command exited {result.returncode}"
+            " (expected 1: the shipped starter intentionally fails)")
+    lines = result.stdout.splitlines()
+    if not any(line.startswith("Suites: starter ") for line in lines):
+        problems.append(f"{name}: default command missing the Suites line")
+    if not any("[open]" in line and "l03" in line for line in lines):
+        problems.append(f"{name}: default command does not show l03 as open")
+    if not any("[attest" in line for line in lines):
+        problems.append(f"{name}: default command does not show self-attested checkpoints")
+    # English before Chinese: checkpoint titles must not lead with Chinese
+    # (FP-709 mixed-order debt) — shared-core titles are stored "zh / en".
+    for line in lines:
+        if re.match(r"  l\d{2}  ", line):
+            title = line.split("  ", 3)[2] if line.count("  ") >= 3 else ""
+            if re.match(r"^[\u4e00-\u9fff]", title):
+                problems.append(f"{name}: default command prints a Chinese-first checkpoint title")
+                break
+    return problems
+
+
+# ── Standalone-folder contract (FP-821) ────────────────────────────────────
+# A course fetched through /api/challenges/<slug>/files must verify alone:
+# only the course folder plus the shared files the endpoint attaches (the
+# repo-relative tools/ tree, e.g. claim_receipt.py). This check rebuilds that
+# layout in a temp directory and runs the default command + receipts there.
+
+STANDALONE_SHARED = ("tools/claim_receipt.py",)
+
+
+def check_standalone_run(course: Path) -> list[str]:
+    name = course.name
+    problems: list[str] = []
+    with tempfile.TemporaryDirectory(prefix="fp-standalone-") as tmp:
+        root = Path(tmp)
+        isolated = root / "courses" / name
+        shutil.copytree(
+            course, isolated,
+            ignore=shutil.ignore_patterns("__pycache__", "*.pyc", ".pytest_cache"),
+        )
+        for shared in STANDALONE_SHARED:
+            source = ROOT / shared
+            if not source.exists():
+                problems.append(f"{name}: shared file {shared} missing from repo")
+                continue
+            (root / shared).parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source, root / shared)
+
+        default = subprocess.run(
+            [sys.executable, str(isolated / "verify.py")],
+            check=False, capture_output=True, text=True,
+        )
+        if default.returncode != 1:
+            problems.append(
+                f"{name}: standalone default command exited {default.returncode}"
+                " (expected 1: the shipped starter intentionally fails)")
+        elif "Suites:" not in default.stdout or "l03" not in default.stdout:
+            problems.append(f"{name}: standalone default command did not print checkpoint status")
+
+        env = dict(os.environ, FLYPYTHON_CLAIM_SECRET="standalone-test-secret")
+        receipts = subprocess.run(
+            [sys.executable, str(isolated / "verify.py"), "progress", "--json"],
+            check=False, capture_output=True, text=True, env=env,
+        )
+        if receipts.returncode != 0:
+            problems.append(
+                f"{name}: standalone progress failed\n"
+                f"{(receipts.stdout or '') + (receipts.stderr or '')}".rstrip())
+        else:
+            try:
+                document = json.loads(receipts.stdout)
+            except ValueError:
+                problems.append(f"{name}: standalone progress --json did not emit valid JSON")
+                document = {}
+            if not document.get("receipts"):
+                problems.append(
+                    f"{name}: standalone run produced no receipts — the shared"
+                    " tools/ file the files endpoint attaches is not loadable")
+    return problems
+
+
 # ── Shared-core enforcement (docs/courses/README.md §5.2, FP-711) ─────────
 # Agent-tool courses share one exercise — the report-tool scenario skins,
 # starter/solution pair, tests, and task contract. Folders stay
@@ -266,6 +369,8 @@ def main() -> int:
     for course in courses:
         problems.extend(check_bilingual_contract(course))
         problems.extend(run_course_verifier(course))
+        problems.extend(check_default_command(course))
+        problems.extend(check_standalone_run(course))
     problems.extend(check_shared_core(courses))
 
     if problems:

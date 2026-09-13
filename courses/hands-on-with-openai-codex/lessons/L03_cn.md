@@ -9,7 +9,7 @@ status: reviewed
 reviewed_on: 2026-09-13
 hints:
   - title: "本检查点考察什么"
-    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py progress` 只在 starter 套件变绿后显示本检查点的码。"
+    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py` 只在 starter 套件变绿后显示本检查点的码。"
   - title: "审批就是边界"
     body: "应用会在跑命令前询问、在每个文件 diff 落地前展示。读命令、读 diff——闭眼批准正是「有界工作」变成「整文件重写」的方式。"
   - title: "完成的标志"
@@ -62,7 +62,7 @@ diff，再接受下一处改动。
 
 ## 检查点
 
-运行 `python verify.py progress`。本检查点的码只在 starter 套件全绿
+运行 `python verify.py`。本检查点的码只在 starter 套件全绿
 时出现。不看材料能回答即算通过：
 
 1. 这次有界改动走了几轮，是什么让每轮保持有界？

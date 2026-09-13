@@ -4,7 +4,7 @@ type: course
 title: Hands-on Python with Claude Code
 summary: An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.
 lang: en-US
-content_version: 2
+content_version: 3
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
@@ -17,8 +17,9 @@ course_id: course-claude-code
 
 # Hands-on Python with Claude Code
 
-> TL;DR: download this folder, open it in Claude Code, say **"start lesson 1"**,
-> and the agent teaches you a verified workflow for AI-written Python: task
+> TL;DR: set up Claude Code, install the FlyPython Skill, and let the agent
+> fetch this course — lesson 1 walks you through all three steps and you
+> download nothing. Then say **"start lesson 1"**, and the agent teaches you a verified workflow for AI-written Python: task
 > contract → smallest change → tests → objective verification. You finish with
 > a working report tool, a reproducible pass/fail command, and a pattern you
 > can apply to your own project. Claude Code is the tool used in the lessons,
@@ -63,11 +64,12 @@ If you are the coding agent teaching this course, follow these rules:
 - **When to stop:** a lesson is done when its checkpoint command runs and the
   learner can say, in their own words, what failed and why. If the learner
   cannot, re-teach from the failing test, not from the solution.
-- **How to use `verify.py`:**
-  `python verify.py starter --expect-failure` must reproduce the listed
-  failures; `python verify.py solution` must pass. "Done" means the starter
-  implementation passes the same suite after the learner's bounded change.
-- **Honesty rules:** say what you did not verify. Do not claim the code is
+- **How to use `verify.py`:** the learner's command is plain
+  `python verify.py` — it runs the suites, prints per-checkpoint status
+  and earned claim codes, and exits non-zero while the gated checkpoints
+  (l03, l04) are still open. `starter --expect-failure` and `solution`
+  remain maintainer checks. "Done" means the default command shows every
+  gate `[passed]` after the learner's bounded change.- **Honesty rules:** say what you did not verify. Do not claim the code is
   production-ready. Do not promise learning or career outcomes.
 
 ## What this course does NOT cover
@@ -81,7 +83,7 @@ companion repository has guides and playbooks — link, don't improvise.
 
 - Badge: **Reproduce the failure Badge** (badge id `course-claude-code`) - earned by claiming all five checkpoints.
 - Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
-- Evidence: `python verify.py progress` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Evidence: `python verify.py` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
 - Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
 
 ## Folder map

@@ -96,7 +96,9 @@ def main() -> int:
         return 1
 
     print(f"capstone verified — claim code: {_claim_code()}")
+    print("\u4e2d\u6587\uff1a\u6bd5\u4e1a\u9879\u76ee\u5df2\u901a\u8fc7\uff0c\u8ba4\u9886\u7801\u89c1\u4e0a\uff1b\u63d0\u4ea4\u5230 flypython.com\u3002")
     print("Self-reported evidence for flypython.com, never a certificate.")
+    print("\u8ba4\u9886\u7801\u662f\u81ea\u6211\u62a5\u544a\u7684\u8bc1\u636e\uff0c\u4e0d\u662f\u8bc1\u4e66\u3002")
     return 0
 
 

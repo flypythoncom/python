@@ -4,7 +4,7 @@ type: course
 title: Hands-on with DeepSeek Harness
 summary: The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in DeepSeek Harness, where the agent loop is composed from plugins and every step lands in an inspectable trajectory.
 lang: en-US
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-13
 badge:
@@ -17,8 +17,9 @@ course_id: course-deepseek-harness
 
 # Hands-on with DeepSeek Harness
 
-> TL;DR: download this folder, point a DeepSeek Harness agent at it, and say
-> **"start lesson 1"**. You finish with a working report tool, a reproducible
+> TL;DR: set up DeepSeek Harness, install the FlyPython Skill, and let the
+> agent fetch this course — lesson 1 walks you through all three steps and
+> you download nothing. Say **"start lesson 1"**. You finish with a working report tool, a reproducible
 > pass/fail command, and the harness-native workflow: plugins composed in
 > `cordis.yml`, and an append-only trajectory you can inspect, resume, and
 > fork. The exercise core is the same one the other agent-tool courses use —
@@ -72,11 +73,12 @@ follow these rules:
 - **When to stop:** a lesson is done when its checkpoint command runs and
   the learner can say, in their own words, what failed and why. If the
   learner cannot, re-teach from the failing test, not from the solution.
-- **How to use `verify.py`:** run it in the session's shell/sandbox tool —
-  `python verify.py starter --expect-failure` must reproduce the listed
-  failures; `python verify.py solution` must pass. "Done" means the starter
-  implementation passes the same suite after the learner's bounded change.
-- **Honesty rules:** say what you did not verify. Do not claim the code is
+- **How to use `verify.py`:** the learner's command is plain
+  `python verify.py` — it runs the suites, prints per-checkpoint status
+  and earned claim codes, and exits non-zero while the gated checkpoints
+  (l03, l04) are still open. `starter --expect-failure` and `solution`
+  remain maintainer checks. "Done" means the default command shows every
+  gate `[passed]` after the learner's bounded change.- **Honesty rules:** say what you did not verify. Do not claim the code is
   production-ready. Do not promise learning or career outcomes.
 
 ## What this course does NOT cover
@@ -90,7 +92,7 @@ link, don't improvise.
 
 - Badge: **Reproduce with DeepSeek Harness in the loop Badge** (badge id `course-deepseek-harness`) — earned by claiming all five checkpoints.
 - Challenges: L01–L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
-- Evidence: `python verify.py progress` — L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Evidence: `python verify.py` — L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
 - Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
 
 ## Folder map

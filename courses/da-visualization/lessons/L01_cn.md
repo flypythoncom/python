@@ -30,4 +30,4 @@ hints:
 声称要是错了，图越漂亮越糟糕。
 
 **检查点：** 你能说出每张图背后的声称。自我声明；用
-`python verify.py progress` 记录。
+`python verify.py` 记录。

@@ -27,5 +27,5 @@ hints:
 `python verify.py starter --expect-failure` 现在必须退出非零；
 `python verify.py solution` 必须全绿。
 
-**检查点：** 两道门禁都过。用 `python verify.py progress` 取客观
+**检查点：** 两道门禁都过。用 `python verify.py` 取客观
 认领码。

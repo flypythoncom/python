@@ -4,7 +4,7 @@ type: course
 title: "上手 Cursor"
 summary: "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Cursor 里手把手教：由 Agent 模式跑闭环，你监督 diff 与项目规则。"
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
 reviewed_on: 2026-09-13
 badge:
@@ -17,8 +17,8 @@ course_id: course-cursor
 
 # 上手 Cursor
 
-> 一句话：下载本文件夹，在 Cursor 里作为项目打开，开一个 Agent 对话，
-> 对它说**「开始第 1 课」**。完成时你会得到一个能跑的报表工具、一条
+> 一句话：装好 Cursor、装上 FlyPython Skill、让 Agent 取回本课文件（第 1 课
+> 就是这三步，你什么都不用下载），开一个 Agent 对话，对它说**「开始第 1 课」**。完成时你会得到一个能跑的报表工具、一条
 > 可复现的通过/失败命令，以及 Cursor 工作流：Agent/Ask/Plan 模式、
 > `.cursor/rules` 项目规则与 diff 审查。练习核心与 Claude Code、Codex
 > 课程完全相同——变的只是你驱动的工具。
@@ -61,11 +61,10 @@ course_id: course-cursor
 - **何时停下：** 一节课的检查点命令跑通、且学习者能用自己的话说清
   哪里坏了、为什么，这节课才算完。学习者说不出就从失败测试重新教，
   不要从 solution 教。
-- **如何使用 `verify.py`：** 在集成终端里跑，或让 Agent 跑——
-  `python verify.py starter --expect-failure` 必须复现列出的失败；
-  `python verify.py solution` 必须通过。「完成」指学习者做完有界
-  改动后，starter 实现通过同一套测试。
-- **诚实规则：** 说清你没验证什么。不要声称代码达到生产可用。不要
+- **如何使用 `verify.py`：** 学员命令就是 `python verify.py`——它跑套件、
+  打印逐检查点状态与已获认领码，在门控检查点（l03、l04）未全通过时以
+  非零退出。`starter --expect-failure` 与 `solution` 留作维护者检查。
+  「完成」指学习者做完有界改动后，默认命令把所有门显示为 `[passed]`。- **诚实规则：** 说清你没验证什么。不要声称代码达到生产可用。不要
   承诺学习或职业结果。
 
 ## 本课程不覆盖什么
@@ -77,7 +76,7 @@ Cursor 的安装、套餐定价、模型选择、MCP 配置、团队/管理功�
 
 - 徽章：**Cursor 协同复现徽章**（badge id `course-cursor`）——认领全部五个检查点获得。
 - 挑战：L01–L05 检查点，各 10 分；在 flypython.com 上集齐五个再加 50 分课程徽章奖励。
-- 证据：`python verify.py progress`——L03（有界改动）与 L04（验证与评审）由套件客观把关；L01/L02/L05 为学习者自我报告。
+- 证据：`python verify.py`——L03（有界改动）与 L04（验证与评审）由套件客观把关；L01/L02/L05 为学习者自我报告。
 - 提交：每个通过的检查点打印一个确定性的认领码；在 flypython.com 上记入你的账号。这是自我报告的证据，从来不是证书。
 
 ## 文件夹地图

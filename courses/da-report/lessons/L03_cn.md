@@ -28,4 +28,4 @@ hints:
 - 数字格式：`33347.89` 必须以两位小数出现。
 
 **检查点：** `python verify.py starter` 退出 0。用
-`python verify.py progress` 取认领码。
+`python verify.py` 取认领码。

@@ -25,4 +25,4 @@ hints:
 哪些没有。
 
 **检查点：** 这句话已写下。自我声明；用
-`python verify.py progress` 记录。
+`python verify.py` 记录。

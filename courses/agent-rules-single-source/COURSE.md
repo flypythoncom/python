@@ -4,7 +4,7 @@ type: course
 title: One source of truth for agent rules
 summary: Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.
 lang: en-US
-content_version: 2
+content_version: 3
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
@@ -17,8 +17,9 @@ course_id: course-agent-rules
 
 # One source of truth for agent rules
 
-> TL;DR: download this folder, open it in your coding agent, and say
-> **"start lesson 1"**. You finish with a working rule-consistency checker
+> TL;DR: install the FlyPython Skill in your coding agent and let it fetch
+> this course, then say **"start lesson 1"**. (Lesson files arrive via
+> the Skill — you download nothing by hand.) You finish with a working rule-consistency checker
 > (`rules_check.py`) that fails CI the moment a rule file drifts from
 > AGENTS.md — plus the single-source setup applied to your own repository.
 > Tool-agnostic by design: Claude Code, Codex CLI, and Cursor all read these
@@ -69,7 +70,7 @@ directory, three file names, one truth.
 
 - Badge: **Measure the drift Badge** (badge id `course-agent-rules`) - earned by claiming all five checkpoints.
 - Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
-- Evidence: `python verify.py progress` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
+- Evidence: `python verify.py` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
 - Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
 
 ## Folder map

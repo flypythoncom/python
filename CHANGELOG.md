@@ -4,6 +4,41 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+0.0.8 — Skill as the main entry (companion-repository half; see the
+website plan `docs/product-and-growth-plan-0.0.8.md`).
+
+### Added
+
+- FP-820: bare `python verify.py` is the learner's default command on
+  every course and the data-analysis capstone — runs the suites, prints
+  per-checkpoint status and earned claim codes (English first, Chinese
+  after), exits non-zero while gated checkpoints are open. The four
+  explicit usages remain maintainer checks; the published
+  `progress --json` / `--receipt-out` formats are unchanged.
+- FP-821: `tools/verify_courses.py` now copies each course folder plus
+  the shared `tools/claim_receipt.py` into an isolated tree and runs the
+  default command and the receipts contract there — a course fetched via
+  the files endpoint verifies alone.
+
+### Changed
+
+- FP-822: the six agent-tool courses' lesson 1 (EN+ZH) is rewritten
+  around the fixed order get-the-tool-running → install the FlyPython
+  Skill (network access included) → let the agent fetch the course
+  files; every "download this folder" wording is gone from `COURSE.md`,
+  `COURSE_cn.md`, and the lessons, and `verify.py solution` is no longer
+  presented as a completion standard.
+- FP-823: the prose checkpoints of `agent-rules-single-source`,
+  `mcp-server-in-python`, and `verifying-ai-generated-code` are question
+  lists the agent can ask directly at the human-in-the-loop gate;
+  data-analysis courses keep their concrete checkpoint criteria and
+  frontmatter hint questions.
+- FP-824: both READMEs' "Start in three minutes" leads with the Skill
+  entry sentence and the six agent-tool courses instead of a clone +
+  download flow.
+
+## [Unreleased-0.0.4-phase-A]
+
 0.0.4 phase A — challenge-platform rework on top of 0.1.0.
 
 ### Added

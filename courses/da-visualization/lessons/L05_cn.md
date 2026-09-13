@@ -27,4 +27,4 @@ hints:
 写一句话附在这些图旁边，准确说明哪些东西验证过、哪些没有。
 
 **检查点：** 这句话你已写下来。自我声明；用
-`python verify.py progress` 记录。
+`python verify.py` 记录。

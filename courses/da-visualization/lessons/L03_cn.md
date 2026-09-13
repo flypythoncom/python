@@ -28,4 +28,4 @@ hints:
 - 测试检查 PNG 魔数：不是真 PNG 的文件会失败。
 
 **检查点：** `python verify.py starter` 退出 0。用
-`python verify.py progress` 取认领码。
+`python verify.py` 取认领码。

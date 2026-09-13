@@ -28,4 +28,4 @@ hints:
 EDA 只有数字可核查才算数。
 
 **检查点：** 你已写下期望键清单，并能解释每个键的含义。自我声明；
-用 `python verify.py progress` 记录。
+用 `python verify.py` 记录。

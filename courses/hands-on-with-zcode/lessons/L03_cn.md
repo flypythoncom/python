@@ -9,7 +9,7 @@ status: reviewed
 reviewed_on: 2026-09-13
 hints:
   - title: "本检查点考察什么"
-    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py progress` 只在 starter 套件变绿后显示本检查点的码。"
+    body: "starter 通过你监督的改动让九个测试全绿——`python verify.py` 只在 starter 套件变绿后显示本检查点的码。"
   - title: "Git 状态就是边界"
     body: "工作区把 Git 状态放在执行旁边——每个任务完成后，工作区立刻显示改了什么。动错文件的任务一眼可见；用目标恢复倒回去，而不是叠补丁。"
   - title: "完成的标志"
@@ -60,7 +60,7 @@ ZCode 把 Git 状态放在执行旁边——每个任务之后你都能直接看
 
 ## 检查点
 
-运行 `python verify.py progress`。本检查点的码只在 starter 套件
+运行 `python verify.py`。本检查点的码只在 starter 套件
 全绿时出现。不看材料能回答即算通过：
 
 1. 这次有界改动走了几个任务，是什么让每个任务保持有界？
