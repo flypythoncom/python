@@ -30,7 +30,9 @@ hints:
 安装 `kimi` CLI，用你的 Moonshot/Kimi
 账号或 API key 登录，在一个空工作目录里启动 `kimi`。
 
-## 第 2 步——装 FlyPython Skill（含联网权限）
+## 第 2 步——（可选）预装 FlyPython Skill
+
+这一步可选：第 3 步的开课句子会直接从 URL 读取 Skill，不装也能上课——预装只是省掉一次权限往返。
 
 `kimi` 会读取项目根目录的 `AGENTS.md`：
 
@@ -87,7 +89,7 @@ starter 缺了哪些。”**
 python verify.py
 ```
 
-你会看到 starter 复现出四类真实世界故障，对应到测试名：
+你会看到 starter 复现五类真实世界故障，外加两个端到端后果——共七个具名失败测试——并与测试名一一对应：
 
 | 失败的测试 | 真实含义 |
 | --- | --- |
@@ -120,7 +122,7 @@ python verify.py starter --expect-failure
 在课程文件夹里运行 `python verify.py`。不看材料能回答下面三个
 问题即算通过：
 
-1. 哪四个行为把 starter 和 solution 区分开？
+1. 哪五个行为把 starter 和 solution 区分开？其中哪两个失败测试是它们的端到端后果？
 2. `python verify.py` 为什么故意以非零退出——它在报告什么状态？
    为什么这是成功条件而不是报错？
 3. 哪个子代理能改文件——哪两个不能？

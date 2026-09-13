@@ -1,5 +1,7 @@
-# FlyPython: Build Better Products with Python and AI Coding
+# FlyPython: Learn to ship Python with AI coding agents
 
+Learn to ship Python with AI coding agents — real projects; your agent does
+the typing, `verify.py` decides when you're done.
 [![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
 [![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
 [![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)

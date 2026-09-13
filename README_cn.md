@@ -1,5 +1,7 @@
-# FlyPython：用 Python 和 AI Coding 做出好产品
+# FlyPython：用 AI 编码 Agent 把 Python 真正交付
 
+用 AI 编码 Agent 把 Python 真正交付——真实项目；Agent 负责敲键盘，
+`verify.py` 决定你什么时候算完成。
 [![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
 [![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
 [![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)

@@ -56,6 +56,10 @@ def check_path(path_file: Path) -> list[str]:
             continue
         if "points" not in module:
             problems.append(f"{name}: module {mid!r} missing points")
+        if "optional" in module and not isinstance(module["optional"], bool):
+            problems.append(f"{name}: module {mid!r} optional must be a boolean")
+        if module.get("optional") and modules[0] is module:
+            problems.append(f"{name}: optional module {mid!r} cannot be the first step")
         if kind == "course":
             slug = module.get("course", "")
             if not (ROOT / "courses" / slug).is_dir():
