@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "双套件加怀疑者式读记录：绿、红、零测试产出不同判定——证明你分得清。"
+  - title: "三个皮肤都跑"
+    body: "对 green-project、red-project、no-tests 运行 `run_project`，分别得到 ok、failed、no-tests——拿契约核对每个 `SHIP-RECORD.json`，不要凭记忆。"
+  - title: "记录证不了什么"
+    body: "写一句绿色记录覆盖不了的事（比如测试本身写得好不好）——这句话就是本课。"
 ---
 
 # 像怀疑者一样读记录

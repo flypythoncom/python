@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "先理解形态再写码：MCP 2026-07-28 是无状态 JSON-RPC 2.0 接口——没有 initialize 握手、没有会话、版本走 `_meta.protocolVersion`。"
+  - title: "说出缺了什么"
+    body: "列出旧流程里被本规范删掉的东西：initialize、sessions、roots、sampling。收到 `initialize` 时正确回答是 -32601 错误，不是握手。"
+  - title: "完成标准"
+    body: "一句话说清整个生命周期：进来一个请求 dict，出去一个响应 dict。"
 ---
 
 # MCP 到底是什么（2026-07-28）

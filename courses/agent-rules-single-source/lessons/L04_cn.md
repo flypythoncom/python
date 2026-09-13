@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "双套件加接线：两个方向都验证、三个皮肤都跑，然后把检查器接进你真正的评审环。"
+  - title: "两个方向"
+    body: "starter 在坏 scenario 上必须失败、在干净 scenario 上必须通过——`--expect-failure` 和普通运行告诉你自己在哪一侧。"
+  - title: "接到咬得动的地方"
+    body: "没人运行的检查器等于没人读的规则文件：把它加进你某个仓库的 pre-commit 或 CI，记下它第一次抓到了什么。"
 ---
 
 # 验证并接入流程

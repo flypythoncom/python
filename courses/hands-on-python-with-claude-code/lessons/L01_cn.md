@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "考你能不能先复现故障再谈修复：`python verify.py starter --expect-failure` 必须打印出那组具名失败测试。重点是让失败变成客观证据，而不是修好它。"
+  - title: "把失败名当成契约读"
+    body: "每个失败的测试名都对应 `TASK.md` 里的一行——比如 `test_non_numeric_amount_is_invalid` 对应契约的『非数值的 numeric_field 值』。如果有名字对不上契约，那处漂移值得注意。"
+  - title: "完成标准"
+    body: "你能说清楚这九个测试各自证明了什么、为什么 starter 装不出来。然后 `python verify.py progress` 就会显示本检查点的认领码。"
 ---
 
 # 第 1 课：先复现故障，再谈修复

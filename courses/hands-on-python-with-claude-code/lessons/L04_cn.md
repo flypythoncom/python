@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "双套件门控：你的 starter 全绿，同时你要证明自己会审查证据而不只是产出绿灯。"
+  - title: "三个皮肤都要端到端跑"
+    body: "对每个 scenario 文件夹运行 `run_scenario`——csv、json 输入和错误路径都过一遍。然后拿契约审你的 diff：任何函数做得比它的契约行多，就是范围蔓延。"
+  - title: "怀疑者的部分"
+    body: "套件绿了但你解释不了某个 diff，那才是真正的失败。认领前先重读改动——认领码声明的是你验证过，不只是测试跑过。"
 ---
 
 # 第 4 课：像工程师一样验证，像怀疑者一样审查

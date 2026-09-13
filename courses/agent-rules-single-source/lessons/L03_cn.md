@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "门控是 `python verify.py starter`——实现 `load_rule_files`、`is_pointer`、`check_directory`、`main`，十一个测试全绿。"
+  - title: "分类顺序很关键"
+    body: "`AGENTS.md` 缺失或为空产出 `missing-source` 且 `ok=false`。其余文件分 `pointer`、`copy`、`diverged`——先判指针和副本再判漂移，没有任何漂移或缺失项时 `ok` 才为真。"
+  - title: "输出形态"
+    body: "`main` 打印 `ok=... files=... diverged=...`，仅当 ok 时退出 0——参数错误打印用法到 stderr 并返回 2。"
 ---
 
 # 按测试驱动一次有边界的变更

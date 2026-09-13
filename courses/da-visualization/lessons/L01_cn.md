@@ -1,3 +1,21 @@
+---
+id: course-da-visualization-l01
+type: course
+title: "挑战 01：图是证据的包装"
+summary: "写码前先说出每张 PNG 声明什么——JSON 摘要才是可审计层。"
+lang: zh-CN
+content_version: 1
+status: reviewed
+reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "图表是打包好的证据：写码前先说出每张 PNG 声明什么——`revenue_by_region` 声明地区总计、`daily_revenue` 声明趋势、`revenue_histogram` 声明分布。"
+  - title: "先声明后像素"
+    body: "数字错了的图是排版精良的谎言——JSON 汇总才是 PNG 必须对得上的可审计层。"
+  - title: "完成标准"
+    body: "你能说清三条声明，以及各自吃哪个聚合。"
+---
+
 # 挑战 01：图是证据的包装
 
 **判卷：** 自我声明 · **积分：** 10

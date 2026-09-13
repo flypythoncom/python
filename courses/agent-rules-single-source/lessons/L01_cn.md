@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "考你能不能把漂移量化而不是凭感觉：对三个 scenario 仓库跑检查器，把每个结果当测试失败读，不当气氛。"
+  - title: "认出三种仓库状态"
+    body: "scenario 文件夹展示了契约要分类的三种形态——干净的单一真源仓库、带薄指针的仓库、副本已漂移的仓库。先说出谁是谁再往下走。"
+  - title: "完成标准"
+    body: "你能用文件而不是感觉解释 `ok=false`：哪个文件偏离了 `AGENTS.md`，检查器是怎么发现的。"
 ---
 
 # 量化你已经存在的漂移

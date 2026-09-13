@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "把 `TASK.md` 读成有边界、可测试的语句——这是驱动 Codex 最值钱的技能，因为它严格按契约行事。"
+  - title: "对一行、写一行"
+    body: "把一行契约对到 `tests/test_report_tool.py` 里的测试，再为你自己的脚本写一行契约：输入、输出、错误路径、『完成 = 某命令退出 0』。"
+  - title: "可测试性检查"
+    body: "一句话可测试，当且仅当套件不用读你心思就能断言它：数字、退出码、磁盘文件。"
 ---
 
 # 第 2 课：动手之前先写任务契约

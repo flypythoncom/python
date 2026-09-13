@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "门控是 `python verify.py starter`——九个测试在你的 starter 上全绿。一次只推一组失败：先 `load_records`（csv/json/ValueError），再 `build_report`，再 `write_report`，最后 `main`。"
+  - title: "套件真正断言的坑"
+    body: "布尔值不是数字——`isinstance(True, int)` 为 True，要显式排除。分组总计保留两位小数。`total = valid + invalid` 在全部行都非法时也必须成立。"
+  - title: "原子写就是原子写"
+    body: "`write_report` 必须用同级临时文件加 `os.replace`，成功时不能留下 `.tmp`——套件检查的是文件系统，不是你的意图。还红就直接跑 unittest 看失败名。"
 ---
 
 # 第 3 课：按测试驱动一次有边界的变更

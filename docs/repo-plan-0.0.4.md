@@ -4,7 +4,9 @@
 更新日期：2026-09-12（第 3 版——挑战模型定稿 + A/B 阶段拆分）
 关联：flypython.com `docs/product-and-growth-plan-0.0.4.md`
 
-状态：除 FP-414 与真实 Agent 可解性试跑外，本计划已实现；网站当前固定
+状态：除 FP-414 外本计划已实现；真实 Agent 可解性试跑已于 2026-09-13
+完成（Devin, SWE-2 Max，全部 8 门课，挑战模式实测记录见各课
+`REVIEW.md`；授课式走查仍为另行待办）。网站当前固定
 到 `920f790`（阶段 A + 数据分析模块 live 状态）。`AGENTS.md` 的仓库边界不变：
 本仓库拥有经审核的内容、可运行的证据与稳定的 JSON 契约；网站拥有呈现、
 账号体系与转化。所有新内容中英同一次变更交付。
@@ -134,7 +136,8 @@
       `da-report`），中英 + verify.py 双向验证。（本地 2026-09-12：
       首批非标准库课程，依赖经 `requirements.txt` 锁定——pandas
       2.3.3 / matplotlib 3.10.9；da-eda 12 测试、da-visualization
-      5 测试、da-report 6 测试；Agent 可解性实测仍待录 REVIEW.md）
+      5 测试、da-report 6 测试；Agent 可解性实测已录 REVIEW.md
+      （2026-09-13））
 - [x] FP-417 `paths/data-analysis/` 路线契约 + 综合项目挑战。（本地
   2026-09-12：`path.json` + `capstone/`——303 行脏数据集、
   `verify.py` 真值校验（容差 0.01）、综合项目认领码）
@@ -160,7 +163,8 @@
 
 ## 7. 自 0.0.3 结转（未完成）
 
-- FP-326 备注：五次 Agent 实机授课记录仍待写入各课程 `REVIEW.md`
+- FP-326 备注：挑战模式 Agent 可解性实测已写入各课程 `REVIEW.md`
+  （2026-09-13）；授课式（COURSE.md 引导模式）实机走查仍待做
   （属于发布证据，不是内容阻塞项）。
 - FP-327 发布步骤：网站 pin 在一次刻意变更中固定到本仓库发布 SHA。
 - FP-334 仓库描述/话题 + 首个 GitHub Release；该 Release 时将

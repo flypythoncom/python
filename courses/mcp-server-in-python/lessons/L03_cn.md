@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "`python verify.py starter`——实现 `MCPServer` 的 `register_tool` 与 `handle_request`：校验、分发、错误隔离全绿。"
+  - title: "工具是不可信输入"
+    body: "缺必填参数 → `isError` 内容 'Missing required argument: <arg>'；未知工具 → 'Tool not found'；处理函数抛异常 → `isError` 'Error: <e>'。工具失败绝不能打断传输层。"
+  - title: "返回形态"
+    body: "`tools/list` 产出带 name/description/inputSchema 的 `result.tools`；`tools/call` 产出 text 型 `result.content`——信封结构要精确，套件比对的是结构。"
 ---
 
 # 校验与错误隔离

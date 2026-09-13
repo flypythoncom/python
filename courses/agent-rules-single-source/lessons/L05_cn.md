@@ -7,6 +7,13 @@ lang: zh-CN
 content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
+hints:
+  - title: "这个检查点考什么"
+    body: "一个 `AGENTS.md`、其余都是薄指针、坏了就有检查报警——落地到你自己一个仓库。"
+  - title: "指针要薄"
+    body: "每个指针文件：最多 10 个非空行并引用 `AGENTS.md`。要重写不要复制——副本会漂移。"
+  - title: "诚实的记录"
+    body: "记下你删掉或削薄了哪些文件，以及检查器看不到什么（比如规则质量——它查一致性，不查智慧）。"
 ---
 
 # 把这套方法带回你的仓库
