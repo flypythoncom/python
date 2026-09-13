@@ -8,6 +8,10 @@ This file records notable catalog-contract and maintenance changes.
 `docs/product-and-growth-plan-0.1.0.md`; see the website `CHANGELOG.md`
 for the platform half).
 
+Release mapping (FP-1012): this repository ships **v0.1.1** on this
+release train — the earlier `v0.1.0` tag stays immutably on `e420fca`.
+Compatibility: website `v0.1.0` ↔ repository `v0.1.1`.
+
 ### Changed
 
 - FP-1012: `docs/repo-plan-0.1.0.md` renamed to `docs/repo-plan-0.1.x.md`

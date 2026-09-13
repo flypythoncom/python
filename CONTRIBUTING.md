@@ -120,3 +120,17 @@ justify removing a resource.
 Passing automation does not replace editorial review. After merge, a website
 consumer must deliberately update its pinned catalog commit before the new data
 appears on flypython.com.
+
+## Release and tag rules
+
+- A pushed tag is **immutable**: never delete, move, or reuse it. `v0.1.0`
+  stays pointed at its original commit forever.
+- This repository and the website (`flypythoncom/flypython.com`) are
+  independent release artifacts. They may ship different version numbers in
+  the same release train; the compatibility mapping is recorded in both
+  CHANGELOGs and in the GitHub Releases (e.g. website `v0.1.0` ↔ repository
+  `v0.1.1`), each naming the exact commit SHA.
+- The website consumes this repository at a pinned full commit SHA
+  (`content-pin.json`) — never a moving branch or tag.
+- `pyproject.toml` `version` tracks the repository release; bump it in the
+  change that cuts the release.

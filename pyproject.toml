@@ -1,6 +1,6 @@
 [project]
 name = "flypython"
-version = "0.1.0"
+version = "0.1.1"
 description = "Community-maintained source for building reliable Python products in the AI-coding era."
 readme = "README.md"
 requires-python = ">=3.11"
