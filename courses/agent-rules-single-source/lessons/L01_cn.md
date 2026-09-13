@@ -26,6 +26,10 @@ hints:
 
 运行 `python starter/rules_check.py scenario/drifted`——它说一切正常。这正是 bug：三个文件对同一行为各执一词，却没有任何东西察觉。然后运行验证器：
 
+```bash
+python verify.py starter --expect-failure
+```
+
 ## 练习
 
 - 把 `verify.py --expect-failure` 里的每个具名失败对应到一类真实漂移：无真源、无指针识别、无漂移报告

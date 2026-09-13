@@ -36,6 +36,11 @@ line-length = 88
 select = ["E", "F", "I", "UP", "B", "SIM"]
 ignore = ["E501"]
 
+[tool.ruff.lint.per-file-ignores]
+# Course starters are deliberately unfinished: pre-imported modules are
+# scaffolding the learner will use when implementing the contract.
+"courses/*/starter/*.py" = ["F401"]
+
 [tool.mypy]
 python_version = "3.11"
 strict = false

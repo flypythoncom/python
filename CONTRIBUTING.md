@@ -11,10 +11,12 @@ Read the [curation policy](docs/CURATION_POLICY.md) before contributing.
 
 ## Permissions
 
-This repository currently does not grant a general license to reuse its content
-or code. Public visibility is not permission to copy, redistribute, or relicense
-repository material. Contributors must submit only material they have the right
-to submit and retain required third-party notices.
+This repository is dual-licensed as described in [LICENSE](LICENSE): code
+(examples, tools, templates, course starters/solutions/verifiers) under the MIT
+License, and written content (guides, playbooks, lessons, catalog records,
+READMEs) under CC BY 4.0 with attribution "FlyPython (flypython.com)".
+Contributors must submit only material they have the right to submit and retain
+required third-party notices; a file's own license header, when present, wins.
 
 ## Propose a change
 
@@ -23,6 +25,7 @@ Use the matching issue form before a larger change:
 - **Resource proposal** for a new official source.
 - **Project proposal** for a current Python project that should receive human
   review for Project Radar.
+- **Course feedback** for running a course or reporting a course problem.
 - **Broken link** for an unreachable or replaced resource.
 - **Security report** for a vulnerability; follow [SECURITY.md](SECURITY.md)
   instead of opening a public issue.
@@ -86,10 +89,12 @@ Run the same deterministic checks as CI:
 ```bash
 python -m pytest
 python tools/validate_catalog.py
-python tools/export_catalog.py --check
+python tools/export_catalog.py --check --target both
 python tools/render_readmes.py --check
 python tools/build_content_manifest.py --check
 python tools/verify_examples.py
+python tools/verify_courses.py
+python tools/verify_paths.py
 ```
 
 Maintainers can run the networked link audit through GitHub Actions. For a

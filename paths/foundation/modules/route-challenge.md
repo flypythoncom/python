@@ -19,7 +19,10 @@ different agents through the same task — and verify both results yourself.
 ## The task
 
 Pick a real small task you care about (suggestion: "a CLI that counts the
-lines, words, and bytes of a file" or reuse any scenario skin from C1–C4).
+lines, words, and bytes of a file" or reuse any scenario skin from the four
+path courses: `hands-on-python-with-claude-code`,
+`hands-on-with-openai-codex-cli`, `agent-rules-single-source`,
+`verifying-ai-generated-code`).
 Then:
 
 1. **Round one — Claude Code.** In a fresh folder, write a `TASK.md`
@@ -37,8 +40,8 @@ Then:
 
 - Both folders kept intact (they are your evidence).
 - A short note: which agent's output needed fewer corrections, and *why you
-  believe that* — this is the skeptical-review habit from C4 applied across
-  tools.
+  believe that* — this is the skeptical-review habit from the
+  `verifying-ai-generated-code` course applied across tools.
 
 ## Checkpoint
 

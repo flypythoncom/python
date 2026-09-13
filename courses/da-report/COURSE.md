@@ -8,7 +8,7 @@ content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
-  id: da-report
+  id: course-da-report
   name_en: Report Challenger
   name_zh: 分析报告挑战者
   requires: All five checkpoints claimed (L01–L05)
@@ -32,7 +32,7 @@ the auditable layer; the Markdown is for humans.
 
 ```bash
 cd courses/da-report
-uv sync            # pandas (or: pip install -r requirements.txt)
+# Standard library only — nothing to install.
 ```
 
 ## Challenges (checkpoints)
@@ -70,7 +70,6 @@ starter/report.py          unfinished implementation
 solution/report.py         reviewed solution
 tests/test_report.py       contract suite (read-only)
 verify.py                  objective pass/fail + claim codes
-requirements.txt           pinned pandas
 REVIEW.md                  maintainer run-through record
 ```
 

@@ -45,12 +45,13 @@ def main() -> int:
             "FAIL: test_collapses_mixed_separators",
             "FAIL: test_rejects_an_empty_result",
             "FAIL: test_removes_punctuation",
+            "FAIL: test_punctuation_does_not_duplicate_separators",
         )
         if not all(failure in output for failure in expected_failures):
             print("Starter failed for an unexpected reason:", file=sys.stderr)
             print(output, file=sys.stderr)
             return 1
-        print("Expected regression reproduced: 3 boundary cases fail.")
+        print("Expected regression reproduced: 4 boundary cases fail.")
         return 0
     return result.returncode
 

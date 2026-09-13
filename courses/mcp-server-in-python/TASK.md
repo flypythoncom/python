@@ -22,4 +22,4 @@ Change only `starter/mcp_server.py`.
     - On any other handler exception: catch and return `{"result": {"isError": True, "content": [{"type": "text", "text": f"Error: {e}"}]}}`.
 - Provide `InputRequired(Exception)` with a `requests` attribute so tools can request client input.
 
-Done means `python examples/mcp-server/verify.py starter` exits successfully.
+Done means `python verify.py starter` exits 0 with all tests passing.

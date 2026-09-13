@@ -122,8 +122,10 @@ def main() -> int:
             "test_tools_call_handles_runtime_exception",
             "test_tools_call_missing_required_argument",
         )
-        if not any(failure in output for failure in expected_failures):
-            print("Starter failed for an unexpected reason:", file=sys.stderr)
+        missing = [n for n in expected_failures if n not in output]
+        if missing:
+            print("Starter failed for unexpected reasons:", file=sys.stderr)
+            print("\n".join(missing), file=sys.stderr)
             print(output, file=sys.stderr)
             return 1
         print("Expected MCP boundary regression reproduced: unhandled exceptions and missing schema validations fail.")

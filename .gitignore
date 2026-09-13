@@ -49,3 +49,6 @@ courses/*/scenario/*/report.json.tmp
 courses/*/out/
 paths/*/capstone/out/
 courses/*/scenario/*/results.json
+
+# Test caches
+.pytest_cache/

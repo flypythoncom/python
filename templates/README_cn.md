@@ -1,8 +1,8 @@
 # 可复用工程模板
 
 - [任务契约](TASK_CONTRACT_cn.md) ([English](TASK_CONTRACT.md))：目标结果、改动边界、验收标准、决策权限。
-- [实现计划](IMPLEMENTATION_PLAN.md)：现状调查、实现步骤、风险点与回滚策略。
-- [代码审查](CODE_REVIEW.md)：正确性、安全性、可维护性与验证凭据。
+- [实现计划](IMPLEMENTATION_PLAN_cn.md) ([English](IMPLEMENTATION_PLAN.md))：现状调查、实现步骤、风险点与回滚策略。
+- [代码审查](CODE_REVIEW_cn.md) ([English](CODE_REVIEW.md))：正确性、安全性、可维护性与验证凭据。
 - [验证记录](VERIFICATION_cn.md) ([English](VERIFICATION.md))：执行命令与实际观察结果。
 - [Agent 仓库守则](AGENTS.example_cn.md) ([English](AGENTS.example.md))：面向 Coding Agent 的仓库级准则规范。
 - [Agent IDE 规则](AGENT_RULES.example_cn.md) ([English](AGENT_RULES.example.md))：适用于 Cursor (.cursorrules)、Windsurf、Copilot 的通用预设。

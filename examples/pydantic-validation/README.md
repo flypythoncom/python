@@ -11,6 +11,11 @@ reviewed_on: 2026-09-02
 
 # Validate Untrusted Boundary Payloads
 
+This exercise is standard-library only by design: you hand-roll the normalization
+and validation mechanics that a schema library such as Pydantic automates, so the
+boundary rules stay visible. In production, reach for Pydantic — see the catalog's
+[Pydantic documentation](https://pydantic.dev/docs/validation/latest/get-started/) entry.
+
 External payloads from webhooks, mobile clients, and LLM tool calls are untrusted.
 They frequently arrive with mixed camelCase and snake_case keys, dirty currency strings,
 or invalid enum states. A production boundary validator must sanitize valid variations

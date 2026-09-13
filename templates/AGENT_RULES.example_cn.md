@@ -5,7 +5,7 @@
 1. **清晰边界 (Explicit Boundaries)**：严禁修改任务范围之外的无关文件。
 2. **契约优先 (Contract First)**：在动手写代码前，先阅读既有类型定义、数据契约与测试断言。
 3. **拒绝幻觉代码 (No Phantom Code)**：每一次代码改动，都必须有明确可执行的测试或验证命令支撑。
-4. **保持整洁规范 (Preserve Integrity)**：不要随意删除或重构无关的业务注释、代码格式与全局状态。
+4. **保持完整规范 (Preserve Integrity)**：除非明确要求，不要删除无关的注释、文档字符串或格式。
 5. **现代工程栈 (Standard Tooling)**：优先推荐现代化标准工具链（Python 3.11+、uv、pytest、ruff、mypy）。
 
 ## 改动交付验证流程

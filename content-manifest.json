@@ -20,7 +20,7 @@
           "path": "playbooks/add-an-api/README_cn.md",
           "title": "增加或修改 Python API",
           "summary": "先定义公共契约，再实现并验证成功、错误和兼容性行为。",
-          "sha256": "5c844ed892f4bfa591f11a7be9a329306c3b191b645935fe13bb3a536067b691"
+          "sha256": "a1d7367965614d51c538162fbabdfd5759bf697510994d53842df428a27f941a"
         }
       ]
     },
@@ -82,14 +82,14 @@
           "path": "courses/agent-rules-single-source/lessons/L01.md",
           "title": "Measure the drift you already have",
           "summary": "Run the checker against the three scenario repositories and read drift as a test failure, not a vibe.",
-          "sha256": "5daf164c4b622a483df4bbf1e1df4a5753779fb43e6f70a9456124c959e012e6"
+          "sha256": "cd923a835bc51166ca622ef61414b1dfd75eacc70c649307ab3a559b968617c3"
         },
         {
           "lang": "zh-CN",
           "path": "courses/agent-rules-single-source/lessons/L01_cn.md",
           "title": "量化你已经存在的漂移",
           "summary": "对三个场景仓库运行检查器，把漂移读成测试失败，而不是一种感觉。",
-          "sha256": "a935a17b1e9d09f2f161580f480221ab36eb079c86711524bdf5e4508ed069d5"
+          "sha256": "c5f88441065a1bc5208b005c083dd0b231da4a281f0b5bb97710e55280daed6f"
         }
       ]
     },
@@ -473,14 +473,14 @@
           "path": "courses/da-eda/COURSE.md",
           "title": "Exploratory Data Analysis with an Agent",
           "summary": "A challenge course — point your agent at a messy shop export and produce a verified EDA summary (results.json) whose numbers are checked against ground truth. First non-stdlib course in the catalog; pandas is managed with uv.",
-          "sha256": "3d5a7d05b6b48a667eeca51f7c6232e95c231d7cb4f78d3826de02c6a0a55b85"
+          "sha256": "d36b48bd7f5ee3864fd7b2653dff42703469f64728c440d343a9a5c8076fa99b"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-eda/COURSE_cn.md",
           "title": "用 Agent 做探索性数据分析",
           "summary": "挑战式课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要（results.json）。目录中第一门非标准库课程；pandas 由 uv 管理。",
-          "sha256": "ef5272a728fc540f4bedb3c650a1789d50a32cc90883aacd3202ba10360b4f00"
+          "sha256": "693d2da589858d6716c0dabf34042ac012875620092eefdea688ba5601e7a41b"
         }
       ]
     },
@@ -611,14 +611,14 @@
           "path": "courses/da-report/COURSE.md",
           "title": "From Analysis to Report with an Agent",
           "summary": "Challenge course — turn a verified EDA summary into a structured report (report.json + report.md) where every number traces back to its input. Verification checks structure and number consistency, not writing quality.",
-          "sha256": "d2b978ad0e561b90734d747c4551cda91dddf8619e4d388799b67a4b59344496"
+          "sha256": "f0aea2909ed3e187497e9a79cf008d88324cf22e0ffc4251540825ecd8f08a46"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-report/COURSE_cn.md",
           "title": "用 Agent 从分析到报告",
           "summary": "挑战课程——把经过验证的 EDA 摘要变成结构化报告（report.json + report.md），其中每个数字都可回溯到输入。验证检查结构与数字一致性，不评价文笔。",
-          "sha256": "c825ca0039fd828e4133a1a14956907a7cf8a74ff0c2e736f387c16fd26723e7"
+          "sha256": "f141a356b60de463d329fc72bb13374a8194cdbe5ecfc973a4f6f8c0e13c64c1"
         }
       ]
     },
@@ -749,14 +749,14 @@
           "path": "courses/da-visualization/COURSE.md",
           "title": "Data Visualization with an Agent",
           "summary": "Challenge course — turn a clean sales dataset into three spec'd charts plus a summary.json whose numbers are verified against the data. Charts must be generated from data, never hardcoded.",
-          "sha256": "950c213e5093c415a6a78988fa7bb1c0056fd23b2d27225a762b977a70af3a5f"
+          "sha256": "8f2dba8784b18a8ca15ac578629f5099245299e8a80184a82bea2e29b3e4545c"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-visualization/COURSE_cn.md",
           "title": "用 Agent 做数据可视化",
           "summary": "挑战课程——把干净的销售数据变成三张有规格的图和一份 summary.json，其中数字会与数据集校验。图必须由数据生成，不许硬编码。",
-          "sha256": "6c614cb91314a2b75b51e677d50a6d214355047eeb48def66fa0fc3105c3a690"
+          "sha256": "80f412edb8375f5e2027285a6b27f828e7670cf536d149400fde4cf2948d297b"
         }
       ]
     },
@@ -1209,14 +1209,14 @@
           "path": "examples/pydantic-validation/README.md",
           "title": "Validate Untrusted Boundary Payloads",
           "summary": "Parse, sanitize, and validate messy external payloads with field normalization and structured error contracts.",
-          "sha256": "99e3fedc6e47fd915a24198cbe166ddafd51e4b6d3a4c7f1929bd56b2d27efa9"
+          "sha256": "aa79d051487995dde6a76018aabc0b7dc5e59c0584319ea84ca42c2fc61b0aeb"
         },
         {
           "lang": "zh-CN",
           "path": "examples/pydantic-validation/README_cn.md",
           "title": "验证不可信边界请求体",
           "summary": "使用字段规范化与结构化错误契约，清洗并验证混乱的外部数据载荷。",
-          "sha256": "1e0f741e16df66623d58b6a9c0bf5128ebfc6fc9fe219f5287a683f647c232b6"
+          "sha256": "96a1c746603e9648fe4be5320721fc13445f325daecacf7e94546bf4e8ea03c3"
         }
       ]
     },
@@ -1239,7 +1239,7 @@
           "path": "playbooks/fix-a-bug/README_cn.md",
           "title": "用回归测试修复 Python Bug",
           "summary": "复现行为、缩小原因、完成最小修复，并证明回归问题不会再次出现。",
-          "sha256": "cc770168300aa25cd4e42a00a7157a06aaf9a4c713678effdeb6b737a94e865f"
+          "sha256": "61e3745570569cf81760d2919ee618602ecf9e11bd8b675672f27eac19b91d0c"
         }
       ]
     },
@@ -1262,7 +1262,7 @@
           "path": "playbooks/integrate-an-external-api/README_cn.md",
           "title": "接入外部 API",
           "summary": "用类型边界封装第三方 API，并安全处理凭据、超时、重试和确定性测试。",
-          "sha256": "900582abc309374ecc190b29c117208a09bbd55e136f1adcc6d95ecac04114a4"
+          "sha256": "a17f56ac6bf6bc18d2b5a628f413554ae49cbe11d2c44596dcb66b9fa4e80336"
         }
       ]
     },
@@ -1285,7 +1285,7 @@
           "path": "playbooks/manage-database-migrations/README_cn.md",
           "title": "管理数据库架构迁移",
           "summary": "规划、执行并验证具备零停机兼容性与回滚安全性的可逆数据库迁移。",
-          "sha256": "5458037a8359c85aa16abe22696a21054e040f04bdc51a0c1dda4304e4585d8a"
+          "sha256": "9f2b53002fc2e2f7b1d2322809035b363436dcecb417231046ae7b6d8cd83b4d"
         }
       ]
     },
@@ -1301,7 +1301,7 @@
           "path": "guides/mcp/migrate-2026-07-28.md",
           "title": "Migrate a Python MCP server to the 2026-07-28 specification",
           "summary": "Update a Python MCP server for the stateless 2026-07-28 specification by removing the initialize handshake, adopting the input_required round-trip, dropping deprecated features, and hardening authorization.",
-          "sha256": "3e64c297b0449769d42b00302e8c20d24f470999f3360b1219927da4264f310f"
+          "sha256": "063e285acdebc4854245cbdc2951060a1b38f0fdb814692c6bdc3cd0229d2316"
         },
         {
           "lang": "zh-CN",
@@ -1347,14 +1347,14 @@
           "path": "paths/foundation/modules/route-challenge.md",
           "title": "Route challenge: dual-agent, double-verified",
           "summary": "Foundation path capstone — run the same task through Claude Code and Codex CLI and verify both outputs yourself.",
-          "sha256": "12390205b366d179afd34fc60fc557ed3aca53d10f6474a73d922b2cbbf3045a"
+          "sha256": "0c56353b6b98acb6a15f575ab57fc513f367716754c27aae7a042cccfeabdbc4"
         },
         {
           "lang": "zh-CN",
           "path": "paths/foundation/modules/route-challenge_cn.md",
           "title": "路线挑战：双 Agent、双重验证",
           "summary": "基础路线收官挑战——同一任务分别用 Claude Code 与 Codex CLI 完成并亲手双重验证。",
-          "sha256": "86add318cc3094155f0a3f05eb05947d351af312c7f78f777f290be953cf27ab"
+          "sha256": "efb3d075163c2051dc8908072bc9da63ac13df17b4380f2ceac3fe17db6f2f33"
         }
       ]
     },
@@ -1446,7 +1446,7 @@
           "path": "guides/python-engineering/async-patterns_cn.md",
           "title": "异步 Python 可靠模式与避坑指南",
           "summary": "通过避免常见异步反模式与规范管理任务生命周期，构建高韧性的并发 Python 应用。",
-          "sha256": "614ac9617cc77b94ba8030a9c6490b862b83d2e4bf8c7679109f6c6cd67113ed"
+          "sha256": "08e5c4f7ca489b5f62e7da13de505ee9d8ad3bb637cce2966d4d6d217c13f9a7"
         }
       ]
     },
@@ -1469,7 +1469,7 @@
           "path": "guides/python-engineering/modern-typing_cn.md",
           "title": "现代 Python 类型系统实战",
           "summary": "将明确的 Python 类型作为机器可读的契约，指导可靠的 AI 辅助编程与工程交付。",
-          "sha256": "1fb7f63ea5675d58102c3d8178d1ffbf9720e69ebf9083036372ae1ddedeabab"
+          "sha256": "22afdb56b35819c3fb7adccd9e1d5016aa41baef821dbe639f41dc984a8e1784"
         }
       ]
     },
@@ -1515,7 +1515,7 @@
           "path": "playbooks/setup-structured-logging/README_cn.md",
           "title": "搭建生产级结构化日志",
           "summary": "配置具备上下文贯穿、敏感数据脱敏与环境隔离的 JSON 结构化日志体系。",
-          "sha256": "a1f9fd0417c8d1f51a272e0b4f6fd5f0d401f505d84887ae7ee2c5343706af11"
+          "sha256": "2024d5386b1cf4c3e397a1034dc884e6ea244a967ed0eb4612ce5bd36b885950"
         }
       ]
     },
@@ -1538,7 +1538,7 @@
           "path": "playbooks/ship-a-release/README_cn.md",
           "title": "发布 Python 版本",
           "summary": "交付可追踪的包或服务版本，并验证真实线上行为与回退路径。",
-          "sha256": "faa5387b7a6f394f22a16d4d4f4a3aaaeb4766018eb6c7a086c2533f7af5b8e9"
+          "sha256": "41697b3bdd720d29516138af2712dc5d241e8a8fc0ef66e87bf4bcd7f90f7d58"
         }
       ]
     },
@@ -1584,7 +1584,7 @@
           "path": "playbooks/upgrade-dependencies/README_cn.md",
           "title": "升级 Python 依赖",
           "summary": "在边界明确的修改中，用锁文件、兼容性、安全和运行证据完成依赖升级。",
-          "sha256": "755df574181670b18a6ddbd1a24d2949b0a56c31790109e1d26aa4b6bdffdf27"
+          "sha256": "84aab5fed41cddd07f4c466a4f0eac675afa7af2cacc05fbdd6a8ed4cde3d514"
         }
       ]
     },
@@ -1607,7 +1607,7 @@
           "path": "playbooks/write-llm-evals/README_cn.md",
           "title": "为大模型与 Agent 编写确定性评测",
           "summary": "结合黄金测试集与 Schema 断言，为 Prompt 调整与工具调用 Agent 构建防劣化回归测试套件。",
-          "sha256": "516a779f37b4f36b86be0807125f391bf08d6ea7d9270969e609331ca153c0e2"
+          "sha256": "5bc19f11f82be78197cdc8ab7b1aab01b201ffa57edf21d5e21b75b27e0f40e3"
         }
       ]
     }

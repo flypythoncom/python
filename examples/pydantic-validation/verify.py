@@ -49,7 +49,7 @@ def main() -> int:
             print("Starter failed for an unexpected reason:", file=sys.stderr)
             print(output, file=sys.stderr)
             return 1
-        print("Expected boundary regression reproduced: unhandled keys and schema errors fail.")
+        print("Expected boundary regression reproduced: camelCase/dirty amounts and missing fields fail.")
         return 0
     return result.returncode
 

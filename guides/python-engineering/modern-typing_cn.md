@@ -51,7 +51,7 @@ class UserProfile(TypedDict):
 ## 4. 在开发与 CI 流程中进行静态验证
 
 类型注解只有在被强制检查时才具备确定性价值。在 CI 流水线中运行 [Mypy documentation](https://mypy.readthedocs.io/en/stable/)
-或 Pyright，确保公共接口类型完备。
+或 Pyright 等静态类型检查器，并配置 pre-commit 钩子拦截未标注类型的公共 API。
 
 更多类型系统权威规范可参考官方 [Python typing documentation](https://typing.python.org/en/latest/)。
 

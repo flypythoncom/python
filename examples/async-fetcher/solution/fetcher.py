@@ -75,5 +75,9 @@ async def async_batch_fetch(
     max_retries: int = 3,
 ) -> list[dict[str, Any]]:
     semaphore = asyncio.Semaphore(max_concurrency)
-    tasks = [_fetch_single(item, fetch_fn, semaphore, max_retries) for item in items]
-    return await asyncio.gather(*tasks)
+    async with asyncio.TaskGroup() as group:
+        tasks = [
+            group.create_task(_fetch_single(item, fetch_fn, semaphore, max_retries))
+            for item in items
+        ]
+    return [task.result() for task in tasks]

@@ -8,7 +8,7 @@ content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
-  id: da-report
+  id: course-da-report
   name_en: Report Challenger
   name_zh: 分析报告挑战者
   requires: 全部五个检查点认领通过（L01–L05）
@@ -30,7 +30,7 @@ Markdown → 写出两份产物。结构化 JSON 是可审计层，Markdown 给�
 
 ```bash
 cd courses/da-report
-uv sync            # pandas（或 pip install -r requirements.txt）
+# 仅使用标准库——无需安装任何依赖。
 ```
 
 ## 挑战（检查点）
@@ -67,7 +67,6 @@ starter/report.py          未完成实现
 solution/report.py         审核过的解答
 tests/test_report.py       契约套件（只读）
 verify.py                  客观通过/失败 + 认领码
-requirements.txt           锁定的 pandas
 REVIEW.md                  维护者走查记录
 ```
 

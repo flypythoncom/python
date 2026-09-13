@@ -35,12 +35,17 @@ reviewed catalog data, and stable public JSON contracts.
   an AI coding agent from the files themselves: `COURSE.md` (metadata plus the
   teaching contract: audience, prerequisites, exact tool and version,
   lesson order, teaching-style rules, when to stop, how to use `verify.py`,
-  and what the course does not cover), `lessons/L01.md` with `L01_cn.md`
+  and what the course does not cover) with `id: course-<slug>` and `badge`
+  frontmatter, `lessons/L01.md` with `L01_cn.md`
   pairs (objective, exercise, checkpoint, expected evidence), `scenario/`
   data files for each skin, `TASK.md`/`TASK_cn.md` (task contract),
-  `starter/` and `solution/` runnable pairs, stdlib-only `verify.py` that
-  fails on `starter` and passes on `solution`, and `REVIEW.md` recording the
-  maintainer run-through (date, tool, version, observed agent deviations).
+  `starter/` and `solution/` runnable pairs, a self-contained `verify.py`
+  that fails on `starter` and passes on `solution`, exposes deterministic
+  claim codes through `verify.py progress` (five checkpoints), and runs on
+  the standard library unless the course ships its own `requirements.txt`
+  (as the pandas/matplotlib data-analysis courses do), and `REVIEW.md`
+  recording the maintainer run-through (date, tool, version, observed agent
+  deviations).
   A course is incomplete until every lesson ships EN+ZH in the same change;
   `COURSE.md` must name the exact tool version it was taught with, and a tool
   major release triggers re-review. Never claim guaranteed learning outcomes.
@@ -57,8 +62,9 @@ reviewed catalog data, and stable public JSON contracts.
   verify them with `python tools/render_readmes.py --check`.
 - Regenerate `content-manifest.json` and verify it with
   `python tools/build_content_manifest.py --check`.
-- Verify every runnable example with `python tools/verify_examples.py` and
-  every course folder with `python tools/verify_courses.py`.
+- Verify every runnable example with `python tools/verify_examples.py`,
+  every course folder with `python tools/verify_courses.py`, and every
+  learning path with `python tools/verify_paths.py`.
 - Website consumers must pin a full repository commit and verify the catalog
   checksum. Do not make production builds depend on a moving branch.
 - Keep external-link checks read-only, rate-limited, retryable, and blocked from

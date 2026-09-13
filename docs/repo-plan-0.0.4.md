@@ -168,7 +168,9 @@
   （属于发布证据，不是内容阻塞项）。
 - FP-327 发布步骤：网站 pin 在一次刻意变更中固定到本仓库发布 SHA。
 - FP-334 仓库描述/话题 + 首个 GitHub Release；该 Release 时将
-  CHANGELOG `[Unreleased]` 切为正式版本小节。
+  CHANGELOG `[Unreleased]` 切为正式版本小节。——已完成：`v0.1.0`
+  （2026-09-12，提交 `e420fca`），CHANGELOG 已含正式 0.1.0 小节；0.0.4
+  phase A 之后的变更暂记于 `[Unreleased]`。
 
 ## 8. 实施规范（挑战模型改造细节）
 

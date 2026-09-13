@@ -1,8 +1,8 @@
 # Reusable templates
 
 - [Task contract](TASK_CONTRACT.md) ([中文](TASK_CONTRACT_cn.md)): outcome, boundaries, acceptance, authority.
-- [Implementation plan](IMPLEMENTATION_PLAN.md): findings, steps, risks, rollback.
-- [Code review](CODE_REVIEW.md): correctness, security, maintainability, evidence.
+- [Implementation plan](IMPLEMENTATION_PLAN.md) ([中文](IMPLEMENTATION_PLAN_cn.md)): findings, steps, risks, rollback.
+- [Code review](CODE_REVIEW.md) ([中文](CODE_REVIEW_cn.md)): correctness, security, maintainability, evidence.
 - [Verification record](VERIFICATION.md) ([中文](VERIFICATION_cn.md)): exact commands and observed results.
 - [Agent repository instructions](AGENTS.example.md) ([中文](AGENTS.example_cn.md)): a starting policy for a Python repository using coding agents.
 - [Agent IDE rules](AGENT_RULES.example.md) ([中文](AGENT_RULES.example_cn.md)): universal configuration template for Cursor (.cursorrules), Windsurf, and Copilot.

@@ -19,7 +19,9 @@ reviewed_on: 2026-09-12
 ## 任务
 
 选一个你真正在乎的小任务（建议：“一个统计文件行数、词数、字节数的
-CLI”，或复用 C1–C4 的任意场景皮）。然后：
+CLI”，或复用路线四门课程 `hands-on-python-with-claude-code`、
+`hands-on-with-openai-codex-cli`、`agent-rules-single-source`、
+`verifying-ai-generated-code` 的任意场景皮）。然后：
 
 1. **第一轮 —— Claude Code。** 新建文件夹，写一个 `TASK.md` 描述契约
    （输入、输出、边界情况、完成 = 测试通过），让 Claude Code 实现它，
@@ -33,7 +35,7 @@ CLI”，或复用 C1–C4 的任意场景皮）。然后：
 
 - 两个文件夹都保留原样（它们就是你的证据）。
 - 一段简短笔记：哪个 Agent 的产出需要的修正更少，以及**你为什么这么
-  判断**——这是把 C4 的怀疑式审查用到跨工具对比上。
+  判断**——这是把 `verifying-ai-generated-code` 一课的怀疑式审查用到跨工具对比上。
 
 ## 检查点
 

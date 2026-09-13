@@ -6,10 +6,11 @@
 
 [English](README.md) · [中文](README_cn.md) · [🌐 官方在线门户](https://flypython.com)
 
-> **新——由 Agent 授课、带客观验证的实战课程。** 从 [`courses/`](courses/) 下载一个
-> 文件夹，在你的编码 Agent 中打开，说一句*“开始第 1 课”*。每门课程都以一条
-> `verify.py` 命令收尾，证明你确实做出了什么。同一旅程可继续在
-> [flypython.com](https://flypython.com/) 上进行。
+> **带客观验证的挑战课程。** 从 [`courses/`](courses/) 挑一个文件夹，把
+> `TASK.md` 中的契约交给你的编码 Agent 去解决，并用 `verify.py` 证明结果——
+> 它会在每个检查点打印一个认领码。想要有人带？`COURSE.md` 仍支持 Agent
+> 授课模式，[`paths/`](paths/README.md) 则把课程串成徽章路线。可继续在
+> [flypython.com](https://flypython.com/) 上学习。
 
 FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把代码变成用户可以依赖的
 产品。这里同时提供 AI Coding 方法、任务 Playbook、可运行示例、复用模板，以及 API、
@@ -21,7 +22,7 @@ FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把
 
 ## 3 分钟开始
 
-只需要 Python 3.11+：
+只需要 Python 3.11+（开发环境通过 `.python-version` 固定在 3.12）：
 
 ```bash
 git clone https://github.com/flypythoncom/python.git
@@ -38,7 +39,7 @@ python examples/product-slug/verify.py solution
 
 | 目标 | 从这里开始 | 最终产出 |
 | --- | --- | --- |
-| 解题式动手实战 | [挑战课程](courses/) · [学习路线](paths/) | 一个通过验证的项目 + `verify.py` 的检查点认领码 |
+| 解题式动手实战 | [挑战课程](courses/) · [学习路线](paths/README.md) | 一个通过验证的项目 + `verify.py` 的检查点认领码 |
 | 安全地编写和修改 Python | [AI Coding 工作方法](guides/ai-coding/workflow_cn.md) | 上下文明确、有证据的边界修改 |
 | 把 Python 变成可靠产品 | [产品质量指南](guides/python-engineering/product-quality_cn.md) | 可测试、可观测、可回退的产品路径 |
 | 完成反复出现的工程任务 | [Playbook](playbooks/README_cn.md) | Bug 修复、API 修改、外部集成、依赖升级或发布 |
@@ -166,6 +167,8 @@ catalog/
   paths.yml          中英文学习路径定义
   resources/         每项资源一个 YAML 文件
   projects/          最新 Python 项目的人工审核队列
+courses/              带 TASK.md 契约和 verify.py 认领码的挑战课程
+paths/                把课程串成徽章路线的学习路径
 guides/               Python 工程与 AI Coding 方法
 playbooks/            可重复任务步骤与完成标准
 examples/             带自动验证的可运行小项目
@@ -173,6 +176,7 @@ templates/            任务、计划、Review 和验证模板
 schema/
   *.schema.json       带版本的机器可读契约
 catalog.json         提供给网站使用的确定性公开导出
+radar.json            提供给网站使用的确定性 Project Radar 导出
 content-manifest.json 网站使用的版本、路径、摘要与校验值
 tools/                生成、校验、示例和链接审计工具
 tests/                内容一致性与行为测试
@@ -215,10 +219,12 @@ pytest
 ```bash
 python -m pytest
 python tools/validate_catalog.py
-python tools/export_catalog.py --check
+python tools/export_catalog.py --check --target both
 python tools/render_readmes.py --check
 python tools/build_content_manifest.py --check
 python tools/verify_examples.py
+python tools/verify_courses.py
+python tools/verify_paths.py
 ```
 
 修改源内容后重新生成：

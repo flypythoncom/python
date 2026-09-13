@@ -2,6 +2,31 @@
 
 This file records notable catalog-contract and maintenance changes.
 
+## [Unreleased]
+
+0.0.4 phase A — challenge-platform rework on top of 0.1.0.
+
+### Added
+
+- Per-checkpoint claim codes, badge frontmatter contracts, and the
+  deterministic `verify.py progress` subcommand (FP-411/412/415), enforced
+  by `tools/verify_courses.py`.
+- The data-analysis course track: `da-eda`, `da-visualization`, and
+  `da-report` (EN+ZH), each with pandas/matplotlib `requirements.txt` where
+  needed and a stdlib-only report capstone.
+- `paths/` learning paths sequencing courses into badge routes, plus
+  `tools/verify_paths.py` enforcing the path contract (FP-413/416/417/418,
+  wired into the Makefile and the validation workflow).
+- `content-manifest.json` path entries (`type: "path"`) for the website.
+- Checkpoint hints, the branch-path contract, and agent-solvability review
+  records across all eight courses (2026-09-13).
+
+### Changed
+
+- Repository narrative moved from agent-taught courses to challenge courses
+  with `TASK.md` contracts and `verify.py` claim codes; `COURSE.md` remains
+  the guided mode. README, README_cn, and `llms.txt` now reflect it.
+
 ## [0.1.0] - 2026-09-12
 
 First versioned release: agent-taught courses, the Project Radar

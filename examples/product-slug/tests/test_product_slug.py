@@ -13,6 +13,10 @@ class NormalizeProductSlugTests(unittest.TestCase):
     def test_removes_punctuation(self) -> None:
         self.assertEqual(normalize_product_slug("MCP: Tools!"), "mcp-tools")
 
+    def test_punctuation_does_not_duplicate_separators(self) -> None:
+        self.assertEqual(normalize_product_slug("Hello , World"), "hello-world")
+        self.assertEqual(normalize_product_slug("Kit! (deluxe)"), "kit-deluxe")
+
     def test_rejects_an_empty_result(self) -> None:
         with self.assertRaises(ValueError):
             normalize_product_slug(" -- !! ")

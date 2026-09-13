@@ -3,8 +3,7 @@
 
 Objective completion evidence for "From analysis to report" (da-report).
 ``progress`` prints checkpoint claim codes for recording on flypython.com.
-Dependencies (pandas) managed with uv — run ``uv sync`` inside
-this folder first.
+Standard library only — no dependencies to install.
 """
 
 from __future__ import annotations
@@ -12,7 +11,6 @@ from __future__ import annotations
 import argparse
 import base64
 import hashlib
-import importlib.util
 import json
 import os
 import subprocess
@@ -45,19 +43,6 @@ CHECKPOINTS = [
 ]
 
 
-def _deps_available():
-    return (importlib.util.find_spec("pandas") is not None
-            )
-
-
-def _deps_hint():
-    print(
-        "pandas not installed. Run `uv sync` (or "
-        "`pip install -r requirements.txt`) inside this course folder first.",
-        file=sys.stderr,
-    )
-
-
 def _claim_code(checkpoint_id):
     digest = hashlib.sha256(
         (COURSE_ID + ":" + checkpoint_id + ":" + COURSE_SALT).encode("utf-8")
@@ -75,12 +60,8 @@ def _run_suite(implementation):
 
 
 def run_progress(as_json):
-    if not _deps_available():
-        _deps_hint()
-        starter_ok = solution_ok = False
-    else:
-        starter_ok = _run_suite("starter").returncode == 0
-        solution_ok = _run_suite("solution").returncode == 0
+    starter_ok = _run_suite("starter").returncode == 0
+    solution_ok = _run_suite("solution").returncode == 0
     rows = []
     for checkpoint in CHECKPOINTS:
         gate = checkpoint["gate"]
@@ -125,10 +106,6 @@ def main() -> int:
 
     if args.implementation == "progress":
         return run_progress(args.json)
-
-    if not _deps_available():
-        _deps_hint()
-        return 1
 
     environment = os.environ.copy()
     environment["PYTHONPATH"] = str(ROOT / args.implementation)

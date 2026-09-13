@@ -8,7 +8,7 @@ content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
-  id: da-eda
+  id: course-da-eda
   name_en: EDA Challenger
   name_zh: 探索分析挑战者
   requires: 全部五个检查点认领通过（L01–L05）

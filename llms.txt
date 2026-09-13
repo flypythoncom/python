@@ -1,6 +1,6 @@
 # FlyPython Repository Index for LLMs and AI Agents
 
-> FlyPython provides production-tested Python engineering playbooks, agent-taught courses with objective verification, verifiable test-driven starter examples, task contracts, and agent IDE rules.
+> FlyPython provides production-tested Python engineering playbooks, challenge courses with objective verification and per-checkpoint claim codes, verifiable test-driven starter examples, task contracts, and agent IDE rules.
 
 ## Quick API and Automation Commands
 
@@ -16,13 +16,16 @@
 ## Machine-Readable Directories
 
 - `catalog/resources/`: YAML files representing verified libraries, tools, and platforms.
-- `catalog/projects/`: One reviewed YAML file per Project Radar entry, plus the discovery queue `candidates.json`.
-- `courses/`: Agent-taught course folders; download one and say "start lesson 1":
+- `catalog/projects/`: One reviewed YAML file per Project Radar entry (discovery candidates are produced on demand by `tools/radar_scan.py`).
+- `courses/`: Challenge course folders — solve the `TASK.md` contract with a coding agent and prove it with `verify.py` claim codes; `COURSE.md` still offers a guided, agent-taught mode:
   - `courses/hands-on-python-with-claude-code/`: Task contract, bounded change, and objective verify.py evidence with Claude Code (EN+ZH lessons, three scenario skins).
   - `courses/hands-on-with-openai-codex-cli/`: The same verified workflow taught with the OpenAI Codex CLI (EN+ZH lessons, reuses the flagship scenario skins).
   - `courses/agent-rules-single-source/`: Build a checker that proves one AGENTS.md source of truth across CLAUDE.md and .cursorrules (EN+ZH, three drift scenarios).
   - `courses/verifying-ai-generated-code/`: Build the release-evidence machine: run checks, parse results, refuse zero-test projects, write SHIP-RECORD.json (EN+ZH, three project skins).
   - `courses/mcp-server-in-python/`: Build a stateless 2026-07-28 MCP tool server in pure Python — reuses the reviewed mcp-server example core (EN+ZH).
+  - `courses/da-eda/`: Exploratory data analysis with pandas over a messy shop export: exact duplicates, bad amounts, one bad date (EN+ZH).
+  - `courses/da-visualization/`: Data visualization with matplotlib from clean long-format daily sales: summaries, one-figure charts, Agg-before-pyplot discipline (EN+ZH).
+  - `courses/da-report/`: Turn a verified EDA summary JSON into a rendered report with stdlib-only code and deterministic verification (EN+ZH).
 - `examples/`: Reproducible test projects with failing starters and verified solutions:
   - `examples/product-slug/`: String normalization edge cases and regex safety.
   - `examples/pydantic-validation/`: Model boundaries and custom validators.
@@ -34,10 +37,10 @@
   - `templates/AGENT_RULES.example_cn.md`: Universal rule set in Chinese.
   - `templates/AGENTS.example.md`: Repository instruction policy for coding agents.
   - `templates/AGENTS.example_cn.md`: Repository instruction policy in Chinese.
-  - `templates/TASK_CONTRACT.example.md`: Scoped specification template for coding agents.
-  - `templates/TASK_PLAN.example.md`: Implementation plan template.
-  - `templates/TASK_REVIEW.example.md`: Code change review template.
-  - `templates/VERIFICATION_RECORD.example.md`: Evidence record for reproducible tests.
+  - `templates/TASK_CONTRACT.md`: Scoped specification template for coding agents.
+  - `templates/IMPLEMENTATION_PLAN.md`: Implementation plan template.
+  - `templates/CODE_REVIEW.md`: Code change review template.
+  - `templates/VERIFICATION.md`: Evidence record for reproducible tests.
 
 ## Official Portal
 

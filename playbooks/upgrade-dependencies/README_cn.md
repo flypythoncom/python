@@ -20,4 +20,4 @@ reviewed_on: 2026-09-02
 
 ---
 
-在 [flypython.com](https://flypython.com/learn/zh) 的中文指南索引中继续这个任务：每份清单背后的完整指南与经过审核的资料目录。
+在 [flypython.com 资源页](https://flypython.com/resources#upgrade-python-dependencies)继续这个任务（该页为英文，锚点直达本清单）：完整 Playbook 目录、每份清单背后的指南与经过审核的资料目录。

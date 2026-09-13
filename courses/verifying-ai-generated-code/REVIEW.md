@@ -9,7 +9,7 @@
   - `python verify.py starter --expect-failure` — exit 0; all expected
     failure names reproduced.
   - `python verify.py solution` — exit 0; full suite passes.
-  - Every scenario skin exercised end to end by the suite.
+  - Every scenario project (red, green, no-tests) exercised end to end by the suite.
 - Not verified in this pass: teaching quality with a live agent session.
 
 ## Pending before the public course drop

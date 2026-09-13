@@ -45,9 +45,12 @@ must leave the last accepted catalog unchanged.
 
 ## Contract
 
-Both current exports have `schema_version: 1`. They are described by
-[`schema/catalog-v1.schema.json`](../schema/catalog-v1.schema.json) and
-[`schema/content-manifest-v1.schema.json`](../schema/content-manifest-v1.schema.json).
+The current exports all have `schema_version: 1`. They are described by
+[`schema/catalog-v1.schema.json`](../schema/catalog-v1.schema.json),
+[`schema/content-manifest-v1.schema.json`](../schema/content-manifest-v1.schema.json),
+and [`schema/radar-v1.schema.json`](../schema/radar-v1.schema.json)
+(`radar.json`, the Project Radar export, is the third pinned artifact a
+consumer should record alongside the other two).
 
 - A schema-version change may require consumer code changes.
 - A content-only change keeps the same schema version.

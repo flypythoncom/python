@@ -22,4 +22,4 @@
     - 其他执行异常：捕获并返回 `{"result": {"isError": True, "content": [{"type": "text", "text": f"Error: {e}"}]}}`。
 - 提供 `InputRequired(Exception)`，带 `requests` 属性，让工具能够向客户端请求补充输入。
 
-完成标准：`python examples/mcp-server/verify.py starter` 成功退出。
+完成标准：`python verify.py starter` 以状态码 0 退出、全部测试通过。

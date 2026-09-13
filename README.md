@@ -10,7 +10,7 @@
 > [`courses/`](courses/), solve the contract in `TASK.md` with your coding
 > agent as the tool, and prove it with `verify.py` — which prints a claim
 > code per checkpoint. Prefer a guided path? `COURSE.md` still runs an
-> agent-taught mode, and [`paths/`](paths/) sequences courses into badge
+> agent-taught mode, and [`paths/`](paths/README.md) sequences courses into badge
 > routes. Continue on [flypython.com](https://flypython.com/).
 
 FlyPython is a practical, bilingual repository for writing good Python and
@@ -25,7 +25,8 @@ versions into a browsable learning experience.
 
 ## Start in three minutes
 
-No installation is required beyond Python 3.11+:
+No installation is required beyond Python 3.11+ (development pins 3.12
+through `.python-version`):
 
 ```bash
 git clone https://github.com/flypythoncom/python.git
@@ -42,7 +43,7 @@ to a coding agent (Cursor, Windsurf, Claude Code, Copilot) and make the starter 
 
 | Goal | Start here | What you will produce |
 | --- | --- | --- |
-| Learn by solving challenges | [Challenge courses](courses/) · [Learning paths](paths/) | A verified project + checkpoint claim codes from `verify.py` |
+| Learn by solving challenges | [Challenge courses](courses/) · [Learning paths](paths/README.md) | A verified project + checkpoint claim codes from `verify.py` |
 | Write and change Python safely | [AI Coding workflow](guides/ai-coding/workflow.md) | A bounded change with explicit context and evidence |
 | Turn Python into a reliable product | [Product quality guide](guides/python-engineering/product-quality.md) | A tested, observable, reversible product path |
 | Finish a recurring engineering task | [Playbooks](playbooks/README.md) | A bug fix, API change, integration, dependency upgrade, or release |
@@ -175,6 +176,8 @@ catalog/
   paths.yml          bilingual learning-path definitions
   resources/         one reviewed resource per YAML file
   projects/          human-review queue for current Python projects
+courses/              challenge courses with TASK.md contracts and verify.py claim codes
+paths/                learning paths sequencing courses into badge routes
 guides/               Python engineering and AI-coding methods
 playbooks/            repeatable task procedures and definitions of done
 examples/             small runnable projects with automated verification
@@ -182,6 +185,7 @@ templates/            task, plan, review, and verification starters
 schema/
   *.schema.json       versioned machine-readable contracts
 catalog.json         deterministic public export for consumers
+radar.json            deterministic Project Radar export for consumers
 content-manifest.json versioned paths, summaries, and checksums for the website
 tools/                generation, validation, example, and link-audit commands
 tests/                content consistency and behavior tests
@@ -227,10 +231,12 @@ Run the deterministic checks:
 ```bash
 python -m pytest
 python tools/validate_catalog.py
-python tools/export_catalog.py --check
+python tools/export_catalog.py --check --target both
 python tools/render_readmes.py --check
 python tools/build_content_manifest.py --check
 python tools/verify_examples.py
+python tools/verify_courses.py
+python tools/verify_paths.py
 ```
 
 After changing catalog sources, regenerate the public export before running the

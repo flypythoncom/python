@@ -7,7 +7,7 @@ Change only `starter/fetcher.py`.
   - At most `max_concurrency` calls to `fetch_fn` may be executing concurrently at any moment.
 - Retry & Backoff contract:
   - `fetch_fn` returns `{"status_code": int, "data": ...}` or raises an exception.
-  - If `status_code` in `{429, 500, 502, 503, 504}` or an exception is raised, retry up to `max_retries` times.
+  - If `status_code` in `{429, 500, 502, 503, 504}` or an exception is raised, retry within a total budget of `max_retries` attempts per item (a fresh call and its retries together count as `attempts`).
   - Permanent client errors (status 400..499 except 429) must NOT be retried.
   - On retry, back off by `0.01 * (2 ** attempt)` seconds.
 - Result collection:

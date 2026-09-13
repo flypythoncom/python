@@ -8,7 +8,7 @@ content_version: 1
 status: reviewed
 reviewed_on: 2026-09-12
 badge:
-  id: da-visualization
+  id: course-da-visualization
   name_en: Visualization Challenger
   name_zh: 可视化挑战者
   requires: All five checkpoints claimed (L01–L05)
