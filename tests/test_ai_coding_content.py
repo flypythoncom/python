@@ -49,7 +49,7 @@ def test_guide_reference_urls_come_from_reviewed_catalog() -> None:
 
     for path in GUIDES.values():
         _, body = load_guide(path)
-        urls = set(re.findall(r"\]\((https://[^)]+)\)", body))
+        urls = set(re.findall(r"\]\((https://[^)\s]+)", body))
         assert urls
         assert {url for url in urls if not url.startswith(FIRST_PARTY_PREFIX)} <= catalog_urls
 
