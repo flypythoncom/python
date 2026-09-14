@@ -39,7 +39,7 @@ def test_ai_coding_guides_have_matching_identity_and_version() -> None:
 def test_ai_coding_guides_cover_the_same_eight_step_workflow() -> None:
     for path in GUIDES.values():
         _, body = load_guide(path)
-        headings = re.findall(r"^## ([1-8])\.", body, flags=re.MULTILINE)
+        headings = re.findall(r"^## ([1-8])\.\s", body, flags=re.MULTILINE)
         assert headings == [str(number) for number in range(1, 9)]
 
 
