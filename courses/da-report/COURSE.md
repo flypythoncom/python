@@ -51,7 +51,7 @@ cd courses/da-report
   checkpoints claimed.
 - Challenges: L01–L05, 10 points each; +50 course-badge bonus on
   flypython.com.
-- Evidence: `python verify.py progress` — L03/L04 objective, L01/L02/L05
+- Evidence: `python verify.py` — L03/L04 objective, L01/L02/L05
   attested. Self-reported evidence, never a certificate.
 
 ## What this course does NOT cover

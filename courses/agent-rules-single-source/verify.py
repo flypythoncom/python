@@ -183,21 +183,69 @@ def run_progress(as_json, receipt_out=None, default=False):
         print(f"Wrote {len(receipts)} receipt(s) to {receipt_out}", file=sys.stderr)
     return 0
 
+def run_check(as_json=False, attested=()):
+    """Learner-facing v2 check: run only starter/ and require explicit attestation.
+
+    The published progress command remains the v1 claim-receipt interface.
+    The reference solution is checked by the maintainer's course validation,
+    not rerun on every learner check.
+    """
+    selected = set(attested)
+    allowed = {item["id"] for item in CHECKPOINTS if item["gate"] == "attest"}
+    unknown = selected - allowed
+    if unknown:
+        print("Only self-reported checkpoints can be attested: " + ", ".join(sorted(unknown)), file=sys.stderr)
+        return 2
+    dependency_check = globals().get("_deps_available")
+    blocked = callable(dependency_check) and not dependency_check()
+    result = None if blocked else _run_suite("starter")
+    passed = result is not None and result.returncode == 0
+    rows = []
+    for item in CHECKPOINTS:
+        self_report = item["gate"] == "attest"
+        status = ("attested" if item["id"] in selected else "pending") if self_report else ("blocked" if blocked else "passed" if passed else "open")
+        rows.append({"id": item["id"], "title": _display_title(item["title"]),
+                     "kind": "self-reported" if self_report else "objective",
+                     "status": status,
+                     "claim_code": _claim_code(item["id"]) if status in ("passed", "attested") else None})
+    document = {"v": 2, "course": COURSE_ID, "implementation": "starter",
+                "suite": {"status": "blocked" if blocked else "passed" if passed else "failed",
+                          "reason": "Install this course's requirements first." if blocked else None},
+                "checkpoints": rows}
+    if as_json:
+        print(json.dumps(document, ensure_ascii=False, indent=2))
+    else:
+        print("Course " + COURSE_ID)
+        print("Suites: starter " + ("blocked: install course requirements" if blocked else "passed" if passed else "not passed"))
+        for row in rows:
+            print("  " + row["id"] + "  " + row["title"] + "  [" + row["status"] + "]  " + (row["claim_code"] or "—"))
+        pending = [row["id"] for row in rows if row["status"] == "pending"]
+        if pending:
+            print("Confirm completed reflection checkpoints explicitly with --attest ID (repeat for each): " + ", ".join(pending))
+        if result is not None and not passed:
+            print((result.stderr or result.stdout or "").strip()[-3000:], file=sys.stderr)
+        print("Codes record self-reported progress, not a certificate. / 认领码只记录自报进度，不是证书。")
+    return 0 if all(row["status"] in ("passed", "attested") for row in rows) else 1
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("implementation", choices=("progress", "starter", "solution"),
+    parser.add_argument("implementation", choices=("check", "progress", "starter", "solution"),
                         nargs="?", default=None)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--expect-failure", action="store_true")
     parser.add_argument("--receipt-out", metavar="PATH", help="write signed run receipts JSON (requires FLYPYTHON_CLAIM_SECRET)")
+    parser.add_argument("--attest", action="append", default=[], metavar="ID", help="confirm one self-reported checkpoint after doing its work")
     args = parser.parse_args()
 
-    if args.implementation in (None, "progress"):
-        # FP-820: the bare command is the learner's default — same engine as
-        # ``progress``, English-first output, exit 1 while gates stay open.
-        # The four explicit usages remain for maintainers.
-        return run_progress(args.json, args.receipt_out,
-                            default=args.implementation is None)
+    if args.implementation in (None, "check"):
+        if args.receipt_out or args.expect_failure:
+            parser.error("--receipt-out and --expect-failure are for legacy progress/fixture commands")
+        return run_check(args.json, args.attest)
+    if args.attest:
+        parser.error("--attest is only valid with the learner check command")
+    if args.implementation == "progress":
+        return run_progress(args.json, args.receipt_out)
 
     command = [sys.executable, "-m", "unittest", "discover", "-s", str(ROOT / "tests")]
     environment = os.environ.copy()

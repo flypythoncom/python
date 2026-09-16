@@ -59,14 +59,14 @@
           "path": "courses/agent-rules-single-source/COURSE.md",
           "title": "One source of truth for agent rules",
           "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.",
-          "sha256": "ea30434d93440708952bd4acb895efb5c8b59bf9764ccddeaab53f97eaa283e8"
+          "sha256": "b75cb686586e3ae0ecb92d9b68c220212e9364b752808b5ba63c273da339fe87"
         },
         {
           "lang": "zh-CN",
           "path": "courses/agent-rules-single-source/COURSE_cn.md",
           "title": "Agent 规则的单一真源",
           "summary": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。",
-          "sha256": "5b11e590514fe81dc01b6ad4555a55abfc3b730ca4d14ff1fa4cd5b50fb15bb9"
+          "sha256": "9d5efe0d5ee5615be9d90001fe8a53c209b285a9e7ca6364222f71779d83eedf"
         }
       ]
     },
@@ -197,14 +197,14 @@
           "path": "courses/hands-on-python-with-claude-code/COURSE.md",
           "title": "Hands-on Python with Claude Code",
           "summary": "An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.",
-          "sha256": "44b874c07240c58bf7d3b240fa45fe52a0981802d2b4bbe95900567f20c12d69"
+          "sha256": "3076ed936b16ecae0891ecfa881b6bb553080175639e270b1bc0031a01753006"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/COURSE_cn.md",
           "title": "用 Claude Code 实战 Python",
           "summary": "一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。",
-          "sha256": "6c385a6554c914efabb37ec5b94f7f65c194094cb75d353db0bba2a35da0c6d4"
+          "sha256": "a7cb245d0247f6057f11e07e58963513358e698dde1eaf63e52633a4eea2b829"
         }
       ]
     },
@@ -335,14 +335,14 @@
           "path": "courses/hands-on-with-openai-codex/COURSE.md",
           "title": "Hands-on with the OpenAI Codex App",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the Codex desktop app, where an agent thread runs the loop and you supervise diffs and approvals.",
-          "sha256": "da4f82fcfce2751c335d1a140cc2e55fafa9f6b1b5353f7925f5ca342ebc6da7"
+          "sha256": "597bb0d7a6e4529dcbf63a755d4516793ceac21681fa78728540aa42c430c688"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/COURSE_cn.md",
           "title": "上手 OpenAI Codex 应用",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Codex 桌面应用里手把手教：由 Agent 线程跑闭环，你监督 diff 与审批。",
-          "sha256": "481e2e7fa7873b9695f5ad4c9427ea68f456b54ce6901cb9f01ac57b3f2cf6a3"
+          "sha256": "60bdd00ee11995fbefe8f46aded4878e936efbf437586fcdcd543fa50b7d0956"
         }
       ]
     },
@@ -473,14 +473,14 @@
           "path": "courses/hands-on-with-cursor/COURSE.md",
           "title": "Hands-on with Cursor",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Cursor, where Agent mode runs the loop and you supervise diffs and project rules.",
-          "sha256": "242e0a0838ba61eadf6ed1b2e88c87989e34cd47dfc5b569f6b1455b3139c3b6"
+          "sha256": "ae57993829cf1c271f1b1ad5d723103d484acb7dcb2dd4a03c318f2b5b012bc7"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/COURSE_cn.md",
           "title": "上手 Cursor",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Cursor 里手把手教：由 Agent 模式跑闭环，你监督 diff 与项目规则。",
-          "sha256": "567a8e1a76d5be9b72aa0dd445af38159132cb5660246a74053d634dc75b8d9d"
+          "sha256": "1e6536d0e6ef22d9152615d1c6a3af6d9a17dba5253a4383748abf6c03786886"
         }
       ]
     },
@@ -611,14 +611,14 @@
           "path": "courses/da-eda/COURSE.md",
           "title": "Exploratory Data Analysis with an Agent",
           "summary": "A challenge course — point your agent at a messy shop export and produce a verified EDA summary (results.json) whose numbers are checked against ground truth. First non-stdlib course in the catalog; pandas is managed with uv.",
-          "sha256": "d36b48bd7f5ee3864fd7b2653dff42703469f64728c440d343a9a5c8076fa99b"
+          "sha256": "e50b0ca1ec8d3dcccfeb8a9597a31bf3a9b351a869be95c72495a9861ee0b224"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-eda/COURSE_cn.md",
           "title": "用 Agent 做探索性数据分析",
           "summary": "挑战式课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要（results.json）。目录中第一门非标准库课程；pandas 由 uv 管理。",
-          "sha256": "693d2da589858d6716c0dabf34042ac012875620092eefdea688ba5601e7a41b"
+          "sha256": "83b2a03bbb124d95b81e3d537b8a6a89b0b7be4600e43e3585dbbc5b07af18c1"
         }
       ]
     },
@@ -749,14 +749,14 @@
           "path": "courses/da-report/COURSE.md",
           "title": "From Analysis to Report with an Agent",
           "summary": "Challenge course — turn a verified EDA summary into a structured report (report.json + report.md) where every number traces back to its input. Verification checks structure and number consistency, not writing quality.",
-          "sha256": "f0aea2909ed3e187497e9a79cf008d88324cf22e0ffc4251540825ecd8f08a46"
+          "sha256": "3c80de32162187285964142406f1b482dc6c422608de63825783e0444a0f582a"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-report/COURSE_cn.md",
           "title": "用 Agent 从分析到报告",
           "summary": "挑战课程——把经过验证的 EDA 摘要变成结构化报告（report.json + report.md），其中每个数字都可回溯到输入。验证检查结构与数字一致性，不评价文笔。",
-          "sha256": "f141a356b60de463d329fc72bb13374a8194cdbe5ecfc973a4f6f8c0e13c64c1"
+          "sha256": "40e0e079eaa4c9419b0ff72756a6ee28936bfe5c31cbcc530c48082574b2bd5a"
         }
       ]
     },
@@ -887,14 +887,14 @@
           "path": "courses/da-visualization/COURSE.md",
           "title": "Data Visualization with an Agent",
           "summary": "Challenge course — turn a clean sales dataset into three spec'd charts plus a summary.json whose numbers are verified against the data. Charts must be generated from data, never hardcoded.",
-          "sha256": "8f2dba8784b18a8ca15ac578629f5099245299e8a80184a82bea2e29b3e4545c"
+          "sha256": "fe7a7d00197b676cff35f62b1f098b39501c529b8dff93f034f716e623cd467b"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-visualization/COURSE_cn.md",
           "title": "用 Agent 做数据可视化",
           "summary": "挑战课程——把干净的销售数据变成三张有规格的图和一份 summary.json，其中数字会与数据集校验。图必须由数据生成，不许硬编码。",
-          "sha256": "80f412edb8375f5e2027285a6b27f828e7670cf536d149400fde4cf2948d297b"
+          "sha256": "d4e4447b9f31c9c31936b94cc0985e9f37e36090da3c562dd6450dbf1147c7f8"
         }
       ]
     },
@@ -1025,14 +1025,14 @@
           "path": "courses/hands-on-with-deepseek-harness/COURSE.md",
           "title": "Hands-on with DeepSeek Harness",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in DeepSeek Harness, where the agent loop is composed from plugins and every step lands in an inspectable trajectory.",
-          "sha256": "fb3b25a0f5233613b96f51e44f31292e1ba844603b12d9b1baeac34bd9e8504f"
+          "sha256": "f3e928e96dfa6f45547bc2b07ba151271551af6cdd22dff4281d032df5276186"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/COURSE_cn.md",
           "title": "上手 DeepSeek Harness",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 DeepSeek Harness 里手把手教：Agent 闭环由插件组装，每一步都落进可检查的轨迹日志。",
-          "sha256": "cabe3a68415798d70463afcfa1051d76a247793611b041b0077bba9fcb8cbbae"
+          "sha256": "3bef27e9425c37709924781f53d12f42b883cd5174eb94cc32675c01f5d1bfac"
         }
       ]
     },
@@ -1163,14 +1163,14 @@
           "path": "courses/hands-on-with-kimi-code/COURSE.md",
           "title": "Hands-on with Kimi Code",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code, where built-in subagents split read-only exploration, planning, and the edits you approve.",
-          "sha256": "749ea832bc28f7074f99770e0c827255d221159cef48a79a316a8de9c2b55296"
+          "sha256": "d574ba24d74c189cbc4cfa599f14d64ed327a65299272564300c2e85e6d6a272"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/COURSE_cn.md",
           "title": "上手 Kimi Code",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里手把手教：内置子代理把只读勘察、规划和经你批准的编辑分在三条道上。",
-          "sha256": "b080c36ac7ffbb1bfaeaad98db2ef68ca61a5f6c72f445c860a5801acf57e762"
+          "sha256": "a7c09dafda26d905430d182258485d6792b43a55703822a3438ce552518c5815"
         }
       ]
     },
@@ -1301,14 +1301,14 @@
           "path": "courses/mcp-server-in-python/COURSE.md",
           "title": "Give your agent tools with MCP (Python)",
           "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip — and learn where a real tool belongs.",
-          "sha256": "33af5c6245ce1dc1f9fbba6431ba6fa911c63ee2b7137d9e91600370685f44d8"
+          "sha256": "6df68da45b69a9a62ba46cdba2b39963edc443759cdfdea00f94b9cdd1f4de40"
         },
         {
           "lang": "zh-CN",
           "path": "courses/mcp-server-in-python/COURSE_cn.md",
           "title": "用 MCP 给你的 Agent 装上工具（Python）",
           "summary": "用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。",
-          "sha256": "322660423993cb400ec53c8b0c79b55a276229765fbc1c3fa1891729d7c1c72c"
+          "sha256": "197797063a2f01da277d2c51a3cb3816077feca8eae9dfa00b76706bc0ef4887"
         }
       ]
     },
@@ -1439,14 +1439,14 @@
           "path": "courses/verifying-ai-generated-code/COURSE.md",
           "title": "From \"it runs\" to \"it ships\": verifying AI-generated code",
           "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that runs the tests, parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
-          "sha256": "f329af811dee9fb767f0789c5b176fef435e6bf9a2bd6e36a86e98992e232d6d"
+          "sha256": "f21f75bd6a716245b614ee2d9b8d782354e33d890694683a66fbd7a1fe53f46b"
         },
         {
           "lang": "zh-CN",
           "path": "courses/verifying-ai-generated-code/COURSE_cn.md",
           "title": "从「能跑」到「能上线」：验证 AI 写的代码",
           "summary": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：运行测试、解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
-          "sha256": "4e9f9675fd80851670b5585a48161b78be080640d832b1a4f40a0ad75078b83d"
+          "sha256": "ade471c2a4f88526bdb5630b67791b4b5c0757e2a6daf59d2a56566b72f34da9"
         }
       ]
     },
@@ -1577,14 +1577,14 @@
           "path": "courses/hands-on-with-zcode/COURSE.md",
           "title": "Hands-on with ZCode",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the ZCode desktop workspace, where Goal Mode decomposes the work and the Git state shows every change.",
-          "sha256": "f1549e06594afe047d386bbf379467006df7dcaad24a9e3b848d8be0451e8f6c"
+          "sha256": "051fee38652ea32840258ec50e304190124bdef5965309c0e24578ecbf5c5481"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/COURSE_cn.md",
           "title": "上手 ZCode",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 ZCode 桌面工作区里手把手教：Goal 模式拆解任务，Git 状态展示每一处改动。",
-          "sha256": "38a1ede3d23dc65fd44e0b764914d4a5f637aa1156c5b07a3d6ed5c1c141c034"
+          "sha256": "a3c9916af904b3c054bab2ae84c486d8ee629c699ec024ddbb8c7e993c8fe3a5"
         }
       ]
     },

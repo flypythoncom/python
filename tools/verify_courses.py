@@ -182,12 +182,10 @@ def check_receipt_contract(course: Path) -> list[str]:
 
 
 # ── Default command contract (FP-820) ──────────────────────────────────────
-# Bare ``python verify.py`` is the learner's command: it runs the same engine
-# as ``progress``, prints English-first output with the Chinese lines after,
-# and exits 1 while objective gates are open (a shipped starter intentionally
-# fails). The published ``progress --json`` / ``--receipt-out`` formats must
-# stay byte-compatible with 0.0.7 — check_progress/check_receipt above own
-# those; this check owns the new surface.
+# Bare ``python verify.py`` is the learner's command: it runs starter only,
+# leaves self-reported checkpoints pending until --attest ID, and exits 1
+# while anything remains unfinished. Published progress/receipt v1 formats
+# remain compatible; the check --json command is a separate v2 interface.
 
 
 def check_default_command(course: Path) -> list[str]:
@@ -209,8 +207,10 @@ def check_default_command(course: Path) -> list[str]:
         problems.append(f"{name}: default command missing the Suites line")
     if not any("[open]" in line and "l03" in line for line in lines):
         problems.append(f"{name}: default command does not show l03 as open")
-    if not any("[attest" in line for line in lines):
-        problems.append(f"{name}: default command does not show self-attested checkpoints")
+    if not any("[pending]" in line for line in lines):
+        problems.append(f"{name}: default command does not leave self-reported checkpoints pending")
+    if any(re.search(r"\[pending\]\s+[A-Z2-7]{8}", line) for line in lines):
+        problems.append(f"{name}: default command printed a code for a pending checkpoint")
     # English before Chinese: checkpoint titles must not lead with Chinese
     # (FP-709 mixed-order debt) — shared-core titles are stored "zh / en".
     for line in lines:
@@ -219,6 +219,32 @@ def check_default_command(course: Path) -> list[str]:
             if re.match(r"^[\u4e00-\u9fff]", title):
                 problems.append(f"{name}: default command prints a Chinese-first checkpoint title")
                 break
+    machine = subprocess.run(
+        [sys.executable, str(verify), "check", "--json"],
+        check=False, capture_output=True, text=True,
+    )
+    if machine.returncode != 1:
+        problems.append(f"{name}: check --json must exit 1 for the shipped starter")
+    else:
+        try:
+            document = json.loads(machine.stdout)
+            assert document["v"] == 2 and document["implementation"] == "starter"
+            assert len(document["checkpoints"]) == 5
+            assert all(row["claim_code"] is None for row in document["checkpoints"] if row["status"] == "pending")
+        except (ValueError, KeyError, AssertionError, TypeError):
+            problems.append(f"{name}: check --json does not provide a valid v2 learner result")
+    attested = subprocess.run(
+        [sys.executable, str(verify), "check", "--json", "--attest", "l01"],
+        check=False, capture_output=True, text=True,
+    )
+    try:
+        rows = {row["id"]: row for row in json.loads(attested.stdout)["checkpoints"]}
+        assert attested.returncode == 1  # other checkpoints remain unfinished
+        assert rows["l01"]["status"] == "attested"
+        assert re.fullmatch(r"[A-Z2-7]{8}", rows["l01"]["claim_code"])
+        assert rows["l02"]["status"] == "pending" and rows["l02"]["claim_code"] is None
+    except (ValueError, KeyError, AssertionError, TypeError):
+        problems.append(f"{name}: explicit l01 attestation must print only its own code")
     return problems
 
 

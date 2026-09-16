@@ -50,7 +50,7 @@ uv sync            # pandas + matplotlib（或 pip install -r requirements.txt�
 - 徽章：**可视化挑战者**（badge id `da-visualization`）——五个检查点
   全部认领。
 - 挑战：L01–L05 各 10 分；flypython.com 上 +50 课程徽章奖励分。
-- 证据：`python verify.py progress`——L03/L04 客观判卷，L01/L02/L05
+- 证据：`python verify.py`——L03/L04 客观判卷，L01/L02/L05
   自报。自我报告的证据，绝非证书。
 
 ## 本课程不覆盖的内容

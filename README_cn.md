@@ -49,6 +49,15 @@ python examples/product-slug/verify.py starter --expect-failure
 python examples/product-slug/verify.py solution
 ```
 
+## 验证并记录课程进度
+
+在课程文件夹里，每次修改后运行 `python verify.py`。它只测试 `starter/`：
+`[open]` 表示任务未完成，`[passed]` 会给出认领码，`[pending]` 是需要
+本人回答课后问题的自报检查点。回答后运行 `python verify.py --attest l01`
+（每个已完成的自报检查点分别确认），取得 `[attested]` 认领码。只通过
+Agent 或工作台提交 `[passed]` 和 `[attested]` 的码。`check --json` 是
+版本化的 v2 接口；`progress --json` 只为旧版签名回执集成保留。
+
 ## 选择你现在要完成的事
 
 | 目标 | 从这里开始 | 最终产出 |

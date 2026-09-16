@@ -53,6 +53,16 @@ python examples/product-slug/verify.py starter --expect-failure
 python examples/product-slug/verify.py solution
 ```
 
+## Verify and record a course
+
+In the course folder, run `python verify.py` after each change. It tests only
+`starter/`: `[open]` means the task is unfinished, `[passed]` gives a claim
+code, and `[pending]` is a reflection checkpoint. Answer that lesson's
+questions, then run `python verify.py --attest l01` (repeat for each completed
+reflection) to get its code. Submit only `[passed]` and `[attested]` codes
+through your agent or the dashboard. `check --json` is the versioned v2
+interface; `progress --json` remains for older signed-receipt integrations.
+
 ## Choose what you need to accomplish
 
 | Goal | Start here | What you will produce |

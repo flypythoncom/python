@@ -56,9 +56,9 @@ uv sync            # 或：pip install -r requirements.txt
   认领后获得。
 - 挑战：L01–L05 各 10 分；五个全部在 flypython.com 认领后 +50 课程
   徽章奖励分。
-- 证据：`python verify.py progress`——L03/L04 由套件客观判卷，
+- 证据：`python verify.py`——L03/L04 由套件客观判卷，
   L01/L02/L05 为学习者自报。
-- 提交：每个通过的检查点打印一个确定性认领码，在 flypython.com 上
+- 提交：测试通过的检查点打印确定性认领码；自报检查点要先回答课后问题，再运行 `python verify.py --attest ID` 才打印码，在 flypython.com 上
   记入你的账号。自我报告的证据，绝非证书。
 
 ## 本课程不覆盖的内容

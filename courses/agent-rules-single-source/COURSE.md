@@ -71,7 +71,7 @@ directory, three file names, one truth.
 - Badge: **Measure the drift Badge** (badge id `course-agent-rules`) - earned by claiming all five checkpoints.
 - Challenges: L01-L05 checkpoints, 10 points each; +50 course-badge bonus when all five are claimed on flypython.com.
 - Evidence: `python verify.py` - L03 (bounded change) and L04 (verify & review) are objectively gated by the suite; L01/L02/L05 are learner-attested.
-- Submission: each passed checkpoint prints a deterministic claim code; record it on flypython.com against your account. Self-reported evidence, never a certificate.
+- Submission: each test-passed checkpoint prints a deterministic claim code; a reflection checkpoint prints one only after you answer its questions and run `python verify.py --attest ID`; record it on flypython.com against your account. Self-reported evidence, never a certificate.
 
 ## Folder map
 

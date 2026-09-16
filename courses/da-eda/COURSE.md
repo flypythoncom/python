@@ -58,9 +58,9 @@ uv sync            # or: pip install -r requirements.txt
   five checkpoints.
 - Challenges: L01–L05, 10 points each; +50 course-badge bonus when all
   five are claimed on flypython.com.
-- Evidence: `python verify.py progress` — L03 and L04 are objectively
+- Evidence: `python verify.py` — L03 and L04 are objectively
   gated by the suite; L01/L02/L05 are learner-attested.
-- Submission: each passed checkpoint prints a deterministic claim code;
+- Submission: each test-passed checkpoint prints a deterministic claim code; a reflection checkpoint prints one only after you answer its questions and run `python verify.py --attest ID`;
   record it on flypython.com against your account. Self-reported
   evidence, never a certificate.
 
