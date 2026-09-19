@@ -1,5 +1,8 @@
 # FlyPython 仓库 0.0.4 更新计划
 
+> 历史版本记录：本文件保留当时的挑战模型和发布证据。2026-09-19 当前 `master`
+> 已是 `39a3e79…`，learner verifier v2 已上线；下文旧 pin 只表示当时快照。
+
 版本：0.0.4（规划草稿，第 3 版）
 更新日期：2026-09-12（第 3 版——挑战模型定稿 + A/B 阶段拆分）
 关联：flypython.com `docs/product-and-growth-plan-0.0.4.md`

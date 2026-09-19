@@ -29,9 +29,10 @@ Avoid generic banners, repeated marketing copy, and links to placeholder pages.
 
 ## Attribution and acceptance
 
-Until a dedicated GitHub landing route exists in production, link to the live
-site root. When the website ships a route such as `/from-github`, verify it on
-the custom domain before changing repository links. Then measure, at minimum:
+The dedicated `/from-github` landing route is now in production. Repository
+calls to action may link to that route when attribution matters, while generic
+“continue learning” links may still use the site root. Re-verify the custom
+domain after each website release. Measure, at minimum:
 
 - repository link clicks by source document;
 - landing-page engagement with a learning path;

@@ -4,13 +4,29 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+### Changed — 2026-09-16 learner verifier v2
+
+- All 12 public course verifiers now expose `check --json` and require
+  explicit `--attest ID` confirmation before self-reported checkpoints emit
+  learner-submittable codes.
+- The default learner command tests `starter/`, reports `[open]`, `[passed]`,
+  `[pending]`, and `[attested]`, and exits successfully only after every gate
+  is passed or explicitly attested.
+- `progress --json` remains available only for the v1 signed-receipt contract;
+  its legacy self-reported rows must not be submitted as learner claims.
+- `tools/verify_courses.py`, both READMEs, paired course guidance, and
+  `content-manifest.json` were updated together. Production consumer pin:
+  `39a3e79be939f491ac3c779494bf5c655c5588a0`.
+
 0.1.0 — companion-repository half of the public launch (website
 `docs/product-and-growth-plan-0.1.0.md`; see the website `CHANGELOG.md`
 for the platform half).
 
 Release mapping (FP-1012): this repository ships **v0.1.1** on this
 release train — the earlier `v0.1.0` tag stays immutably on `e420fca`.
-Compatibility: website `v0.1.0` ↔ repository `v0.1.1`.
+Compatibility: website `v0.1.0` ↔ repository `v0.1.1`. The immutable tag is
+`db85cdd…`; current `master` and the production website pin have advanced to
+post-tag verifier commit `39a3e79…`.
 
 ### Changed
 
