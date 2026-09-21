@@ -7,20 +7,20 @@ requires-python = ">=3.11"
 license = { text = "MIT" }
 dependencies = [
     "PyYAML>=6.0.2",
-    "requests>=2.32.3",
-    "urllib3>=2.3.0",
+    "requests>=2.34.2",
+    "urllib3>=2.8.0",
 ]
 
 [project.optional-dependencies]
 dev = [
     "pytest>=8.3.0",
     "jsonschema>=4.20.0",
-    "ruff>=0.9.0",
-    "mypy>=1.14.0",
-    "types-PyYAML>=6.0.12.20241230",
-    "types-requests>=2.32.0.20241016",
-    "pandas>=2.3,<2.4",
-    "matplotlib>=3.10,<3.11",
+    "ruff>=0.16.8",
+    "mypy>=2.3.1",
+    "types-PyYAML>=6.0.12.20260906",
+    "types-requests>=2.33.0.20260906",
+    "pandas>=3.0.6,<3.1",
+    "matplotlib>=3.11.2,<3.12",
 ]
 
 [tool.pytest.ini_options]
