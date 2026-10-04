@@ -3,15 +3,15 @@ updates:
   - package-ecosystem: pip
     directory: "/"
     schedule:
-      interval: weekly
-      day: monday
+      interval: monthly
+      day: 1
       time: "09:00"
       timezone: Asia/Shanghai
     open-pull-requests-limit: 5
     ignore:
       # Course folders pin these in their own requirements.txt, which this
       # root-level config does not scan. Upgrade them together with the
-      # course pins during a course re-review, not in the weekly group PR.
+      # course pins during a course re-review, not in the monthly group PR.
       - dependency-name: "pandas"
       - dependency-name: "matplotlib"
     groups:
@@ -22,8 +22,8 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
-      day: monday
+      interval: monthly
+      day: 1
       time: "09:15"
       timezone: Asia/Shanghai
     open-pull-requests-limit: 5
