@@ -76,6 +76,14 @@ python -m venv .venv
 python -m pip install -r requirements-dev.lock.txt
 ```
 
+The lock files are generated, not hand-edited. To change a dependency, edit
+`pyproject.toml` and run `make lock` (needs [uv](https://docs.astral.sh/uv/));
+existing pins are kept wherever they still satisfy the new constraints. CI runs
+`make lock-check` and fails if the locks drift from `pyproject.toml`. Course
+and path folders that ship their own `requirements.txt` must pin exactly the
+versions in `requirements-dev.lock.txt` (`tests/test_dependency_pins.py`), so
+CI tests the stack learners install.
+
 After changing catalog sources, regenerate the public export:
 
 ```bash
