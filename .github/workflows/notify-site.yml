@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Website Workflow
-        uses: peter-evans/repository-dispatch@v3
+        uses: peter-evans/repository-dispatch@v4
         if: env.SYNC_TOKEN != ''
         with:
           token: ${{ secrets.WEBSITE_SYNC_TOKEN }}
