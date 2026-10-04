@@ -1,6 +1,17 @@
-.PHONY: help check export render manifest test verify courses paths lint all
+.PHONY: help check export render manifest test verify courses paths lint lock lock-check all
 
 PYTHON ?= python3
+UV ?= uv
+
+# Lock files are resolved once for every supported Python and platform
+# (--universal from the 3.11 floor). The dev lock is constrained to the
+# runtime lock so both always agree on shared packages.
+UV_COMPILE = $(UV) pip compile pyproject.toml --universal --python-version 3.11 \
+	--custom-compile-command "make lock" --quiet
+define compile_locks
+	$(UV_COMPILE) -o requirements.lock.txt
+	$(UV_COMPILE) --extra dev -c requirements.lock.txt -o requirements-dev.lock.txt
+endef
 
 help:
 	@echo "FlyPython Development Workflow:"
@@ -13,6 +24,8 @@ help:
 	@echo "  make verify     - Verify all runnable examples"
 	@echo "  make courses    - Verify all course folders"
 	@echo "  make paths      - Verify all learning-path contracts"
+	@echo "  make lock       - Re-resolve requirements*.lock.txt from pyproject.toml (keeps existing pins where valid)"
+	@echo "  make lock-check - Fail if the lock files no longer match pyproject.toml"
 	@echo "  make all        - Regenerate all exports and run all checks and tests"
 
 check: lint test
@@ -47,5 +60,19 @@ courses:
 
 paths:
 	$(PYTHON) tools/verify_paths.py
+
+lock:
+	$(compile_locks)
+
+# Re-resolve copies of the committed locks in a scratch directory: uv keeps
+# every committed pin that still satisfies pyproject.toml, so any diff means
+# the locks drifted from the declared dependencies.
+lock-check:
+	@tmp=$$(mktemp -d) && \
+	cp pyproject.toml requirements.lock.txt requirements-dev.lock.txt "$$tmp/" && \
+	$(MAKE) --no-print-directory -C "$$tmp" -f "$(CURDIR)/Makefile" lock && \
+	diff -u requirements.lock.txt "$$tmp/requirements.lock.txt" && \
+	diff -u requirements-dev.lock.txt "$$tmp/requirements-dev.lock.txt" && \
+	rm -rf "$$tmp" && echo "lock files match pyproject.toml"
 
 all: export render manifest check

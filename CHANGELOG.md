@@ -4,6 +4,26 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+### Changed — 2026-10-04 CI hardening
+
+- `requirements.lock.txt` and `requirements-dev.lock.txt` are now generated
+  by `make lock` (`uv pip compile --universal` from the Python 3.11 floor)
+  instead of hand-maintained. All existing pins were kept; the Windows-only
+  `colorama` and Python <3.13 `typing-extensions` transitive pins the manual
+  lock had missed are now included. A new `lock` CI job runs
+  `make lock-check` and fails when the locks drift from `pyproject.toml`.
+- New `tests/test_dependency_pins.py`: every course/path `requirements.txt`
+  must pin exactly the versions CI tests with.
+- Validate matrix adds Python 3.14 and no longer cancels sibling versions
+  on the first failure; actions are pinned to commit SHAs, `setup-uv` moves
+  from v7 to v10.2.0, and CI pins uv 0.12.19.
+- Removed `notify-site.yml`: its `WEBSITE_SYNC_TOKEN` secret was never
+  configured, so all 32 runs skipped the dispatch step while reporting
+  success, and the website builds from its own content pin regardless.
+- Removed the unused `mypy`, `types-PyYAML`, and `types-requests` dev
+  dependencies and the `[tool.mypy]` config; mypy was never installed by
+  the lock or run by CI.
+
 ### Changed — 2026-10-04 README restructure
 
 - Root READMEs now carry a condensed catalog index (learning-path bullets
