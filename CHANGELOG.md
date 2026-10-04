@@ -10,13 +10,16 @@ This file records notable catalog-contract and maintenance changes.
   by `make lock` (`uv pip compile --universal` from the Python 3.11 floor)
   instead of hand-maintained. All existing pins were kept; the Windows-only
   `colorama` and Python <3.13 `typing-extensions` transitive pins the manual
-  lock had missed are now included. A new `lock` CI job runs
-  `make lock-check` and fails when the locks drift from `pyproject.toml`.
+  lock had missed are now included. `make lock-check` re-resolves the
+  committed locks in place and fails on any diff; CI runs it on the 3.11 leg.
 - New `tests/test_dependency_pins.py`: every course/path `requirements.txt`
   must pin exactly the versions CI tests with.
-- Validate matrix adds Python 3.14 and no longer cancels sibling versions
-  on the first failure; actions are pinned to commit SHAs, `setup-uv` moves
-  from v7 to v10.2.0, and CI pins uv 0.12.19.
+- Validate is a single `make check` job (the same command as local) on the
+  Python floor and latest (3.11 + 3.14 — the universal lock resolves every
+  version between), no longer cancels sibling versions on the first failure,
+  SHA-pins actions, moves `setup-uv` v7 → v10.2.0, and pins uv 0.12.19.
+- Removed the unused root `requirements.txt` and `requirements-dev.txt`;
+  dependencies are declared only in `pyproject.toml` and the two locks.
 - Removed `notify-site.yml`: its `WEBSITE_SYNC_TOKEN` secret was never
   configured, so all 32 runs skipped the dispatch step while reporting
   success, and the website builds from its own content pin regardless.

@@ -64,15 +64,12 @@ paths:
 lock:
 	$(compile_locks)
 
-# Re-resolve copies of the committed locks in a scratch directory: uv keeps
-# every committed pin that still satisfies pyproject.toml, so any diff means
-# the locks drifted from the declared dependencies.
+# uv keeps every committed pin that still satisfies pyproject.toml, so any
+# diff after re-resolution means the locks drifted — the printed diff is the
+# change to commit.
 lock-check:
-	@tmp=$$(mktemp -d) && \
-	cp pyproject.toml requirements.lock.txt requirements-dev.lock.txt "$$tmp/" && \
-	$(MAKE) --no-print-directory -C "$$tmp" -f "$(CURDIR)/Makefile" lock && \
-	diff -u requirements.lock.txt "$$tmp/requirements.lock.txt" && \
-	diff -u requirements-dev.lock.txt "$$tmp/requirements-dev.lock.txt" && \
-	rm -rf "$$tmp" && echo "lock files match pyproject.toml"
+	@$(compile_locks)
+	@git diff --exit-code requirements.lock.txt requirements-dev.lock.txt || \
+		{ echo "lock files drifted from pyproject.toml — commit the regenerated files"; exit 1; }
 
 all: export render manifest check

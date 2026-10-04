@@ -14,27 +14,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  lock:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Install uv
-        uses: astral-sh/setup-uv@c18668ad3cf93ea998bef934396af7bb5c839dc7 # v10.2.0
-        with:
-          version: "0.12.19"
-
-      - name: Lock files match pyproject.toml
-        run: make lock-check
-
+  # Lowest and latest supported CPython; the universal lock already resolves
+  # every version between them, so the middle ones ran the identical suite.
   validate:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.11", "3.12", "3.13", "3.14"]
+        python-version: ["3.11", "3.14"]
     timeout-minutes: 15
     steps:
       - name: Check out repository
@@ -49,33 +36,14 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         run: uv python install ${{ matrix.python-version }}
 
-      - name: Install dependencies and dev tools
+      - name: Install locked dev dependencies
         run: |
           uv venv --python ${{ matrix.python-version }}
           uv pip install -r requirements-dev.lock.txt
 
-      - name: Lint with ruff
-        run: .venv/bin/ruff check .
+      - name: Run all checks
+        run: make check PYTHON=.venv/bin/python
 
-      - name: Run tests
-        run: .venv/bin/python -m pytest
-
-      - name: Validate catalog
-        run: .venv/bin/python tools/validate_catalog.py
-
-      - name: Verify public JSON exports
-        run: .venv/bin/python tools/export_catalog.py --check --target both
-
-      - name: Verify browsable README indexes
-        run: .venv/bin/python tools/render_readmes.py --check
-
-      - name: Verify first-party content manifest
-        run: .venv/bin/python tools/build_content_manifest.py --check
-
-      - name: Verify runnable examples
-        run: .venv/bin/python tools/verify_examples.py
-
-      - name: Verify course folders
-        run: .venv/bin/python tools/verify_courses.py
-      - name: Verify learning-path contracts
-        run: .venv/bin/python tools/verify_paths.py
+      - name: Lock files match pyproject.toml
+        if: matrix.python-version == '3.11'
+        run: make lock-check
