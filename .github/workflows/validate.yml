@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies and dev tools
         run: |
           uv venv --python ${{ matrix.python-version }}
-          uv pip install -r requirements-dev.lock.txt ruff
+          uv pip install -r requirements-dev.lock.txt
 
       - name: Lint with ruff
         run: .venv/bin/ruff check .

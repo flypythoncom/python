@@ -376,8 +376,9 @@ def check_shared_core(courses: list[Path]) -> list[str]:
             shapes.append(list(zip(
                 re.findall(r'"id":\s*"(l\d+|capstone)"', verify),
                 re.findall(r'"gate":\s*"([a-z-]+)"', verify),
+                strict=False,
             )))
-        for member, shape in zip(members[1:], shapes[1:]):
+        for member, shape in zip(members[1:], shapes[1:], strict=True):
             if shape != shapes[0]:
                 problems.append(
                     f"core-group {group}: {member.name} checkpoint ids/gates differ from {members[0].name}"

@@ -17,7 +17,7 @@ import hashlib
 import hmac
 import json
 import secrets
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 SECRET_ENV = "FLYPYTHON_CLAIM_SECRET"
@@ -85,7 +85,7 @@ def make_receipt(
         },
         "impl_sha256": impl_hash,
         "solution_match": (impl_hash == solution_hash) if solution_hash else False,
-        "created_at": datetime.now(timezone.utc).isoformat(timespec="milliseconds").replace("+00:00", "Z"),
+        "created_at": datetime.now(UTC).isoformat(timespec="milliseconds").replace("+00:00", "Z"),
         "nonce": secrets.token_hex(16),
     }
     receipt["sig"] = hmac.new(
