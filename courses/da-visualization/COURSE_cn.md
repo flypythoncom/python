@@ -32,7 +32,9 @@ course_id: course-da-visualization
 
 ```bash
 cd courses/da-visualization
-uv sync            # pandas + matplotlib（或 pip install -r requirements.txt）
+python -m venv .venv               # 或：uv venv
+source .venv/bin/activate          # Windows：.venv\Scripts\activate
+pip install -r requirements.txt    # pandas + matplotlib（或 uv pip install -r requirements.txt）
 ```
 
 ## 挑战（检查点）

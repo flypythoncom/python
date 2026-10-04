@@ -7,8 +7,9 @@ Exit 0 means the selected implementation satisfies the task contract;
 that the failing tests are the intended ones. ``progress`` prints the
 checkpoint claim codes for recording on flypython.com.
 
-Dependencies (pandas) are managed with uv — run ``uv sync`` (or
-``pip install -r requirements.txt``) inside this folder first.
+Dependencies (pandas) are pinned in requirements.txt — install them into a
+virtual environment inside this folder first (``python -m venv .venv``,
+activate it, then ``pip install -r requirements.txt``).
 """
 
 from __future__ import annotations
@@ -71,8 +72,9 @@ def _deps_available():
 
 def _deps_hint():
     print(
-        "pandas is not installed. Run `uv sync` (or "
-        "`pip install -r requirements.txt`) inside this course folder first.",
+        "pandas is not installed. In this course folder, create and activate "
+        "a virtual environment, then run `pip install -r requirements.txt` "
+        "(or `uv pip install -r requirements.txt`).",
         file=sys.stderr,
     )
 

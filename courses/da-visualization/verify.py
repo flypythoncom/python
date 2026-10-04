@@ -3,8 +3,8 @@
 
 Objective completion evidence for "Data visualization" (da-visualization).
 ``progress`` prints checkpoint claim codes for recording on flypython.com.
-Dependencies (pandas, matplotlib) managed with uv — run ``uv sync`` inside
-this folder first.
+Dependencies (pandas, matplotlib) are pinned in requirements.txt — install
+them into a virtual environment inside this folder first.
 """
 
 from __future__ import annotations
@@ -60,8 +60,9 @@ def _deps_available():
 
 def _deps_hint():
     print(
-        "pandas/matplotlib not installed. Run `uv sync` (or "
-        "`pip install -r requirements.txt`) inside this course folder first.",
+        "pandas/matplotlib not installed. In this course folder, create and "
+        "activate a virtual environment, then run `pip install -r "
+        "requirements.txt` (or `uv pip install -r requirements.txt`).",
         file=sys.stderr,
     )
 

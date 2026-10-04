@@ -2,7 +2,7 @@
 id: course-da-eda
 type: course
 title: 用 Agent 做探索性数据分析
-summary: 挑战式课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要（results.json）。目录中第一门非标准库课程；pandas 由 uv 管理。
+summary: 挑战式课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要（results.json）。目录中第一门非标准库课程；pandas 版本固定在 requirements.txt。
 lang: zh-CN
 content_version: 1
 status: reviewed
@@ -35,7 +35,9 @@ course_id: course-da-eda
 
 ```bash
 cd courses/da-eda
-uv sync            # 或：pip install -r requirements.txt
+python -m venv .venv               # 或：uv venv
+source .venv/bin/activate          # Windows：.venv\Scripts\activate
+pip install -r requirements.txt    # 或：uv pip install -r requirements.txt
 ```
 
 `verify.py` 会检查 pandas，缺失时打印这条提示。

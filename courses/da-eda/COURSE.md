@@ -2,7 +2,7 @@
 id: course-da-eda
 type: course
 title: Exploratory Data Analysis with an Agent
-summary: A challenge course — point your agent at a messy shop export and produce a verified EDA summary (results.json) whose numbers are checked against ground truth. First non-stdlib course in the catalog; pandas is managed with uv.
+summary: A challenge course — point your agent at a messy shop export and produce a verified EDA summary (results.json) whose numbers are checked against ground truth. First non-stdlib course in the catalog; pandas is pinned in requirements.txt.
 lang: en-US
 content_version: 1
 status: reviewed
@@ -37,7 +37,9 @@ This is the first course in the catalog that leaves the standard library:
 
 ```bash
 cd courses/da-eda
-uv sync            # or: pip install -r requirements.txt
+python -m venv .venv               # or: uv venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt    # or: uv pip install -r requirements.txt
 ```
 
 `verify.py` checks for pandas and prints this hint if it is missing.
