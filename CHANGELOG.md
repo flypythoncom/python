@@ -4,6 +4,29 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+### Fixed — 2026-10-04 CI and course setup
+
+- CI: `ruff` is pinned in `requirements-dev.lock.txt`. CI had installed the
+  latest unpinned ruff, whose new rules failed every Validate run from
+  2026-09-16; the three findings were fixed without behavior change.
+- CI: the dev lock installs on Python 3.11 again (`numpy` and `contourpy`
+  use `python_version` markers); the 3.11 job had failed at install since
+  the lock was added.
+- Tests: guide heading extraction requires whitespace after the step number
+  (#90), and guide URL extraction ignores Markdown link titles (adapted from
+  #91).
+- Actions: `actions/checkout` v7, `astral-sh/setup-uv` v7,
+  `peter-evans/repository-dispatch` v4 (#89).
+- Courses: `da-eda` and `da-visualization` setup (EN+ZH) and the `verify.py`
+  missing-dependency hint no longer say `uv sync`, which fails in a
+  standalone course folder (no `pyproject.toml`) and does not install pandas
+  in a clone (it lives in the `dev` extra). They now create a virtual
+  environment and run `pip install -r requirements.txt`.
+- Tooling: removed the stale, unused `uv.lock` (`requirements*.lock.txt` are
+  the only lock files); `make check` now also runs ruff and pytest, as CI
+  does; Dependabot ignores pandas and matplotlib, which course folders pin;
+  workflows no longer trigger on the deleted `main` branch.
+
 ### Changed — 2026-09-16 learner verifier v2
 
 - All 12 public course verifiers now expose `check --json` and require
@@ -15,8 +38,9 @@ This file records notable catalog-contract and maintenance changes.
 - `progress --json` remains available only for the v1 signed-receipt contract;
   its legacy self-reported rows must not be submitted as learner claims.
 - `tools/verify_courses.py`, both READMEs, paired course guidance, and
-  `content-manifest.json` were updated together. Production consumer pin:
-  `39a3e79be939f491ac3c779494bf5c655c5588a0`.
+  `content-manifest.json` were updated together. The website consumer pin was
+  `39a3e79be939f491ac3c779494bf5c655c5588a0` at the time; the current pin is
+  recorded in the website's `src/data/content-pin.json`.
 
 0.1.0 — companion-repository half of the public launch (website
 `docs/product-and-growth-plan-0.1.0.md`; see the website `CHANGELOG.md`
@@ -25,8 +49,8 @@ for the platform half).
 Release mapping (FP-1012): this repository ships **v0.1.1** on this
 release train — the earlier `v0.1.0` tag stays immutably on `e420fca`.
 Compatibility: website `v0.1.0` ↔ repository `v0.1.1`. The immutable tag is
-`db85cdd…`; current `master` and the production website pin have advanced to
-post-tag verifier commit `39a3e79…`.
+`db85cdd…`; `master` and the website pin have since moved past the tag (see
+`[Unreleased]`).
 
 ### Changed
 

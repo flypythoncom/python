@@ -8,6 +8,12 @@ updates:
       time: "09:00"
       timezone: Asia/Shanghai
     open-pull-requests-limit: 5
+    ignore:
+      # Course folders pin these in their own requirements.txt, which this
+      # root-level config does not scan. Upgrade them together with the
+      # course pins during a course re-review, not in the weekly group PR.
+      - dependency-name: "pandas"
+      - dependency-name: "matplotlib"
     groups:
       python-dependencies:
         patterns:
