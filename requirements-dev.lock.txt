@@ -9,6 +9,7 @@ Pygments==2.21.0
 pytest==9.1.1
 referencing==0.37.0
 rpds-py==2026.6.3
+ruff==0.16.9
 contourpy==1.4.0
 cycler==0.12.1
 fonttools==4.65.0
