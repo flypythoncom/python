@@ -1,12 +1,13 @@
 # FlyPython: Learn to ship Python with AI coding agents
 
-Learn to ship Python with AI coding agents — real projects; your agent does
-the typing, `verify.py` decides when you're done.
 [![GitHub stars](https://img.shields.io/github/stars/flypythoncom/python?style=flat-square&label=stars)](https://github.com/flypythoncom/python/stargazers)
 [![Validate](https://github.com/flypythoncom/python/actions/workflows/validate.yml/badge.svg)](https://github.com/flypythoncom/python/actions/workflows/validate.yml)
 [![Website](https://img.shields.io/badge/Website-flypython.com-blue?style=flat-square)](https://flypython.com)
 
 [English](README.md) · [中文](README_cn.md) · [🌐 Online Portal](https://flypython.com)
+
+Real projects; your agent does the typing, `verify.py` decides when you're
+done.
 
 > **Challenge courses with objective verification.** Pick a folder from
 > [`courses/`](courses/), solve the contract in `TASK.md` with your coding
@@ -14,6 +15,10 @@ the typing, `verify.py` decides when you're done.
 > code per checkpoint. Prefer a guided path? `COURSE.md` still runs an
 > agent-taught mode, and [`paths/`](paths/README.md) sequences courses into badge
 > routes. Continue on [flypython.com](https://flypython.com/).
+
+<p align="center">
+  <img src="assets/verify-demo.svg" width="720" alt="Terminal demo: a course verify.py checkpoint report. A reflection checkpoint prints its claim code after explicit --attest confirmation; unfinished tasks stay open.">
+</p>
 
 FlyPython is a practical, bilingual repository for writing good Python and
 turning it into products people can rely on. It combines AI-coding methods,
@@ -25,16 +30,9 @@ wrote code” to “a user outcome is verified.” The repository owns the revie
 source content and data; [flypython.com](https://flypython.com/) turns pinned
 versions into a browsable learning experience.
 
-## Current status
-
-The package version is `0.1.1`; the immutable `v0.1.1` tag points to `db85cdd`.
-Since that tag, `master` has added learner verifier v2 (tests must pass and
-reflection checkpoints must be explicitly confirmed with `--attest`) plus CI
-and course-setup fixes; see [CHANGELOG.md](CHANGELOG.md). FlyPython.com builds
-from an exact commit pinned on the website side, so `master` can be ahead of
-what the site serves. A pinned, served commit proves release delivery, not
-learner outcomes or paid demand; the website's payment and email operations
-still have separate acceptance gates.
+**Current release:** `v0.1.1` — see [CHANGELOG.md](CHANGELOG.md); release and
+delivery status is tracked in the
+[repository-to-website operating model](docs/REPO_TO_WEBSITE.md).
 
 ## Start in three minutes
 
@@ -67,12 +65,17 @@ python examples/product-slug/verify.py solution
 ## Verify and record a course
 
 In the course folder, run `python verify.py` after each change. It tests only
-`starter/`: `[open]` means the task is unfinished, `[passed]` gives a claim
-code, and `[pending]` is a reflection checkpoint. Answer that lesson's
-questions, then run `python verify.py --attest l01` (repeat for each completed
-reflection) to get its code. Submit only `[passed]` and `[attested]` codes
-through your agent or the dashboard. `check --json` is the versioned v2
-interface; `progress --json` remains for older signed-receipt integrations.
+`starter/` and reports every checkpoint:
+
+- `[open]` — the task is unfinished.
+- `[passed]` — the tests pass and `verify.py` prints a claim code.
+- `[pending]` — a reflection checkpoint: answer that lesson's questions, then
+  run `python verify.py --attest l01` (repeat for each completed reflection)
+  to get its `[attested]` code.
+
+Submit only `[passed]` and `[attested]` codes through your agent or the
+dashboard. `check --json` is the versioned v2 interface; `progress --json`
+remains for older signed-receipt integrations.
 
 ## Choose what you need to accomplish
 
@@ -84,7 +87,7 @@ interface; `progress --json` remains for older signed-receipt integrations.
 | Finish a recurring engineering task | [Playbooks](playbooks/README.md) | A bug fix, API change, integration, dependency upgrade, or release |
 | Practice instead of only reading | [Runnable examples](examples/README.md) | Local testable projects with failing starters and verified solutions |
 | Give an agent better instructions | [Templates](templates/README.md) | Task contracts, plans, reviews, IDE rules, and verification records |
-| Build agents, Skills, MCP, APIs, or automation | [Reviewed source catalog](#browse-the-reviewed-source-catalog) | A primary-source path selected for your use case |
+| Build agents, Skills, MCP, APIs, or automation | [Reviewed source catalog](catalog/README.md) | A primary-source path selected for your use case |
 | Find current Python projects | [Project Radar review queue](catalog/projects/README.md) | An evidence-backed shortlist after maintainer review |
 
 The working loop is simple: define the user outcome, inspect the real context,
@@ -104,87 +107,21 @@ If you are an LLM agent or coding assistant (Cursor, Windsurf, Claude Code, Copi
 - Machine-readable manifest: [`content-manifest.json`](content-manifest.json)
 - Official web knowledge dump: `https://flypython.com/llms-full.txt`
 
-## Browse the reviewed source catalog
+## Reviewed source catalog
 
-Choose a learning path below and open the official source that matches your
-current goal. The table explains why each source is included, who it suits, and
-which access or safety constraints deserve attention.
+Four maintainer-reviewed learning paths cover foundations, web and APIs,
+automation, and AI agents:
 
 <!-- catalog-index:start -->
 <!-- Generated by tools/render_readmes.py; edit catalog/ instead. -->
 > **33 reviewed resources** · Catalog reviewed 2026-09-06 · 25 intermediate or advanced · Primary sources first
 
-### Choose a learning path
+- [**Python foundations**](catalog/README.md#path-foundations) — Learn the language, environments, dependencies, typing, and tests that reliable Python work depends on. (8 resources)
+- [**Web and APIs**](catalog/README.md#path-web-apis) — Build typed services and applications that connect Python logic to users and other systems. (7 resources)
+- [**Automation**](catalog/README.md#path-automation) — Turn repeatable work into maintainable scripts, browser workflows, and data pipelines. (7 resources)
+- [**AI agents**](catalog/README.md#path-ai-agents) — Learn tools, structured output, state, evaluation, and the safety boundaries of agent systems. (11 resources)
 
-- [**Python foundations**](#path-foundations) — Learn the language, environments, dependencies, typing, and tests that reliable Python work depends on. (8 resources)
-- [**Web and APIs**](#path-web-apis) — Build typed services and applications that connect Python logic to users and other systems. (7 resources)
-- [**Automation**](#path-automation) — Turn repeatable work into maintainable scripts, browser workflows, and data pipelines. (7 resources)
-- [**AI agents**](#path-ai-agents) — Learn tools, structured output, state, evaluation, and the safety boundaries of agent systems. (11 resources)
-
-<a id="path-foundations"></a>
-### Python foundations
-
-Learn the language, environments, dependencies, typing, and tests that reliable Python work depends on.
-
-| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
-| --- | --- | --- | --- | --- |
-| [The Python Tutorial](https://docs.python.org/3/tutorial/)<br><sub>Official docs · Featured</sub> | The primary introduction to Python syntax, data structures, modules, errors, classes, and the standard library. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
-| [venv — Creation of virtual environments](https://docs.python.org/3/library/venv.html)<br><sub>Official docs</sub> | The standard-library reference for creating isolated Python environments and understanding their behavior. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)<br><sub>Official docs</sub> | The PyPA tutorial for project layout, build metadata, distributions, and publishing Python packages. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
-| [uv documentation](https://docs.astral.sh/uv/)<br><sub>Official project · Featured</sub> | A modern workflow for Python versions, virtual environments, dependencies, lockfiles, and project commands. | All levels<br>English | No API key<br>Low risk | 2026-08-31 |
-| [pytest documentation](https://docs.pytest.org/en/stable/)<br><sub>Official project</sub> | The official guide to test discovery, assertions, fixtures, parametrization, and maintainable test suites. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Python typing documentation](https://typing.python.org/en/latest/)<br><sub>Official docs</sub> | The canonical home for Python's type-system specification, guides, and typing best practices. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Ruff documentation](https://docs.astral.sh/ruff/)<br><sub>Official project · Featured</sub> | An extremely fast Python linter and code formatter written in Rust, replacing Flake8, Black, isort, and more. | All levels<br>English | No API key<br>Low risk | 2026-09-02 |
-| [Mypy documentation](https://mypy.readthedocs.io/en/stable/)<br><sub>Official project</sub> | The standard static type checker for Python to catch bugs and verify type contracts before running code. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
-
-<a id="path-web-apis"></a>
-### Web and APIs
-
-Build typed services and applications that connect Python logic to users and other systems.
-
-| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
-| --- | --- | --- | --- | --- |
-| [FastAPI documentation](https://fastapi.tiangolo.com/)<br><sub>Official docs · Featured</sub> | A direct route from typed Python functions to tested APIs with validation and generated documentation. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Django documentation: First steps](https://docs.djangoproject.com/en/stable/intro/tutorial01/)<br><sub>Official docs</sub> | The official path through Django projects, models, views, templates, forms, tests, and reusable apps. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Flask documentation](https://flask.palletsprojects.com/en/stable/)<br><sub>Official docs</sub> | The maintained reference and tutorial for Flask applications, requests, templates, testing, and deployment. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Pydantic documentation](https://pydantic.dev/docs/validation/latest/get-started/)<br><sub>Official docs</sub> | The primary guide to validating untrusted data and expressing typed contracts at Python system boundaries. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
-| [HTTPX documentation](https://www.python-httpx.org/)<br><sub>Official project</sub> | The official reference for synchronous and asynchronous HTTP clients, timeouts, streaming, and transport control. | Intermediate<br>English | No API key<br>Low risk | 2026-08-31 |
-| [SQLAlchemy documentation](https://docs.sqlalchemy.org/en/20/)<br><sub>Official project</sub> | The definitive Python SQL toolkit and Object Relational Mapper, providing type-safe database access and migrations. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
-| [Alembic documentation](https://alembic.sqlalchemy.org/en/latest/)<br><sub>Official project</sub> | Database migration tool for SQLAlchemy, providing transactional schema changes and rollback support. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-09-02 |
-
-<a id="path-automation"></a>
-### Automation
-
-Turn repeatable work into maintainable scripts, browser workflows, and data pipelines.
-
-| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
-| --- | --- | --- | --- | --- |
-| [pathlib — Object-oriented filesystem paths](https://docs.python.org/3/library/pathlib.html)<br><sub>Official docs</sub> | The standard-library reference for readable, cross-platform file and directory automation. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
-| [subprocess — Subprocess management](https://docs.python.org/3/library/subprocess.html)<br><sub>Official docs</sub> | The standard-library contract for launching processes, capturing output, handling failures, and avoiding unsafe shell usage. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
-| [Playwright for Python](https://playwright.dev/python/docs/intro)<br><sub>Official docs</sub> | The official Python guide to reliable browser automation, locators, assertions, traces, and isolated contexts. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
-| [Scrapy tutorial](https://docs.scrapy.org/en/latest/intro/tutorial.html)<br><sub>Official docs</sub> | The official introduction to crawl structure, extraction, item pipelines, persistence, and responsible operation. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
-| [pandas getting started guides](https://pandas.pydata.org/docs/getting_started/index.html)<br><sub>Official docs</sub> | The primary entry point for tabular data loading, cleaning, transformation, analysis, and export. | Beginner<br>English | No API key<br>Low risk | 2026-08-31 |
-| [Polars documentation](https://docs.pola.rs/)<br><sub>Official project</sub> | Lightning-fast DataFrame library built on Apache Arrow and Rust, optimized for efficient data pipelines and parallel processing. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
-| [DuckDB Python API documentation](https://duckdb.org/docs/api/python/overview)<br><sub>Official project</sub> | Fast in-process analytical SQL engine for automated data transformation, Parquet querying, and embedded analytics. | Intermediate<br>English | No API key<br>Low risk | 2026-09-02 |
-
-<a id="path-ai-agents"></a>
-### AI agents
-
-Learn tools, structured output, state, evaluation, and the safety boundaries of agent systems.
-
-| Resource | Why it is useful | Level and language | Access and risk | Reviewed |
-| --- | --- | --- | --- | --- |
-| [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)<br><sub>Official docs · Featured</sub> | The official Python toolkit for agents, tools, handoffs, guardrails, sessions, tracing, and orchestration. | Intermediate<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
-| [Pydantic AI](https://pydantic.dev/docs/ai/overview/)<br><sub>Official docs · Featured</sub> | Typed agent development built around validated inputs, structured output, tools, testing, and model portability. | Intermediate<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
-| [Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)<br><sub>Official standard · Featured</sub> | The open protocol and reference documentation for connecting AI applications to tools, data, and reusable context. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-08-31 |
-| [LangGraph overview](https://docs.langchain.com/oss/python/langgraph/overview)<br><sub>Official docs</sub> | The official Python guide to stateful graph workflows, durable execution, memory, interrupts, and human review. | Advanced<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
-| [Google Agent Development Kit](https://adk.dev/)<br><sub>Official docs</sub> | Google's official documentation for developing, evaluating, and deploying modular agent systems. | Advanced<br>English | API key typically required<br>Review permissions and side effects | 2026-08-31 |
-| [Instructor documentation](https://python.useinstructor.com/)<br><sub>Official project</sub> | Structured outputs and validation for LLMs powered by Pydantic, enabling predictable tool calling and schema enforcement. | Intermediate<br>English | API key typically required<br>Review permissions and side effects | 2026-09-02 |
-| [Model Context Protocol Python SDK](https://github.com/modelcontextprotocol/python-sdk)<br><sub>Official project</sub> | Official Python implementation of the Model Context Protocol for building MCP servers and clients. | Intermediate<br>English | No API key<br>Review permissions and side effects | 2026-09-02 |
-| [MCP 2026-07-28 specification release](https://blog.modelcontextprotocol.io/posts/2026-07-28/)<br><sub>Official docs</sub> | The official release announcement for the 2026-07-28 Model Context Protocol specification, covering the stateless redesign and breaking changes. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
-| [MCP 2026-07-28 release candidate overview](https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/)<br><sub>Official docs</sub> | The official release-candidate post that enumerates the 2026-07-28 breaking changes and the migration window for SDK maintainers. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
-| [Anthropic donating MCP to the Agentic AI Foundation](https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation)<br><sub>Official docs</sub> | Anthropic's announcement establishing neutral Linux Foundation governance for MCP under the Agentic AI Foundation. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
-| [MCP under the Agentic AI Foundation](https://aaif.io/projects/model-context-protocol)<br><sub>Official project</sub> | The Agentic AI Foundation project page for MCP, the neutral governance home for specification development and roadmaps. | Intermediate<br>English | No API key<br>Low risk | 2026-09-06 |
+Full tables — why each source is included, its level, and its access and risk notes — live in [the catalog README](catalog/README.md).
 
 Missing an important official source? [Propose a resource or report a correction](https://github.com/flypythoncom/python/issues/new/choose).
 <!-- catalog-index:end -->
@@ -206,11 +143,14 @@ to add measurable calls to action without inventing unavailable products.
 ## Repository structure
 
 ```text
+assets/                README images (verify.py terminal demo)
 catalog/
-  catalog.yml        catalog status and review date
-  paths.yml          bilingual learning-path definitions
-  resources/         one reviewed resource per YAML file
-  projects/          human-review queue for current Python projects
+  README.md            browsable reviewed catalog (English, generated)
+  README_cn.md         browsable reviewed catalog (Chinese, generated)
+  catalog.yml          catalog status and review date
+  paths.yml            bilingual learning-path definitions
+  resources/           one reviewed resource per YAML file
+  projects/            human-review queue for current Python projects
 courses/              challenge courses with TASK.md contracts and verify.py claim codes
 paths/                learning paths sequencing courses into badge routes
 guides/               Python engineering and AI-coding methods
@@ -239,55 +179,13 @@ https://raw.githubusercontent.com/flypythoncom/python/<full-commit-sha>/catalog.
 ```
 
 The content manifest lets flypython.com render the matching bilingual guide or
-playbook without owning a second editable copy. Project recommendations remain
-empty until a maintainer has reviewed source, maintenance, license, release,
-security, and practical user-value evidence.
+playbook without owning a second editable copy.
 
-## Validate a change
+## Contribute
 
-Use the Python version declared in `.python-version`, then install the locked
-development dependencies:
-
-```bash
-# Fast setup using uv (recommended):
-uv venv
-uv pip install -r requirements-dev.lock.txt
-uv run pytest
-
-# Or using standard pip:
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements-dev.lock.txt
-pytest
-```
-
-Run the deterministic checks:
-
-```bash
-python -m pytest
-python tools/validate_catalog.py
-python tools/export_catalog.py --check --target both
-python tools/render_readmes.py --check
-python tools/build_content_manifest.py --check
-python tools/verify_examples.py
-python tools/verify_courses.py
-python tools/verify_paths.py
-```
-
-After changing catalog sources, regenerate the public export before running the
-checks:
-
-```bash
-python tools/export_catalog.py
-python tools/render_readmes.py
-python tools/build_content_manifest.py
-```
-
-Network link fetching is intentionally excluded from pull-request validation.
-Maintainers run it through the scheduled or manual **Catalog link audit**
-workflow.
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
-[curation policy](docs/CURATION_POLICY.md) before proposing a resource or
-changing its classification. Website integrations should also follow the
-[consumer contract](docs/CONSUMING.md).
+Propose a resource, report a correction, or improve a course. Read
+[CONTRIBUTING.md](CONTRIBUTING.md) first — it covers the local setup, the
+deterministic checks CI runs, and how to regenerate the generated exports.
+Also read the [curation policy](docs/CURATION_POLICY.md) before proposing a
+resource or changing its classification, and the
+[consumer contract](docs/CONSUMING.md) for website integrations.

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="372" viewBox="0 0 800 372" role="img" aria-label="Terminal demo: a course verify.py checkpoint report with open, pending, and attested states">
+  <rect x="0" y="0" width="800" height="372" rx="8" fill="#0d1117" stroke="#30363d" stroke-width="1"/>
+  <!-- window title bar -->
+  <circle cx="20" cy="22" r="5.5" fill="#ff5f57"/>
+  <circle cx="40" cy="22" r="5.5" fill="#febc2e"/>
+  <circle cx="60" cy="22" r="5.5" fill="#28c840"/>
+  <text x="400" y="27" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', monospace" font-size="12" fill="#8b949e">verify.py — courses/agent-rules-single-source</text>
+  <line x1="1" y1="44" x2="799" y2="44" stroke="#30363d" stroke-width="1"/>
+
+  <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'PingFang SC', 'Microsoft YaHei', monospace" font-size="13" xml:space="preserve">
+    <!-- command -->
+    <text x="28" y="72"><tspan fill="#3fb950">$</tspan> <tspan fill="#e6edf3">python verify.py --attest l01</tspan></text>
+
+    <text x="28" y="93" fill="#e6edf3">Course course-agent-rules</text>
+    <text x="28" y="114" fill="#e6edf3">Suites: <tspan fill="#d29922">starter not passed</tspan></text>
+
+    <!-- checkpoint table: id / title / status / code -->
+    <text x="28" y="141"><tspan fill="#79c0ff">  l01</tspan><tspan x="70" fill="#e6edf3">Measure the drift / 量化漂移</tspan><tspan x="560" fill="#3fb950">[attested]</tspan><tspan x="668" fill="#3fb950" font-weight="bold">ZYLHTDE7</tspan></text>
+    <text x="28" y="162"><tspan fill="#79c0ff">  l02</tspan><tspan x="70" fill="#e6edf3">Decide the source of truth / 确定唯一真源</tspan><tspan x="560" fill="#d29922">[pending]</tspan><tspan x="668" fill="#8b949e">—</tspan></text>
+    <text x="28" y="183"><tspan fill="#79c0ff">  l03</tspan><tspan x="70" fill="#e6edf3">Bounded change / 有边界的变更</tspan><tspan x="560" fill="#8b949e">[open]</tspan><tspan x="668" fill="#8b949e">—</tspan></text>
+    <text x="28" y="204"><tspan fill="#79c0ff">  l04</tspan><tspan x="70" fill="#e6edf3">Verify and wire it in / 验证并接入流程</tspan><tspan x="560" fill="#8b949e">[open]</tspan><tspan x="668" fill="#8b949e">—</tspan></text>
+    <text x="28" y="225"><tspan fill="#79c0ff">  l05</tspan><tspan x="70" fill="#e6edf3">Apply to your repository / 应用到你的仓库</tspan><tspan x="560" fill="#d29922">[pending]</tspan><tspan x="668" fill="#8b949e">—</tspan></text>
+
+    <!-- guidance notes -->
+    <text x="28" y="252" fill="#8b949e">Confirm completed reflection checkpoints explicitly with --attest ID</text>
+    <text x="28" y="271" fill="#8b949e">(repeat for each): l02, l05</text>
+    <text x="28" y="298" fill="#8b949e">Codes record self-reported progress, not a certificate. /</text>
+    <text x="28" y="317" fill="#8b949e">认领码只记录自报进度，不是证书。</text>
+  </g>
+</svg>

@@ -4,6 +4,20 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+### Changed — 2026-10-04 README restructure
+
+- Root READMEs now carry a condensed catalog index (learning-path bullets
+  linking into the catalog pages); the full 33-resource tables moved to the
+  new generated `catalog/README.md` and `catalog/README_cn.md`, both rendered
+  by `tools/render_readmes.py`.
+- Root READMEs: badges moved directly under the title, the internal
+  "Current status" section collapsed to a one-line release pointer (details
+  in `docs/REPO_TO_WEBSITE.md`), the course-verify section rewritten as a
+  checkpoint-state list, and the locally duplicated validation commands
+  replaced by a link to `CONTRIBUTING.md`.
+- Added `assets/verify-demo.svg`, a terminal demo of a real `verify.py`
+  checkpoint report, embedded in both READMEs.
+
 ### Fixed — 2026-10-04 CI and course setup
 
 - CI: `ruff` is pinned in `requirements-dev.lock.txt`. CI had installed the

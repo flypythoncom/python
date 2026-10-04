@@ -6,7 +6,7 @@ help:
 	@echo "FlyPython Development Workflow:"
 	@echo "  make check      - Run the same checks as CI: lint, tests, catalog, radar, export, readme, manifest, example, course, and path checks"
 	@echo "  make export     - Regenerate catalog.json and radar.json"
-	@echo "  make render     - Regenerate README and README_cn catalog indexes plus the Radar table"
+	@echo "  make render     - Regenerate root and catalog README indexes plus the Radar table"
 	@echo "  make manifest   - Regenerate content-manifest.json"
 	@echo "  make lint       - Run ruff"
 	@echo "  make test       - Run pytest test suite"

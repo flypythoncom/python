@@ -21,10 +21,10 @@ def test_checked_in_readme_catalog_sections_are_current() -> None:
     assert run(["--check"]) == 0
 
 
-def test_readmes_expose_every_catalog_resource() -> None:
+def test_catalog_readmes_expose_every_catalog_resource() -> None:
     catalog = load_catalog(ROOT / "catalog")
-    english = (ROOT / "README.md").read_text(encoding="utf-8")
-    chinese = (ROOT / "README_cn.md").read_text(encoding="utf-8")
+    english = (ROOT / "catalog" / "README.md").read_text(encoding="utf-8")
+    chinese = (ROOT / "catalog" / "README_cn.md").read_text(encoding="utf-8")
 
     for resource in catalog["resources"]:
         link = f"[{resource['title']}]({resource['url']})"
@@ -32,6 +32,14 @@ def test_readmes_expose_every_catalog_resource() -> None:
         assert link in chinese
         assert resource["why_en"] in english
         assert resource["why_zh"] in chinese
+
+
+def test_root_readmes_link_to_the_full_catalog() -> None:
+    english = (ROOT / "README.md").read_text(encoding="utf-8")
+    chinese = (ROOT / "README_cn.md").read_text(encoding="utf-8")
+
+    assert "catalog/README.md" in english
+    assert "catalog/README_cn.md" in chinese
 
 
 def test_generated_catalog_escapes_markdown_and_html(valid_catalog: dict) -> None:

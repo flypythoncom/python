@@ -44,3 +44,14 @@ domain after each website release. Measure, at minimum:
 Do not treat stars, traffic, email signups, a checkout route, or a deploy log as
 paid-demand evidence. Review the funnel monthly and remove calls to action that
 do not help visitors take a useful next step.
+
+## Repository release status
+
+The package version is `0.1.1`; the immutable `v0.1.1` tag points to `db85cdd`.
+Since that tag, `master` has added learner verifier v2 (tests must pass and
+reflection checkpoints must be explicitly confirmed with `--attest`) plus CI
+and course-setup fixes; see the repository CHANGELOG. FlyPython.com builds
+from an exact commit pinned on the website side, so `master` can be ahead of
+what the site serves. A pinned, served commit proves release delivery, not
+learner outcomes or paid demand; the website's payment and email operations
+still have separate acceptance gates.
