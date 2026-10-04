@@ -33,7 +33,9 @@ A matplotlib script that produces `out/revenue_by_region.png`,
 
 ```bash
 cd courses/da-visualization
-uv sync            # pandas + matplotlib (or: pip install -r requirements.txt)
+python -m venv .venv               # or: uv venv
+source .venv/bin/activate          # Windows: .venv\Scripts\activate
+pip install -r requirements.txt    # pandas + matplotlib (or: uv pip install -r requirements.txt)
 ```
 
 ## Challenges (checkpoints)
