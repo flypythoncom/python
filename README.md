@@ -27,13 +27,14 @@ versions into a browsable learning experience.
 
 ## Current status
 
-As of 2026-09-19, `master` is `39a3e79be939f491ac3c779494bf5c655c5588a0`
-and the package version is `0.1.1`. This commit follows the immutable `v0.1.1`
-tag and adds learner verifier v2: tests must pass and reflection checkpoints
-must be explicitly confirmed with `--attest`. FlyPython.com pins this exact
-commit and serves it in production. That proves release delivery, not learner
-outcomes or paid demand; the website's payment and email operations still have
-separate acceptance gates.
+The package version is `0.1.1`; the immutable `v0.1.1` tag points to `db85cdd`.
+Since that tag, `master` has added learner verifier v2 (tests must pass and
+reflection checkpoints must be explicitly confirmed with `--attest`) plus CI
+and course-setup fixes; see [CHANGELOG.md](CHANGELOG.md). FlyPython.com builds
+from an exact commit pinned on the website side, so `master` can be ahead of
+what the site serves. A pinned, served commit proves release delivery, not
+learner outcomes or paid demand; the website's payment and email operations
+still have separate acceptance gates.
 
 ## Start in three minutes
 

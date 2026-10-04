@@ -40,8 +40,11 @@ reviewed catalog data, and stable public JSON contracts.
   pairs (objective, exercise, checkpoint, expected evidence), `scenario/`
   data files for each skin, `TASK.md`/`TASK_cn.md` (task contract),
   `starter/` and `solution/` runnable pairs, a self-contained `verify.py`
-  that fails on `starter` and passes on `solution`, exposes deterministic
-  claim codes through `verify.py progress` (five checkpoints), and runs on
+  that fails on `starter` and passes on `solution`, reports five checkpoints
+  through `python verify.py` and the versioned `check --json` interface
+  (deterministic claim codes; self-reported checkpoints emit a code only after
+  explicit `--attest ID`; `progress --json` stays only for legacy signed
+  receipts), and runs on
   the standard library unless the course ships its own `requirements.txt`
   (as the pandas/matplotlib data-analysis courses do), and `REVIEW.md`
   recording the maintainer run-through (date, tool, version, observed agent

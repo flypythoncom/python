@@ -84,9 +84,10 @@ python tools/render_readmes.py
 python tools/build_content_manifest.py
 ```
 
-Run the same deterministic checks as CI:
+Run the same deterministic checks as CI (or `make check`):
 
 ```bash
+python -m ruff check .
 python -m pytest
 python tools/validate_catalog.py
 python tools/export_catalog.py --check --target both
