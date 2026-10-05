@@ -84,7 +84,7 @@ rpds-py==2026.6.3
     # via
     #   jsonschema
     #   referencing
-ruff==0.16.9
+ruff==0.16.10
     # via flypython (pyproject.toml)
 six==1.17.0
     # via python-dateutil
