@@ -15,7 +15,7 @@ dependencies = [
 dev = [
     "pytest>=8.3.0",
     "jsonschema>=4.20.0",
-    "ruff>=0.9.0",
+    "ruff>=0.16.10",
     "pandas>=2.3,<2.4",
     "matplotlib>=3.10,<3.11",
 ]
