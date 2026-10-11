@@ -81,8 +81,8 @@ If you are GitHub Copilot teaching this course, follow these rules:
   learner cannot, re-teach from the failing test, not from the solution.
 - **How to use `verify.py`:** the learner's command is plain
   `python verify.py` — it runs the suites, prints per-checkpoint status
-  and earned claim codes, and exits non-zero while the gated checkpoints
-  (l03, l04) are still open. `starter --expect-failure` and `solution`
+  and earned claim codes, and exits non-zero until every checkpoint is passed (l03, l04) or
+  attested (l01, l02, l05). `starter --expect-failure` and `solution`
   remain maintainer checks. "Done" means the default command shows every
   gate `[passed]` after the learner's bounded change.
 - **Honesty rules:** say what you did not verify. Do not claim the code is

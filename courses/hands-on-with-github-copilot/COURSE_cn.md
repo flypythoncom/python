@@ -70,8 +70,8 @@ course_id: course-github-copilot
   哪里坏了、为什么，这节课才算完。学习者说不出就从失败测试重新教，
   不要从 solution 教。
 - **如何使用 `verify.py`：** 学员命令就是 `python verify.py`——它跑套件、
-  打印逐检查点状态与已获认领码，在门控检查点（l03、l04）未全通过时以
-  非零退出。`starter --expect-failure` 与 `solution` 留作维护者检查。
+  打印逐检查点状态与已获认领码，直到每个检查点都通过（l03、l04）或
+  已自报确认（l01、l02、l05）之前都以非零退出。`starter --expect-failure` 与 `solution` 留作维护者检查。
   「完成」指学习者做完有界改动后，默认命令把所有门显示为 `[passed]`。
 - **诚实规则：** 说清你没验证什么。不要声称代码达到生产可用。不要
   承诺学习或职业结果。
