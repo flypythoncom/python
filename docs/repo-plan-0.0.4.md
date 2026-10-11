@@ -9,12 +9,12 @@
 更新日期：2026-09-12（第 3 版——挑战模型定稿 + A/B 阶段拆分；状态说明核对于 2026-10-11）
 关联：flypython.com `docs/product-and-growth-plan-0.0.4.md`
 
-状态（2026-10-11 核对）：除 FP-414 外本计划已实现。之后 2026-09-16 的
+状态（2026-10-11 核对）：本计划已实现，FP-414 评估记录见 §9。之后 2026-09-16 的
 learner verifier v2 把认领入口从 `progress --json` 换成 `check --json` +
 `--attest`，`progress --json` 只保留给旧版签名回执（见 CHANGELOG）。真实
 Agent 可解性试跑已于 2026-09-13 完成（Devin, SWE-2 Max，当时全部 8 门课，
-挑战模式实测记录见各课 `REVIEW.md`）。仍未完成两项：FP-414（SKILL.md 打包
-评估）；授课式实机走查，目前 9 门课的 `REVIEW.md` 仍列为 Pending，属于发布
+挑战模式实测记录见各课 `REVIEW.md`）。仍未完成的是授课式实机走查：目前
+9 门课的 `REVIEW.md` 仍列为 Pending，需要维护者在各目标工具里实跑，属于发布
 证据，不阻塞内容。`AGENTS.md` 的仓库边界不变：
 本仓库拥有经审核的内容、可运行的证据与稳定的 JSON 契约；网站拥有呈现、
 账号体系与转化。所有新内容中英同一次变更交付。
@@ -136,7 +136,9 @@ Agent 可解性试跑已于 2026-09-13 完成（Devin, SWE-2 Max，当时全部 
 - [x] FP-413 供网站渲染的结构化徽章元数据。（本地 2026-09-12：全部
   8 门课 `COURSE.md`/`COURSE_cn.md` frontmatter 增加 `badge`（id、
   name_en、name_zh、requires）与 `course_id`）
-- [ ] FP-414 SKILL.md 打包评估，附书面记录。
+- [x] FP-414 SKILL.md 打包评估，附书面记录。（2026-10-11：见 §9。结论是
+  不按课程打包，保留网站单一平台 Skill；线上 Skill 有两项规范不合规和一条
+  依赖安装说明需网站侧修正）
 - [x] FP-415 `verify_courses.py` 认领码覆盖进 CI。（本地 2026-09-12：
   进度契约检查——双运行确定性、JSON 结构、5 检查点、码格式——已入
   验证器并随 `make check`/validate.yml 执行）
@@ -248,3 +250,57 @@ FP-409 渲染消费，网站侧不手抄定义。
 3. `paths/foundation/`（复用现有课，最快可见）
 4. `da-eda` / `da-visualization` / `da-report` 新课 + `paths/data-analysis/`
    + M0 入门模块
+
+## 9. FP-414 评估记录：把课程打包为 SKILL.md skill（2026-10-11）
+
+起草：Cursor Cloud Agent。结论由所有者合并本节时确认。原计划提到的
+OpenMAIC 本次未评估。
+
+### 9.1 现状
+
+- 网站已发布一个覆盖全部课程的平台级 Skill：
+  `https://flypython.com/skills/flypython/SKILL.md`（`name:
+  flypython-challenges`，0.1.0，2026-09-14）。它负责一次性授权链接、按课程
+  拉取文件清单、先读 `TASK.md`、人在回路关卡、`python verify.py` 与
+  `--attest`、批量提交认领码。0.0.8 起它是课程主入口，0.0.9 起工具课第 1 课
+  把安装它列为可选但推荐。
+- 课程文件夹本身已能单独运行（0.0.8 FP-821：单个文件夹取出即可
+  `python verify.py`）。
+- 格式依据：Agent Skills 规范 <https://agentskills.io/specification>。
+
+### 9.2 方案对比
+
+| 方案 | 做法 | 判断 |
+| --- | --- | --- |
+| A. 每门课一个 skill | 12 个 `SKILL.md`，把 `COURSE.md` / `TASK.md` 写进正文或 `references/` | 不做。与课程文件重复且要中英两份同步；12 个几乎相同的 `description` 在 Agent 启动时都会加载（规范的渐进加载第 1 层），容易触发错课；若把 `starter/` / `solution/` 一起打包，等于把答案交给 Agent |
+| B. 单一平台 Skill（现状） | 网站一个 Skill，课程文件按固定提交从 API 拉取 | 保留。一处维护，课程契约仍只在本仓库 |
+| C. 本仓库另做离线 skill | 无账号、无认领，只读 clone 下来的文件夹并跑 `verify.py` | 不做。README 与 `COURSE.md` 已能让 Agent 直接开跑，多一个入口只会分流和漂移 |
+
+### 9.3 试点记录
+
+- 用规范的参考校验器 `skills-ref` 0.1.1（`agentskills validate`）校验线上
+  Skill，两项不合规：
+  1. frontmatter 含规范外字段 `version`、`updated`。规范只允许 `name`、
+     `description`、`license`、`compatibility`、`metadata`、`allowed-tools`，
+     版本信息应放进 `metadata`。
+  2. `name: flypython-challenges` 与 Skill 自己给 Claude Code 的安装目录
+     `.claude/skills/flypython/` 不一致；规范要求 `name` 与父目录同名。
+- Skill 的 Environment notes 建议 pandas / matplotlib 课程用
+  `uv run python verify.py`。课程文件夹没有 `pyproject.toml`，这条命令不会安装
+  `requirements.txt` 中的依赖，与本仓库 2026-10-04 对 `da-eda` /
+  `da-visualization` 的修正（改为 venv + `pip install -r requirements.txt`）不一致。
+- Skill 的 Cursor 安装行把它写成规则文件 `.cursor/rules/flypython.mdc`，
+  而不是 skill 目录；需要网站侧按 Cursor 当前文档核实应放在哪里。
+- Skill 描述的课程侧契约（`TASK.md`、`python verify.py`、`--attest ID`、
+  `check --json`、旧版 `progress --json` 只用于签名回执）与本仓库 learner
+  verifier v2 一致。
+- 未做：没有在 Claude Code、Codex 等外部工具里实际安装 Skill 并跑完一门课
+  （本次环境没有这些工具）。以上结论基于规范、校验器和线上文件。
+
+### 9.4 结论
+
+- 不按课程打包 skill，也不在本仓库另做离线 skill；保持网站单一平台 Skill。
+- Skill 归网站仓库，需在网站侧修正：把 `version` / `updated` 移进
+  `metadata`；统一 `name` 与安装目录；pandas / matplotlib 课程的运行说明改成
+  与课程 `requirements.txt` 一致的 venv + pip；核实 Cursor 安装位置。
+- 本仓库无需为 FP-414 增加文件。

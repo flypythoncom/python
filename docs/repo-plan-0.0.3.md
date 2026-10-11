@@ -13,8 +13,8 @@
 当前产品形态。本文件按所有者决策以中文保留。
 关联：flypython.com `docs/product-and-growth-plan-0.0.3.md`
 
-状态：已基本实现（2026-10-11 核对）。§8 中 FP-326、FP-332、FP-335 仍有
-未完成部分，见各项备注；其余各项已在仓库中落地。本计划遵守 `AGENTS.md` 的
+状态：已基本实现（2026-10-11 核对）。§8 中只有 FP-326 仍有未完成部分
+（旗舰课的授课式实机走查），见该项备注；其余各项已在仓库中落地。本计划遵守 `AGENTS.md` 的
 仓库边界：本仓库负责已审核内容、可运行证据与稳定 JSON 契约；网站负责展示与
 转化。所有新内容中英文同步产出。
 
@@ -168,22 +168,21 @@ risk: "…"
   `export_catalog.py --check --target both` 通过）
 - [x] FP-331 `tools/radar_scan.py` 合入：限速与"不生成描述"有测试保证。
   （核对：`tests/test_radar_scan.py` 含每来源上限与“候选不带结论字段”测试）
-- [ ] FP-332 llms.txt / llms-full.txt 增加 courses+radar 区块；深链有效
+- [x] FP-332 llms.txt / llms-full.txt 增加 courses+radar 区块；深链有效
   （pin 更新后网站侧 llms-links 测试保持绿）。（核对：`llms.txt` 已有
-  courses 与 radar 区块；`llms-full.txt` 由网站提供，本仓库只引用。**课程
-  列表已过时**：只列 8 门，缺 `hands-on-with-cursor`、
-  `hands-on-with-deepseek-harness`、`hands-on-with-kimi-code`、
-  `hands-on-with-zcode`，且 `courses/hands-on-with-openai-codex-cli/` 深链
-  失效，实际目录为 `courses/hands-on-with-openai-codex/`）
+  courses 与 radar 区块；`llms-full.txt` 由网站提供，本仓库只引用。
+  2026-10-11 补齐此前缺的 4 门工具课，修正失效的 Codex 课程深链，并新增
+  `tests/test_llms_txt.py`：列出的路径必须存在，每门课都必须列出）
 - [x] FP-333 `CURATION_POLICY.md` scope + `ai_familiarity` 分级规则；
   `course-feedback.yml` issue 模板。（核对：两者均已在仓库中）
 - [x] FP-334 仓库描述/topics/关键词；第一个 GitHub Release。（核对：仓库
   描述与 10 个 topics 已设置；`v0.1.0` 标签于 2026-09-12 打在 `e420fca`，
   首个 GitHub Release 为 `v0.1.1`，2026-09-14）
-- [ ] FP-335 README/README_cn 横幅 + 各文档情境化文末链接，以线上
+- [x] FP-335 README/README_cn 横幅 + 各文档情境化文末链接，以线上
   `/from-github` 验证为前置。（核对：guides / playbooks / examples 的
-  文末情境化链接已全部加上；README 横幅链网站根域，**未切到 `/from-github`**。
-  该路由已上线，`docs/REPO_TO_WEBSITE.md` 允许两种链法，是否切换待所有者决定）
+  文末情境化链接已全部加上。2026-10-11 确认 `/from-github` 返回 200 后，
+  英文 README 的两处“继续前往”链接改为 `/from-github`；该页暂无中文版，
+  中文 README 仍链根域，规则记录在 `docs/REPO_TO_WEBSITE.md`）
 - [x] FP-344 双许可 LICENSE 就位（MIT 代码 / CC BY 4.0 内容，两仓库同）——
   课程文件夹分发与 FP-326 的前置。（核对：本仓库 `LICENSE` 已是双许可；
   网站仓库未在此核实）
