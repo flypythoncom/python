@@ -31,8 +31,12 @@ Avoid generic banners, repeated marketing copy, and links to placeholder pages.
 
 The dedicated `/from-github` landing route is now in production. Repository
 calls to action may link to that route when attribution matters, while generic
-“continue learning” links may still use the site root. Re-verify the custom
-domain after each website release. Measure, at minimum:
+“continue learning” links may still use the site root. The English README's
+“continue on flypython.com” calls to action link `/from-github`; the Chinese
+README keeps the site root until that route has a Chinese version, so Chinese
+readers do not land on an English-only page. Badges and navigation links stay
+on the site root. Re-verify the custom domain after each website release.
+Measure, at minimum:
 
 - repository link clicks by source document;
 - landing-page engagement with a learning path;

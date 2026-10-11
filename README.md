@@ -14,7 +14,7 @@ done.
 > agent as the tool, and prove it with `verify.py` — which prints a claim
 > code per checkpoint. Prefer a guided path? `COURSE.md` still runs an
 > agent-taught mode, and [`paths/`](paths/README.md) sequences courses into badge
-> routes. Continue on [flypython.com](https://flypython.com/).
+> routes. Continue on [flypython.com](https://flypython.com/from-github).
 
 <p align="center">
   <img src="assets/verify-demo.svg" width="720" alt="Terminal demo: a course verify.py checkpoint report. A reflection checkpoint prints its claim code after explicit --attest confirmation; unfinished tasks stay open.">
@@ -96,7 +96,7 @@ record what remains unverified. AI accelerates the loop; it does not replace
 engineering judgment.
 
 Prefer a guided reading path and ongoing updates? Continue on
-[flypython.com](https://flypython.com/). The repository remains the inspectable
+[flypython.com](https://flypython.com/from-github). The repository remains the inspectable
 source; the website helps you choose the next useful step.
 
 ## For AI Agents and LLMs
