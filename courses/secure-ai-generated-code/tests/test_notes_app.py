@@ -74,9 +74,8 @@ class ReadAttachmentTest(unittest.TestCase):
 
     def test_attachment_traversal_is_refused(self) -> None:
         for name in ("../secrets.txt", "docs/../../secrets.txt"):
-            with self.subTest(name=name):
-                with self.assertRaises(notes_app.SecurityError):
-                    notes_app.read_attachment(self.base, name)
+            with self.subTest(name=name), self.assertRaises(notes_app.SecurityError):
+                notes_app.read_attachment(self.base, name)
 
     def test_absolute_attachment_path_is_refused(self) -> None:
         with self.assertRaises(notes_app.SecurityError):
@@ -141,9 +140,8 @@ class SessionTest(unittest.TestCase):
         flipped = ("A" if token[0] != "A" else "B") + token[1:]
         non_ascii = token.rpartition(".")[0] + ".é" + token.rpartition(".")[2][1:]
         for bad in (forged, flipped, non_ascii, "", "no-signature-here"):
-            with self.subTest(token=bad[:16]):
-                with self.assertRaises(notes_app.SecurityError):
-                    notes_app.load_session(bad, self.key)
+            with self.subTest(token=bad[:16]), self.assertRaises(notes_app.SecurityError):
+                notes_app.load_session(bad, self.key)
 
     def test_pickle_payload_is_never_executed(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

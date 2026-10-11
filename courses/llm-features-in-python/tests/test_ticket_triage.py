@@ -64,9 +64,8 @@ class ParseTriageTest(unittest.TestCase):
                     ticket_triage.parse_triage(raw, CATEGORIES)
                 self.assertIn(field, str(caught.exception))
         for raw in ("Sure! Category: billing.", "[]", reply(summary="x" * 121)):
-            with self.subTest(raw=raw[:20]):
-                with self.assertRaises(ticket_triage.TriageError):
-                    ticket_triage.parse_triage(raw, CATEGORIES)
+            with self.subTest(raw=raw[:20]), self.assertRaises(ticket_triage.TriageError):
+                ticket_triage.parse_triage(raw, CATEGORIES)
 
 
 class ToolCallTest(unittest.TestCase):
