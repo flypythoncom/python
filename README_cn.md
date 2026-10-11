@@ -26,7 +26,7 @@ FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把
 维护经过审核的源内容与数据，[flypython.com](https://flypython.com/) 把固定版本呈现为更适合
 阅读和发现的学习体验。
 
-**当前版本：** `v0.1.1`——版本与交付状态见 [CHANGELOG.md](CHANGELOG.md) 和
+**当前版本：** `v0.1.2`——版本与交付状态见 [CHANGELOG.md](CHANGELOG.md) 和
 [仓库到网站的运营模型](docs/REPO_TO_WEBSITE.md)。
 
 ## 3 分钟开始

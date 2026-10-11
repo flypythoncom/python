@@ -30,7 +30,7 @@ wrote code” to “a user outcome is verified.” The repository owns the revie
 source content and data; [flypython.com](https://flypython.com/) turns pinned
 versions into a browsable learning experience.
 
-**Current release:** `v0.1.1` — see [CHANGELOG.md](CHANGELOG.md); release and
+**Current release:** `v0.1.2` — see [CHANGELOG.md](CHANGELOG.md); release and
 delivery status is tracked in the
 [repository-to-website operating model](docs/REPO_TO_WEBSITE.md).
 

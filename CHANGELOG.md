@@ -4,6 +4,36 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-11
+
+Repository-only release: there is no website release on this train, and
+flypython.com keeps building from the commit pinned in its own
+`src/data/content-pin.json`. The `catalog-v1`, `radar-v1`, and
+`content-manifest-v1` schemas are unchanged. Learner verifier v2 adds
+`check --json` and `--attest` while keeping `progress --json` for v1
+receipts, so this is a patch release.
+
+### Changed — 2026-10-11 agent index, README links, and plan status
+
+- `llms.txt` lists all 12 courses: it had 8, pointed at a nonexistent
+  `courses/hands-on-with-openai-codex-cli/` folder, and recommended
+  `uv run pytest`, which fails because pytest lives in the `dev` extra. The
+  new `tests/test_llms_txt.py` fails on any listed path that does not exist
+  and on any course folder that is not listed.
+- The English README's two "continue on flypython.com" links point at the
+  live `/from-github` landing route. The Chinese README keeps the site root
+  because that route has no Chinese version yet; the rule is recorded in
+  `docs/REPO_TO_WEBSITE.md`.
+- `docs/repo-plan-0.0.3.md` TODOs are reconciled against the repository,
+  and both plan headers point at `CHANGELOG.md`,
+  `docs/REPO_TO_WEBSITE.md`, and the website's `content-pin.json` instead of
+  stale SHAs.
+- `docs/repo-plan-0.0.4.md` §9 records the FP-414 evaluation: keep the
+  single website-hosted Skill rather than per-course skills. The live Skill
+  fails two Agent Skills spec checks (`skills-ref` 0.1.1), and its `uv run`
+  advice for pandas courses contradicts the course setup; both are
+  website-side fixes.
+
 ### Changed — 2026-10-11 dependency updates
 
 - `ruff` 0.16.9 → 0.16.10 (dev lock; `pyproject.toml` floor `>=0.16.10`).
@@ -88,6 +118,8 @@ This file records notable catalog-contract and maintenance changes.
   `39a3e79be939f491ac3c779494bf5c655c5588a0` at the time; the current pin is
   recorded in the website's `src/data/content-pin.json`.
 
+## [0.1.1] - 2026-09-14
+
 0.1.0 — companion-repository half of the public launch (website
 `docs/product-and-growth-plan-0.1.0.md`; see the website `CHANGELOG.md`
 for the platform half).
@@ -95,8 +127,7 @@ for the platform half).
 Release mapping (FP-1012): this repository ships **v0.1.1** on this
 release train — the earlier `v0.1.0` tag stays immutably on `e420fca`.
 Compatibility: website `v0.1.0` ↔ repository `v0.1.1`. The immutable tag is
-`db85cdd…`; `master` and the website pin have since moved past the tag (see
-`[Unreleased]`).
+`db85cdd…`; later changes are in `[0.1.2]`.
 
 ### Changed
 
@@ -151,11 +182,11 @@ website plan `docs/product-and-growth-plan-0.0.8.md`).
   entry sentence and the six agent-tool courses instead of a clone +
   download flow.
 
-## [Unreleased-0.0.4-phase-A]
+### 0.0.4 phase A (2026-09-12, shipped in 0.1.1)
 
-0.0.4 phase A — challenge-platform rework on top of 0.1.0.
+Challenge-platform rework on top of 0.1.0.
 
-### Added
+#### Added
 
 - Per-checkpoint claim codes, badge frontmatter contracts, and the
   deterministic `verify.py progress` subcommand (FP-411/412/415), enforced
@@ -170,7 +201,7 @@ website plan `docs/product-and-growth-plan-0.0.8.md`).
 - Checkpoint hints, the branch-path contract, and agent-solvability review
   records across all eight courses (2026-09-13).
 
-### Changed
+#### Changed
 
 - Repository narrative moved from agent-taught courses to challenge courses
   with `TASK.md` contracts and `verify.py` claim codes; `COURSE.md` remains
