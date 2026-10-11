@@ -1,0 +1,8 @@
+order_id,region,amount,item_count
+1001,emea,249.99,3
+1002,apac,89.50,1
+1003,emea,,2
+1004,americas,120.00,5
+1005,,310.00,4
+1006,apac,45.25,2
+1007,emea,640.10,6
