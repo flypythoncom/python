@@ -1,20 +1,22 @@
 # FlyPython 仓库 0.0.3 更新计划
 
-> 历史版本记录：本文件保留当时的范围与假设。2026-09-19 当前 `master` 已是
-> `39a3e79…`，生产网站也固定到该提交；不要把下文旧 pin 或未勾选 TODO 当成当前状态。
+> 历史版本记录：本文件保留当时的范围与假设，正文不再随仓库更新。§8 TODO 的
+> 勾选状态已于 2026-10-11 对照仓库核对；当前发布状态以 `CHANGELOG.md` 与
+> `docs/REPO_TO_WEBSITE.md` 为准，网站固定的提交记录在网站仓库
+> `src/data/content-pin.json`。
 
 版本：0.0.3（规划稿）
-更新：2026-09-11
+更新：2026-09-11（TODO 勾选状态核对于 2026-10-11）
 
 历史边界说明：本文记录 0.0.3 的内容模型和实施计划。当前挑战叙事、认领码、
-徽章与公开学习路线已经由 0.0.4 计划接续；网站当前固定到后续状态提交
-`920f790`。本文中的
-“Agent 授课”和未勾选 TODO 不代表当前状态。本文件按所有者决策以中文保留。
+徽章与公开学习路线已经由 0.0.4 计划接续，本文中的“Agent 授课”叙事不代表
+当前产品形态。本文件按所有者决策以中文保留。
 关联：flypython.com `docs/product-and-growth-plan-0.0.3.md`
 
-状态：规划文档，不代表已实现。本计划遵守 `AGENTS.md` 的仓库边界：本仓库
-负责已审核内容、可运行证据与稳定 JSON 契约；网站负责展示与转化。
-所有新内容中英文同步产出。
+状态：已基本实现（2026-10-11 核对）。§8 中 FP-326、FP-332、FP-335 仍有
+未完成部分，见各项备注；其余各项已在仓库中落地。本计划遵守 `AGENTS.md` 的
+仓库边界：本仓库负责已审核内容、可运行证据与稳定 JSON 契约；网站负责展示与
+转化。所有新内容中英文同步产出。
 
 ## 1. 网站 0.0.3 方向对本仓库的要求
 
@@ -140,32 +142,57 @@ risk: "…"
 5. `/from-github` 线上验证后做 README 导流改造。
 6. 首个课程落地时开始 Releases/tagging 节奏。
 
-## 8. TODO（编号续接网站规划；全部未验收）
+## 8. TODO（编号续接网站规划）
 
-- [ ] FP-325 `courses/` 规范写入 `AGENTS.md`；COURSE.md 授课契约经评审。
+勾选状态于 2026-10-11 对照仓库核对。网站侧的部分（pin、llms-links 测试）
+不在本仓库，无法从这里核实，备注中单独说明。
+
+- [x] FP-325 `courses/` 规范写入 `AGENTS.md`；COURSE.md 授课契约经评审。
+  （核对：`AGENTS.md` 内容规则含完整课程文件夹规范；12 门课均有 `COURSE.md`
+  与 `REVIEW.md`）
 - [ ] FP-326 C1 课程文件夹完成（3 个场景皮、verify.py 双向、EN+CN、
-  真实跟课的 REVIEW.md）。
-- [ ] FP-327 manifest `type: "course"` + schema + `build_content_manifest.py`
-  遍历；网站 pin 更新同一次刻意完成（FP-224 规则）。
-- [ ] FP-328 `verify_courses.py` 进入验证工作流与 Makefile。
-- [ ] FP-329 `catalog/projects/` 迁为 per-project YAML（迁移 7 条种子）+
-  `render_readmes.py` 重生成验证。
-- [ ] FP-330 `radar.json` 导出 + `schema/radar-v1.schema.json` +
-  `export_catalog.py` 扩展；`--check` 全绿。
-- [ ] FP-331 `tools/radar_scan.py` 合入：限速与"不生成描述"有测试保证。
+  真实跟课的 REVIEW.md）。（核对：3 个场景皮 `api-tool` / `data-monitor` /
+  `excel-report`、verify.py 双向、EN+CN 均已完成，挑战模式可解性实测已录
+  `REVIEW.md`；**授课式实机走查仍待做**，见该课 `REVIEW.md` 的 Pending 一节）
+- [x] FP-327 manifest `type: "course"` + schema + `build_content_manifest.py`
+  遍历；网站 pin 更新同一次刻意完成（FP-224 规则）。（核对：manifest schema
+  含 `course` 与 `path`，`build_content_manifest.py --check` 通过；网站 pin
+  在网站仓库 `src/data/content-pin.json`）
+- [x] FP-328 `verify_courses.py` 进入验证工作流与 Makefile。（核对：
+  `make check` 执行，CI 的 Validate 即 `make check`）
+- [x] FP-329 `catalog/projects/` 迁为 per-project YAML（迁移 7 条种子）+
+  `render_readmes.py` 重生成验证。（核对：7 个 `*.yml`，
+  `render_readmes.py --check` 通过）
+- [x] FP-330 `radar.json` 导出 + `schema/radar-v1.schema.json` +
+  `export_catalog.py` 扩展；`--check` 全绿。（核对：
+  `export_catalog.py --check --target both` 通过）
+- [x] FP-331 `tools/radar_scan.py` 合入：限速与"不生成描述"有测试保证。
+  （核对：`tests/test_radar_scan.py` 含每来源上限与“候选不带结论字段”测试）
 - [ ] FP-332 llms.txt / llms-full.txt 增加 courses+radar 区块；深链有效
-  （pin 更新后网站侧 llms-links 测试保持绿）。
-- [ ] FP-333 `CURATION_POLICY.md` scope + `ai_familiarity` 分级规则；
-  `course-feedback.yml` issue 模板。
-- [ ] FP-334 仓库描述/topics/关键词；第一个 GitHub Release。
+  （pin 更新后网站侧 llms-links 测试保持绿）。（核对：`llms.txt` 已有
+  courses 与 radar 区块；`llms-full.txt` 由网站提供，本仓库只引用。**课程
+  列表已过时**：只列 8 门，缺 `hands-on-with-cursor`、
+  `hands-on-with-deepseek-harness`、`hands-on-with-kimi-code`、
+  `hands-on-with-zcode`，且 `courses/hands-on-with-openai-codex-cli/` 深链
+  失效，实际目录为 `courses/hands-on-with-openai-codex/`）
+- [x] FP-333 `CURATION_POLICY.md` scope + `ai_familiarity` 分级规则；
+  `course-feedback.yml` issue 模板。（核对：两者均已在仓库中）
+- [x] FP-334 仓库描述/topics/关键词；第一个 GitHub Release。（核对：仓库
+  描述与 10 个 topics 已设置；`v0.1.0` 标签于 2026-09-12 打在 `e420fca`，
+  首个 GitHub Release 为 `v0.1.1`，2026-09-14）
 - [ ] FP-335 README/README_cn 横幅 + 各文档情境化文末链接，以线上
-  `/from-github` 验证为前置。
-- [ ] FP-344 双许可 LICENSE 就位（MIT 代码 / CC BY 4.0 内容，两仓库同）——
-  课程文件夹分发与 FP-326 的前置。
-- [ ] FP-350 校验器与 schema 追上政策：`validate_catalog.py` 与
+  `/from-github` 验证为前置。（核对：guides / playbooks / examples 的
+  文末情境化链接已全部加上；README 横幅链网站根域，**未切到 `/from-github`**。
+  该路由已上线，`docs/REPO_TO_WEBSITE.md` 允许两种链法，是否切换待所有者决定）
+- [x] FP-344 双许可 LICENSE 就位（MIT 代码 / CC BY 4.0 内容，两仓库同）——
+  课程文件夹分发与 FP-326 的前置。（核对：本仓库 `LICENSE` 已是双许可；
+  网站仓库未在此核实）
+- [x] FP-350 校验器与 schema 追上政策：`validate_catalog.py` 与
   `catalog-v1`/`radar-v1` 支持 Radar 生命周期状态与 `ai_familiarity`；
   manifest schema 增加 `type: "course"`；首个 Release（FP-334）时把
-  CHANGELOG `[Unreleased]` 切入 `0.1.0` 段。
+  CHANGELOG `[Unreleased]` 切入 `0.1.0` 段。（核对：`radar-v1` schema 与
+  `tools/catalog.py` 校验 6 种生命周期状态与 `ai_familiarity`，由
+  `export_catalog.py --check` 执行；CHANGELOG 已有 `[0.1.0] - 2026-09-12`）
 
 ## 9. 非目标与风险
 
