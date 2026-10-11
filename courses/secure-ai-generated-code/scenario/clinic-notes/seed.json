@@ -1,0 +1,24 @@
+{
+  "notes": [
+    {
+      "owner": "dr_lee",
+      "title": "Visit 1042 follow-up",
+      "body": "Fictional record: recheck blood pressure in two weeks."
+    },
+    {
+      "owner": "dr_lee",
+      "title": "Referral letters",
+      "body": "Fictional record: two letters pending signature."
+    },
+    {
+      "owner": "dr_patel",
+      "title": "Visit 2210 results",
+      "body": "Fictional record: lab results within range."
+    },
+    {
+      "owner": "dr_patel",
+      "title": "On-call swap",
+      "body": "Fictional record: swap Saturday with Dr. Lee."
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "id": "c01",
+    "kind": "sql",
+    "owner": "dr_lee",
+    "query": "x' OR 1=1 --"
+  },
+  {
+    "id": "c02",
+    "kind": "sql",
+    "owner": "dr_lee' OR '1'='1",
+    "query": ""
+  },
+  {
+    "id": "c03",
+    "kind": "path",
+    "name": "scans/../../secrets.txt"
+  },
+  {
+    "id": "c04",
+    "kind": "path",
+    "name": "{scenario}/secrets.txt"
+  },
+  {
+    "id": "c05",
+    "kind": "secret-key",
+    "env": {
+      "NOTES_SECRET_KEY": ""
+    }
+  },
+  {
+    "id": "c06",
+    "kind": "fast-hash",
+    "password": "clinic-2026"
+  },
+  {
+    "id": "c07",
+    "kind": "forged-session",
+    "claims": {
+      "user": "dr_lee",
+      "role": "records-admin"
+    }
+  },
+  {
+    "id": "c08",
+    "kind": "pickle-session"
+  }
+]

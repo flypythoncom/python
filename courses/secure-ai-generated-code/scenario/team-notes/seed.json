@@ -1,0 +1,29 @@
+{
+  "notes": [
+    {
+      "owner": "alice",
+      "title": "Sprint plan",
+      "body": "Ship the export fix first."
+    },
+    {
+      "owner": "alice",
+      "title": "Retro notes",
+      "body": "Fewer meetings on Fridays."
+    },
+    {
+      "owner": "bob",
+      "title": "Salary review",
+      "body": "Confidential: band changes for Q4."
+    },
+    {
+      "owner": "bob",
+      "title": "Offsite budget",
+      "body": "Venue deposit due Friday."
+    },
+    {
+      "owner": "carol",
+      "title": "Hiring pipeline",
+      "body": "Three candidates in final round."
+    }
+  ]
+}

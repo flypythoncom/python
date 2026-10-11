@@ -1,0 +1,1 @@
+Fictional intake form template: name, date of birth, reason for visit.

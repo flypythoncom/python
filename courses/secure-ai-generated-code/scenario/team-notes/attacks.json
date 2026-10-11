@@ -1,0 +1,53 @@
+[
+  {
+    "id": "t01",
+    "kind": "sql",
+    "owner": "alice",
+    "query": "%' OR owner != '"
+  },
+  {
+    "id": "t02",
+    "kind": "sql",
+    "owner": "alice",
+    "query": "' UNION SELECT id, owner || ':' || title, body FROM notes --"
+  },
+  {
+    "id": "t03",
+    "kind": "path",
+    "name": "../secrets.txt"
+  },
+  {
+    "id": "t04",
+    "kind": "path",
+    "name": "{scenario}/secrets.txt"
+  },
+  {
+    "id": "t05",
+    "kind": "secret-key",
+    "env": {}
+  },
+  {
+    "id": "t06",
+    "kind": "secret-key",
+    "env": {
+      "NOTES_SECRET_KEY": "dev"
+    }
+  },
+  {
+    "id": "t07",
+    "kind": "fast-hash",
+    "password": "correct horse battery staple"
+  },
+  {
+    "id": "t08",
+    "kind": "forged-session",
+    "claims": {
+      "user": "alice",
+      "role": "admin"
+    }
+  },
+  {
+    "id": "t09",
+    "kind": "pickle-session"
+  }
+]
