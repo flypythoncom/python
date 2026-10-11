@@ -4,6 +4,15 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+### Changed — 2026-10-11 dependency updates
+
+- `ruff` 0.16.9 → 0.16.10 (dev lock; `pyproject.toml` floor `>=0.16.10`).
+- Removed `.github/dependabot.yml`: Dependabot no longer opens monthly
+  version-update PRs for pip or GitHub Actions. Dependencies are bumped by
+  hand with `make lock` and verified by `make lock-check`; SHA-pinned actions
+  in `.github/workflows/` are updated by hand. Dependabot security alerts and
+  security-update PRs are repository settings and are unaffected by this file.
+
 ### Changed — 2026-10-04 CI hardening
 
 - `requirements.lock.txt` and `requirements-dev.lock.txt` are now generated
