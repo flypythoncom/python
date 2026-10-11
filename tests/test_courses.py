@@ -18,8 +18,11 @@ def test_courses_directory_is_discovered() -> None:
         "hands-on-with-deepseek-harness",
         "hands-on-with-kimi-code",
         "hands-on-with-zcode",
+        "hands-on-with-github-copilot",
         "agent-rules-single-source",
         "verifying-ai-generated-code",
+        "llm-features-in-python",
+        "secure-ai-generated-code",
         "mcp-server-in-python",
     } <= names
 
@@ -62,8 +65,11 @@ def test_course_documents_enter_the_content_manifest() -> None:
         "course-deepseek-harness",
         "course-kimi-code",
         "course-zcode",
+        "course-github-copilot",
         "course-agent-rules",
         "course-verify-ship",
+        "course-llm-features",
+        "course-secure-code",
         "course-mcp-tools",
     }
     assert expected_courses <= ids

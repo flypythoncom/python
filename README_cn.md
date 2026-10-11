@@ -32,8 +32,8 @@ FlyPython 是一个面向实践的双语仓库，帮助你写好 Python，并把
 ## 3 分钟开始
 
 你需要一个能执行命令并联网的编码 Agent（Claude Code、Codex 应用、
-Cursor、DeepSeek Harness、Kimi Code 或 ZCode——只能聊天的网页 AI 做
-不了这些课程）。在你的 Agent 里装上
+Cursor、VS Code 里的 GitHub Copilot、DeepSeek Harness、Kimi Code 或
+ZCode——只能聊天的网页 AI 做不了这些课程）。在你的 Agent 里装上
 [FlyPython Skill](https://flypython.com/skills/flypython/SKILL.md)，
 然后粘贴这一句话：
 
@@ -43,6 +43,7 @@ Agent 会用一次性授权链接为你授权（你不用把密码交给它）�
 课程文件——你不下载任何东西——并陪你完成挑战。还没用过编码 Agent？
 从*你的*工具对应的工具课开始：[Claude Code 实战](courses/hands-on-python-with-claude-code/COURSE_cn.md)、
 [Codex 应用](courses/hands-on-with-openai-codex/COURSE_cn.md)、[Cursor](courses/hands-on-with-cursor/COURSE_cn.md)、
+[GitHub Copilot](courses/hands-on-with-github-copilot/COURSE_cn.md)、
 [DeepSeek Harness](courses/hands-on-with-deepseek-harness/COURSE_cn.md)、
 [Kimi Code](courses/hands-on-with-kimi-code/COURSE_cn.md)、
 [ZCode](courses/hands-on-with-zcode/COURSE_cn.md)。

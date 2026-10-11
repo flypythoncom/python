@@ -2,11 +2,11 @@
 id: path-foundation-challenge
 type: path
 title: "Route challenge: dual-agent, double-verified"
-summary: Foundation path capstone — run the same task through any two of the six path agents and verify both outputs yourself.
+summary: Foundation path capstone — run the same task through any two of the seven path agents and verify both outputs yourself.
 lang: en-US
-content_version: 2
+content_version: 3
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-10-11
 ---
 
 # Route challenge: dual-agent, double-verified
@@ -21,12 +21,14 @@ different** agents through the same task — and verify both results yourself.
 Pick a real small task you care about (suggestion: "a CLI that counts the
 lines, words, and bytes of a file" or reuse any scenario skin from the path
 courses: `hands-on-python-with-claude-code`, `hands-on-with-openai-codex`,
-`hands-on-with-cursor`, `hands-on-with-deepseek-harness`,
-`hands-on-with-kimi-code`, `hands-on-with-zcode`, `agent-rules-single-source`,
+`hands-on-with-cursor`, `hands-on-with-github-copilot`,
+`hands-on-with-deepseek-harness`, `hands-on-with-kimi-code`,
+`hands-on-with-zcode`, `agent-rules-single-source`,
 `verifying-ai-generated-code`).
 
-Choose **any two** of the six agent tools this path teaches (Claude Code,
-Codex app, Cursor, DeepSeek Harness, Kimi Code, ZCode). Then:
+Choose **any two** of the seven agent tools this path teaches (Claude Code,
+Codex app, Cursor, GitHub Copilot in VS Code, DeepSeek Harness, Kimi Code,
+ZCode). Then:
 
 1. **Round one — agent A.** In a fresh folder, write a `TASK.md`
    describing the contract (inputs, outputs, edge cases, done = tests pass),

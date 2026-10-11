@@ -4,6 +4,38 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+### Added — 2026-10-11 three courses (EN+ZH)
+
+- `courses/hands-on-with-github-copilot/` (`course-github-copilot`): the
+  shared `report-tool` core taught with GitHub Copilot in VS Code — session
+  controls, Manual permissions, `.github/copilot-instructions.md` and
+  `applyTo` instructions files, checkpoints, and Source Control review.
+  Authored from the VS Code Copilot documentation fetched 2026-10-11; not
+  yet run inside VS Code (see its `REVIEW.md`).
+- `courses/llm-features-in-python/` (`course-llm-features`): validate
+  structured model output, allowlist and type-check tool calls, retry with
+  the error fed back, fall back to a human, and score an offline eval that
+  divides by every case. Replies are hand-written recordings; no model API
+  is called. 15 tests, three scenario skins.
+- `courses/secure-ai-generated-code/` (`course-secure-code`): review a
+  plausible notes service for SQL injection, path traversal, a hard-coded
+  secret, fast password hashes, and pickled sessions, one flaw class per
+  turn, and prove each fix with an attack-replay harness. 16 tests, two
+  scenario skins.
+- Both topic courses record a challenge-mode solvability run in
+  `REVIEW.md`; its findings tightened both `TASK.md` contracts, added a
+  tool-call-budget test, and fixed a `TypeError` on non-ASCII session
+  tokens in the security reference solution. Agent-taught run-throughs
+  are pending for all three courses.
+
+### Changed — 2026-10-11 foundation path and agent index
+
+- The foundation path offers GitHub Copilot as a seventh first-agent
+  module (`m3e`); later module `order` values shift by one. The
+  orientation and route-challenge modules (EN+ZH) list seven tools.
+- `llms.txt`, both READMEs, and `paths/README*.md` list the new courses
+  and tool.
+
 ## [0.1.2] - 2026-10-11
 
 Repository-only release: there is no website release on this train, and

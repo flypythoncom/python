@@ -2,11 +2,11 @@
 id: path-foundation-m0
 type: path
 title: The agent tool landscape
-summary: Foundation path module 0 — orientation across six agentic coding tools; pick the one that fits your environment and observe its evidence habits.
+summary: Foundation path module 0 — orientation across seven agentic coding tools; pick the one that fits your environment and observe its evidence habits.
 lang: en-US
-content_version: 2
+content_version: 3
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-10-11
 ---
 
 # Module 0: The agent tool landscape
@@ -18,7 +18,7 @@ have in common, and which one you will drive first.
 
 ## The landscape
 
-Six agentic coding tools carry this path's hands-on courses. Pick by where
+Seven agentic coding tools carry this path's hands-on courses. Pick by where
 you want to work:
 
 | Tool | Where it runs | What it's good at |
@@ -26,6 +26,7 @@ you want to work:
 | **Claude Code** | terminal | long multi-step tasks, strong instruction following, reads `CLAUDE.md`/`AGENTS.md` |
 | **Codex (desktop app)** | desktop app | task threads with approvals and diff review, reads `AGENTS.md` |
 | **Cursor** | IDE | Agent/Ask/Plan modes inside an editor, `.cursor/rules` project rules |
+| **GitHub Copilot** | IDE (VS Code) | Agent/Plan/Ask roles with Manual or Allow-all permissions, `.github/copilot-instructions.md` and `*.instructions.md` files |
 | **DeepSeek Harness** | Python framework | plugin-composed agents (`cordis.yml`), auditable append-only trajectories |
 | **Kimi Code** | terminal | built-in `explore`/`plan`/`coder` subagents that split reading, planning, editing |
 | **ZCode** | desktop app | long-horizon Goal Mode, task lists, workspace Git state, remote check-ins |
@@ -36,13 +37,13 @@ the important part — **can be wrong in ways that look right**. That is why
 this path spends so much effort on rules and verification, not on prompts.
 
 **Choosing by environment:** live in the terminal → Claude Code or Kimi Code.
-Live in a GUI → Codex app, Cursor, or ZCode. Want to assemble and audit the
+Live in a GUI → Codex app, Cursor, GitHub Copilot in VS Code, or ZCode. Want to assemble and audit the
 agent loop itself → DeepSeek Harness. You only need **one** to start; the
 route challenge at the end asks for a second, different one.
 
 ## Your first task (no code)
 
-1. Pick **one** of the six tools and install it following its official docs
+1. Pick **one** of the seven tools and install it following its official docs
    (linked from the course pages).
 2. Open it on an empty folder and ask it: "create a Python script that
    prints the current date, then run it."

@@ -2,11 +2,11 @@
 id: path-foundation-challenge
 type: path
 title: "路线挑战：双 Agent、双重验证"
-summary: 基础路线收官——把同一个任务分别交给六个路线 Agent 中任选的两个，并亲手验证两份产出。
+summary: 基础路线收官——把同一个任务分别交给七个路线 Agent 中任选的两个，并亲手验证两份产出。
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-10-11
 ---
 
 # 路线挑战：双 Agent、双重验证
@@ -21,12 +21,13 @@ reviewed_on: 2026-09-13
 挑一个你真正在乎的小任务（建议：「一个统计文件行数、词数、字节数的
 CLI」，或复用路线课程里的任一场景皮肤：
 `hands-on-python-with-claude-code`、`hands-on-with-openai-codex`、
-`hands-on-with-cursor`、`hands-on-with-deepseek-harness`、
+`hands-on-with-cursor`、`hands-on-with-github-copilot`、
+`hands-on-with-deepseek-harness`、
 `hands-on-with-kimi-code`、`hands-on-with-zcode`、
 `agent-rules-single-source`、`verifying-ai-generated-code`）。
 
-从本路线教授的六个 Agent 工具中任选**两个**（Claude Code、Codex 应用、
-Cursor、DeepSeek Harness、Kimi Code、ZCode），然后：
+从本路线教授的七个 Agent 工具中任选**两个**（Claude Code、Codex 应用、
+Cursor、VS Code 里的 GitHub Copilot、DeepSeek Harness、Kimi Code、ZCode），然后：
 
 1. **第一轮——Agent A。** 在全新文件夹里写一份描述契约的 `TASK.md`
    （输入、输出、边界情况、完成 = 测试通过），驱动第一个 Agent 实现，

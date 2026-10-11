@@ -26,8 +26,11 @@
   - `courses/hands-on-with-deepseek-harness/`: The same verified workflow taught hands-on in DeepSeek Harness, where the agent loop is composed from plugins and every step lands in an inspectable trajectory (EN+ZH).
   - `courses/hands-on-with-kimi-code/`: The same verified workflow taught hands-on in Kimi Code, where built-in subagents split read-only exploration, planning, and the edits you approve (EN+ZH).
   - `courses/hands-on-with-zcode/`: The same verified workflow taught hands-on in the ZCode desktop workspace, where Goal Mode decomposes the work and the Git state shows every change (EN+ZH).
+  - `courses/hands-on-with-github-copilot/`: The same verified workflow taught hands-on with GitHub Copilot in VS Code, where the Agent role runs the loop and you supervise permissions, instructions files, and diffs (EN+ZH).
   - `courses/agent-rules-single-source/`: Build a checker that proves one AGENTS.md source of truth across CLAUDE.md and .cursorrules (EN+ZH, three drift scenarios).
   - `courses/verifying-ai-generated-code/`: Build the release-evidence machine: run checks, parse results, refuse zero-test projects, write SHIP-RECORD.json (EN+ZH, three project skins).
+  - `courses/llm-features-in-python/`: Turn a demo-day model call into a shippable feature: validate structured output, allowlist tool calls, retry with the error fed back, fall back to a human, and measure with an offline eval that divides by every case (EN+ZH, three skins).
+  - `courses/secure-ai-generated-code/`: Review a plausible AI-style notes service like an attacker: close SQL injection, path traversal, a hard-coded secret, fast password hashes, and pickled sessions, then replay the attacks (EN+ZH, two skins).
   - `courses/mcp-server-in-python/`: Build a stateless 2026-07-28 MCP tool server in pure Python — reuses the reviewed mcp-server example core (EN+ZH).
   - `courses/da-eda/`: Exploratory data analysis with pandas over a messy shop export: exact duplicates, bad amounts, one bad date (EN+ZH).
   - `courses/da-visualization/`: Data visualization with matplotlib from clean long-format daily sales: summaries, one-figure charts, Agg-before-pyplot discipline (EN+ZH).

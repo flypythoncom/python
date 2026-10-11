@@ -5,7 +5,8 @@ own folder with a machine-checked `path.json` contract plus bilingual module
 and challenge documents.
 
 - [Agent tools foundation](foundation/) — drive a coding agent (Claude
-  Code, Codex, Cursor, DeepSeek Harness, Kimi Code, or ZCode — pick one),
+  Code, Codex, Cursor, GitHub Copilot, DeepSeek Harness, Kimi Code, or
+  ZCode — pick one),
   write a single-source rules file, and verify agent output by hand.
   Modules: the pick-one tool courses, the rules and verification courses,
   and a dual-agent route challenge (200 points). The orientation module is

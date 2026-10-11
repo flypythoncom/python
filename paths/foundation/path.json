@@ -4,8 +4,8 @@
   "status": "live",
   "title_en": "Agent tools foundation",
   "title_zh": "Agent 工具基础",
-  "summary_en": "Learn to drive real coding agents - Claude Code, Codex, Cursor, DeepSeek Harness, Kimi Code, or ZCode - give them good rules, and verify everything they produce.",
-  "summary_zh": "学会驱动真正的编码 Agent（Claude Code、Codex、Cursor、DeepSeek Harness、Kimi Code、ZCode 任选），给它们好规则，并验证它们产出的一切。",
+  "summary_en": "Learn to drive real coding agents - Claude Code, Codex, Cursor, GitHub Copilot, DeepSeek Harness, Kimi Code, or ZCode - give them good rules, and verify everything they produce.",
+  "summary_zh": "学会驱动真正的编码 Agent（Claude Code、Codex、Cursor、GitHub Copilot、DeepSeek Harness、Kimi Code、ZCode 任选），给它们好规则，并验证它们产出的一切。",
   "audience_en": "Beginners who have never (or barely) used AI coding agents.",
   "audience_zh": "从未用过（或刚接触）AI 编程 Agent 的初学者。",
   "outcome_en": "You can independently drive two different coding agents on small tasks, write a single-source rules file, and verify agent output with your own hands.",
@@ -90,6 +90,18 @@
     },
     {
       "order": 6,
+      "id": "m3e",
+      "kind": "course",
+      "course": "hands-on-with-github-copilot",
+      "title_en": "GitHub Copilot hands-on",
+      "title_zh": "GitHub Copilot 实战",
+      "points": 100,
+      "branch": "first-agent",
+      "branch_label_en": "pick your first agent",
+      "branch_label_zh": "选你的第一个 Agent"
+    },
+    {
+      "order": 7,
       "id": "m3",
       "kind": "course",
       "course": "agent-rules-single-source",
@@ -98,7 +110,7 @@
       "points": 100
     },
     {
-      "order": 7,
+      "order": 8,
       "id": "m4",
       "kind": "course",
       "course": "verifying-ai-generated-code",
@@ -107,7 +119,7 @@
       "points": 100
     },
     {
-      "order": 8,
+      "order": 9,
       "id": "route-challenge",
       "kind": "module",
       "ref": "modules/route-challenge.md",
@@ -117,7 +129,7 @@
       "kind_label": "project"
     },
     {
-      "order": 9,
+      "order": 10,
       "id": "m0",
       "kind": "module",
       "ref": "modules/m0-orientation.md",

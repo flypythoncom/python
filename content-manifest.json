@@ -1152,6 +1152,144 @@
       ]
     },
     {
+      "id": "course-github-copilot",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-github-copilot/COURSE.md",
+          "title": "Hands-on with GitHub Copilot",
+          "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on with GitHub Copilot in VS Code, where the Agent role runs the loop and you supervise permissions, instructions files, and diffs.",
+          "sha256": "d78fa83c4664e368faccc89490ff34b7e6b859b32d37cb53b699af2a2cfbe80c"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-github-copilot/COURSE_cn.md",
+          "title": "上手 GitHub Copilot",
+          "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 VS Code 的 GitHub Copilot 里手把手教：由 Agent 角色跑闭环，你监督权限、指令文件与 diff。",
+          "sha256": "c17c53dcf6814e1df569e642b92705974fd52614da0852199b029ca044ed72a7"
+        }
+      ]
+    },
+    {
+      "id": "course-github-copilot-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-github-copilot/lessons/L01.md",
+          "title": "Lesson 1: Set up Copilot in VS Code, install the FlyPython Skill, fetch the course",
+          "summary": "Get GitHub Copilot running in VS Code with the Agent role and Manual permissions, optionally install the FlyPython Skill, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
+          "sha256": "c8da93c48af23c9e9bfe8d6c1c750be357a21511e42d5751046697fd6b6ba998"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-github-copilot/lessons/L01_cn.md",
+          "title": "第 1 课：在 VS Code 里装好 Copilot、装上 FlyPython Skill、让 Agent 取回课程",
+          "summary": "让 GitHub Copilot 在 VS Code 里以 Agent 角色、Manual permissions 跑起来，（可选）装好 FlyPython Skill，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
+          "sha256": "6fc5c71d4c2b3c0953be4e4972e51a407524198a6d1b9c18536b0f6bd5d740b3"
+        }
+      ]
+    },
+    {
+      "id": "course-github-copilot-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-github-copilot/lessons/L02.md",
+          "title": "Lesson 2: Write the task contract, let .github instructions carry the rules",
+          "summary": "Turn \"make it better\" into a bounded, testable contract — then make it durable with `.github/copilot-instructions.md` and an `applyTo` instructions file, so every Copilot session starts with the same rules.",
+          "sha256": "74c4519aad83e0a8e49930459f319b94ee963e69e315aef698a3951cd43f6dfa"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-github-copilot/lessons/L02_cn.md",
+          "title": "第 2 课：写任务契约，让 .github 指令文件承载规则",
+          "summary": "把「改好一点」变成有边界、可测试的契约——再用 `.github/copilot-instructions.md` 和带 `applyTo` 的指令文件把它持久化，让每个 Copilot 会话都从同一套规则开始。",
+          "sha256": "7458f9ec3aca85e6f5389cd3c2c9851643452a06e1e9b5b56f9d0174bf70368c"
+        }
+      ]
+    },
+    {
+      "id": "course-github-copilot-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-github-copilot/lessons/L03.md",
+          "title": "Lesson 3: The bounded change, reviewed turn by turn",
+          "summary": "Drive the starter to green through bounded turns — review each turn's diff before the next, and use Restore Checkpoint and Git to keep every change yours.",
+          "sha256": "cea8e1536f2865c3f0eb7af39e198d03f309300ae98483019ca10d9b8a58c30b"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-github-copilot/lessons/L03_cn.md",
+          "title": "第 3 课：有界改动，一轮一审",
+          "summary": "通过有界的轮次把 starter 推到全绿——每轮先审 diff 再发下一轮，用 Restore Checkpoint 和 Git 守住每一处改动。",
+          "sha256": "edd5a69ac53ee0cd515bec1b601fd906b1afd4580e8cff92e8beb80ac15b21e6"
+        }
+      ]
+    },
+    {
+      "id": "course-github-copilot-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-github-copilot/lessons/L04.md",
+          "title": "Lesson 4: Verify like a reviewer, not a spectator",
+          "summary": "Green tests are the floor, not the ceiling — run both suites, walk a scenario skin, and review the accumulated diff in Source Control the way you would review a colleague's.",
+          "sha256": "e66f1a3652d94beae772d9fcdc3a86fa1ffa21c03146f546188f39ebe7d141ba"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-github-copilot/lessons/L04_cn.md",
+          "title": "第 4 课：像评审者一样验证，别当观众",
+          "summary": "测试全绿是地板不是天花板——两个套件都跑、走完一个皮肤、在 Source Control 里按评审同事的标准审这份累积 diff。",
+          "sha256": "61c92a8c81eed42e13686ba1574622c235406144617393fd38ea481abd627a2e"
+        }
+      ]
+    },
+    {
+      "id": "course-github-copilot-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/hands-on-with-github-copilot/lessons/L05.md",
+          "title": "Lesson 5: Take the workflow to your own project",
+          "summary": "The tool generalizes: task contract, instructions files, bounded agent work, diff review — run the same loop with Copilot on a repository you actually own.",
+          "sha256": "ef91a8baea18e3821d4f285c9bbb0dc13bb4bfcfdd3f9e9f2ef08aa5825fdcfb"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/hands-on-with-github-copilot/lessons/L05_cn.md",
+          "title": "第 5 课：把工作流带回自己的项目",
+          "summary": "工具会泛化：任务契约、指令文件、有界 Agent 工作、diff 评审——用 Copilot 在你真正拥有的仓库上跑同一套闭环。",
+          "sha256": "bc38cf9a8e747a6191973689b8d6524c7229c05a67d64733b1216a7577c7324d"
+        }
+      ]
+    },
+    {
       "id": "course-kimi-code",
       "type": "course",
       "content_version": 2,
@@ -1290,6 +1428,144 @@
       ]
     },
     {
+      "id": "course-llm-features",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/llm-features-in-python/COURSE.md",
+          "title": "Build LLM features in Python: structured output, tool calls, and evals",
+          "summary": "Turn a demo-day model call into a feature you can ship — validate structured output, allowlist tool calls, retry with the error fed back, fall back to a human instead of guessing, and measure it with an offline eval that divides by every case.",
+          "sha256": "39bf1f7869da13115552c62ea0128db8a03092ba7b04184aa3a98832491dad9a"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/llm-features-in-python/COURSE_cn.md",
+          "title": "用 Python 构建 LLM 功能：结构化输出、工具调用与评测",
+          "summary": "把演示日的一次模型调用变成能上线的功能——校验结构化输出、给工具调用设白名单、带着错误信息重试、拿不准就转人工而不是瞎猜，并用分母覆盖全部用例的离线评测来度量。",
+          "sha256": "be86fb13168251a5a5baec99c1c68f914bed7956329e95ebedf126afa9838516"
+        }
+      ]
+    },
+    {
+      "id": "course-llm-features-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/llm-features-in-python/lessons/L01.md",
+          "title": "Lesson 1: A demo reply is not a feature",
+          "summary": "Fetch the course through the FlyPython Skill, run the starter's eval, and catch the number that cannot be true — then map every failing test to the real-world reply that breaks it.",
+          "sha256": "da3b2c3657a499c6a39efec4b4cb7e7a257a11cb2c9bf00fa959a508acbaba58"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/llm-features-in-python/lessons/L01_cn.md",
+          "title": "第 1 课：演示能跑不等于功能可靠",
+          "summary": "通过 FlyPython Skill 取回课程，跑一遍 starter 的评测，抓住那个不可能为真的数字——再把每个失败测试对应到让它坏掉的真实回复。",
+          "sha256": "69c4a6e854928aaef5c6b16bff89f7fc7a7adff12a074313093c36ded7879bf2"
+        }
+      ]
+    },
+    {
+      "id": "course-llm-features-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/llm-features-in-python/lessons/L02.md",
+          "title": "Lesson 2: Write the output contract",
+          "summary": "The prompt asks; the contract checks. Read TASK.md as the boundary between your code and the model — what a reply must look like, which tools it may run, and what happens when it does not comply.",
+          "sha256": "cf19964e23e6604e4f534f452b70fd05d75f4b5e934399c7827c222b5f513667"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/llm-features-in-python/lessons/L02_cn.md",
+          "title": "第 2 课：把模型输出写成契约",
+          "summary": "提示词负责请求，契约负责检查。把 TASK.md 当成你的代码与模型之间的边界来读——回复必须长什么样、能运行哪些工具、不照做时怎么办。",
+          "sha256": "07f4d9afae77009603f97918c0ad564cae582a0a2f02be9b49c99f950c38567b"
+        }
+      ]
+    },
+    {
+      "id": "course-llm-features-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/llm-features-in-python/lessons/L03.md",
+          "title": "Lesson 3: Validate, allowlist tools, retry — one group at a time",
+          "summary": "Drive the starter to green in four bounded turns — the parser, the tool gate, the retry-and-fallback loop, the eval — and watch one fix expose a bug the old code was hiding.",
+          "sha256": "0def13edb7bb2eb306f5cf9788744cc5304500bb399b398a6eaca6dfa244f69e"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/llm-features-in-python/lessons/L03_cn.md",
+          "title": "第 3 课：校验、工具白名单、重试——一次一组",
+          "summary": "用四个有界轮次把 starter 推到全绿——解析器、工具关口、重试与兜底循环、评测——并亲眼看到一处修复暴露出旧代码藏着的 bug。",
+          "sha256": "80e99a0c00f6726fe16e83e9c73af181cc56be7d6ec0e9bcd3f540ba3fdec3f6"
+        }
+      ]
+    },
+    {
+      "id": "course-llm-features-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/llm-features-in-python/lessons/L04.md",
+          "title": "Lesson 4: Read the eval honestly",
+          "summary": "A green suite proves the contract; the eval measures the feature. Run all three skins, accept the one that fails its threshold, and write down what a handful of recorded replies can and cannot tell you.",
+          "sha256": "8a56c73e8b6fd4668cd33624d667fe6d36d094e3e378953b3641118d1cbb3377"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/llm-features-in-python/lessons/L04_cn.md",
+          "title": "第 4 课：诚实地读评测",
+          "summary": "套件全绿证明的是契约；评测度量的是功能。跑完三个皮肤，接受那个没过阈值的结果，并写下少量录好的回复能说明什么、不能说明什么。",
+          "sha256": "ec79c0448247b288842dd1ae9307d1dbfc7daff02e1e1c09574f07e22cb18aa0"
+        }
+      ]
+    },
+    {
+      "id": "course-llm-features-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/llm-features-in-python/lessons/L05.md",
+          "title": "Lesson 5: Apply it to your own LLM feature",
+          "summary": "Put a real model behind the same seam: a client callable, an output contract, an allowlist, a fallback, and an eval you record once and replay on every change.",
+          "sha256": "3480e2cd27efdda14efbfa68d530987776f8b06d233e3036d4d00426ec54461f"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/llm-features-in-python/lessons/L05_cn.md",
+          "title": "第 5 课：接到你自己的模型功能上",
+          "summary": "把真实模型放到同一个接缝后面：一个 client 可调用对象、一份输出契约、一张白名单、一个兜底，以及录一次、每次改动都回放的评测。",
+          "sha256": "b8639d63f0d399ca633c1f0fdb330348afd81215100c840ecc038b7993aaf6b6"
+        }
+      ]
+    },
+    {
       "id": "course-mcp-tools",
       "type": "course",
       "content_version": 3,
@@ -1424,6 +1700,144 @@
           "title": "给你的 Agent 暴露一个真实工具",
           "summary": "把你真正拥有的一个函数包进刚建好的“校验 + 隔离”边界。",
           "sha256": "f5a906e707393326ece9a984916dd3624cf2573dd6cefc0371ca362e0a02b7c7"
+        }
+      ]
+    },
+    {
+      "id": "course-secure-code",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/secure-ai-generated-code/COURSE.md",
+          "title": "Security review for AI-written Python",
+          "summary": "Review a plausible, AI-style notes service the way an attacker would — close SQL injection, path traversal, a hard-coded secret, fast password hashes, and pickled sessions one class at a time, then prove each fix by replaying the attacks.",
+          "sha256": "17e8571f7192fbb86e5167e6c4505ed0a8d482e067efd4ef4da623ec2173a303"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/secure-ai-generated-code/COURSE_cn.md",
+          "title": "AI 写的 Python 代码的安全审查",
+          "summary": "像攻击者一样审查一个看起来没问题、AI 风格的笔记服务——一次一类地堵上 SQL 注入、路径穿越、硬编码密钥、快速密码哈希和 pickle 会话，再通过重放攻击证明每处修复。",
+          "sha256": "e4e388235efde9d2c6ea14e914792906fa8aeb887426650490609eab6be7af70"
+        }
+      ]
+    },
+    {
+      "id": "course-secure-code-l01",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/secure-ai-generated-code/lessons/L01.md",
+          "title": "Lesson 1: Plausible is not safe",
+          "summary": "Fetch the course through the FlyPython Skill, read a notes service that looks fine, then replay nine attacks against it and watch every one succeed.",
+          "sha256": "e2c5160ee73219de7bfff49e883fa5c36273afb977ef31744e79e5b368c396a7"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/secure-ai-generated-code/lessons/L01_cn.md",
+          "title": "第 1 课：看起来对不等于安全",
+          "summary": "通过 FlyPython Skill 取回课程，读一个看起来没问题的笔记服务，然后对它重放九个攻击，看着每一个都得手。",
+          "sha256": "37eb221ca507e3792b1aaa36b5c0e0f73f6cc58eeb6363e0e5c111b9430b55e7"
+        }
+      ]
+    },
+    {
+      "id": "course-secure-code-l02",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/secure-ai-generated-code/lessons/L02.md",
+          "title": "Lesson 2: Write the threat model as a contract",
+          "summary": "For each function, name who controls the input, what they want, and what the code must refuse — then trace every refusal in TASK.md to a test and to the Python documentation behind it.",
+          "sha256": "ef7330b170094dcb114779a3b0ea1e0c2fce9397cd9af286cbca825a036805fa"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/secure-ai-generated-code/lessons/L02_cn.md",
+          "title": "第 2 课：把威胁模型写成契约",
+          "summary": "对每个函数，说清谁控制输入、他想要什么、代码必须拒绝什么——再把 TASK.md 里的每一条拒绝追查到一个测试，以及它背后的 Python 文档。",
+          "sha256": "b0847c2fbe8715fd22f662d7ce605b982f7c7467ef321198dea68cba5f7a1125"
+        }
+      ]
+    },
+    {
+      "id": "course-secure-code-l03",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/secure-ai-generated-code/lessons/L03.md",
+          "title": "Lesson 3: Close one flaw class per turn",
+          "summary": "Five bounded turns — search, attachments, secret key, passwords, sessions — each closing one weakness class with a mechanism, never a filter, and each proven by its tests and the replay.",
+          "sha256": "042a147514c02ddba30ab17fd4f445023bd42b5bceea2e8538abde0dcb67ff75"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/secure-ai-generated-code/lessons/L03_cn.md",
+          "title": "第 3 课：每轮只堵一类漏洞",
+          "summary": "五个有界轮次——搜索、附件、密钥、密码、会话——每轮用机制（绝不用过滤）堵上一类弱点，并用测试和重放证明。",
+          "sha256": "aeda117a3ec242a4c896479ed9b9c80469e77ce47487fb9d7c1ba251e4cfcf5e"
+        }
+      ]
+    },
+    {
+      "id": "course-secure-code-l04",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/secure-ai-generated-code/lessons/L04.md",
+          "title": "Lesson 4: Review like an attacker",
+          "summary": "Green tests and a 9/9 replay are the floor. Replay the second skin, run a static scanner and note what it misses, attack one thing the suite never tried, and write down what is still unreviewed.",
+          "sha256": "b59c907a4d3ae0d47aa03a590eeebf9128031d071379100cc98c80a6153825ca"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/secure-ai-generated-code/lessons/L04_cn.md",
+          "title": "第 4 课：像攻击者一样复查",
+          "summary": "测试全绿和 9/9 的重放只是地板。重放第二个皮肤、跑一遍静态扫描并记下它漏了什么、攻击一处套件从没试过的地方，并写下还有什么没审查。",
+          "sha256": "3fdedd08c18ada2d6aacd429c8096432cdfac0d36c1e7f1e7e06a13a323f74d5"
+        }
+      ]
+    },
+    {
+      "id": "course-secure-code-l05",
+      "type": "course",
+      "content_version": 1,
+      "status": "reviewed",
+      "reviewed_on": "2026-10-11",
+      "locales": [
+        {
+          "lang": "en-US",
+          "path": "courses/secure-ai-generated-code/lessons/L05.md",
+          "title": "Lesson 5: Review your own AI-written code",
+          "summary": "Take the five questions and the scanner pass to a repository you own: find where input crosses a trust boundary, check each crossing for a mechanism, and write down what you did not review.",
+          "sha256": "db30cf89a2a6da03807264f3e8dff1beb0161b47bbe1b188a6d628963c2e222c"
+        },
+        {
+          "lang": "zh-CN",
+          "path": "courses/secure-ai-generated-code/lessons/L05_cn.md",
+          "title": "第 5 课：审查你自己的 AI 代码",
+          "summary": "把五个问题和扫描步骤带到你自己的仓库：找出输入跨越信任边界的地方，检查每处是否用了机制，并写下你没有审查的部分。",
+          "sha256": "cb305a1346b3e0820f4c1cb2943e7416c75503fb0a8cfb4b0126f86c9b11399d"
         }
       ]
     },
@@ -1890,46 +2304,46 @@
     {
       "id": "path-foundation-challenge",
       "type": "path",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-10-11",
       "locales": [
         {
           "lang": "en-US",
           "path": "paths/foundation/modules/route-challenge.md",
           "title": "Route challenge: dual-agent, double-verified",
-          "summary": "Foundation path capstone — run the same task through any two of the six path agents and verify both outputs yourself.",
-          "sha256": "5dd9a96fb85e3582b57455b1714827ff8503a53cef65eaf5159666771542bf7f"
+          "summary": "Foundation path capstone — run the same task through any two of the seven path agents and verify both outputs yourself.",
+          "sha256": "8982609d52576c51a7b680ddc904951c479ecbef8eb285c33af80f8ee1cb0867"
         },
         {
           "lang": "zh-CN",
           "path": "paths/foundation/modules/route-challenge_cn.md",
           "title": "路线挑战：双 Agent、双重验证",
-          "summary": "基础路线收官——把同一个任务分别交给六个路线 Agent 中任选的两个，并亲手验证两份产出。",
-          "sha256": "eafb3dc130a96a8ba6b8128c4353c689f2590abbfe2ecd8c06fd00940f7e0ea5"
+          "summary": "基础路线收官——把同一个任务分别交给七个路线 Agent 中任选的两个，并亲手验证两份产出。",
+          "sha256": "89ce1e3e13a6b07c87f56a3a65136a9f5e01c642abce771b119f22b73d9be4f6"
         }
       ]
     },
     {
       "id": "path-foundation-m0",
       "type": "path",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-10-11",
       "locales": [
         {
           "lang": "en-US",
           "path": "paths/foundation/modules/m0-orientation.md",
           "title": "The agent tool landscape",
-          "summary": "Foundation path module 0 — orientation across six agentic coding tools; pick the one that fits your environment and observe its evidence habits.",
-          "sha256": "16f44353eb09b2292d3ff49af6bde9906a865a471a8818301ebb9b7260454e1a"
+          "summary": "Foundation path module 0 — orientation across seven agentic coding tools; pick the one that fits your environment and observe its evidence habits.",
+          "sha256": "41fda71a48d8382fbff39da5813b78adf2b15c97079b9b6f96aeb44de34899db"
         },
         {
           "lang": "zh-CN",
           "path": "paths/foundation/modules/m0-orientation_cn.md",
           "title": "Agent 工具生态总览",
-          "summary": "基础路线模块 0——六个 Agentic 编程工具生态导览；按你的工作环境选一个，并观察它的证据习惯。",
-          "sha256": "9d416d3f68766ee6d241dff0e00edb21a654ba27c8013ff4de8e23ff90852a1e"
+          "summary": "基础路线模块 0——七个 Agentic 编程工具生态导览；按你的工作环境选一个，并观察它的证据习惯。",
+          "sha256": "3857bf97e35ab16af157fd506f897f665c752985e2623bd57c8c4312c4623542"
         }
       ]
     },

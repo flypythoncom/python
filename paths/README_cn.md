@@ -4,9 +4,9 @@
 `path.json` 契约与双语的模块、挑战文档。
 
 - [Agent 工具基础](foundation/)——驱动一门编码 Agent（Claude Code、
-  Codex、Cursor、DeepSeek Harness、Kimi Code、ZCode 六选一），写出单一
-  真源规则文件，并亲手验证 Agent 的产出。模块：六选一工具课、规则与
-  验证两门课，以及一个双 Agent 路线挑战（200 分）。入门总览模块为
+  Codex、Cursor、GitHub Copilot、DeepSeek Harness、Kimi Code、ZCode
+  七选一），写出单一真源规则文件，并亲手验证 Agent 的产出。模块：
+  七选一工具课、规则与验证两门课，以及一个双 Agent 路线挑战（200 分）。入门总览模块为
   可选加分项（10 分）——不计入徽章。
 - [用 Agent 做数据分析](data-analysis/)——对真实数据集完成清洗、探索、
   可视化与报告。模块：`da-eda`、`da-visualization`、`da-report` 三门课程，

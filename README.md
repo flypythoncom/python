@@ -37,9 +37,9 @@ delivery status is tracked in the
 ## Start in three minutes
 
 You need a coding agent that can run commands and reach the network
-(Claude Code, the Codex app, Cursor, DeepSeek Harness, Kimi Code, or
-ZCode — chat-only web AIs cannot run these courses). Install the
-[FlyPython Skill](https://flypython.com/skills/flypython/SKILL.md) in
+(Claude Code, the Codex app, Cursor, GitHub Copilot in VS Code,
+DeepSeek Harness, Kimi Code, or ZCode — chat-only web AIs cannot run
+these courses). Install the [FlyPython Skill](https://flypython.com/skills/flypython/SKILL.md) in
 your agent, then paste this one sentence:
 
 > Read https://flypython.com/skills/flypython/SKILL.md and start the FlyPython course `da-eda`.
@@ -49,6 +49,7 @@ password), fetches the course files itself — you download nothing — and
 drives the challenges with you. New to driving an agent? Start with the
 tool course for *your* agent: [Hands-on Python with Claude Code](courses/hands-on-python-with-claude-code/COURSE.md),
 [Codex app](courses/hands-on-with-openai-codex/COURSE.md), [Cursor](courses/hands-on-with-cursor/COURSE.md),
+[GitHub Copilot](courses/hands-on-with-github-copilot/COURSE.md),
 [DeepSeek Harness](courses/hands-on-with-deepseek-harness/COURSE.md),
 [Kimi Code](courses/hands-on-with-kimi-code/COURSE.md), or
 [ZCode](courses/hands-on-with-zcode/COURSE.md).

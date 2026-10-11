@@ -37,6 +37,11 @@
       "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
     },
     {
+      "slug": "hands-on-with-github-copilot",
+      "course_id": "course-github-copilot",
+      "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
+    },
+    {
       "slug": "hands-on-with-kimi-code",
       "course_id": "course-kimi-code",
       "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
@@ -52,9 +57,19 @@
       "solution_sha256": "d0aa4b9a5486f9d50abf2fe34f9166815174591e7fc0c2fb23ae3111a5a16699"
     },
     {
+      "slug": "llm-features-in-python",
+      "course_id": "course-llm-features",
+      "solution_sha256": "3d9979d543024389632f08ac25605531f69c1072bc7c29b61c6756672ead38ac"
+    },
+    {
       "slug": "mcp-server-in-python",
       "course_id": "course-mcp-tools",
       "solution_sha256": "e9a0c348e12bd1f04d83783689f299e3ece8884f3f8a5be2f8a40655e211b790"
+    },
+    {
+      "slug": "secure-ai-generated-code",
+      "course_id": "course-secure-code",
+      "solution_sha256": "71e13f1cc12634baeef6b5fabc491465629f25d612fbb85ad0ca4ee2ecdd1404"
     },
     {
       "slug": "verifying-ai-generated-code",

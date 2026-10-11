@@ -2,11 +2,11 @@
 id: path-foundation-m0
 type: path
 title: Agent 工具生态总览
-summary: 基础路线模块 0——六个 Agentic 编程工具生态导览；按你的工作环境选一个，并观察它的证据习惯。
+summary: 基础路线模块 0——七个 Agentic 编程工具生态导览；按你的工作环境选一个，并观察它的证据习惯。
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-10-11
 ---
 
 # 模块 0：Agent 工具生态总览
@@ -17,13 +17,14 @@ reviewed_on: 2026-09-13
 
 ## 生态概览
 
-六个 Agentic 编程工具承载本路线的实战课程。按你想工作的位置选：
+七个 Agentic 编程工具承载本路线的实战课程。按你想工作的位置选：
 
 | 工具 | 运行位置 | 擅长什么 |
 | --- | --- | --- |
 | **Claude Code** | 终端 | 长链路多步任务，指令遵循强，读 `CLAUDE.md`/`AGENTS.md` |
 | **Codex（桌面应用）** | 桌面应用 | 带审批与 diff 审查的任务线程，读 `AGENTS.md` |
 | **Cursor** | IDE | 编辑器内 Agent/Ask/Plan 模式，`.cursor/rules` 项目规则 |
+| **GitHub Copilot** | IDE（VS Code） | Agent/Plan/Ask 角色，可选手动审批或全部允许，`.github/copilot-instructions.md` 与 `*.instructions.md` 指令文件 |
 | **DeepSeek Harness** | Python 框架 | 插件组装的 Agent（`cordis.yml`），可审计的只增轨迹 |
 | **Kimi Code** | 终端 | 内置 `explore`/`plan`/`coder` 子代理，读、规划、改码分道 |
 | **ZCode** | 桌面应用 | 长程 Goal 模式、任务列表、工作区 Git 状态、远程查岗 |
@@ -33,12 +34,12 @@ reviewed_on: 2026-09-13
 路线把大量精力放在规则和验证上，而不是提示词上。
 
 **按环境选：** 住终端 → Claude Code 或 Kimi Code；住图形界面 → Codex
-应用、Cursor 或 ZCode；想自己组装并审计 Agent 循环 → DeepSeek Harness。
+应用、Cursor、VS Code 里的 GitHub Copilot 或 ZCode；想自己组装并审计 Agent 循环 → DeepSeek Harness。
 起步只需要**一个**；路线末尾的挑战会要求第二个不同的工具。
 
 ## 第一个任务（不写代码）
 
-1. 从六个工具里挑**一个**，按官方文档安装（课程页有链接）。
+1. 从七个工具里挑**一个**，按官方文档安装（课程页有链接）。
 2. 在一个空文件夹里打开它，让它「写一个打印当前日期的 Python 脚本并运行」。
 3. 观察它的行为：创建了哪些文件、跑了哪些命令、回报了什么。
 4. 问它：「你怎么知道它能跑？」——注意它是*给出证据*还是只*说跑过了*。
