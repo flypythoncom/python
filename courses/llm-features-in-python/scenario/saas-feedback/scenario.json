@@ -1,0 +1,7 @@
+{
+  "name": "saas-feedback",
+  "description": "In-app feedback for a small SaaS product. No tools: the model answers from the ticket text alone.",
+  "categories": ["bug", "feature_request", "billing", "praise", "other"],
+  "min_accuracy": 0.8,
+  "tools": {}
+}

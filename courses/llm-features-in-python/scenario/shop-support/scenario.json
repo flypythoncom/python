@@ -1,0 +1,9 @@
+{
+  "name": "shop-support",
+  "description": "An online shop's support inbox. The model may look up an order before answering.",
+  "categories": ["billing", "shipping", "returns", "account", "other"],
+  "min_accuracy": 0.8,
+  "tools": {
+    "lookup_order": {"data": "orders.json", "parameters": {"order_id": "str"}}
+  }
+}

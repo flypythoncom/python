@@ -1,0 +1,4 @@
+{
+  "LT-204": {"type": "laptop", "owner": "finance", "warranty_until": "2027-03-01"},
+  "PR-301": {"type": "printer", "location": "floor 3"}
+}

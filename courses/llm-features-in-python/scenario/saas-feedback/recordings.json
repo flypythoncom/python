@@ -1,0 +1,22 @@
+{
+  "note": "Hand-written replies that imitate common model failure shapes. They are course fixtures, not output captured from any model.",
+  "replies": {
+    "f01": [
+      "{\"category\": \"bug\", \"priority\": 2, \"summary\": \"Export button does nothing in Safari.\", \"needs_human\": false}"
+    ],
+    "f02": [
+      "{\"category\": \"feature_request\", \"priority\": 4, \"summary\": \"User asks for a dark mode.\", \"needs_human\": false}"
+    ],
+    "f03": [
+      "{\"category\": \"billing\", \"priority\": 1, \"summary\": \"User was billed after cancelling the plan.\", \"needs_human\": \"yes\"}",
+      "{\"category\": \"billing\", \"priority\": 1, \"summary\": \"User was billed after cancelling the plan.\", \"needs_human\": true}"
+    ],
+    "f04": [
+      "[{\"category\": \"praise\", \"priority\": 4, \"summary\": \"User likes the new dashboard.\", \"needs_human\": false}]",
+      "{\"category\": \"praise\", \"priority\": 4, \"summary\": \"User likes the new dashboard.\", \"needs_human\": false}"
+    ],
+    "f05": [
+      "{\"category\": \"feature_request\", \"priority\": 3, \"summary\": \"User reports the app is sometimes slow.\", \"needs_human\": false}"
+    ]
+  }
+}

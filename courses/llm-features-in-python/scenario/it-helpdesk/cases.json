@@ -1,0 +1,8 @@
+[
+  {"id": "h01", "ticket": "My laptop LT-204 won't turn on.", "expected": {"category": "hardware", "needs_human": true}},
+  {"id": "h02", "ticket": "VPN keeps disconnecting every 10 minutes.", "expected": {"category": "network", "needs_human": false}},
+  {"id": "h03", "ticket": "I need access to the finance shared drive.", "expected": {"category": "access", "needs_human": true}},
+  {"id": "h04", "ticket": "Excel crashes when I open big files.", "expected": {"category": "software", "needs_human": false}},
+  {"id": "h05", "ticket": "The printer on floor 3 (PR-301) is jammed.", "expected": {"category": "hardware", "needs_human": false}},
+  {"id": "h06", "ticket": "Can you install Photoshop on my machine?", "expected": {"category": "software", "needs_human": true}}
+]

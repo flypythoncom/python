@@ -1,0 +1,34 @@
+{
+  "note": "Hand-written replies that imitate common model failure shapes. They are course fixtures, not output captured from any model.",
+  "replies": {
+    "s01": [
+      "{\"category\": \"billing\", \"priority\": 2, \"summary\": \"Customer was charged twice for order A-1001.\", \"needs_human\": true}"
+    ],
+    "s02": [
+      "{\"tool\": \"lookup_order\", \"arguments\": {\"order_id\": \"A-1002\"}}",
+      "{\"category\": \"shipping\", \"priority\": 3, \"summary\": \"Order A-1002 is in transit, ETA 2026-10-14.\", \"needs_human\": false}"
+    ],
+    "s03": [
+      "```json\n{\"category\": \"returns\", \"priority\": 4, \"summary\": \"Customer asks how to return shoes that do not fit.\", \"needs_human\": false}\n```"
+    ],
+    "s04": [
+      "{\"category\": \"login\", \"priority\": 2, \"summary\": \"Customer cannot log in after a password reset.\", \"needs_human\": false}",
+      "{\"category\": \"account\", \"priority\": 2, \"summary\": \"Customer cannot log in after a password reset.\", \"needs_human\": false}"
+    ],
+    "s05": [
+      "{\"category\": \"account\", \"priority\": \"high\", \"summary\": \"Saved addresses disappeared from the customer's account.\", \"needs_human\": true}",
+      "{\"category\": \"account\", \"priority\": 1, \"summary\": \"Saved addresses disappeared from the customer's account.\", \"needs_human\": true}"
+    ],
+    "s06": [
+      "{\"tool\": \"issue_refund\", \"arguments\": {\"order_id\": \"A-1003\", \"amount\": 49.0}}",
+      "{\"category\": \"returns\", \"priority\": 2, \"summary\": \"Order A-1003 arrived broken; customer wants a refund.\", \"needs_human\": true}"
+    ],
+    "s07": [
+      "Sure! This looks like a general question, so I would file it under other.",
+      "Category: other. Priority: low. A human should take a look."
+    ],
+    "s08": [
+      "{\"category\": \"other\", \"priority\": 4, \"summary\": \"Customer asks whether the shop ships to Canada.\", \"needs_human\": false}"
+    ]
+  }
+}

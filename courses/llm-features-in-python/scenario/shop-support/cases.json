@@ -1,0 +1,10 @@
+[
+  {"id": "s01", "ticket": "I was charged twice for order A-1001. Please fix this.", "expected": {"category": "billing", "needs_human": true}},
+  {"id": "s02", "ticket": "Where is my package? Order A-1002.", "expected": {"category": "shipping", "needs_human": false}},
+  {"id": "s03", "ticket": "How do I return shoes that don't fit?", "expected": {"category": "returns", "needs_human": false}},
+  {"id": "s04", "ticket": "I can't log in after resetting my password.", "expected": {"category": "account", "needs_human": false}},
+  {"id": "s05", "ticket": "Your app deleted all my saved addresses!!!", "expected": {"category": "account", "needs_human": true}},
+  {"id": "s06", "ticket": "Order A-1003 arrived broken. I want my money back.", "expected": {"category": "returns", "needs_human": true}},
+  {"id": "s07", "ticket": "asdf ??? help", "expected": {"category": "other", "needs_human": true}},
+  {"id": "s08", "ticket": "Do you ship to Canada?", "expected": {"category": "shipping", "needs_human": false}}
+]

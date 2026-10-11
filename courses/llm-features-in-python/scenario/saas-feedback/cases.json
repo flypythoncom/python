@@ -1,0 +1,7 @@
+[
+  {"id": "f01", "ticket": "The export button does nothing on Safari.", "expected": {"category": "bug", "needs_human": false}},
+  {"id": "f02", "ticket": "Please add a dark mode!", "expected": {"category": "feature_request", "needs_human": false}},
+  {"id": "f03", "ticket": "I was billed again after cancelling my plan.", "expected": {"category": "billing", "needs_human": true}},
+  {"id": "f04", "ticket": "Love the new dashboard, great work.", "expected": {"category": "praise", "needs_human": false}},
+  {"id": "f05", "ticket": "The app is slow sometimes.", "expected": {"category": "bug", "needs_human": false}}
+]

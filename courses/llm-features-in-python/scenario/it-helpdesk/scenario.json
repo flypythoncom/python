@@ -1,0 +1,9 @@
+{
+  "name": "it-helpdesk",
+  "description": "An internal IT helpdesk. The model may look up a device by asset tag before answering.",
+  "categories": ["hardware", "software", "network", "access", "other"],
+  "min_accuracy": 0.8,
+  "tools": {
+    "lookup_device": {"data": "devices.json", "parameters": {"asset_tag": "str"}}
+  }
+}

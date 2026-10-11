@@ -1,0 +1,27 @@
+{
+  "note": "Hand-written replies that imitate common model failure shapes. They are course fixtures, not output captured from any model.",
+  "replies": {
+    "h01": [
+      "{\"tool\": \"lookup_device\", \"arguments\": {\"asset_tag\": \"LT-204\"}}",
+      "{\"category\": \"hardware\", \"priority\": 2, \"summary\": \"Laptop LT-204 will not power on; still under warranty.\", \"needs_human\": true}"
+    ],
+    "h02": [
+      "{\"category\": \"network\", \"priority\": 3, \"summary\": \"VPN disconnects about every 10 minutes.\", \"needs_human\": false}"
+    ],
+    "h03": [
+      "```\n{\"category\": \"access\", \"priority\": 3, \"summary\": \"Employee requests access to the finance shared drive.\", \"needs_human\": true}\n```"
+    ],
+    "h04": [
+      "{\"category\": \"software\", \"priority\": 3, \"summary\": \"Excel crashes when opening large files.\", \"needs_human\": false, \"confidence\": 0.9}",
+      "{\"category\": \"software\", \"priority\": 3, \"summary\": \"Excel crashes when opening large files.\", \"needs_human\": false}"
+    ],
+    "h05": [
+      "{\"tool\": \"lookup_device\", \"arguments\": {\"asset_tag\": 301}}",
+      "{\"category\": \"hardware\", \"priority\": 3, \"summary\": \"Printer PR-301 on floor 3 is jammed.\", \"needs_human\": false}"
+    ],
+    "h06": [
+      "{\"category\": \"software\", \"priority\": 4, \"summary\": \"The employee is asking whether someone from IT could install Adobe Photoshop on their work machine, which may need a license approval first.\", \"needs_human\": true}",
+      "{\"category\": \"software\", \"priority\": 4, \"summary\": \"An employee would like Adobe Photoshop installed on their work computer and is asking IT to do it, pending a license check.\", \"needs_human\": true}"
+    ]
+  }
+}

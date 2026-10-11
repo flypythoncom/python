@@ -1,0 +1,5 @@
+{
+  "A-1001": {"status": "delivered", "total": 59.0, "charges": 2},
+  "A-1002": {"status": "in transit", "carrier_eta": "2026-10-14"},
+  "A-1003": {"status": "delivered", "total": 49.0, "charges": 1}
+}
