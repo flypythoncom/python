@@ -55,6 +55,20 @@ class TestMCPServer(unittest.TestCase):
         names = {t["name"] for t in tools}
         self.assertEqual(names, {"calculate_sum", "risky_operation"})
 
+    def test_tools_call_rejects_non_string_tool_name(self) -> None:
+        for invalid_name in ([], {}, None, True, False, 1, 1.5):
+            with self.subTest(invalid_name=invalid_name):
+                resp = self.server.handle_request({
+                    "jsonrpc": "2.0",
+                    "id": 99,
+                    "method": "tools/call",
+                    "params": {"name": invalid_name, "arguments": {}},
+                })
+                self.assertEqual(resp["jsonrpc"], "2.0")
+                self.assertEqual(resp["id"], 99)
+                self.assertEqual(resp["error"]["code"], -32602)
+                self.assertIn("tool name must be a string", resp["error"]["message"])
+
     def test_tools_call_success(self) -> None:
         resp = self.server.handle_request({
             "jsonrpc": "2.0",

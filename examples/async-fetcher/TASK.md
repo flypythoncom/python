@@ -4,6 +4,7 @@ Change only `starter/fetcher.py`.
 
 - Implement `async_batch_fetch(items: list[dict], fetch_fn: Callable[[dict], Awaitable[dict]], max_concurrency: int = 3, max_retries: int = 3) -> list[dict]`.
 - Concurrency bounding:
+  - `max_concurrency` must be a positive integer; reject zero, negative values, booleans, and non-integers with `ValueError` before starting any tasks, even for empty input.
   - At most `max_concurrency` calls to `fetch_fn` may be executing concurrently at any moment.
 - Retry & Backoff contract:
   - `fetch_fn` returns `{"status_code": int, "data": ...}` or raises an exception.

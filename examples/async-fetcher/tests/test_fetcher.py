@@ -7,6 +7,33 @@ from fetcher import async_batch_fetch
 
 
 class TestAsyncBatchFetcher(unittest.TestCase):
+    def test_rejects_invalid_concurrency(self) -> None:
+        async def mock_fetch(item: dict) -> dict:
+            return {"status_code": 200, "data": item}
+
+        async def run_invalid(value: object) -> None:
+            # Bound the regression test itself: Semaphore(0) used to hang.
+            await asyncio.wait_for(
+                async_batch_fetch([{"id": 1}], mock_fetch, max_concurrency=value),
+                timeout=1,
+            )
+
+        for invalid in (0, -1, True, False, 1.5, "2", None, float("nan"), float("inf")):
+            with self.subTest(max_concurrency=invalid):
+                with self.assertRaisesRegex(ValueError, "max_concurrency must be a positive integer"):
+                    asyncio.run(run_invalid(invalid))
+                with self.assertRaisesRegex(ValueError, "max_concurrency must be a positive integer"):
+                    asyncio.run(async_batch_fetch([], mock_fetch, max_concurrency=invalid))
+
+    def test_single_concurrency_and_empty_input(self) -> None:
+        async def mock_fetch(item: dict) -> dict:
+            return {"status_code": 200, "data": item["id"]}
+
+        self.assertEqual(asyncio.run(async_batch_fetch([], mock_fetch, max_concurrency=1)), [])
+        results = asyncio.run(async_batch_fetch([{"id": 1}], mock_fetch, max_concurrency=1))
+        self.assertTrue(results[0]["success"])
+        self.assertEqual(results[0]["data"], 1)
+
     def test_bounded_concurrency(self) -> None:
         active_concurrency = 0
         peak_concurrency = 0

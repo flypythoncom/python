@@ -74,6 +74,8 @@ async def async_batch_fetch(
     max_concurrency: int = 3,
     max_retries: int = 3,
 ) -> list[dict[str, Any]]:
+    if isinstance(max_concurrency, bool) or not isinstance(max_concurrency, int) or max_concurrency < 1:
+        raise ValueError("max_concurrency must be a positive integer")
     semaphore = asyncio.Semaphore(max_concurrency)
     async with asyncio.TaskGroup() as group:
         tasks = [

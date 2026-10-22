@@ -108,6 +108,15 @@ class MCPServer:
                 }
 
             tool_name = params["name"]
+            if not isinstance(tool_name, str):
+                return {
+                    "jsonrpc": "2.0",
+                    "id": req_id,
+                    "error": {
+                        "code": -32602,
+                        "message": "Invalid params: tool name must be a string",
+                    },
+                }
             if tool_name not in self.tools:
                 return {
                     "jsonrpc": "2.0",
