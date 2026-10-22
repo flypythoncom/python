@@ -15,6 +15,7 @@ Change only `starter/mcp_server.py`.
 - Supported methods:
   - `"tools/list"`: returns `{"result": {"tools": [{"name": ..., "description": ..., "inputSchema": ...}, ...]}}`.
   - `"tools/call"`: accepts `params: {"name": ..., "arguments": ..., "inputResponses": {...}?}` and calls the handler as `handler(arguments, inputResponses)`.
+    - If the tool name is missing or is not a string (including lists, objects, booleans, numbers, and null), return JSON-RPC error `-32602` (Invalid params), preserving the request ID.
     - If tool not registered: returns `{"result": {"isError": True, "content": [{"type": "text", "text": "Tool not found"}]}}`.
     - If required argument missing: returns `{"result": {"isError": True, "content": [{"type": "text", "text": "Missing required argument: <arg>"}]}}`.
     - If the handler raises `InputRequired(requests)`: returns `{"result": {"resultType": "input_required", "requests": <requests>, "content": [{"type": "text", "text": "Additional client input is required before this tool can finish."}]}}`. The client retries the same call with answers in `params.inputResponses`.

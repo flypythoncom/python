@@ -4,6 +4,7 @@
 
 - 实现 `async_batch_fetch(items: list[dict], fetch_fn: Callable[[dict], Awaitable[dict]], max_concurrency: int = 3, max_retries: int = 3) -> list[dict]`。
 - 并发控制要求：
+  - `max_concurrency` 必须是正整数；零、负数、布尔值及非整数必须在启动任何任务之前抛出 `ValueError`，即使输入为空也不例外。
   - 任何时刻并发执行 `fetch_fn` 的协程数量不得超过 `max_concurrency`。
 - 重试与退避策略：
   - `fetch_fn` 返回 `{"status_code": int, "data": ...}` 或抛出异常。

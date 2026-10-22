@@ -1,0 +1,3 @@
+# Stable LF checkouts keep generated JSON, source checksums and solution hashes
+# identical across contributor platforms, independent of core.autocrlf.
+* text=auto eol=lf

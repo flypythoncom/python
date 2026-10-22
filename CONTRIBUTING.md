@@ -84,6 +84,18 @@ and path folders that ship their own `requirements.txt` must pin exactly the
 versions in `requirements-dev.lock.txt` (`tests/test_dependency_pins.py`), so
 CI tests the stack learners install.
 
+With `uv` installed, `make setup` is an alternative to the manual setup above:
+it uses `.python-version` and synchronizes the exact dev lock into `.venv`.
+Then use `make check PYTHON=.venv/bin/python`; Make otherwise defaults to
+`python3`. The Make aliases assume a POSIX shell (Windows contributors can use
+the direct Python commands below or WSL). Run from this repository or use
+`make -C path/to/python`, not `make -f path/to/Makefile` from another directory.
+
+`make generated-check` checks derived content without rewriting it, including
+course solution hashes. `make generate` regenerates exports, README indexes,
+the content manifest and solution hashes in order; `make all` then runs checks.
+Both preserve ordering even when invoked with `make -j`.
+
 After changing catalog sources, regenerate the public export:
 
 ```bash
@@ -101,6 +113,7 @@ python tools/validate_catalog.py
 python tools/export_catalog.py --check --target both
 python tools/render_readmes.py --check
 python tools/build_content_manifest.py --check
+python tools/build_solution_hashes.py --check
 python tools/verify_examples.py
 python tools/verify_courses.py
 python tools/verify_paths.py

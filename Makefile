@@ -1,4 +1,11 @@
-.PHONY: help check export render manifest test verify courses paths lint lock lock-check all
+# Recipes use repository-relative paths. Like Magpie's Makefile, fail closed
+# when invoked with `make -f path/to/Makefile` from an unrelated directory.
+ifeq ($(and $(wildcard pyproject.toml),$(wildcard tools/validate_catalog.py),$(wildcard catalog/catalog.yml)),)
+  $(error run make in the Python repository (make -C path/to/python))
+endif
+
+.DEFAULT_GOAL := help
+.PHONY: help setup check generated-check generate export render manifest solutions test verify courses paths lint lock lock-check all
 
 PYTHON ?= python3
 UV ?= uv
@@ -15,10 +22,14 @@ endef
 
 help:
 	@echo "FlyPython Development Workflow:"
-	@echo "  make check      - Run the same checks as CI: lint, tests, catalog, radar, export, readme, manifest, example, course, and path checks"
+	@echo "  make setup      - Create .venv using .python-version and install locked dev dependencies (requires uv)"
+	@echo "  make check      - Run CI checks (use PYTHON=.venv/bin/python after setup)"
+	@echo "  make generated-check - Check catalog, exports, READMEs, manifest, and solution hashes without rewriting"
+	@echo "  make generate   - Regenerate all derived content in dependency order"
 	@echo "  make export     - Regenerate catalog.json and radar.json"
 	@echo "  make render     - Regenerate root and catalog README indexes plus the Radar table"
 	@echo "  make manifest   - Regenerate content-manifest.json"
+	@echo "  make solutions  - Regenerate course-solutions.json"
 	@echo "  make lint       - Run ruff"
 	@echo "  make test       - Run pytest test suite"
 	@echo "  make verify     - Verify all runnable examples"
@@ -28,14 +39,29 @@ help:
 	@echo "  make lock-check - Fail if the lock files no longer match pyproject.toml"
 	@echo "  make all        - Regenerate all exports and run all checks and tests"
 
-check: lint test
+setup:
+	$(UV) venv --python "$$(cat .python-version)" .venv
+	$(UV) pip sync --python .venv/bin/python requirements-dev.lock.txt
+
+check: lint test generated-check
+	$(PYTHON) tools/verify_examples.py
+	$(PYTHON) tools/verify_courses.py
+	$(PYTHON) tools/verify_paths.py
+
+generated-check:
 	$(PYTHON) tools/validate_catalog.py
 	$(PYTHON) tools/export_catalog.py --check --target both
 	$(PYTHON) tools/render_readmes.py --check
 	$(PYTHON) tools/build_content_manifest.py --check
-	$(PYTHON) tools/verify_examples.py
-	$(PYTHON) tools/verify_courses.py
-	$(PYTHON) tools/verify_paths.py
+	$(PYTHON) tools/build_solution_hashes.py --check
+
+# Keep writers sequential even under make -j: README/manifest checks must not
+# race against a producer. No automatic commit, content-pin update or deploy.
+generate:
+	$(MAKE) export
+	$(MAKE) render
+	$(MAKE) manifest
+	$(MAKE) solutions
 
 export:
 	$(PYTHON) tools/export_catalog.py --target both
@@ -45,6 +71,9 @@ render:
 
 manifest:
 	$(PYTHON) tools/build_content_manifest.py
+
+solutions:
+	$(PYTHON) tools/build_solution_hashes.py
 
 lint:
 	$(PYTHON) -m ruff check .
@@ -72,4 +101,5 @@ lock-check:
 	@git diff --exit-code requirements.lock.txt requirements-dev.lock.txt || \
 		{ echo "lock files drifted from pyproject.toml — commit the regenerated files"; exit 1; }
 
-all: export render manifest check
+all: generate
+	$(MAKE) check

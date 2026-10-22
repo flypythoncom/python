@@ -15,6 +15,7 @@
 - 支持的核心方法：
   - `"tools/list"`：返回 `{"result": {"tools": [{"name": ..., "description": ..., "inputSchema": ...}, ...]}}`。
   - `"tools/call"`：接收 `params: {"name": ..., "arguments": ..., "inputResponses": {...}?}`，并以 `handler(arguments, inputResponses)` 调用工具。
+    - 工具名缺失或不是字符串（包括列表、对象、布尔值、数字和 null）时，返回 JSON-RPC 错误码 `-32602`（Invalid params），并保留请求 ID。
     - 工具未找到：返回 `{"result": {"isError": True, "content": [{"type": "text", "text": "Tool not found"}]}}`。
     - 缺少 schema 中声明的必填参数：返回 `{"result": {"isError": True, "content": [{"type": "text", "text": "Missing required argument: <arg>"}]}}`。
     - 工具抛出 `InputRequired(requests)`：返回 `{"result": {"resultType": "input_required", "requests": <requests>, "content": [{"type": "text", "text": "Additional client input is required before this tool can finish."}]}}`。客户端携带 `params.inputResponses` 重试同一请求。
