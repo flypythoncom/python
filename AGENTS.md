@@ -76,6 +76,16 @@ reviewed catalog data, and stable public JSON contracts.
 - After merge, verify the immutable raw `catalog.json`. Verify flypython.com only
   after a separate, deliberate consumer-version update.
 
+## Engineering entry points
+
+- `make help` lists the existing validation and generation tools.
+- `make setup` installs the locked dev environment; use
+  `make check PYTHON=.venv/bin/python` afterwards.
+- `make generated-check` is read-only; `make generate` rewrites derived content
+  in dependency order. Neither publishes or changes the website content pin.
+- Keep agent rules here; `CLAUDE.md` imports this file rather than copying it.
+- Engineering configuration rationale is in `docs/ENGINEERING_CONFIG.md`.
+
 ## Review priorities
 
 1. Content accuracy and source quality.

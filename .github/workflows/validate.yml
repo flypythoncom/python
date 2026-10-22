@@ -1,6 +1,7 @@
 name: Validate
 
 on:
+  workflow_dispatch:
   pull_request:
   push:
     branches:
@@ -11,7 +12,8 @@ permissions:
 
 concurrency:
   group: validate-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  # Preserve a complete default-branch validation; superseded PR runs can stop.
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
 
 jobs:
   # Lowest and latest supported CPython; the universal lock already resolves
