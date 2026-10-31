@@ -4,9 +4,9 @@ type: guide
 title: 将 Python MCP 服务端迁移到 2026-07-28 规范
 summary: 面向 2026-07-28 无状态规范更新 Python MCP 服务端，移除 initialize 握手、采用 input_required 多轮交互、放弃废弃特性并强化授权。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
-reviewed_on: 2026-09-06
+reviewed_on: 2026-10-31
 ---
 
 # 将 Python MCP 服务端迁移到 2026-07-28 规范
@@ -30,8 +30,9 @@ Foundation 管理，Python SDK 已随规范同步发布。
   返回带 `resultType: "input_required"` 的结果以及待回答的请求；客户端携带
   `inputResponses` 重试原始调用。
 - **按请求传递版本与路由头（SEP-2243）。** `MCP-Protocol-Version` 随每个请求传递
-  （值为 `2026-07-28`），Streamable HTTP 请求必须携带 `Mcp-Method` 和 `Mcp-Name`，
-  让基础设施无需解析 JSON 请求体即可路由。
+  （值为 `2026-07-28`）。Streamable HTTP 请求必须携带 `Mcp-Method`；仅
+  `tools/call`、`resources/read` 和 `prompts/get` 需要 `Mcp-Name`，其值对应
+  请求体中的名称或 URI。
 - **授权强化。** 授权服务器必须按 RFC 9207 返回 `iss` 参数（SEP-2468），客户端在
   动态注册时必须设置 `application_type`（SEP-837），客户端凭据与发行方绑定——绝不
   能跨授权服务器复用（SEP-2352）。
@@ -59,8 +60,9 @@ Foundation 管理，Python SDK 已随规范同步发布。
    用，但新代码不应再依赖它们。
 5. **升级官方 Python SDK。** TypeScript、Python、Go 和 C# SDK 已随规范发布；从 RC
    到正式版大约有十周窗口，更早的 SDK 版本早于这些破坏性变更。
-6. **更新传输层。** 在一年过渡期内下线传统 HTTP+SSE 传输，并在 Streamable HTTP 上
-   输出必需的 `Mcp-Method` 与 `Mcp-Name` 头。
+6. **更新传输层。** 在一年过渡期内下线传统 HTTP+SSE 传输；Streamable HTTP 的每个
+   POST 都需携带 `Mcp-Method`，且 `tools/call`、`resources/read` 和 `prompts/get`
+   请求还需携带 `Mcp-Name`。
 7. **检查授权链路。** 按 RFC 9207 校验 `iss`，注册时设置 `application_type`，每个
    发行方使用独立凭据。
 8. **采用缓存元数据。** 为列表响应标注 `ttlMs` 与 `cacheScope`，让无状态基础设施
