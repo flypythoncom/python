@@ -2258,23 +2258,23 @@
     {
       "id": "mcp-2026-07-28-migration",
       "type": "guide",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-06",
+      "reviewed_on": "2026-10-31",
       "locales": [
         {
           "lang": "en-US",
           "path": "guides/mcp/migrate-2026-07-28.md",
           "title": "Migrate a Python MCP server to the 2026-07-28 specification",
           "summary": "Update a Python MCP server for the stateless 2026-07-28 specification by removing the initialize handshake, adopting the input_required round-trip, dropping deprecated features, and hardening authorization.",
-          "sha256": "063e285acdebc4854245cbdc2951060a1b38f0fdb814692c6bdc3cd0229d2316"
+          "sha256": "118d2eb5e13fec380e8ba582bd9f5643fd2218a9c9dba8280a7480d6adccb576"
         },
         {
           "lang": "zh-CN",
           "path": "guides/mcp/migrate-2026-07-28_cn.md",
           "title": "将 Python MCP 服务端迁移到 2026-07-28 规范",
           "summary": "面向 2026-07-28 无状态规范更新 Python MCP 服务端，移除 initialize 握手、采用 input_required 多轮交互、放弃废弃特性并强化授权。",
-          "sha256": "cc5360996f1d45cd8155dd1a0cd7a6c418d988247c54ba31ca0d5efaa1e81c8f"
+          "sha256": "765c9a58237dea3526f152e53f5b6f48e41bf12546b8949ffd8c40bfb2eac079"
         }
       ]
     },
