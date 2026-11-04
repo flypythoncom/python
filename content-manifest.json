@@ -211,7 +211,7 @@
     {
       "id": "course-claude-code-l01",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
       "reviewed_on": "2026-11-04",
       "locales": [
@@ -220,14 +220,14 @@
           "path": "courses/hands-on-python-with-claude-code/lessons/L01.md",
           "title": "Lesson 1: Set up Claude Code, install the FlyPython Skill, fetch the course",
           "summary": "Get Claude Code running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "a036d4d0bfd9480b78fd45436ac5ff9b00fb7e1bef3b2e4323f55a63c92e42e0"
+          "sha256": "55e4db16a6d16aa2e399fdc7f40420a1c394d7f60bae91f1b42e683f2aadf90a"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/lessons/L01_cn.md",
           "title": "第 1 课：装好 Claude Code、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Claude Code 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "905c5b7f1213f280bc9a33315ff1d409b2a2cc2c0573acf45d9ee7a41077e8c9"
+          "sha256": "11b353ef3b4535e1ceaba803dd16487602263c22c84a5f40bf6dc14849e70aed"
         }
       ]
     },
@@ -349,7 +349,7 @@
     {
       "id": "course-codex-cli-l01",
       "type": "course",
-      "content_version": 4,
+      "content_version": 5,
       "status": "reviewed",
       "reviewed_on": "2026-11-04",
       "locales": [
@@ -358,14 +358,14 @@
           "path": "courses/hands-on-with-openai-codex/lessons/L01.md",
           "title": "Lesson 1: Set up the Codex app, install the FlyPython Skill, fetch the course",
           "summary": "Get the Codex app running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "5728ef63d565d56d7c13c17b8f0e1d17f8adf766e7a7cfda5a92ce523e208e68"
+          "sha256": "df128789e9d7fdec752ade2dfab80757f6e40b76ca7cf4a46dc689ca63723273"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/lessons/L01_cn.md",
           "title": "第 1 课：装好 the Codex app、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 the Codex app 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "66794c6306ec46f22b1adbcac7ffe35ca14d220316879b510f5d6a15bb548410"
+          "sha256": "8253df825eab2768c8a70322a6d48d41ee370148879f8294d396dce22fd61e3c"
         }
       ]
     },
@@ -487,7 +487,7 @@
     {
       "id": "course-cursor-l01",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
       "reviewed_on": "2026-11-04",
       "locales": [
@@ -496,14 +496,14 @@
           "path": "courses/hands-on-with-cursor/lessons/L01.md",
           "title": "Lesson 1: Set up Cursor, install the FlyPython Skill, fetch the course",
           "summary": "Get Cursor running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "1d99c229a40e82e4eab86324af45cdc19e1cc07ce343978122d02b695e79c653"
+          "sha256": "042274be016406d6fb6c1df0757b2898904b7052c89c4833cb5b3659884f5be8"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/lessons/L01_cn.md",
           "title": "第 1 课：装好 Cursor、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Cursor 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "298bc1497bfa810ecdb0aadf5df6e597fb7bb2a7c7dd387d3e7d0f7a25461379"
+          "sha256": "84433a77faa23b29e3d87ca408654c4e5b9842e4089028d1dda91480a348b2cb"
         }
       ]
     },
@@ -1039,7 +1039,7 @@
     {
       "id": "course-deepseek-harness-l01",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
       "reviewed_on": "2026-11-04",
       "locales": [
@@ -1048,14 +1048,14 @@
           "path": "courses/hands-on-with-deepseek-harness/lessons/L01.md",
           "title": "Lesson 1: Set up DeepSeek Harness, install the FlyPython Skill, fetch the course",
           "summary": "Get DeepSeek Harness running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "70ed2156deb6179f1006967becc23c67fdfef03b56d0f7fb742239b0fbcc3cc0"
+          "sha256": "04af9cbe95c4e9685d09ab6dce05b74e8b4ec86936a1fdd850878777aac519d8"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L01_cn.md",
           "title": "第 1 课：装好 DeepSeek Harness、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 DeepSeek Harness 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "1c6fdc233cb4f1e0c3ece502fc1507ef7d62b8184ef4c41df2778c848bbc6bc3"
+          "sha256": "5a60b6db927d296433c1172972d31753f4dd73ac7009d38e41977b9b967f9d7c"
         }
       ]
     },
@@ -1177,23 +1177,23 @@
     {
       "id": "course-github-copilot-l01",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-10-11",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-github-copilot/lessons/L01.md",
           "title": "Lesson 1: Set up Copilot in VS Code, install the FlyPython Skill, fetch the course",
           "summary": "Get GitHub Copilot running in VS Code with the Agent role and Manual permissions, optionally install the FlyPython Skill, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "c8da93c48af23c9e9bfe8d6c1c750be357a21511e42d5751046697fd6b6ba998"
+          "sha256": "285f3cfb48a97e82dfbad2a191de45e07cfcff1978b318ba01a8d0a0a19ee2e2"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-github-copilot/lessons/L01_cn.md",
           "title": "第 1 课：在 VS Code 里装好 Copilot、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "让 GitHub Copilot 在 VS Code 里以 Agent 角色、Manual permissions 跑起来，（可选）装好 FlyPython Skill，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "6fc5c71d4c2b3c0953be4e4972e51a407524198a6d1b9c18536b0f6bd5d740b3"
+          "sha256": "b2df5d3cbcf56b0e1852b89117fc0d4173b27312dbb61294aaf2d13257d6bb5a"
         }
       ]
     },
@@ -1315,7 +1315,7 @@
     {
       "id": "course-kimi-code-l01",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
       "reviewed_on": "2026-11-04",
       "locales": [
@@ -1324,14 +1324,14 @@
           "path": "courses/hands-on-with-kimi-code/lessons/L01.md",
           "title": "Lesson 1: Set up Kimi Code, install the FlyPython Skill, fetch the course",
           "summary": "Get Kimi Code running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "d31b6b75d7087ef3afbc7b12b89c1637f72b24182f7de8d49c8fc300ed6fd361"
+          "sha256": "23b85c7aaf80babb1f5bfb17a0af4bf417a6900235159db8ad5e504fec51281a"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/lessons/L01_cn.md",
           "title": "第 1 课：装好 Kimi Code、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Kimi Code 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "f4305ff5ae8d8cc89b0b0fb3672eaf402cf4273a7aad160e3e85066f5475a369"
+          "sha256": "0ba99ed27c0b360804bc0d4766d4a0cfc7e014f067074afebe2295cca8edd75e"
         }
       ]
     },
@@ -2005,7 +2005,7 @@
     {
       "id": "course-zcode-l01",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
       "reviewed_on": "2026-11-04",
       "locales": [
@@ -2014,14 +2014,14 @@
           "path": "courses/hands-on-with-zcode/lessons/L01.md",
           "title": "Lesson 1: Set up ZCode, install the FlyPython Skill, fetch the course",
           "summary": "Get ZCode running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "30af915aa95d866709d3cb21526d8d402d9b1e8f57659b1841a0e3665c038f55"
+          "sha256": "f650e6593f5322a117dd3a14294f4293e667a04ed98982b744c95b54311e6b2b"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/lessons/L01_cn.md",
           "title": "第 1 课：装好 ZCode、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 ZCode 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "db097d7a74a989b4781c1272758d10f55e9532bb3971e7a037a58084dc57605d"
+          "sha256": "0162553953d5e4622737daa475a4d465a1c5d83747299dee37e34b79c7322212"
         }
       ]
     },

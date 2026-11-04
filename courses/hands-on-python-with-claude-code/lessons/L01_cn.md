@@ -4,7 +4,7 @@ type: course
 title: "第 1 课：装好 Claude Code、装上 FlyPython Skill、让 Agent 取回课程"
 summary: "先把 Claude Code 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。"
 lang: zh-CN
-content_version: 3
+content_version: 4
 status: reviewed
 reviewed_on: 2026-11-04
 hints:
@@ -141,5 +141,5 @@ python verify.py --attest l01
 
 ## 预期证据
 
-两条命令的输出记录，加上你对三个问题的回答。保存好，第 4 课会再次
+默认命令与确认命令两条输出记录，加上你对三个问题的回答。保存好，第 4 课会再次
 用到。

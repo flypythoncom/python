@@ -4,9 +4,9 @@ type: course
 title: "第 1 课：在 VS Code 里装好 Copilot、装上 FlyPython Skill、让 Agent 取回课程"
 summary: "让 GitHub Copilot 在 VS Code 里以 Agent 角色、Manual permissions 跑起来，（可选）装好 FlyPython Skill，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。"
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
-reviewed_on: 2026-10-11
+reviewed_on: 2026-11-04
 hints:
   - title: "本检查点考察什么"
     body: "先复现失败再动手修：`python verify.py` 必须把 l03 和 l04 显示为 `[open]`（`starter --expect-failure` 会打印点名测试）。在 Copilot 里，Agent 角色负责干活——但命令仍然是证据。"
@@ -144,5 +144,5 @@ Agent 确认，而不是让它修。
 
 ## 预期证据
 
-默认命令的完整输出记录，加你的三个答案。保留好——第 4 课还会
+默认命令与确认命令两条输出记录，加你的三个答案。保留好——第 4 课还会
 用到。

@@ -4,7 +4,7 @@ type: course
 title: "第 1 课：装好 ZCode、装上 FlyPython Skill、让 Agent 取回课程"
 summary: "先把 ZCode 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。"
 lang: zh-CN
-content_version: 3
+content_version: 4
 status: reviewed
 reviewed_on: 2026-11-04
 hints:
@@ -13,7 +13,7 @@ hints:
   - title: "工作区，不是聊天框"
     body: "ZCode 是桌面原生工作区：文件、任务、规划、执行、验证和 Git 状态同在一处。用文件引用把 Agent 精确指到文件，不要用文字描述。"
   - title: "完成的标志"
-    body: "你能说出套件证明了哪九种行为、为什么 starter 伪造不出来。`python verify.py` 随即显示本检查点的认领码。"
+    body: "你能说出套件证明了哪九种行为、为什么 starter 伪造不出来。`python verify.py --attest l01` 随即显示本检查点的认领码。"
 ---
 
 # 第 1 课：装好 ZCode、装上 FlyPython Skill、让 Agent 取回课程
@@ -142,5 +142,5 @@ python verify.py --attest l01
 
 ## 预期证据
 
-默认命令的完整输出记录，加你的三个答案。保留好——第 4 课还会
+默认命令与确认命令两条输出记录，加你的三个答案。保留好——第 4 课还会
 用到。

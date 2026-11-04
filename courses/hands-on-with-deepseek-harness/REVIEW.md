@@ -40,6 +40,19 @@
   deviations from `COURSE.md` here — including the exact `cordis.yml` used
   and the model plugin configured.
 
+## 2026-11-04 — claim-instruction accuracy fix (mechanical re-verify)
+
+- Lesson and hint text corrected to match the shipped verifier: the default
+  `python verify.py` prints no claim code for reflection checkpoints
+  (l01/l02/l05); the code appears only after the explicit
+  `--attest ID` flag for a completed reflection. L02/L05 checkpoints now
+  name the command; L01 hint 3 no longer promises a code from the default
+  run; evidence sections keep both command transcripts.
+- Verification: clean-copy runs of `verify.py check --json` with partial
+  and full `--attest` sets reproduced the documented states; repository
+  gates (`make check`) green at this change. No live DeepSeek Harness agent run —
+  the pending live run-through below still stands.
+
 ## Deviation log
 
 (none yet — no live run has happened)
