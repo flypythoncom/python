@@ -4,9 +4,9 @@ type: course
 title: "第 5 课：把工作流带回自己的项目"
 summary: "模式会泛化：契约先行、只读勘察、规划道拆步、有界编辑、书面验证——在你真正拥有的脚本上跑同一套闭环。"
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-11-04
 hints:
   - title: "本检查点考察什么"
     body: "自我报告：你确认把这套闭环用到了自己的项目上。证据是你的契约、你审过的 diff、你的验证记录——不是我们查得了的码。"
@@ -58,7 +58,8 @@ hints:
 
 ## 检查点
 
-本检查点自我报告：能回答下面三题时即可认领：
+本检查点自我报告。能回答下面三题时，用
+`python verify.py --attest l05` 认领：
 
 1. 你的契约里「完成 =」命令是什么？
 2. 你在哪处编辑上顶回去过？

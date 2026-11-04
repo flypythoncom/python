@@ -4,9 +4,9 @@ type: course
 title: "第 5 课：把这套方法带回你自己的项目"
 summary: 迁移工作流——而不是代码——到你拥有的一个脚本上：契约、错误隔离、舍入、原子写入，以及一份诚实的验证记录。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
-reviewed_on: 2026-09-12
+reviewed_on: 2026-11-04
 hints:
   - title: "这个检查点考什么"
     body: "考你能不能把这套工作流——而不是代码——搬到你自己一个脚本上：任务契约、隔离运行、诚实记录。"
@@ -76,7 +76,7 @@ hints:
 
 你的项目现在拥有：一份书面契约、一个曾经失败现在通过的测试、一条
 能同时演示两者的命令、一份三行验证记录。这就是整门课程压缩进你
-代码库的样子。
+代码库的样子。用 `python verify.py --attest l05` 认领本检查点。
 
 ## 预期证据
 
