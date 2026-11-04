@@ -4,9 +4,9 @@ type: course
 title: "第 1 课：装好 the Codex app、装上 FlyPython Skill、让 Agent 取回课程"
 summary: "先把 the Codex app 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。"
 lang: zh-CN
-content_version: 3
+content_version: 4
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-11-04
 hints:
   - title: "本检查点考察什么"
     body: "先复现失败再动手修：`python verify.py` 必须把 l03 和 l04 显示为 `[open]`（`starter --expect-failure` 会打印点名测试）。在 Codex 应用里，线程是干活的地方——但命令仍然是证据。"
@@ -126,8 +126,17 @@ python verify.py starter --expect-failure
    为什么这是成功条件而不是报错？
 3. 在线程的哪里能看到 Agent 执行过的命令——又是谁批准的？
 
-本检查点的认领码已经在默认命令的输出里——能回答这些问题之后再
-提交。
+默认命令将 `l01` 显示为 `[pending]`，不会为它输出认领码。只有在你
+亲自完成练习并能回答上述问题后，才运行：
+
+```bash
+python verify.py --attest l01
+```
+
+此时 `l01` 行显示 `[attested]` 和认领码，提交该码即可。其他检查点仍
+未通过或未确认时，命令的退出码仍为 1，不影响 `l01` 认领码的有效性。
+确认只对本次运行有效：以后检查时仍需带上 `--attest l01`，并为其他
+确实完成的反思关卡重复添加对应参数。保存默认命令和确认命令的输出。
 
 ## 预期证据
 

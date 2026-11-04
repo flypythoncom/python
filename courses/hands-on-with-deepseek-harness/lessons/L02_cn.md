@@ -4,9 +4,9 @@ type: course
 title: "第 2 课：写任务契约，让 cordis.yml 承载配置"
 summary: "把「改好一点」变成有边界、可测试的契约——再把工作规则放进组装出来的 Agent 里，而不是会被遗忘的提示词。"
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-11-04
 hints:
   - title: "本检查点考察什么"
     body: "你能把 `TASK.md` 当成可测试的陈述来读，而不是散文。每个以函数名开头的句子都是套件能断言的契约行。"
@@ -66,8 +66,7 @@ Agent 的一部分，而不是每次都要重打的提示词。
 
 ## 检查点
 
-运行 `python verify.py`——能回答下面三题时，本检查点的
-认领码就会显示：
+能回答下面三题时，用 `python verify.py --attest l02` 认领本检查点：
 
 1. 用你自己的话说，`test_invalid_records_are_isolated_with_reasons`
    钉住的是 `TASK.md` 哪一行？

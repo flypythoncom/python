@@ -188,69 +188,69 @@
     {
       "id": "course-claude-code",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-python-with-claude-code/COURSE.md",
           "title": "Hands-on Python with Claude Code",
           "summary": "An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.",
-          "sha256": "3076ed936b16ecae0891ecfa881b6bb553080175639e270b1bc0031a01753006"
+          "sha256": "e0077f90d6d715a6d47850744fc5eb232549527b201b350cc7cfa6dd5c3a6745"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/COURSE_cn.md",
           "title": "用 Claude Code 实战 Python",
           "summary": "一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。",
-          "sha256": "a7cb245d0247f6057f11e07e58963513358e698dde1eaf63e52633a4eea2b829"
+          "sha256": "e8892611d8be70454a9b33276699ba5ec5beb8ce604b9ce25dc29a806c4934b4"
         }
       ]
     },
     {
       "id": "course-claude-code-l01",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-python-with-claude-code/lessons/L01.md",
           "title": "Lesson 1: Set up Claude Code, install the FlyPython Skill, fetch the course",
           "summary": "Get Claude Code running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "82369069fc4bd61c79235d87d0fad6cfb154c9fd7cef72a35588bd93d07406ae"
+          "sha256": "a036d4d0bfd9480b78fd45436ac5ff9b00fb7e1bef3b2e4323f55a63c92e42e0"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/lessons/L01_cn.md",
           "title": "第 1 课：装好 Claude Code、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Claude Code 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "92ecf820ba6e85711fe75f3949ece009e7f32e1f3ffdcc41e6d39bd8ad8795f5"
+          "sha256": "905c5b7f1213f280bc9a33315ff1d409b2a2cc2c0573acf45d9ee7a41077e8c9"
         }
       ]
     },
     {
       "id": "course-claude-code-l02",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-python-with-claude-code/lessons/L02.md",
           "title": "Lesson 2: Write the task contract before the change",
           "summary": "Turn \"make it better\" into a bounded, testable contract — the single highest-leverage skill for working with coding agents.",
-          "sha256": "61e96ecb739482e545f4480a6dd4c6ed6017e2d41cdb268156ec91131de2e320"
+          "sha256": "383238d2b6111918311526be666fa9c6b78a0484da0bd4218cad47c949f43103"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/lessons/L02_cn.md",
           "title": "第 2 课：动手之前先写任务契约",
           "summary": "把\"优化一下\"变成有边界、可测试的契约——这是与编码 Agent 协作杠杆最大的一项技能。",
-          "sha256": "83944c2772438743f920ad177cbce098f8777a3c12d267c74081be0c2280493b"
+          "sha256": "d4ae50495032f4e315b70d9f891b5a468c67f471bdd7bbc5c583a5e5a238a043"
         }
       ]
     },
@@ -303,92 +303,92 @@
     {
       "id": "course-claude-code-l05",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-python-with-claude-code/lessons/L05.md",
           "title": "Lesson 5: Apply this to your own project",
           "summary": "Port the workflow — not the code — to one script you own: contract, isolation, rounding, atomic writes, and an honest verification record.",
-          "sha256": "740a67fa1ce064eeca4b870578f036d4d241a96e730a9898fbc5d720e9bdcf79"
+          "sha256": "0348e69a5159ae688f0fd6c91ebaf32b87ba8cc0cf39b6a965b64be10e7e437f"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/lessons/L05_cn.md",
           "title": "第 5 课：把这套方法带回你自己的项目",
           "summary": "迁移工作流——而不是代码——到你拥有的一个脚本上：契约、错误隔离、舍入、原子写入，以及一份诚实的验证记录。",
-          "sha256": "62bf3fe25f4b27f6aff3b1bddded715f2fdd2ac674d2d2c69144b34d4648b41a"
+          "sha256": "69bc10ae2eb39d6c4400da259c41161c0c6c11a7c4481f0f77842d75d89d66d8"
         }
       ]
     },
     {
       "id": "course-codex-cli",
       "type": "course",
-      "content_version": 4,
+      "content_version": 5,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-openai-codex/COURSE.md",
           "title": "Hands-on with the OpenAI Codex App",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the Codex desktop app, where an agent thread runs the loop and you supervise diffs and approvals.",
-          "sha256": "597bb0d7a6e4529dcbf63a755d4516793ceac21681fa78728540aa42c430c688"
+          "sha256": "ebb1bea14c6f2afd30de04417c75a3525a5629d513428d825fb4bbd60588894f"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/COURSE_cn.md",
           "title": "上手 OpenAI Codex 应用",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Codex 桌面应用里手把手教：由 Agent 线程跑闭环，你监督 diff 与审批。",
-          "sha256": "60bdd00ee11995fbefe8f46aded4878e936efbf437586fcdcd543fa50b7d0956"
+          "sha256": "34e92005dd6ebb2791a79574d724eac2bdcdc7e53b4ea88ce7d2d160bd4a648c"
         }
       ]
     },
     {
       "id": "course-codex-cli-l01",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-openai-codex/lessons/L01.md",
           "title": "Lesson 1: Set up the Codex app, install the FlyPython Skill, fetch the course",
           "summary": "Get the Codex app running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "ee24b9e1e542eb8c740867f6e47467fcf9fa97f16a02458a15586c34b80927a5"
+          "sha256": "5728ef63d565d56d7c13c17b8f0e1d17f8adf766e7a7cfda5a92ce523e208e68"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/lessons/L01_cn.md",
           "title": "第 1 课：装好 the Codex app、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 the Codex app 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "01aaf0281525e670a7707e2860e778a72c2497c86a6ea5070ae4bc5e5ae68cdb"
+          "sha256": "66794c6306ec46f22b1adbcac7ffe35ca14d220316879b510f5d6a15bb548410"
         }
       ]
     },
     {
       "id": "course-codex-cli-l02",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-openai-codex/lessons/L02.md",
           "title": "Lesson 2: Write the task contract, let AGENTS.md carry the rules",
           "summary": "Turn \"make it better\" into a bounded, testable contract — then make it durable so every Codex thread starts with the same rules.",
-          "sha256": "e8a8c74a0ae01e129101db976e812f12e4f129820d3aabca648272d9d95e0e85"
+          "sha256": "1b794e535fb294d395622ad83b63f4e3c916e658203fceda7bfd9476057caf39"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/lessons/L02_cn.md",
           "title": "第 2 课：写任务契约，让 AGENTS.md 承载规则",
           "summary": "把「改好一点」变成有边界、可测试的契约——再让它持久化，让每个 Codex 线程都从同一套规则开始。",
-          "sha256": "3fc7dfa8bff4401c45f36fb45f0062184eccf57b4730b1cc8ce6e9013f80d965"
+          "sha256": "6c2b9e0dd3a044ae67d0fcacdd9e81a4cd033c42bd25b47a555e05a198bceb36"
         }
       ]
     },
@@ -441,92 +441,92 @@
     {
       "id": "course-codex-cli-l05",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-openai-codex/lessons/L05.md",
           "title": "Lesson 5: Take the workflow to your own project",
           "summary": "The tool generalizes: task contract, bounded thread, approvals, diff review — run the same loop on a script you actually own.",
-          "sha256": "8964d7d543353de4cebaba40229e945a45aca208b6bbb4881443a0f2603e690a"
+          "sha256": "aa54b4ca900dbc88b2ea2f68de1389d014de1e130606ea322b5c9879ea9c5f4b"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/lessons/L05_cn.md",
           "title": "第 5 课：把工作流带回自己的项目",
           "summary": "工具会泛化：任务契约、有界线程、审批、diff 评审——在你真正拥有的脚本上跑同一套闭环。",
-          "sha256": "8517bc536fedc8c79e0ff68b7209a91456d4f745107e2793f41b8978841d373c"
+          "sha256": "8e391b4629d0b294e1a2a7a411d370a1018c650ece352275f970a2d5c9d0113c"
         }
       ]
     },
     {
       "id": "course-cursor",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-cursor/COURSE.md",
           "title": "Hands-on with Cursor",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Cursor, where Agent mode runs the loop and you supervise diffs and project rules.",
-          "sha256": "ae57993829cf1c271f1b1ad5d723103d484acb7dcb2dd4a03c318f2b5b012bc7"
+          "sha256": "771a50c3064ed5e0900634ebee505f3adfc0835290f6885489809943fe3dc51e"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/COURSE_cn.md",
           "title": "上手 Cursor",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Cursor 里手把手教：由 Agent 模式跑闭环，你监督 diff 与项目规则。",
-          "sha256": "1e6536d0e6ef22d9152615d1c6a3af6d9a17dba5253a4383748abf6c03786886"
+          "sha256": "f4649bb2f33651a870750bb43a83199d3cade99599bc74a2b3fe43165d5fd942"
         }
       ]
     },
     {
       "id": "course-cursor-l01",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-cursor/lessons/L01.md",
           "title": "Lesson 1: Set up Cursor, install the FlyPython Skill, fetch the course",
           "summary": "Get Cursor running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "de071fa887d8199000873a79feab7bb1ea0e4627f848cd87ba161a4fb0f0a5f7"
+          "sha256": "1d99c229a40e82e4eab86324af45cdc19e1cc07ce343978122d02b695e79c653"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/lessons/L01_cn.md",
           "title": "第 1 课：装好 Cursor、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Cursor 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "54202b2349b7f846e71d5a18f876922c69a5c84b717e5350f1683537397ed386"
+          "sha256": "298bc1497bfa810ecdb0aadf5df6e597fb7bb2a7c7dd387d3e7d0f7a25461379"
         }
       ]
     },
     {
       "id": "course-cursor-l02",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-cursor/lessons/L02.md",
           "title": "Lesson 2: Write the task contract, let .cursor/rules carry the rules",
           "summary": "Turn \"make it better\" into a bounded, testable contract — then make it durable so every Cursor session starts with the same rules.",
-          "sha256": "f2fb837f9239298608358381309bdaeceec9b1190b0332736ecdaf108b90e40c"
+          "sha256": "9a3d3f4e91fad82a2a11061b604e3363ae4f01de0eed86d7a685f88aa9f1a10c"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/lessons/L02_cn.md",
           "title": "第 2 课：写任务契约，让 .cursor/rules 承载规则",
           "summary": "把「改好一点」变成有边界、可测试的契约——再让它持久化，让每个 Cursor 会话都从同一套规则开始。",
-          "sha256": "0c9f2e3745a2b84910793bf4717ed483442cc0d88afae5b1c1eecd1fd93cc45f"
+          "sha256": "dc6e97269a970cfd733eba53b6bfa0afcc20c5b761cf16ede8ca5f2f378791d2"
         }
       ]
     },
@@ -579,23 +579,23 @@
     {
       "id": "course-cursor-l05",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-cursor/lessons/L05.md",
           "title": "Lesson 5: Take the workflow to your own project",
           "summary": "The tool generalizes: task contract, bounded agent work, diff review — run the same loop on a script you actually own.",
-          "sha256": "b9e9dbad4f6de5b72497220eeaa0866170fa64b5cc1d1e2b548878d9d008d94d"
+          "sha256": "92ad46bb0d825a72f6fedf91c789989f14a27620328e43de7dd5483fc357337c"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/lessons/L05_cn.md",
           "title": "第 5 课：把工作流带回自己的项目",
           "summary": "工具会泛化：任务契约、有界 Agent 工作、diff 评审——在你真正拥有的脚本上跑同一套闭环。",
-          "sha256": "263f61fe5e52141fc8e8a7e8ad8d72b187e6d203c6f47a4ae76ac8c938dd4e3c"
+          "sha256": "545ec560f6843cca9c24152d20ca166e69a59dc6a43313ad23fb02cc4ecb5bf3"
         }
       ]
     },
@@ -1016,69 +1016,69 @@
     {
       "id": "course-deepseek-harness",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-deepseek-harness/COURSE.md",
           "title": "Hands-on with DeepSeek Harness",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in DeepSeek Harness, where the agent loop is composed from plugins and every step lands in an inspectable trajectory.",
-          "sha256": "f3e928e96dfa6f45547bc2b07ba151271551af6cdd22dff4281d032df5276186"
+          "sha256": "e1afbd4952c13a0a1556b8b2b29aff4240dad515ac067db4971e842c6fc35f44"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/COURSE_cn.md",
           "title": "上手 DeepSeek Harness",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 DeepSeek Harness 里手把手教：Agent 闭环由插件组装，每一步都落进可检查的轨迹日志。",
-          "sha256": "3bef27e9425c37709924781f53d12f42b883cd5174eb94cc32675c01f5d1bfac"
+          "sha256": "79a300e15c088864ca895ecfecd715430242db49b0f464273c0d74fda8893db8"
         }
       ]
     },
     {
       "id": "course-deepseek-harness-l01",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L01.md",
           "title": "Lesson 1: Set up DeepSeek Harness, install the FlyPython Skill, fetch the course",
           "summary": "Get DeepSeek Harness running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "966ec591705e7351461ec85a7d3f615dcdc001dc559767b32b9a362efde7aaf7"
+          "sha256": "70ed2156deb6179f1006967becc23c67fdfef03b56d0f7fb742239b0fbcc3cc0"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L01_cn.md",
           "title": "第 1 课：装好 DeepSeek Harness、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 DeepSeek Harness 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "0f83e1dc5c7d1ec13b6cc04b4eb2b5050d957ec39da99faaa05adb4f5dc51d4b"
+          "sha256": "1c6fdc233cb4f1e0c3ece502fc1507ef7d62b8184ef4c41df2778c848bbc6bc3"
         }
       ]
     },
     {
       "id": "course-deepseek-harness-l02",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L02.md",
           "title": "Lesson 2: Write the task contract, let cordis.yml carry the setup",
           "summary": "Turn \"make it better\" into a bounded, testable contract — then make the working rules part of the composed agent, not a forgotten prompt.",
-          "sha256": "64d4f1e4f8dc54c6d151ddcbbb9c530d866f232ac9673423c90a777d7fbd6280"
+          "sha256": "1d249fdb1f57a031427d98a359987a0e70a46e93fe133483e632718f7d851bf1"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L02_cn.md",
           "title": "第 2 课：写任务契约，让 cordis.yml 承载配置",
           "summary": "把「改好一点」变成有边界、可测试的契约——再把工作规则放进组装出来的 Agent 里，而不是会被遗忘的提示词。",
-          "sha256": "6a540ca0dc99c2d91c44ab1c195993c5157299fcac57f3803b6b4c0c02bff26f"
+          "sha256": "e21c347ae53ee5ac0e4c264ad970919422f4e531347c5d39451134c41c52c706"
         }
       ]
     },
@@ -1131,46 +1131,46 @@
     {
       "id": "course-deepseek-harness-l05",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L05.md",
           "title": "Lesson 5: Take the workflow to your own project",
           "summary": "The pattern generalizes: task contract, composed agent, bounded steps, trajectory audit — run the same loop on a script you actually own.",
-          "sha256": "0e76a3df730783e55b3a0faa07aa8bd974f905c262f9f52bbc81db634d931cc6"
+          "sha256": "e33e7f2218acd9e5ee82aa0fd11a0c68b27c93a999a571bfecc5ad367acd8ae9"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L05_cn.md",
           "title": "第 5 课：把工作流带回自己的项目",
           "summary": "模式会泛化：任务契约、组装 Agent、有界步骤、轨迹审计——在你真正拥有的脚本上跑同一套闭环。",
-          "sha256": "428b9c925dcf232c238e3a7e8a44934e8d74f960b8126be38941b43aecc87dc8"
+          "sha256": "0d1fc9b7e5219b3a427b473051c8e2ac003d0685040942c37674408a238ee97e"
         }
       ]
     },
     {
       "id": "course-github-copilot",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-10-11",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-github-copilot/COURSE.md",
           "title": "Hands-on with GitHub Copilot",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on with GitHub Copilot in VS Code, where the Agent role runs the loop and you supervise permissions, instructions files, and diffs.",
-          "sha256": "d78fa83c4664e368faccc89490ff34b7e6b859b32d37cb53b699af2a2cfbe80c"
+          "sha256": "4b7036b397af685f38c303171f4aaa2c7ac4b14b8834cbcee08955615c2747c7"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-github-copilot/COURSE_cn.md",
           "title": "上手 GitHub Copilot",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 VS Code 的 GitHub Copilot 里手把手教：由 Agent 角色跑闭环，你监督权限、指令文件与 diff。",
-          "sha256": "c17c53dcf6814e1df569e642b92705974fd52614da0852199b029ca044ed72a7"
+          "sha256": "6e66a59359e47387cc67ec16e4ec4c19aa18ffc7425ec3c91102c71975332edb"
         }
       ]
     },
@@ -1292,69 +1292,69 @@
     {
       "id": "course-kimi-code",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-kimi-code/COURSE.md",
           "title": "Hands-on with Kimi Code",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code, where built-in subagents split read-only exploration, planning, and the edits you approve.",
-          "sha256": "d574ba24d74c189cbc4cfa599f14d64ed327a65299272564300c2e85e6d6a272"
+          "sha256": "8983d187d16acc6adbea70e01d9293f5d2d7bdf976232f04791c9e7eec2e307c"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/COURSE_cn.md",
           "title": "上手 Kimi Code",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里手把手教：内置子代理把只读勘察、规划和经你批准的编辑分在三条道上。",
-          "sha256": "a7c09dafda26d905430d182258485d6792b43a55703822a3438ce552518c5815"
+          "sha256": "53a8b42b7e7b62491d44af7b185ade68d3532a9a07cc02b70bc1fff41ac04b03"
         }
       ]
     },
     {
       "id": "course-kimi-code-l01",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-kimi-code/lessons/L01.md",
           "title": "Lesson 1: Set up Kimi Code, install the FlyPython Skill, fetch the course",
           "summary": "Get Kimi Code running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "40c376c81b7a887e17a986908a8e0fce271c494f9e169bea1dd3b9c19e35bd3b"
+          "sha256": "d31b6b75d7087ef3afbc7b12b89c1637f72b24182f7de8d49c8fc300ed6fd361"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/lessons/L01_cn.md",
           "title": "第 1 课：装好 Kimi Code、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Kimi Code 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "5bb681bb60e03cbb2145b76bb671ddfd831f3680e1e617efcf637dc93592f6b6"
+          "sha256": "f4305ff5ae8d8cc89b0b0fb3672eaf402cf4273a7aad160e3e85066f5475a369"
         }
       ]
     },
     {
       "id": "course-kimi-code-l02",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-kimi-code/lessons/L02.md",
           "title": "Lesson 2: Write the task contract, plan it in the planning lane",
           "summary": "Turn \"make it better\" into a bounded, testable contract — then let the plan subagent (no write, no shell) turn it into steps before anything edits.",
-          "sha256": "10b65aecb5e665973ecbfa1808c7418c9b9689da3e6195d400182e8d86bbe8b9"
+          "sha256": "d1b9b882336b33ef4e162756314ea87270915447f5a3911d79d871144c0dd26f"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/lessons/L02_cn.md",
           "title": "第 2 课：写任务契约，在规划道里拆步",
           "summary": "把「改好一点」变成有边界、可测试的契约——再让 plan 子代理（无写无 shell）先把它拆成步骤，然后才许动文件。",
-          "sha256": "5021e765800ea1dd28baacf709720610cee1ad49873e5956111dbea6e7de6231"
+          "sha256": "ca826096067d00d6613c7cc05c173819080877c6d995e9835de7e02da8aa6df2"
         }
       ]
     },
@@ -1407,23 +1407,23 @@
     {
       "id": "course-kimi-code-l05",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-kimi-code/lessons/L05.md",
           "title": "Lesson 5: Take the workflow to your own project",
           "summary": "The pattern generalizes: contract first, read-only survey, planning lane, bounded edits, written verification — run the same loop on a script you actually own.",
-          "sha256": "e3b502add27090e1fd6730d0e4ca0c70b55c18d66bcb3ade452beb2513f95c24"
+          "sha256": "b82e2cae2d585740e410d6bfc6ce0534c98d78ce5e6bb402008aab4e30b945a5"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/lessons/L05_cn.md",
           "title": "第 5 课：把工作流带回自己的项目",
           "summary": "模式会泛化：契约先行、只读勘察、规划道拆步、有界编辑、书面验证——在你真正拥有的脚本上跑同一套闭环。",
-          "sha256": "e1403c1fc31c8304f82219c214afe574ff5dc69f41b3cab7a0c5002c8b8774f2"
+          "sha256": "86afaf2a2b3e8783bea9b92a8d4da71fc6a0cbddc06a0c5c7bd6a3b39bc9237e"
         }
       ]
     },
@@ -1982,69 +1982,69 @@
     {
       "id": "course-zcode",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-zcode/COURSE.md",
           "title": "Hands-on with ZCode",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the ZCode desktop workspace, where Goal Mode decomposes the work and the Git state shows every change.",
-          "sha256": "051fee38652ea32840258ec50e304190124bdef5965309c0e24578ecbf5c5481"
+          "sha256": "8c28cdfbaa331b00c6cd21c7627d2affa2070c2418c14f799d3c53bf3fb1113a"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/COURSE_cn.md",
           "title": "上手 ZCode",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 ZCode 桌面工作区里手把手教：Goal 模式拆解任务，Git 状态展示每一处改动。",
-          "sha256": "a3c9916af904b3c054bab2ae84c486d8ee629c699ec024ddbb8c7e993c8fe3a5"
+          "sha256": "901c645a711addfad01d5f88dfe4d02efd0ad57cb2a382899a36825a70f628e0"
         }
       ]
     },
     {
       "id": "course-zcode-l01",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-zcode/lessons/L01.md",
           "title": "Lesson 1: Set up ZCode, install the FlyPython Skill, fetch the course",
           "summary": "Get ZCode running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "2fbfe9fff71fc209d2b89558f34c47c44985711d02cdb0f7a674db606271e665"
+          "sha256": "30af915aa95d866709d3cb21526d8d402d9b1e8f57659b1841a0e3665c038f55"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/lessons/L01_cn.md",
           "title": "第 1 课：装好 ZCode、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 ZCode 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "1e13ba6f4e3562d25b84de6610cdac2a8fdab4915496181143b179762b6e95d9"
+          "sha256": "db097d7a74a989b4781c1272758d10f55e9532bb3971e7a037a58084dc57605d"
         }
       ]
     },
     {
       "id": "course-zcode-l02",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-zcode/lessons/L02.md",
           "title": "Lesson 2: Write the task contract, let Goal Mode hold the plan",
           "summary": "Turn \"make it better\" into a bounded, testable contract — then let Goal Mode decompose it into tasks you can watch land one by one.",
-          "sha256": "8d82172aa73a5350511ab0e07b88c0725417228ab88766149836c892fb5931a6"
+          "sha256": "e895cfc7d5aa76b881e34e7170c9254c8709d0beb9cdee1053006f39db994572"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/lessons/L02_cn.md",
           "title": "第 2 课：写任务契约，让 Goal 模式承载计划",
           "summary": "把「改好一点」变成有边界、可测试的契约——再让 Goal 模式把它拆成你能看着逐一落地的任务。",
-          "sha256": "8ccfc361351b45a791ae70bd4ee0faeb59e350898f746b9916f85f79ed564eb5"
+          "sha256": "6abc10fd16478383873ce3da259a6f4d7d7bb1dac4d7929b6c0ecc4451b8daaa"
         }
       ]
     },
@@ -2097,23 +2097,23 @@
     {
       "id": "course-zcode-l05",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-13",
+      "reviewed_on": "2026-11-04",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-zcode/lessons/L05.md",
           "title": "Lesson 5: Take the workflow to your own project",
           "summary": "The pattern generalizes: contract as goal, task list, bounded execution, Git-state review — run the same loop on a project you actually own.",
-          "sha256": "60e68f537ddfd30ff271e995d9be15e962ad641ca02cdababf1d1cf363773ca3"
+          "sha256": "173d0546b49ad9c27f2883ee516fc5fec71bfd07248f03262c06358881780ba7"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/lessons/L05_cn.md",
           "title": "第 5 课：把工作流带回自己的项目",
           "summary": "模式会泛化：契约变目标、任务列表、有界执行、Git 状态审查——在你真正拥有的项目上跑同一套闭环。",
-          "sha256": "1adee0b75e4d418005cc9aafdba92a0cd70d6d4f9175ef0972cd874258670602"
+          "sha256": "14bbe1b33b8f5f7c312f32d3b39e82a4980b981117efa4679e35f99fe8d33693"
         }
       ]
     },

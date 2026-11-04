@@ -4,9 +4,9 @@ type: course
 title: "上手 Kimi Code"
 summary: "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里手把手教：内置子代理把只读勘察、规划和经你批准的编辑分在三条道上。"
 lang: zh-CN
-content_version: 2
+content_version: 3
 status: reviewed
-reviewed_on: 2026-09-13
+reviewed_on: 2026-11-04
 badge:
   id: course-kimi-code
   name_en: Reproduce with Kimi Code in the loop
@@ -62,10 +62,17 @@ course_id: course-kimi-code
 - **何时停下：** 一节课的检查点命令跑通、且学习者能用自己的话说清
   哪里坏了、为什么，这节课才算完。学习者说不出就从失败测试重新教，
   不要从 solution 教。
-- **如何使用 `verify.py`：** 学员命令就是 `python verify.py`——它跑套件、
-  打印逐检查点状态与已获认领码，在门控检查点（l03、l04）未全通过时以
-  非零退出。`starter --expect-failure` 与 `solution` 留作维护者检查。
-  「完成」指学习者做完有界改动后，默认命令把所有门显示为 `[passed]`。- **诚实规则：** 说清你没验证什么。不要声称代码达到生产可用。不要
+- **如何使用 `verify.py`：** `python verify.py` 跑套件，打印逐检查点状态与
+  已获认领码。L03/L04 的测试通过后显示为 `[passed]` 并打印码；默认命令
+  不会打印 L01/L02/L05 的自报认领码。学习者回答某个反思检查点的问题后，
+  才显式添加对应的 `--attest l01`、`--attest l02` 或 `--attest l05`；
+  不要自动确认反思。自报确认不会在多次运行之间保存，因此后续每次运行都要
+  重复添加所有已完成反思的旗标。只要任一客观检查点仍未通过，或任一自报
+  检查点仍待确认，命令就以退出码 1 结束。「完成」指 L03/L04 为 `[passed]`、
+  L01/L02/L05 为 `[attested]`；例如，完成三个反思与有界改动后运行
+  `python verify.py --attest l01 --attest l02 --attest l05`。
+  `starter --expect-failure` 与 `solution` 留作维护者检查。
+- **诚实规则：** 说清你没验证什么。不要声称代码达到生产可用。不要
   承诺学习或职业结果。
 
 ## 本课程不覆盖什么

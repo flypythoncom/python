@@ -4,9 +4,9 @@ type: course
 title: Hands-on Python with Claude Code
 summary: An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.
 lang: en-US
-content_version: 3
+content_version: 4
 status: reviewed
-reviewed_on: 2026-09-12
+reviewed_on: 2026-11-04
 badge:
   id: course-claude-code
   name_en: Reproduce the failure
@@ -64,12 +64,20 @@ If you are the coding agent teaching this course, follow these rules:
 - **When to stop:** a lesson is done when its checkpoint command runs and the
   learner can say, in their own words, what failed and why. If the learner
   cannot, re-teach from the failing test, not from the solution.
-- **How to use `verify.py`:** the learner's command is plain
-  `python verify.py` — it runs the suites, prints per-checkpoint status
-  and earned claim codes, and exits non-zero while the gated checkpoints
-  (l03, l04) are still open. `starter --expect-failure` and `solution`
-  remain maintainer checks. "Done" means the default command shows every
-  gate `[passed]` after the learner's bounded change.- **Honesty rules:** say what you did not verify. Do not claim the code is
+- **How to use `verify.py`:** `python verify.py` runs the suites and prints
+  per-checkpoint status and earned claim codes. L03/L04 become `[passed]`
+  and emit codes when their tests pass; the default command does not emit
+  self-report codes for L01/L02/L05. After the learner answers a reflection's
+  questions, explicitly add `--attest l01`, `--attest l02`, or `--attest l05`
+  for that completed reflection; never attest automatically. Attestations
+  are not persisted between runs, so repeat the flags for every completed
+  reflection on later runs. The command exits 1 while any objective
+  checkpoint is open or any self-report checkpoint is pending. "Done" means
+  L03/L04 are `[passed]` and L01/L02/L05 are `[attested]`, for example with
+  `python verify.py --attest l01 --attest l02 --attest l05` after all three
+  reflections and the bounded change are complete. `starter --expect-failure`
+  and `solution` remain maintainer checks.
+- **Honesty rules:** say what you did not verify. Do not claim the code is
   production-ready. Do not promise learning or career outcomes.
 
 ## What this course does NOT cover

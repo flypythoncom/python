@@ -4,9 +4,9 @@ type: course
 title: "第 2 课：动手之前先写任务契约"
 summary: 把"优化一下"变成有边界、可测试的契约——这是与编码 Agent 协作杠杆最大的一项技能。
 lang: zh-CN
-content_version: 1
+content_version: 2
 status: reviewed
-reviewed_on: 2026-09-12
+reviewed_on: 2026-11-04
 hints:
   - title: "这个检查点考什么"
     body: "考你能不能把 `TASK.md` 读成可测试的语句而不是散文。每个以函数名开头的句子都是套件能断言的契约行。"
@@ -67,7 +67,8 @@ hints:
 
 把你的四行内容给 Agent 看，问："这几条里哪一条你能靠作弊满足——测试
 过了但行为没做到？"如果你们都找不到作弊路径，契约就足够具体。修掉
-任何没通过这一关的行。
+任何没通过这一关的行，然后用 `python verify.py --attest l02` 认领本
+检查点。
 
 ## 预期证据
 
