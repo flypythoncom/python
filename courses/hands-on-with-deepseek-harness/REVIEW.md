@@ -53,6 +53,21 @@
   gates (`make check`) green at this change. No live DeepSeek Harness agent run —
   the pending live run-through below still stands.
 
+## 2026-11-05 — bilingual-parity fix (mechanical re-verify)
+
+- The 2026-11-04 pass missed one line: the en-US L01 "Expected evidence"
+  section still listed only the default command's transcript, while the
+  zh-CN counterpart already required both transcripts. Corrected to
+  "Transcripts of both the default command and the attest command",
+  matching the other six tool courses. The L01 pair (EN+ZH) bumped to
+  `content_version: 5` per the paired-metadata rule.
+- Verification: the lesson body and hint both name the explicit
+  `--attest l01` flow; the evidence section now keeps both command
+  transcripts in both locales. Repository gates (`make check`,
+  pandas-dependent courses skipped locally) green at this change. No live
+  DeepSeek Harness agent run — the pending live run-through below still
+  stands.
+
 ## Deviation log
 
 (none yet — no live run has happened)

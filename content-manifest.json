@@ -211,23 +211,23 @@
     {
       "id": "course-claude-code-l01",
       "type": "course",
-      "content_version": 4,
+      "content_version": 5,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-05",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-python-with-claude-code/lessons/L01.md",
           "title": "Lesson 1: Set up Claude Code, install the FlyPython Skill, fetch the course",
           "summary": "Get Claude Code running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "55e4db16a6d16aa2e399fdc7f40420a1c394d7f60bae91f1b42e683f2aadf90a"
+          "sha256": "32a1f9e5a34b1f24dc2158f32eb18482473e9eaffd7b4de7669abe5113f21d46"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/lessons/L01_cn.md",
           "title": "第 1 课：装好 Claude Code、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 Claude Code 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "11b353ef3b4535e1ceaba803dd16487602263c22c84a5f40bf6dc14849e70aed"
+          "sha256": "16d4c213f92c78301f48d0267994872ad0408047a4ffa094e7460028ad4a8817"
         }
       ]
     },
@@ -1039,23 +1039,23 @@
     {
       "id": "course-deepseek-harness-l01",
       "type": "course",
-      "content_version": 4,
+      "content_version": 5,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-05",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L01.md",
           "title": "Lesson 1: Set up DeepSeek Harness, install the FlyPython Skill, fetch the course",
           "summary": "Get DeepSeek Harness running, install the FlyPython Skill with network access approved, and let the agent fetch this course's files — you download nothing. Then make the starter's failure objective.",
-          "sha256": "04af9cbe95c4e9685d09ab6dce05b74e8b4ec86936a1fdd850878777aac519d8"
+          "sha256": "7cbd7e5c4a1507a8562f8d8dc9fd67eb7d29e554e40f19f7ca1d8af79540ae10"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/lessons/L01_cn.md",
           "title": "第 1 课：装好 DeepSeek Harness、装上 FlyPython Skill、让 Agent 取回课程",
           "summary": "先把 DeepSeek Harness 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。",
-          "sha256": "5a60b6db927d296433c1172972d31753f4dd73ac7009d38e41977b9b967f9d7c"
+          "sha256": "5e1e081b039638097c0832ac2fa2396665fe3e1f64688897740c0ddb580212f1"
         }
       ]
     },

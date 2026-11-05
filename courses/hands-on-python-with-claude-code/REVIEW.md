@@ -50,6 +50,19 @@
   gates (`make check`) green at this change. No live Claude Code 2.x agent run —
   the pending live run-through below still stands.
 
+## 2026-11-05 — bilingual-parity fix (mechanical re-verify)
+
+- The 2026-11-04 pass missed one line: the zh-CN L01 hint 3 still promised
+  a claim code from the plain `python verify.py` run. Corrected to name
+  `python verify.py --attest l01`, matching the en-US hint and the shipped
+  verifier behavior. The L01 pair (EN+ZH) bumped to `content_version: 5`
+  per the paired-metadata rule.
+- Verification: default run shows `l01 [pending]` with no code; the
+  `--attest l01` run shows `[attested]` with the code — matching the
+  corrected hint. Repository gates (`make check`, pandas-dependent courses
+  skipped locally) green at this change. No live Claude Code 2.x agent run —
+  the pending live run-through below still stands.
+
 ## Deviation log
 
 ### 2026-09-13 — agent solvability run (challenge mode, not taught mode)

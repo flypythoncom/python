@@ -4,9 +4,9 @@ type: course
 title: "第 1 课：装好 DeepSeek Harness、装上 FlyPython Skill、让 Agent 取回课程"
 summary: "先把 DeepSeek Harness 跑起来，装好 FlyPython Skill 并打开联网权限，让 Agent 取回本课文件——你不下载任何东西，然后让 starter 的失败变得客观。"
 lang: zh-CN
-content_version: 4
+content_version: 5
 status: reviewed
-reviewed_on: 2026-11-04
+reviewed_on: 2026-11-05
 hints:
   - title: "本检查点考察什么"
     body: "先复现失败再动手修：`python verify.py` 必须把 l03 和 l04 显示为 `[open]`（`starter --expect-failure` 会打印点名测试）——你自己跑也好、Agent 的 shell 工具跑也好，命令就是证据。"
