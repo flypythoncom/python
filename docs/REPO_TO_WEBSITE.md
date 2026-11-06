@@ -51,13 +51,11 @@ do not help visitors take a useful next step.
 
 ## Repository release status
 
-The package version is `0.1.2`. The immutable `v0.1.2` tag is cut on the
-`master` commit that merges the 0.1.2 release change, and its GitHub Release
-names that SHA; the previous `v0.1.1` tag points to `db85cdd`. 0.1.2 adds
-learner verifier v2 (tests must pass and reflection checkpoints must be
-explicitly confirmed with `--attest`), CI and course-setup fixes, and a
-corrected `llms.txt`; see the repository CHANGELOG. FlyPython.com builds
-from an exact commit pinned on the website side, so `master` can be ahead of
-what the site serves. A pinned, served commit proves release delivery, not
-learner outcomes or paid demand; the website's payment and email operations
-still have separate acceptance gates.
+The package version is `0.1.3`. The retroactive `v0.1.2` tag points to the
+original 0.1.2 release commit, and `v0.1.3` names the release containing the
+three additional EN+ZH courses plus the follow-up verifier and bilingual
+content fixes. The exact tag SHAs and release notes live in the repository
+CHANGELOG. FlyPython.com builds from an exact commit pinned on the website
+side, so `master` can be ahead of what the site serves. A pinned, served
+commit proves release delivery, not learner outcomes or paid demand; the
+website's payment and email operations still have separate acceptance gates.

@@ -4,6 +4,22 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-11-06
+
+Repository-only release. The `v0.1.2` tag is restored on the original
+0.1.2 release commit, while this release records the three courses and
+follow-up verifier and bilingual-content fixes that landed afterwards. The
+catalog-v1, radar-v1, and content-manifest-v1 schemas are unchanged.
+
+### Changed — 2026-11-04 to 2026-11-05
+
+- The seven tool-course lessons now describe the explicit `--attest` command
+  for reflection checkpoints in English and Chinese, including the L01 hint
+  and evidence sections.
+- The Claude Code and DeepSeek Harness course records now include the missing
+  L01 bilingual parity and teaching-review notes. The generated content
+  manifest was refreshed with those source changes.
+
 ### Added — 2026-10-11 three courses (EN+ZH)
 
 - `courses/hands-on-with-github-copilot/` (`course-github-copilot`): the
