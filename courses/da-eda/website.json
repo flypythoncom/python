@@ -1,0 +1,97 @@
+{
+  "order": 12,
+  "agentTool": false,
+  "aliases": [],
+  "id": "da-eda",
+  "tool": "Any coding agent + pandas",
+  "toolZh": "任一编码 Agent + pandas",
+  "title": "Exploratory Data Analysis with an Agent",
+  "titleZh": "用 Agent 做探索性数据分析",
+  "summary": "A challenge course — point your agent at a messy shop export and produce a verified EDA summary whose numbers are checked against ground truth.",
+  "summaryZh": "一门挑战课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要。",
+  "outcome": "A pandas script that cleans a 142-row messy export (duplicates, bad amounts, bad dates) and writes results.json verified against ground truth — the load → clean → summarize pipeline you can port to your own data.",
+  "outcomeZh": "一个 pandas 脚本：清洗 142 行脏导出（重复、坏金额、坏日期），产出经真值校验的 results.json——一套可以迁移到你自己数据上的加载 → 清洗 → 统计流水线。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "uv or pip to install the pinned pandas dependency",
+    "Any coding agent; no pandas experience required",
+    "First non-stdlib course — installing the environment is part of the challenge"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "用 uv 或 pip 安装锁定的 pandas 依赖",
+    "任一编码 Agent；不要求 pandas 经验",
+    "第一门非标准库课程——装环境本身就是挑战的一部分"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "What messy data looks like",
+      "titleZh": "脏数据长什么样",
+      "objective": "Profile the CSV before touching code: total rows, exact duplicates, unparseable amounts and dates.",
+      "objectiveZh": "写代码前先给 CSV 做画像：总行数、完全重复行、不可解析的金额与日期。"
+    },
+    {
+      "id": "l02",
+      "title": "Define the answer first",
+      "titleZh": "先定答案",
+      "objective": "Write down the expected results.json shape — keys, types, rounding — before letting the agent generate code.",
+      "objectiveZh": "在让 Agent 生成代码之前，先写下期望的 results.json 结构——键、类型、舍入规则。"
+    },
+    {
+      "id": "l03",
+      "title": "Clean and summarize",
+      "titleZh": "清洗与统计",
+      "objective": "Implement the contract in starter/eda.py: load, clean with counted removals, summarize, write results.json.",
+      "objectiveZh": "在 starter/eda.py 里实现契约：加载、按计数清洗、统计、写出 results.json。"
+    },
+    {
+      "id": "l04",
+      "title": "Check against ground truth",
+      "titleZh": "核对真值",
+      "objective": "The suite asserts exact numbers — 142 in, 137 clean, total revenue 33347.89 — plausible-but-different numbers are a fail.",
+      "objectiveZh": "套件断言精确数字——输入 142 行、清洗后 137、总收入 33347.89——看似合理但不同的数字就是失败。"
+    },
+    {
+      "id": "l05",
+      "title": "Run it on your own data",
+      "titleZh": "换成你自己的数据",
+      "objective": "Port the pipeline to a real export you own and name one assumption that broke.",
+      "objectiveZh": "把流水线迁移到你真实的一份导出上，并说出一条不成立的假设。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "shop-export",
+      "title": "Messy shop export",
+      "titleZh": "脏的商店导出",
+      "dataFile": "transactions.csv",
+      "blurb": "142 rows with exact duplicates, unparseable amounts, and a bad date.",
+      "blurbZh": "142 行，含完全重复、不可解析金额与一条坏日期。"
+    }
+  ],
+  "verification": {
+    "method": "Twelve-test contract suite asserting exact numbers against ground truth. The starter must reproduce the unfinished state; the reviewed solution passes 12/12.",
+    "methodZh": "十二个测试的契约套件，按真值断言精确数字。starter 必须复现未完成状态；已审核实现 12/12 通过。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "da-eda",
+    "nameEn": "EDA Challenger",
+    "nameZh": "探索分析挑战者"
+  },
+  "difficulty": "beginner",
+  "shippedAt": "2026-09-13",
+  "duration": "1–2 hours",
+  "level": "Beginner; first pandas course",
+  "levelZh": "新手向；第一门 pandas 课程",
+  "searchTerms": [
+    "pandas tutorial",
+    "eda python",
+    "exploratory data analysis",
+    "pandas 教程",
+    "ai agent data analysis"
+  ]
+}

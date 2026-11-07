@@ -1,0 +1,111 @@
+{
+  "order": 8,
+  "agentTool": false,
+  "aliases": [],
+  "id": "verifying-ai-generated-code",
+  "tool": "Any coding agent (Claude Code 2.x / Codex CLI 0.x / Cursor)",
+  "toolZh": "任一编码 Agent（Claude Code 2.x / Codex CLI 0.x / Cursor）",
+  "title": "From “it runs” to “it ships”: verifying AI-generated code",
+  "titleZh": "从「能跑」到「能上线」：验证 AI 写的代码",
+  "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
+  "summaryZh": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
+  "outcome": "ship_check.py: one command that turns “the demo worked” into a written delivery record — command, exit code, parsed test count, a verdict that refuses projects with no tests, and an explicit unverified list.",
+  "outcomeZh": "ship_check.py：一条命令把「演示能跑」变成一份书面交付记录——命令、退出码、解析出的测试数、一个拒绝零测试项目的判定，以及一份显式的未验证清单。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "A small Python project you want to ship more safely",
+    "Comfort running shell commands; standard library only"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "一个想交付得更稳的小型 Python 项目",
+    "能运行 shell 命令；仅用标准库"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "“It runs” is not evidence",
+      "titleZh": "“能跑”不是证据",
+      "objective": "Watch the starter bless a project with no tests and one with a failing test — then want better.",
+      "objectiveZh": "看着 starter 给零测试的项目和有失败测试的项目都盖章放行——然后想要更好的东西。"
+    },
+    {
+      "id": "l02",
+      "title": "Define what a release record must prove",
+      "titleZh": "定义发布记录必须证明什么",
+      "objective": "Command, exit code, parsed count and outcome, an unverified list, and a verdict that refuses zero-test projects.",
+      "objectiveZh": "命令、退出码、解析出的数量与结果、一份未验证清单，以及一个拒绝零测试项目的判定。"
+    },
+    {
+      "id": "l03",
+      "title": "Build the ship check, test by test",
+      "titleZh": "按测试逐组构建 ship check",
+      "objective": "Parsing, verdicts, the unverified list, atomic writes, exit codes — one failing group at a time.",
+      "objectiveZh": "解析、判定、未验证清单、原子写入、退出码——一次一组失败测试。"
+    },
+    {
+      "id": "l04",
+      "title": "Read the record like a skeptic",
+      "titleZh": "像怀疑者一样读记录",
+      "objective": "Green, red, and no-tests mean different things — prove you can tell them apart.",
+      "objectiveZh": "绿、红、零测试是三件不同的事——证明你能分辨。"
+    },
+    {
+      "id": "l05",
+      "title": "Gate your next release",
+      "titleZh": "给你的下一次发布装上门禁",
+      "objective": "Take the ship check to a project you own and make the record part of shipping.",
+      "objectiveZh": "把 ship check 带到你自己的项目，让记录成为交付的一部分。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "green-project",
+      "title": "Two passing tests",
+      "titleZh": "两个通过的测试",
+      "dataFile": "ship.json + tests/",
+      "blurb": "A tiny project with two passing tests and a declared unverified list.",
+      "blurbZh": "一个带两个通过测试和已声明未验证清单的小项目。"
+    },
+    {
+      "id": "red-project",
+      "title": "One wrong expectation",
+      "titleZh": "一个写错的断言",
+      "dataFile": "ship.json + tests/",
+      "blurb": "The regression under study: one deliberately wrong test expectation.",
+      "blurbZh": "正在研究的回归：一个故意写错的测试断言。"
+    },
+    {
+      "id": "no-tests",
+      "title": "Zero tests",
+      "titleZh": "零个测试",
+      "dataFile": "empty tests/",
+      "blurb": "The state that must never pass: no tests at all.",
+      "blurbZh": "绝不能放行的状态：一个测试都没有。"
+    }
+  ],
+  "verification": {
+    "method": "A 10-test suite pins parsed counts, the no-tests verdict, the unverified list, atomic record writes, and CLI exit codes; the starter reproduces seven named failures, the solution passes 10/10.",
+    "methodZh": "10 个测试的套件锚定解析计数、零测试判定、未验证清单、原子记录写入及 CLI 退出码；starter 复现七个具名失败，solution 通过 10/10。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-verify-ship",
+    "nameEn": "It runs is not evidence",
+    "nameZh": "能跑不是证据"
+  },
+  "difficulty": "intermediate",
+  "shippedAt": "2026-09-12",
+  "duration": "1–2 hours",
+  "level": "Owns an AI-written Python project",
+  "levelZh": "拥有 AI 写的 Python 项目",
+  "searchTerms": [
+    "verify ai generated code",
+    "ai code review",
+    "release evidence",
+    "AI 写的代码怎么验证",
+    "发布检查"
+  ]
+}

@@ -4,6 +4,16 @@ This file records notable catalog-contract and maintenance changes.
 
 ## [Unreleased]
 
+- Add Coach P / 小P老师 guided-learning disclosures and learner confirmation
+  rules to all 15 English/Chinese course pairs. This is an editorial change,
+  not evidence of a completed in-tool teaching run.
+- Export `course-registry.json` from per-course `website.json`, bilingual
+  manifest metadata and statically parsed verifier constants. Website consumers
+  can generate course pages and claim contracts at an immutable pin; legacy
+  aliases and existing claim codes are preserved. Validate with `make registry`
+  and `make generated-check`. No Pro metadata is published here.
+
+
 ## [0.1.3] - 2026-11-06
 
 Repository-only release. The `v0.1.2` tag is restored on the original

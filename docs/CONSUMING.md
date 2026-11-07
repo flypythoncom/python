@@ -74,3 +74,25 @@ consumer should record alongside the other two).
 
 This keeps catalog review independent from website presentation while avoiding
 two separately maintained copies of the same resource content.
+
+## Course registry v1
+
+`course-registry.json` is an additive public contract consumed at the same full
+commit as the content manifest. It contains `courses` (English/Chinese website
+metadata), `contracts` (course ID, public salt, ordered checkpoints, objective
+gates and legacy aliases), and `agentToolCourseIds`. Public salts are not
+secrets and claim codes remain self-reported evidence.
+
+Edit `courses/<slug>/website.json` for display fields, ordering, aliases and
+agent-tool classification. The schema is `schemas/course-website.schema.json`.
+Manifest ID/version/review date come from COURSE.md; claim fields come from
+literal verifier constants parsed with AST, never by executing the verifier.
+Run `make generate PYTHON=.venv/bin/python`; CI fails on drift, missing metadata,
+missing bilingual lessons, duplicate IDs/aliases or unsupported verifier gates.
+The website owns Pro records and curated route allocation. New public courses
+must have five checkpoints for the current website contract. Historical display
+badge IDs are retained (some differ from the verifier course ID).
+
+Coach P / 小P老师 is an AI teaching style executed by the learner's own agent
+and model. Updated course editorial dates do not complete pending REVIEW.md
+teaching trials. See the website 0.1.3 plan FP-1301/FP-1303 for the authorized scope.

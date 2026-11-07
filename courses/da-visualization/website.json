@@ -1,0 +1,97 @@
+{
+  "order": 13,
+  "agentTool": false,
+  "aliases": [],
+  "id": "da-visualization",
+  "tool": "Any coding agent + matplotlib",
+  "toolZh": "任一编码 Agent + matplotlib",
+  "title": "Data Visualization with an Agent",
+  "titleZh": "用 Agent 做数据可视化",
+  "summary": "A challenge course — turn a clean sales dataset into three spec'd charts plus a summary.json whose numbers are verified against the data.",
+  "summaryZh": "一门挑战课程——把干净的销售数据变成三张有规格的图和一份 summary.json，其中数字与数据集校验一致。",
+  "outcome": "A matplotlib script producing three valid PNG charts and a summary.json — the machine-checkable half of “here are my charts”, with an honest statement of what verification cannot see.",
+  "outcomeZh": "一个 matplotlib 脚本，产出三张合法 PNG 图和一份 summary.json——“这是我的图”中可机器核查的那一半，外加一句诚实说明验证看不到什么。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "uv or pip to install pinned pandas + matplotlib",
+    "Any coding agent",
+    "Completing da-eda first is recommended, not required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "用 uv 或 pip 安装锁定的 pandas + matplotlib",
+    "任一编码 Agent",
+    "建议先完成 da-eda，非必需"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "A chart is packaged evidence",
+      "titleZh": "图是证据的包装",
+      "objective": "State the claim behind each required chart before writing code — a wrong claim makes a pretty chart worse than none.",
+      "objectiveZh": "写代码前先说出每张图在声称什么——声称错了，图越漂亮越糟糕。"
+    },
+    {
+      "id": "l02",
+      "title": "Spec first, chart second",
+      "titleZh": "先写规格，再画图",
+      "objective": "Map each output file to its source aggregation before letting the agent render anything.",
+      "objectiveZh": "在让 Agent 渲染之前，把每个输出文件映射到它的聚合来源。"
+    },
+    {
+      "id": "l03",
+      "title": "Three charts and a summary",
+      "titleZh": "三张图与摘要",
+      "objective": "Implement the contract in starter/charts.py — Agg backend, parsed dates, real PNG output.",
+      "objectiveZh": "在 starter/charts.py 里实现契约——Agg 后端、解析日期、产出真 PNG。"
+    },
+    {
+      "id": "l04",
+      "title": "Numbers match the charts",
+      "titleZh": "数字与图一致",
+      "objective": "summary.json is the auditable layer — verified against dataset ground truth.",
+      "objectiveZh": "summary.json 是可审计层——与数据集真值校验。"
+    },
+    {
+      "id": "l05",
+      "title": "What verification cannot see",
+      "titleZh": "验证看不到的东西",
+      "objective": "Write the sentence stating what was and was not verified — the suite does not judge aesthetics or honest scales.",
+      "objectiveZh": "写下一句话说明验证了什么、没验证什么——套件不评价美观与坐标轴诚实性。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sales-clean",
+      "title": "Clean daily sales",
+      "titleZh": "干净的每日销售",
+      "dataFile": "sales_daily.csv",
+      "blurb": "135 rows of long-format daily revenue across three regions.",
+      "blurbZh": "135 行长格式数据，三个地区的每日收入。"
+    }
+  ],
+  "verification": {
+    "method": "Five-test contract suite: PNG magic bytes and file sizes, summary.json numbers against ground truth. The starter must reproduce the unfinished state.",
+    "methodZh": "五个测试的契约套件：PNG 魔数与文件大小、summary.json 数字对真值。starter 必须复现未完成状态。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "da-visualization",
+    "nameEn": "Visualization Challenger",
+    "nameZh": "可视化挑战者"
+  },
+  "difficulty": "intermediate",
+  "shippedAt": "2026-09-13",
+  "duration": "1–2 hours",
+  "level": "Beginner; pandas + matplotlib",
+  "levelZh": "新手向；pandas + matplotlib",
+  "searchTerms": [
+    "matplotlib tutorial",
+    "python charts",
+    "data visualization python",
+    "matplotlib 教程",
+    "agent data visualization"
+  ]
+}

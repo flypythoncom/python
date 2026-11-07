@@ -1,0 +1,1913 @@
+{
+  "schema_version": 1,
+  "courses": [
+    {
+      "id": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "Claude Code 2.x",
+      "toolZh": "Claude Code 2.x",
+      "title": "Hands-on Python with Claude Code",
+      "titleZh": "用 Claude Code 实战 Python",
+      "summary": "A challenge course that takes you from a broken script to a tested, verified Python report tool — one sentence starts it in your agent, which fetches the course itself. Task contract, bounded change, and objective pass/fail evidence; guided agent-taught mode included.",
+      "summaryZh": "一门挑战课程：从一个跑不起来的脚本到交付一个经过测试与验证的 Python 报表工具——一句话即可在你的 Agent 里开课，课程文件由 Agent 自己获取。任务契约、最小变更与客观的通过/失败证据；内含可选的 Agent 引导模式。",
+      "outcome": "A working scenario report tool (CSV + JSON inputs, error isolation, rounded aggregates, atomic report writes) that passes a nine-test suite — plus a contract-first workflow you can apply to your own script the same day.",
+      "outcomeZh": "一个可运行的场景报表工具（CSV + JSON 输入、错误隔离、聚合舍入、原子写报告），通过九个测试——外加一套当天就能迁移到自己脚本的契约优先工作流。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "Claude Code 2.x installed and signed in",
+        "Comfort running shell commands; no Python packages are installed",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "已安装并登录 Claude Code 2.x",
+        "能运行 shell 命令；无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up Claude Code, install the FlyPython Skill, fetch the course",
+          "titleZh": "装好 Claude Code、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Start Claude Code, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+          "objectiveZh": "启动 Claude Code、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract before the change",
+          "titleZh": "动手之前先写任务契约",
+          "objective": "Turn “make it better” into testable contract statements, trace each to a test, and write one contract line for your own project.",
+          "objectiveZh": "把「优化一下」变成可测试的契约陈述，逐条对应到测试，并为自己的项目写出一条契约。"
+        },
+        {
+          "id": "l03",
+          "title": "Drive a bounded change, test by test",
+          "titleZh": "按测试驱动一次有边界的变更",
+          "objective": "Supervise the agent through seven small diffs — smallest change, no new dependencies, one failing test group at a time — until the starter passes.",
+          "objectiveZh": "监督 Agent 完成七个小 diff——最小变更、不新增依赖、一次一组测试——直到 starter 通过。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like an engineer, review like a skeptic",
+          "titleZh": "像工程师一样验证，像怀疑者一样审查",
+          "objective": "Complete the evidence loop: verify both directions, exercise all three scenario skins, review the diff for scope creep, and record what is not proven.",
+          "objectiveZh": "完成证据闭环：双向验证、跑通三个场景皮肤、审查 diff 是否越界，并记录未证明的部分。"
+        },
+        {
+          "id": "l05",
+          "title": "Apply this to your own project",
+          "titleZh": "把这套方法带回你自己的项目",
+          "objective": "Port the workflow — not the code — to one script you own, with a contract, one new failing test made to pass, and an honest verification record.",
+          "objectiveZh": "把工作流（而不是代码）迁移到你自己的一个脚本上：一份契约、一个从红变绿的测试、一份诚实的验证记录。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "The course ships a nine-test contract suite. The starter must reproduce seven named failures; the reviewed solution passes 9/9. The same suite verifies your own bounded change in lesson 3.",
+        "methodZh": "课程自带九个测试的契约套件。starter 必须复现七个具名失败；已审核的实现 9/9 通过。第 3 课中同一套件验证你自己的最小变更。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-claude-code",
+        "nameEn": "Reproduce the failure",
+        "nameZh": "复现故障"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-12",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "claude code course",
+        "claude code tutorial",
+        "claude code python",
+        "vibe coding python",
+        "ai coding verification"
+      ],
+      "repoDir": "courses/hands-on-python-with-claude-code",
+      "manifestId": "course-claude-code",
+      "manifestVersion": 5,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "hands-on-with-openai-codex",
+      "sharedCoreOf": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "OpenAI Codex desktop app",
+      "toolZh": "OpenAI Codex 桌面应用",
+      "title": "Hands-on with the OpenAI Codex App",
+      "titleZh": "上手 OpenAI Codex 应用",
+      "summary": "The same verified Python workflow as the Claude Code course — task contract, bounded change, objective verify.py evidence — taught hands-on in the Codex desktop app: threads, approvals, AGENTS.md, and diff review.",
+      "summaryZh": "与 Claude Code 课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Codex 桌面应用里实战：线程、审批、AGENTS.md 与 diff 审查。",
+      "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through the Codex desktop app — plus a thread-and-approval workflow that transfers to any capable coding agent.",
+      "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Codex 桌面应用驱动——外加一套可迁移到任何编码 Agent 的线程与审批工作流。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "The Codex desktop app (macOS or Windows) signed in with a ChatGPT account",
+        "Comfort running shell commands; no Python packages are installed",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "装有 Codex 桌面应用（macOS 或 Windows）并已登录 ChatGPT 账号",
+        "能运行 shell 命令；无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up the Codex app, install the FlyPython Skill, fetch the course",
+          "titleZh": "装好 Codex 桌面应用、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Start the Codex app, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+          "objectiveZh": "启动 Codex 桌面应用、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract, let AGENTS.md carry the rules",
+          "titleZh": "写任务契约，让 AGENTS.md 承载规则",
+          "objective": "Turn “make it better” into bounded, testable statements — then persist the working rules in AGENTS.md so every thread inherits them.",
+          "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再把工作规则写进 AGENTS.md，让每个线程自动继承。"
+        },
+        {
+          "id": "l03",
+          "title": "The bounded change, reviewed hunk by hunk",
+          "titleZh": "有界改动，逐块审 diff",
+          "objective": "Supervise Codex through small diffs — smallest change, no new dependencies, one failing test group at a time — using the app's diff review and approvals.",
+          "objectiveZh": "借助应用的 diff 审查与审批，监督 Codex 逐个小 diff 推进——最小变更、不新增依赖、一次一组失败测试。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like a reviewer, not a spectator",
+          "titleZh": "像评审者一样验证，别当观众",
+          "objective": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
+          "objectiveZh": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。"
+        },
+        {
+          "id": "l05",
+          "title": "Take the workflow to your own project",
+          "titleZh": "把工作流带回自己的项目",
+          "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+        "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-codex-cli",
+        "nameEn": "Reproduce with Codex in the loop",
+        "nameZh": "Codex 协同复现"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-12",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "codex app tutorial",
+        "openai codex course",
+        "codex desktop python",
+        "codex 教程"
+      ],
+      "repoDir": "courses/hands-on-with-openai-codex",
+      "manifestId": "course-codex-cli",
+      "manifestVersion": 6,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "hands-on-with-cursor",
+      "sharedCoreOf": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "Cursor (Agent mode)",
+      "toolZh": "Cursor（Agent 模式）",
+      "title": "Hands-on with Cursor",
+      "titleZh": "上手 Cursor",
+      "summary": "The same verified Python workflow as the flagship course — task contract, bounded change, objective verify.py evidence — taught hands-on in Cursor: Agent/Ask/Plan modes, .cursor/rules project rules, and accept/reject diff review.",
+      "summaryZh": "与旗舰课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Cursor 里实战：Agent/Ask/Plan 模式、.cursor/rules 项目规则、接受/拒绝式 diff 审查。",
+      "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through Cursor's Agent mode — plus a rules-and-diff-review workflow that transfers to any capable coding agent.",
+      "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Cursor 的 Agent 模式驱动——外加一套可迁移到任何编码 Agent 的规则与 diff 审查工作流。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "The Cursor editor installed and signed in",
+        "Comfort running shell commands; no Python packages are installed",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "已安装并登录 Cursor 编辑器",
+        "能运行 shell 命令；无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up Cursor, install the FlyPython Skill, fetch the course",
+          "titleZh": "装好 Cursor、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Start Cursor, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+          "objectiveZh": "启动 Cursor、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract, let .cursor/rules carry the rules",
+          "titleZh": "写任务契约，让 .cursor/rules 承载规则",
+          "objective": "Turn “make it better” into bounded, testable statements — then persist the working rules as a project rule so every chat inherits them.",
+          "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再把工作规则写成项目规则，让每个对话自动继承。"
+        },
+        {
+          "id": "l03",
+          "title": "The bounded change, reviewed hunk by hunk",
+          "titleZh": "有界改动，逐块审 diff",
+          "objective": "Supervise Agent mode through small diffs — smallest change, no new dependencies, one failing test group at a time — accepting or rejecting each hunk yourself.",
+          "objectiveZh": "监督 Agent 模式逐个小 diff 推进——最小变更、不新增依赖、一次一组失败测试——每个 hunk 由你亲自接受或拒绝。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like a reviewer, not a spectator",
+          "titleZh": "像评审者一样验证，别当观众",
+          "objective": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
+          "objectiveZh": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。"
+        },
+        {
+          "id": "l05",
+          "title": "Take the workflow to your own project",
+          "titleZh": "把工作流带回自己的项目",
+          "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+        "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-cursor",
+        "nameEn": "Reproduce with Cursor in the loop",
+        "nameZh": "Cursor 协同复现"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-13",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "cursor tutorial",
+        "cursor agent mode",
+        "cursor rules course",
+        "cursor 教程"
+      ],
+      "repoDir": "courses/hands-on-with-cursor",
+      "manifestId": "course-cursor",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "hands-on-with-deepseek-harness",
+      "sharedCoreOf": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "DeepSeek Harness",
+      "toolZh": "DeepSeek Harness",
+      "title": "Hands-on with DeepSeek Harness",
+      "titleZh": "上手 DeepSeek Harness",
+      "summary": "The same verified Python workflow as the flagship course — task contract, bounded change, objective verify.py evidence — taught hands-on in DeepSeek Harness: plugin-composed agents and an auditable append-only trajectory.",
+      "summaryZh": "与旗舰课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 DeepSeek Harness 里实战：插件组装的 Agent 与可审计的只增轨迹。",
+      "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through a harness-composed agent — plus a compose-and-audit workflow that transfers to any capable coding agent.",
+      "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Harness 组装的 Agent 驱动——外加一套可迁移到任何编码 Agent 的组装与审计工作流。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "A working DeepSeek Harness setup with a configured model plugin (your own API key or local endpoint)",
+        "Comfort running shell commands; no Python packages are installed for the exercise itself",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "一套可用的 DeepSeek Harness 环境，配好模型插件（自备 API key 或本地端点）",
+        "能运行 shell 命令；练习本身无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up DeepSeek Harness, install the FlyPython Skill, fetch the course",
+          "titleZh": "装好 DeepSeek Harness、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Start DeepSeek Harness, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+          "objectiveZh": "启动 DeepSeek Harness、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract, let cordis.yml carry the setup",
+          "titleZh": "写任务契约，让 cordis.yml 承载配置",
+          "objective": "Turn “make it better” into bounded, testable statements — then put the working rules into the agent's composition, not a forgotten prompt.",
+          "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再把工作规则写进 Agent 的组装配置，而不是会被遗忘的提示词。"
+        },
+        {
+          "id": "l03",
+          "title": "The bounded change, audited from the trajectory",
+          "titleZh": "有界改动，用轨迹做审计",
+          "objective": "Supervise the agent through small steps — one failing test group at a time — and prove it stayed in bounds by inspecting the trajectory.",
+          "objectiveZh": "监督 Agent 逐个小步骤推进——一次一组失败测试——并检查轨迹证明它没有越界。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like a reviewer, not a spectator",
+          "titleZh": "像评审者一样验证，别当观众",
+          "objective": "Complete the evidence loop — both verification directions, all three skins, an end-to-end trajectory review, and a written record of what is not proven.",
+          "objectiveZh": "完成证据闭环——双向验证、三个皮肤、端到端轨迹评审，以及一份写明未证明内容的记录。"
+        },
+        {
+          "id": "l05",
+          "title": "Take the workflow to your own project",
+          "titleZh": "把工作流带回自己的项目",
+          "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+        "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-deepseek-harness",
+        "nameEn": "Reproduce with DeepSeek Harness in the loop",
+        "nameZh": "DeepSeek Harness 协同复现"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-13",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "deepseek harness tutorial",
+        "deepseek agent course",
+        "cordis.yml",
+        "deepseek 教程"
+      ],
+      "repoDir": "courses/hands-on-with-deepseek-harness",
+      "manifestId": "course-deepseek-harness",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "hands-on-with-kimi-code",
+      "sharedCoreOf": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "Kimi Code CLI",
+      "toolZh": "Kimi Code CLI",
+      "title": "Hands-on with Kimi Code",
+      "titleZh": "上手 Kimi Code",
+      "summary": "The same verified Python workflow as the flagship course — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code: built-in explore/plan/coder subagents keep reading, planning, and editing in separate lanes.",
+      "summaryZh": "与旗舰课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里实战：内置 explore/plan/coder 子代理把读、规划、改码分在三条道上。",
+      "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through Kimi Code's subagent lanes — plus a survey-plan-edit workflow that transfers to any capable coding agent.",
+      "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Kimi Code 的子代理分道驱动——外加一套可迁移到任何编码 Agent 的勘察-规划-编辑工作流。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "The kimi CLI installed and authenticated (a Moonshot/Kimi account or API key)",
+        "Comfort running shell commands; no Python packages are installed",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "已安装并完成认证的 kimi CLI（Moonshot/Kimi 账号或 API key）",
+        "能运行 shell 命令；无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up Kimi Code, install the FlyPython Skill, fetch the course",
+          "titleZh": "装好 Kimi Code、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Start Kimi Code, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+          "objectiveZh": "启动 Kimi Code、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract, plan it in the planning lane",
+          "titleZh": "写任务契约，在规划道里拆步",
+          "objective": "Turn “make it better” into bounded, testable statements — then let the plan subagent decompose it before anything edits.",
+          "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再让 plan 子代理先拆步，然后才许动文件。"
+        },
+        {
+          "id": "l03",
+          "title": "The bounded change, one contract line at a time",
+          "titleZh": "有界改动，一次一条契约行",
+          "objective": "Supervise the coder lane through small edits — smallest change, no new dependencies, one failing test group at a time.",
+          "objectiveZh": "监督 coder 道逐个小编辑推进——最小变更、不新增依赖、一次一组失败测试。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like a reviewer, not a spectator",
+          "titleZh": "像评审者一样验证，别当观众",
+          "objective": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
+          "objectiveZh": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。"
+        },
+        {
+          "id": "l05",
+          "title": "Take the workflow to your own project",
+          "titleZh": "把工作流带回自己的项目",
+          "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+        "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-kimi-code",
+        "nameEn": "Reproduce with Kimi Code in the loop",
+        "nameZh": "Kimi Code 协同复现"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-13",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "kimi code tutorial",
+        "kimi cli course",
+        "kimi subagents",
+        "kimi 教程"
+      ],
+      "repoDir": "courses/hands-on-with-kimi-code",
+      "manifestId": "course-kimi-code",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "hands-on-with-zcode",
+      "sharedCoreOf": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "ZCode desktop app",
+      "toolZh": "ZCode 桌面应用",
+      "title": "Hands-on with ZCode",
+      "titleZh": "上手 ZCode",
+      "summary": "The same verified Python workflow as the flagship course — task contract, bounded change, objective verify.py evidence — taught hands-on in the ZCode desktop workspace: Goal Mode task decomposition and the Git state as your review surface.",
+      "summaryZh": "与旗舰课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 ZCode 桌面工作区里实战：Goal 模式任务拆解，Git 状态作为你的审查面。",
+      "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through ZCode's Goal Mode — plus a goal-and-task-list workflow that transfers to any capable coding agent.",
+      "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 ZCode 的 Goal 模式驱动——外加一套可迁移到任何编码 Agent 的目标与任务列表工作流。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "The ZCode desktop app installed and signed in",
+        "Comfort running shell commands; no Python packages are installed",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "已安装并登录 ZCode 桌面应用",
+        "能运行 shell 命令；无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up ZCode, install the FlyPython Skill, fetch the course",
+          "titleZh": "装好 ZCode、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Start ZCode, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+          "objectiveZh": "启动 ZCode、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract, let Goal Mode hold the plan",
+          "titleZh": "写任务契约，让 Goal 模式承载计划",
+          "objective": "Turn “make it better” into bounded, testable statements — then watch Goal Mode decompose it into tasks before anything edits.",
+          "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再看 Goal 模式把它拆成任务，然后才许动文件。"
+        },
+        {
+          "id": "l03",
+          "title": "The bounded change, watched task by task",
+          "titleZh": "有界改动，逐任务盯守",
+          "objective": "Supervise the goal's task list through small changes — smallest change, no new dependencies, one failing test group at a time — checking the Git state after each task.",
+          "objectiveZh": "沿目标的任务列表逐个守小改动——最小变更、不新增依赖、一次一组失败测试——每个任务后核对 Git 状态。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like a reviewer, not a spectator",
+          "titleZh": "像评审者一样验证，别当观众",
+          "objective": "Complete the evidence loop — both verification directions, all three skins, an accumulated Git-diff review, and a written record of what is not proven.",
+          "objectiveZh": "完成证据闭环——双向验证、三个皮肤、累积 Git diff 评审，以及一份写明未证明内容的记录。"
+        },
+        {
+          "id": "l05",
+          "title": "Take the workflow to your own project",
+          "titleZh": "把工作流带回自己的项目",
+          "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+          "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+        "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-zcode",
+        "nameEn": "Reproduce with ZCode in the loop",
+        "nameZh": "ZCode 协同复现"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-13",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "zcode tutorial",
+        "z.ai agent course",
+        "zcode goal mode",
+        "zcode 教程"
+      ],
+      "repoDir": "courses/hands-on-with-zcode",
+      "manifestId": "course-zcode",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "hands-on-with-github-copilot",
+      "sharedCoreOf": "hands-on-python-with-claude-code",
+      "teachingRunPending": true,
+      "tool": "GitHub Copilot in VS Code",
+      "toolZh": "VS Code 中的 GitHub Copilot",
+      "title": "Hands-on with GitHub Copilot",
+      "titleZh": "上手 GitHub Copilot",
+      "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on with GitHub Copilot in VS Code, where the Agent role runs the loop and you supervise permissions, instructions files, and diffs.",
+      "summaryZh": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 VS Code 的 GitHub Copilot 里手把手教：由 Agent 角色跑闭环，你监督权限、指令文件与 diff。",
+      "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven with Copilot's Agent role — plus the Copilot workflow: Agent/Plan/Ask roles, Manual permissions, .github/copilot-instructions.md and applyTo instructions files, checkpoints, and Source Control diff review.",
+      "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Copilot 的 Agent 角色驱动——外加 Copilot 工作流：Agent/Plan/Ask 角色、Manual permissions、.github/copilot-instructions.md 与 applyTo 指令文件、检查点，以及 Source Control 的 diff 评审。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "VS Code with GitHub Copilot signed in",
+        "Comfort running shell commands; no Python packages are installed",
+        "No prior testing experience required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "装有 VS Code 并已登录 GitHub Copilot",
+        "能运行 shell 命令；无需安装任何 Python 包",
+        "不要求有测试经验"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Set up Copilot in VS Code, install the FlyPython Skill, fetch the course",
+          "titleZh": "在 VS Code 里装好 Copilot、装上 FlyPython Skill、让 Agent 取回课程",
+          "objective": "Get Copilot running with the Agent role and Manual permissions, let the agent fetch this course's files, and make the starter's failure objective.",
+          "objectiveZh": "让 Copilot 以 Agent 角色和 Manual permissions 跑起来，让 Agent 取回本课文件，并让 starter 的失败变得客观。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the task contract, let .github instructions carry the rules",
+          "titleZh": "写任务契约，让 .github 指令文件承载规则",
+          "objective": "Turn \"make it better\" into a bounded, testable contract — then make it durable with .github/copilot-instructions.md and an applyTo instructions file.",
+          "objectiveZh": "把「改好一点」变成有边界、可测试的契约——再用 .github/copilot-instructions.md 和带 applyTo 的指令文件把它持久化。"
+        },
+        {
+          "id": "l03",
+          "title": "The bounded change, reviewed turn by turn",
+          "titleZh": "有界改动，一轮一审",
+          "objective": "Drive the starter to green through bounded turns — review each turn's diff before the next, and use Restore Checkpoint and Git to keep every change yours.",
+          "objectiveZh": "通过有界的轮次把 starter 推到全绿——每轮先审 diff 再发下一轮，用 Restore Checkpoint 和 Git 守住每一处改动。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify like a reviewer, not a spectator",
+          "titleZh": "像评审者一样验证，别当观众",
+          "objective": "Green tests are the floor: run both suites, walk a scenario skin, and review the accumulated diff in Source Control the way you would review a colleague's.",
+          "objectiveZh": "测试全绿只是地板：两个套件都跑、走完一个场景皮肤，并按评审同事的标准在 Source Control 里审这份累积 diff。"
+        },
+        {
+          "id": "l05",
+          "title": "Take the workflow to your own project",
+          "titleZh": "把工作流带回自己的项目",
+          "objective": "Run the same loop — contract, instructions files, bounded agent work, diff review — with Copilot on a repository you actually own.",
+          "objectiveZh": "用 Copilot 在你真正拥有的仓库上跑同一套闭环：契约、指令文件、有界 Agent 工作、diff 评审。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "excel-report",
+          "title": "Excel / report automation",
+          "titleZh": "Excel / 报表自动化",
+          "dataFile": "orders.csv",
+          "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+          "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+        },
+        {
+          "id": "data-monitor",
+          "title": "Data monitor script",
+          "titleZh": "数据监控脚本",
+          "dataFile": "metrics.csv",
+          "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+          "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+        },
+        {
+          "id": "api-tool",
+          "title": "Small API tool",
+          "titleZh": "小型 API 工具",
+          "dataFile": "tickets.json",
+          "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+          "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+        }
+      ],
+      "verification": {
+        "method": "The course ships the shared nine-test contract suite. The starter must reproduce seven named failures; the reviewed solution passes 9/9. The same suite verifies your own bounded change in lesson 3.",
+        "methodZh": "课程自带共享的九个测试契约套件。starter 必须复现七个具名失败；已审核的实现 9/9 通过。第 3 课中同一套件验证你自己的最小变更。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-github-copilot",
+        "nameEn": "Reproduce with Copilot in the loop",
+        "nameZh": "Copilot 协同复现"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-10-11",
+      "duration": "2–4 hours",
+      "level": "Beginner-friendly; code-curious",
+      "levelZh": "对新手友好；需要读代码的耐心",
+      "searchTerms": [
+        "github copilot course",
+        "copilot agent mode",
+        "copilot instructions file",
+        "vscode agent course",
+        "copilot python"
+      ],
+      "repoDir": "courses/hands-on-with-github-copilot",
+      "manifestId": "course-github-copilot",
+      "manifestVersion": 3,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "agent-rules-single-source",
+      "tool": "Any coding agent (Claude Code 2.x / Codex CLI 0.x / Cursor)",
+      "toolZh": "任一编码 Agent（Claude Code 2.x / Codex CLI 0.x / Cursor）",
+      "title": "One source of truth for agent rules",
+      "titleZh": "Agent 规则的单一真源",
+      "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source.",
+      "summaryZh": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器。",
+      "outcome": "A working rule-consistency checker (rules_check.py) that fails CI the moment a rule file drifts from AGENTS.md — plus the single-source setup applied to your own repository.",
+      "outcomeZh": "一个可运行的规则一致性检查器（rules_check.py）——任何规则文件偏离 AGENTS.md 的那一刻，CI 就会失败——外加应用到你自己仓库的单一真源配置。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "Any coding agent that reads AGENTS.md, CLAUDE.md, or .cursorrules",
+        "Comfort running shell commands; standard library only"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "任一会读 AGENTS.md、CLAUDE.md 或 .cursorrules 的编码 Agent",
+        "能运行 shell 命令；仅用标准库"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Measure the drift you already have",
+          "titleZh": "量化你已经存在的漂移",
+          "objective": "Run the checker against three scenario repositories and read drift as a test failure, not a vibe.",
+          "objectiveZh": "对三个场景仓库运行检查器，把漂移读成测试失败，而不是一种感觉。"
+        },
+        {
+          "id": "l02",
+          "title": "Decide the source of truth",
+          "titleZh": "确定唯一真源",
+          "objective": "AGENTS.md becomes the one file agents read; everything else is a pointer or a copy.",
+          "objectiveZh": "AGENTS.md 成为 Agent 唯一阅读的文件；其余都只能是指针或副本。"
+        },
+        {
+          "id": "l03",
+          "title": "Drive a bounded change, test by test",
+          "titleZh": "按测试驱动一次有边界的变更",
+          "objective": "Make the starter detect source, pointer, copy, and drift — one failing test group at a time.",
+          "objectiveZh": "让 starter 依次识别真源、指针、副本与漂移——一次一组失败测试。"
+        },
+        {
+          "id": "l04",
+          "title": "Verify and wire it in",
+          "titleZh": "验证并接入流程",
+          "objective": "Prove both verifier directions, run all three skins, then add the checker to your review loop.",
+          "objectiveZh": "证明验证器双向通过、跑完三个皮肤，然后把检查器接入你的审查环。"
+        },
+        {
+          "id": "l05",
+          "title": "Apply this to your repository",
+          "titleZh": "把这套方法带回你的仓库",
+          "objective": "One AGENTS.md, thin pointers everywhere else, and a failing check when it breaks.",
+          "objectiveZh": "一个 AGENTS.md，其余全是瘦指针，一旦破坏检查就失败。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "thin-pointer",
+          "title": "Healthy: thin pointers",
+          "titleZh": "健康：瘦指针",
+          "dataFile": "AGENTS.md + CLAUDE.md",
+          "blurb": "AGENTS.md plus two thin pointer files that defer to it.",
+          "blurbZh": "AGENTS.md 加两个指向它的瘦指针文件。"
+        },
+        {
+          "id": "single-copy",
+          "title": "Healthy: exact copy",
+          "titleZh": "健康：精确副本",
+          "dataFile": "AGENTS.md + CLAUDE.md",
+          "blurb": "AGENTS.md plus one byte-identical copy in CLAUDE.md.",
+          "blurbZh": "AGENTS.md 加一份逐字节一致的 CLAUDE.md 副本。"
+        },
+        {
+          "id": "drifted",
+          "title": "Broken: drifted .cursorrules",
+          "titleZh": "故障：漂移的 .cursorrules",
+          "dataFile": ".cursorrules",
+          "blurb": "A stale full ruleset that contradicts AGENTS.md — the drift to catch.",
+          "blurbZh": "一份与 AGENTS.md 矛盾的过期完整规则集——要捕获的漂移。"
+        }
+      ],
+      "verification": {
+        "method": "An 11-test suite pins pointer detection, the source requirement, copy and drift classification, and CLI exit codes; the starter reproduces six named failures, the solution passes 11/11.",
+        "methodZh": "11 个测试的套件锚定指针识别、真源要求、副本与漂移分类及 CLI 退出码；starter 复现六个具名失败，solution 通过 11/11。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-agent-rules",
+        "nameEn": "Measure the drift",
+        "nameZh": "规则漂移检测"
+      },
+      "difficulty": "intermediate",
+      "shippedAt": "2026-09-12",
+      "duration": "1–2 hours",
+      "level": "Maintains rule files for multiple tools",
+      "levelZh": "为多个工具维护规则文件",
+      "searchTerms": [
+        "agents.md tutorial",
+        "claude code rules",
+        "cursorrules",
+        "agents.md vs claude.md",
+        "agent 规则"
+      ],
+      "repoDir": "courses/agent-rules-single-source",
+      "manifestId": "course-agent-rules",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "verifying-ai-generated-code",
+      "tool": "Any coding agent (Claude Code 2.x / Codex CLI 0.x / Cursor)",
+      "toolZh": "任一编码 Agent（Claude Code 2.x / Codex CLI 0.x / Cursor）",
+      "title": "From “it runs” to “it ships”: verifying AI-generated code",
+      "titleZh": "从「能跑」到「能上线」：验证 AI 写的代码",
+      "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
+      "summaryZh": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
+      "outcome": "ship_check.py: one command that turns “the demo worked” into a written delivery record — command, exit code, parsed test count, a verdict that refuses projects with no tests, and an explicit unverified list.",
+      "outcomeZh": "ship_check.py：一条命令把「演示能跑」变成一份书面交付记录——命令、退出码、解析出的测试数、一个拒绝零测试项目的判定，以及一份显式的未验证清单。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "A small Python project you want to ship more safely",
+        "Comfort running shell commands; standard library only"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "一个想交付得更稳的小型 Python 项目",
+        "能运行 shell 命令；仅用标准库"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "“It runs” is not evidence",
+          "titleZh": "“能跑”不是证据",
+          "objective": "Watch the starter bless a project with no tests and one with a failing test — then want better.",
+          "objectiveZh": "看着 starter 给零测试的项目和有失败测试的项目都盖章放行——然后想要更好的东西。"
+        },
+        {
+          "id": "l02",
+          "title": "Define what a release record must prove",
+          "titleZh": "定义发布记录必须证明什么",
+          "objective": "Command, exit code, parsed count and outcome, an unverified list, and a verdict that refuses zero-test projects.",
+          "objectiveZh": "命令、退出码、解析出的数量与结果、一份未验证清单，以及一个拒绝零测试项目的判定。"
+        },
+        {
+          "id": "l03",
+          "title": "Build the ship check, test by test",
+          "titleZh": "按测试逐组构建 ship check",
+          "objective": "Parsing, verdicts, the unverified list, atomic writes, exit codes — one failing group at a time.",
+          "objectiveZh": "解析、判定、未验证清单、原子写入、退出码——一次一组失败测试。"
+        },
+        {
+          "id": "l04",
+          "title": "Read the record like a skeptic",
+          "titleZh": "像怀疑者一样读记录",
+          "objective": "Green, red, and no-tests mean different things — prove you can tell them apart.",
+          "objectiveZh": "绿、红、零测试是三件不同的事——证明你能分辨。"
+        },
+        {
+          "id": "l05",
+          "title": "Gate your next release",
+          "titleZh": "给你的下一次发布装上门禁",
+          "objective": "Take the ship check to a project you own and make the record part of shipping.",
+          "objectiveZh": "把 ship check 带到你自己的项目，让记录成为交付的一部分。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "green-project",
+          "title": "Two passing tests",
+          "titleZh": "两个通过的测试",
+          "dataFile": "ship.json + tests/",
+          "blurb": "A tiny project with two passing tests and a declared unverified list.",
+          "blurbZh": "一个带两个通过测试和已声明未验证清单的小项目。"
+        },
+        {
+          "id": "red-project",
+          "title": "One wrong expectation",
+          "titleZh": "一个写错的断言",
+          "dataFile": "ship.json + tests/",
+          "blurb": "The regression under study: one deliberately wrong test expectation.",
+          "blurbZh": "正在研究的回归：一个故意写错的测试断言。"
+        },
+        {
+          "id": "no-tests",
+          "title": "Zero tests",
+          "titleZh": "零个测试",
+          "dataFile": "empty tests/",
+          "blurb": "The state that must never pass: no tests at all.",
+          "blurbZh": "绝不能放行的状态：一个测试都没有。"
+        }
+      ],
+      "verification": {
+        "method": "A 10-test suite pins parsed counts, the no-tests verdict, the unverified list, atomic record writes, and CLI exit codes; the starter reproduces seven named failures, the solution passes 10/10.",
+        "methodZh": "10 个测试的套件锚定解析计数、零测试判定、未验证清单、原子记录写入及 CLI 退出码；starter 复现七个具名失败，solution 通过 10/10。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-verify-ship",
+        "nameEn": "It runs is not evidence",
+        "nameZh": "能跑不是证据"
+      },
+      "difficulty": "intermediate",
+      "shippedAt": "2026-09-12",
+      "duration": "1–2 hours",
+      "level": "Owns an AI-written Python project",
+      "levelZh": "拥有 AI 写的 Python 项目",
+      "searchTerms": [
+        "verify ai generated code",
+        "ai code review",
+        "release evidence",
+        "AI 写的代码怎么验证",
+        "发布检查"
+      ],
+      "repoDir": "courses/verifying-ai-generated-code",
+      "manifestId": "course-verify-ship",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "mcp-server-in-python",
+      "tool": "Claude Code 2.x (protocol: MCP 2026-07-28)",
+      "toolZh": "Claude Code 2.x（协议：MCP 2026-07-28）",
+      "title": "Give your agent tools with MCP (Python)",
+      "titleZh": "用 MCP 给你的 Agent 装上工具（Python）",
+      "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip.",
+      "summaryZh": "用纯 Python 构建一个无状态的 MCP 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互。",
+      "outcome": "A working MCP tool server implementing the stateless 2026-07-28 specification: no initialize handshake, validated tool arguments, isolated handler failures, and the multi-round input_required flow.",
+      "outcomeZh": "一个实现无状态 2026-07-28 规范的 MCP 工具服务：无 initialize 握手、参数校验、处理异常隔离、input_required 多轮交互。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "Comfort reading JSON; no API key or model account needed",
+        "Any coding agent; standard library only"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "能读 JSON；无需 API Key 或模型账号",
+        "任一编码 Agent；仅用标准库"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "What MCP actually is (2026-07-28)",
+          "titleZh": "MCP 到底是什么（2026-07-28）",
+          "objective": "A stateless JSON-RPC 2.0 surface for tools — no handshake, no sessions, versions in _meta.",
+          "objectiveZh": "一个面向工具的无状态 JSON-RPC 2.0 接口——无握手、无会话、版本放在 _meta 里。"
+        },
+        {
+          "id": "l02",
+          "title": "The JSON-RPC dispatch contract",
+          "titleZh": "JSON-RPC 分发契约",
+          "objective": "Valid requests echo their id; invalid ones get -32600; unknown or removed methods get -32601.",
+          "objectiveZh": "合法请求回显 id；非法请求得 -32600；未知或已移除的方法得 -32601。"
+        },
+        {
+          "id": "l03",
+          "title": "Validation and error isolation",
+          "titleZh": "校验与错误隔离",
+          "objective": "Arguments are untrusted input: validate before execution, and never let a handler crash the transport.",
+          "objectiveZh": "参数是不可信输入：先校验再执行，绝不让处理函数打断传输。"
+        },
+        {
+          "id": "l04",
+          "title": "The input_required round-trip",
+          "titleZh": "input_required 多轮交互",
+          "objective": "A tool can ask the client a question mid-call — return the requests, finish on the retry carrying answers.",
+          "objectiveZh": "工具可以在调用中途向客户端提问——先返回问题，客户端带答案重试后完成。"
+        },
+        {
+          "id": "l05",
+          "title": "Expose one real tool to your agent",
+          "titleZh": "给你的 Agent 暴露一个真实工具",
+          "objective": "Wrap one function you actually own behind the validated, isolated boundary you just built.",
+          "objectiveZh": "把你真正拥有的一个函数包进刚建好的「校验 + 隔离」边界。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "01-tools-list.json",
+          "title": "Direct tools/list",
+          "titleZh": "直接 tools/list",
+          "dataFile": "requests/01-tools-list.json",
+          "blurb": "Listing tools with no prior handshake.",
+          "blurbZh": "无握手直接列出工具。"
+        },
+        {
+          "id": "03-missing-argument.json",
+          "title": "Argument validation",
+          "titleZh": "参数校验",
+          "dataFile": "requests/03-missing-argument.json",
+          "blurb": "A tools/call missing its required argument.",
+          "blurbZh": "一次缺少必填参数的 tools/call。"
+        },
+        {
+          "id": "04-removed-initialize.json",
+          "title": "The removed initialize",
+          "titleZh": "已移除的 initialize",
+          "dataFile": "requests/04-removed-initialize.json",
+          "blurb": "Calling the method the 2026-07-28 specification removed.",
+          "blurbZh": "调用 2026-07-28 规范已移除的方法。"
+        }
+      ],
+      "verification": {
+        "method": "The reviewed mcp-server contract suite: the starter reproduces the listed boundary failures and the solution passes the full suite; wire samples under scenario/requests/ let you probe the protocol by hand.",
+        "methodZh": "经过审核的 mcp-server 契约套件：starter 复现列出的边界失败，solution 通过全部测试；scenario/requests/ 下的线路样本让你可以手动探查协议。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-mcp-tools",
+        "nameEn": "MCP Tool Server",
+        "nameZh": "MCP 工具服务器"
+      },
+      "difficulty": "advanced",
+      "shippedAt": "2026-09-12",
+      "duration": "2–3 hours",
+      "level": "Comfortable with Python functions and JSON",
+      "levelZh": "熟悉 Python 函数与 JSON",
+      "searchTerms": [
+        "build mcp server python",
+        "mcp tutorial",
+        "mcp 教程",
+        "model context protocol python",
+        "mcp server"
+      ],
+      "repoDir": "courses/mcp-server-in-python",
+      "manifestId": "course-mcp-tools",
+      "manifestVersion": 4,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "llm-features-in-python",
+      "tool": "Any coding agent + a recorded model replay (no API key)",
+      "toolZh": "任一编码 Agent + 录制好的模型回放（无需 API Key）",
+      "title": "Build LLM features in Python: structured output, tool calls, and evals",
+      "titleZh": "用 Python 构建 LLM 功能：结构化输出、工具调用与评测",
+      "summary": "Turn a demo-day model call into a feature you can ship — validate structured output, allowlist tool calls, retry with the error fed back, fall back to a human instead of guessing, and measure it with an offline eval that divides by every case.",
+      "summaryZh": "把演示日的一次模型调用变成能上线的功能——校验结构化输出、给工具调用设白名单、带着错误信息重试、拿不准就转人工而不是瞎猜，并用分母覆盖全部用例的离线评测来度量。",
+      "outcome": "A working ticket-triage feature (ticket_triage.py) that treats every model reply as untrusted input — validated output contract, tool-call allowlist, retry with the error fed back, human fallback — plus an offline eval with a pass/fail threshold you can replay on every change.",
+      "outcomeZh": "一个可运行的工单分诊功能（ticket_triage.py）：把每条模型回复当成不可信输入——经过校验的输出契约、工具调用白名单、带错误反馈的重试、人工兜底——外加一个每次改动都能回放、带通过阈值的离线评测。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "Any coding agent with the FlyPython Skill installed",
+        "Comfort running shell commands; standard library only",
+        "No model API key and no network access required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "任一装好 FlyPython Skill 的编码 Agent",
+        "能运行 shell 命令；仅用标准库",
+        "不需要模型 API Key，也不需要联网"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "A demo reply is not a feature",
+          "titleZh": "演示能跑不等于功能可靠",
+          "objective": "Run the starter's eval, catch the number that cannot be true, and map every failing test to the real-world reply that breaks it.",
+          "objectiveZh": "跑一遍 starter 的评测，抓住那个不可能为真的数字，再把每个失败测试对应到让它坏掉的真实回复。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the output contract",
+          "titleZh": "把模型输出写成契约",
+          "objective": "Read TASK.md as the boundary between your code and the model — what a reply must look like, which tools it may run, and what happens when it does not comply.",
+          "objectiveZh": "把 TASK.md 当成你的代码与模型之间的边界来读——回复必须长什么样、能运行哪些工具、不照做时怎么办。"
+        },
+        {
+          "id": "l03",
+          "title": "Validate, allowlist tools, retry — one group at a time",
+          "titleZh": "校验、工具白名单、重试——一次一组",
+          "objective": "Drive the starter to green in four bounded turns — parser, tool gate, retry-and-fallback loop, eval — and watch one fix expose a bug the old code was hiding.",
+          "objectiveZh": "用四个有界轮次把 starter 推到全绿——解析器、工具关口、重试与兜底循环、评测——并亲眼看到一处修复暴露出旧代码藏着的 bug。"
+        },
+        {
+          "id": "l04",
+          "title": "Read the eval honestly",
+          "titleZh": "诚实地读评测",
+          "objective": "Run all three skins, accept the one that fails its threshold, and write down what a handful of recorded replies can and cannot tell you.",
+          "objectiveZh": "跑完三个皮肤，接受那个没过阈值的结果，并写下少量录好的回复能说明什么、不能说明什么。"
+        },
+        {
+          "id": "l05",
+          "title": "Apply it to your own LLM feature",
+          "titleZh": "接到你自己的模型功能上",
+          "objective": "Put a real model behind the same seam: a callable client, an output contract, an allowlist, a fallback, and an eval you record once and replay on every change.",
+          "objectiveZh": "把真实模型放到同一个接缝后面：一个可调用的 client、一份输出契约、一张白名单、一个兜底，以及录一次、每次改动都回放的评测。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "it-helpdesk",
+          "title": "IT helpdesk with a device lookup tool",
+          "titleZh": "IT 服务台（带设备查询工具）",
+          "dataFile": "recordings.json + devices.json",
+          "blurb": "Classify internal tickets into five categories; the model may look up a device by asset tag first.",
+          "blurbZh": "把内部工单分到五个类别；模型可以先按资产标签查询设备。"
+        },
+        {
+          "id": "saas-feedback",
+          "title": "SaaS feedback inbox",
+          "titleZh": "SaaS 反馈收件箱",
+          "dataFile": "recordings.json",
+          "blurb": "Classify in-app feedback with no tools at all — the model answers from the ticket text alone.",
+          "blurbZh": "完全不带工具地分类应用内反馈——模型只凭工单文本作答。"
+        },
+        {
+          "id": "shop-support",
+          "title": "Shop support with an order lookup tool",
+          "titleZh": "商店客服（带订单查询工具）",
+          "dataFile": "recordings.json + orders.json",
+          "blurb": "Classify a shop's support mail; the model may look up an order before answering.",
+          "blurbZh": "分类商店的客服邮件；模型可以先查询订单再作答。"
+        }
+      ],
+      "verification": {
+        "method": "A 15-test suite pins the output contract, the tool-call allowlist, retry with error feedback, the human fallback, and an eval that divides by every case. The starter reproduces the named failures; the reviewed solution passes 15/15 against recorded replies — no network, no API key.",
+        "methodZh": "15 个测试锚定输出契约、工具调用白名单、带错误反馈的重试、人工兜底，以及分母覆盖全部用例的评测。starter 复现具名失败；已审核的实现对着录制回复通过 15/15——无需联网、无需 API Key。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-llm-features",
+        "nameEn": "Model output is untrusted input",
+        "nameZh": "模型输出是不可信输入"
+      },
+      "difficulty": "intermediate",
+      "shippedAt": "2026-10-11",
+      "duration": "2–4 hours",
+      "level": "Comfortable with functions, dictionaries, and exceptions",
+      "levelZh": "熟悉函数、字典与异常处理",
+      "searchTerms": [
+        "llm structured output python",
+        "tool call allowlist",
+        "offline eval llm",
+        "llm feature python",
+        "结构化输出"
+      ],
+      "repoDir": "courses/llm-features-in-python",
+      "manifestId": "course-llm-features",
+      "manifestVersion": 2,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "secure-ai-generated-code",
+      "tool": "Any coding agent + an attack-replay harness",
+      "toolZh": "任一编码 Agent + 攻击重放装置",
+      "title": "Security review for AI-written Python",
+      "titleZh": "AI 写的 Python 代码的安全审查",
+      "summary": "Review a plausible, AI-style notes service the way an attacker would — close SQL injection, path traversal, a hard-coded secret, fast password hashes, and pickled sessions one class at a time, then prove each fix by replaying the attacks.",
+      "summaryZh": "像攻击者一样审查一个看起来没问题、AI 风格的笔记服务——一次一类地堵上 SQL 注入、路径穿越、硬编码密钥、快速密码哈希和 pickle 会话，再通过重放攻击证明每处修复。",
+      "outcome": "Every one of nine recorded attacks blocked, an attack-replay command that proves it on both scenario skins, and a five-question review habit for the next repository your assistant writes.",
+      "outcomeZh": "九个录制攻击全部被挡下、一条能在两个场景皮肤上证明此事的重放命令，以及一套能带去下一个仓库的五问审查习惯。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "Any coding agent with the FlyPython Skill installed",
+        "Comfort running shell commands; standard library only",
+        "Can read Python functions with file and SQL operations"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "任一装好 FlyPython Skill 的编码 Agent",
+        "能运行 shell 命令；仅用标准库",
+        "能读懂带文件与 SQL 操作的 Python 函数"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "Plausible is not safe",
+          "titleZh": "看起来对不等于安全",
+          "objective": "Read a notes service that looks fine, then replay nine attacks against it and watch every one succeed.",
+          "objectiveZh": "读一个看起来没问题的笔记服务，然后对它重放九个攻击，看着每一个都得手。"
+        },
+        {
+          "id": "l02",
+          "title": "Write the threat model as a contract",
+          "titleZh": "把威胁模型写成契约",
+          "objective": "For each function, name who controls the input, what they want, and what the code must refuse — then trace every refusal to a test and the Python documentation behind it.",
+          "objectiveZh": "对每个函数，说清谁控制输入、他想要什么、代码必须拒绝什么——再把每一条拒绝追查到一个测试，以及它背后的 Python 文档。"
+        },
+        {
+          "id": "l03",
+          "title": "Close one flaw class per turn",
+          "titleZh": "每轮只堵一类漏洞",
+          "objective": "Five bounded turns — search, attachments, secret key, passwords, sessions — each closing one weakness class with a mechanism, never a filter, each proven by tests and the replay.",
+          "objectiveZh": "五个有界轮次——搜索、附件、密钥、密码、会话——每轮用机制（绝不用过滤）堵上一类弱点，并用测试和重放证明。"
+        },
+        {
+          "id": "l04",
+          "title": "Review like an attacker",
+          "titleZh": "像攻击者一样复查",
+          "objective": "Replay the second skin, run a static scanner and note what it misses, attack one thing the suite never tried, and write down what is still unreviewed.",
+          "objectiveZh": "重放第二个皮肤、跑一遍静态扫描并记下它漏了什么、攻击一处套件从没试过的地方，并写下还有什么没审查。"
+        },
+        {
+          "id": "l05",
+          "title": "Review your own AI-written code",
+          "titleZh": "审查你自己的 AI 代码",
+          "objective": "Take the five questions and the scanner pass to a repository you own: find where input crosses a trust boundary, check each crossing for a mechanism, and write down what you did not review.",
+          "objectiveZh": "把五个问题和扫描步骤带到你自己的仓库：找出输入跨越信任边界的地方，检查每处是否用了机制，并写下你没有审查的部分。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "clinic-notes",
+          "title": "Clinic visit notes",
+          "titleZh": "诊所就诊记录",
+          "dataFile": "attacks.json + seed.json",
+          "blurb": "A small clinic's visit notes — every note belongs to one clinician; attachments live under a scans folder. All names and records are fictional.",
+          "blurbZh": "一家小诊所的就诊记录——每条记录只属于一位医生，附件放在 scans 目录下。所有人名与记录均为虚构。"
+        },
+        {
+          "id": "team-notes",
+          "title": "Team shared notes",
+          "titleZh": "团队共享笔记",
+          "dataFile": "attacks.json + seed.json",
+          "blurb": "A small team's shared notes app: search, attachments, logins, and sessions.",
+          "blurbZh": "一个小团队的共享笔记应用：搜索、附件、登录与会话。"
+        }
+      ],
+      "verification": {
+        "method": "A 16-test suite plus an attack-replay harness covering nine attacks per skin — SQL injection, path traversal, secret disclosure, weak password hashes, and pickled sessions. The starter lets all nine through; the reviewed solution blocks 9/9 on both skins.",
+        "methodZh": "16 个测试的套件，外加每个皮肤重放九个攻击的装置——SQL 注入、路径穿越、密钥泄露、弱密码哈希与 pickle 会话。starter 对九个攻击全部放行；已审核的实现两个皮肤均 9/9 拦截。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "course-secure-code",
+        "nameEn": "Plausible is not safe",
+        "nameZh": "看起来对不等于安全"
+      },
+      "difficulty": "intermediate",
+      "shippedAt": "2026-10-11",
+      "duration": "2–4 hours",
+      "level": "Reads Python with file and SQL operations comfortably",
+      "levelZh": "能顺畅读懂带文件与 SQL 操作的 Python",
+      "searchTerms": [
+        "secure ai generated code",
+        "sql injection python",
+        "path traversal",
+        "pickle security",
+        "ai code security review",
+        "安全审查"
+      ],
+      "repoDir": "courses/secure-ai-generated-code",
+      "manifestId": "course-secure-code",
+      "manifestVersion": 2,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "da-eda",
+      "tool": "Any coding agent + pandas",
+      "toolZh": "任一编码 Agent + pandas",
+      "title": "Exploratory Data Analysis with an Agent",
+      "titleZh": "用 Agent 做探索性数据分析",
+      "summary": "A challenge course — point your agent at a messy shop export and produce a verified EDA summary whose numbers are checked against ground truth.",
+      "summaryZh": "一门挑战课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要。",
+      "outcome": "A pandas script that cleans a 142-row messy export (duplicates, bad amounts, bad dates) and writes results.json verified against ground truth — the load → clean → summarize pipeline you can port to your own data.",
+      "outcomeZh": "一个 pandas 脚本：清洗 142 行脏导出（重复、坏金额、坏日期），产出经真值校验的 results.json——一套可以迁移到你自己数据上的加载 → 清洗 → 统计流水线。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "uv or pip to install the pinned pandas dependency",
+        "Any coding agent; no pandas experience required",
+        "First non-stdlib course — installing the environment is part of the challenge"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "用 uv 或 pip 安装锁定的 pandas 依赖",
+        "任一编码 Agent；不要求 pandas 经验",
+        "第一门非标准库课程——装环境本身就是挑战的一部分"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "What messy data looks like",
+          "titleZh": "脏数据长什么样",
+          "objective": "Profile the CSV before touching code: total rows, exact duplicates, unparseable amounts and dates.",
+          "objectiveZh": "写代码前先给 CSV 做画像：总行数、完全重复行、不可解析的金额与日期。"
+        },
+        {
+          "id": "l02",
+          "title": "Define the answer first",
+          "titleZh": "先定答案",
+          "objective": "Write down the expected results.json shape — keys, types, rounding — before letting the agent generate code.",
+          "objectiveZh": "在让 Agent 生成代码之前，先写下期望的 results.json 结构——键、类型、舍入规则。"
+        },
+        {
+          "id": "l03",
+          "title": "Clean and summarize",
+          "titleZh": "清洗与统计",
+          "objective": "Implement the contract in starter/eda.py: load, clean with counted removals, summarize, write results.json.",
+          "objectiveZh": "在 starter/eda.py 里实现契约：加载、按计数清洗、统计、写出 results.json。"
+        },
+        {
+          "id": "l04",
+          "title": "Check against ground truth",
+          "titleZh": "核对真值",
+          "objective": "The suite asserts exact numbers — 142 in, 137 clean, total revenue 33347.89 — plausible-but-different numbers are a fail.",
+          "objectiveZh": "套件断言精确数字——输入 142 行、清洗后 137、总收入 33347.89——看似合理但不同的数字就是失败。"
+        },
+        {
+          "id": "l05",
+          "title": "Run it on your own data",
+          "titleZh": "换成你自己的数据",
+          "objective": "Port the pipeline to a real export you own and name one assumption that broke.",
+          "objectiveZh": "把流水线迁移到你真实的一份导出上，并说出一条不成立的假设。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "shop-export",
+          "title": "Messy shop export",
+          "titleZh": "脏的商店导出",
+          "dataFile": "transactions.csv",
+          "blurb": "142 rows with exact duplicates, unparseable amounts, and a bad date.",
+          "blurbZh": "142 行，含完全重复、不可解析金额与一条坏日期。"
+        }
+      ],
+      "verification": {
+        "method": "Twelve-test contract suite asserting exact numbers against ground truth. The starter must reproduce the unfinished state; the reviewed solution passes 12/12.",
+        "methodZh": "十二个测试的契约套件，按真值断言精确数字。starter 必须复现未完成状态；已审核实现 12/12 通过。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "da-eda",
+        "nameEn": "EDA Challenger",
+        "nameZh": "探索分析挑战者"
+      },
+      "difficulty": "beginner",
+      "shippedAt": "2026-09-13",
+      "duration": "1–2 hours",
+      "level": "Beginner; first pandas course",
+      "levelZh": "新手向；第一门 pandas 课程",
+      "searchTerms": [
+        "pandas tutorial",
+        "eda python",
+        "exploratory data analysis",
+        "pandas 教程",
+        "ai agent data analysis"
+      ],
+      "repoDir": "courses/da-eda",
+      "manifestId": "course-da-eda",
+      "manifestVersion": 2,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "da-visualization",
+      "tool": "Any coding agent + matplotlib",
+      "toolZh": "任一编码 Agent + matplotlib",
+      "title": "Data Visualization with an Agent",
+      "titleZh": "用 Agent 做数据可视化",
+      "summary": "A challenge course — turn a clean sales dataset into three spec'd charts plus a summary.json whose numbers are verified against the data.",
+      "summaryZh": "一门挑战课程——把干净的销售数据变成三张有规格的图和一份 summary.json，其中数字与数据集校验一致。",
+      "outcome": "A matplotlib script producing three valid PNG charts and a summary.json — the machine-checkable half of “here are my charts”, with an honest statement of what verification cannot see.",
+      "outcomeZh": "一个 matplotlib 脚本，产出三张合法 PNG 图和一份 summary.json——“这是我的图”中可机器核查的那一半，外加一句诚实说明验证看不到什么。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "uv or pip to install pinned pandas + matplotlib",
+        "Any coding agent",
+        "Completing da-eda first is recommended, not required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "用 uv 或 pip 安装锁定的 pandas + matplotlib",
+        "任一编码 Agent",
+        "建议先完成 da-eda，非必需"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "A chart is packaged evidence",
+          "titleZh": "图是证据的包装",
+          "objective": "State the claim behind each required chart before writing code — a wrong claim makes a pretty chart worse than none.",
+          "objectiveZh": "写代码前先说出每张图在声称什么——声称错了，图越漂亮越糟糕。"
+        },
+        {
+          "id": "l02",
+          "title": "Spec first, chart second",
+          "titleZh": "先写规格，再画图",
+          "objective": "Map each output file to its source aggregation before letting the agent render anything.",
+          "objectiveZh": "在让 Agent 渲染之前，把每个输出文件映射到它的聚合来源。"
+        },
+        {
+          "id": "l03",
+          "title": "Three charts and a summary",
+          "titleZh": "三张图与摘要",
+          "objective": "Implement the contract in starter/charts.py — Agg backend, parsed dates, real PNG output.",
+          "objectiveZh": "在 starter/charts.py 里实现契约——Agg 后端、解析日期、产出真 PNG。"
+        },
+        {
+          "id": "l04",
+          "title": "Numbers match the charts",
+          "titleZh": "数字与图一致",
+          "objective": "summary.json is the auditable layer — verified against dataset ground truth.",
+          "objectiveZh": "summary.json 是可审计层——与数据集真值校验。"
+        },
+        {
+          "id": "l05",
+          "title": "What verification cannot see",
+          "titleZh": "验证看不到的东西",
+          "objective": "Write the sentence stating what was and was not verified — the suite does not judge aesthetics or honest scales.",
+          "objectiveZh": "写下一句话说明验证了什么、没验证什么——套件不评价美观与坐标轴诚实性。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "sales-clean",
+          "title": "Clean daily sales",
+          "titleZh": "干净的每日销售",
+          "dataFile": "sales_daily.csv",
+          "blurb": "135 rows of long-format daily revenue across three regions.",
+          "blurbZh": "135 行长格式数据，三个地区的每日收入。"
+        }
+      ],
+      "verification": {
+        "method": "Five-test contract suite: PNG magic bytes and file sizes, summary.json numbers against ground truth. The starter must reproduce the unfinished state.",
+        "methodZh": "五个测试的契约套件：PNG 魔数与文件大小、summary.json 数字对真值。starter 必须复现未完成状态。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "da-visualization",
+        "nameEn": "Visualization Challenger",
+        "nameZh": "可视化挑战者"
+      },
+      "difficulty": "intermediate",
+      "shippedAt": "2026-09-13",
+      "duration": "1–2 hours",
+      "level": "Beginner; pandas + matplotlib",
+      "levelZh": "新手向；pandas + matplotlib",
+      "searchTerms": [
+        "matplotlib tutorial",
+        "python charts",
+        "data visualization python",
+        "matplotlib 教程",
+        "agent data visualization"
+      ],
+      "repoDir": "courses/da-visualization",
+      "manifestId": "course-da-visualization",
+      "manifestVersion": 2,
+      "reviewedAt": "2026-11-07"
+    },
+    {
+      "id": "da-report",
+      "tool": "Any coding agent",
+      "toolZh": "任一编码 Agent",
+      "title": "From Analysis to Report with an Agent",
+      "titleZh": "用 Agent 从分析到报告",
+      "summary": "A challenge course — turn a verified EDA summary into report.json + report.md where every number traces back to its input unchanged.",
+      "summaryZh": "一门挑战课程——把经过验证的 EDA 摘要变成 report.json + report.md，其中每个数字都可原样回溯到输入。",
+      "outcome": "A report generator that produces a machine-readable report.json and a human-readable report.md — the auditable structure that separates “a report exists” from “the numbers are traceable”.",
+      "outcomeZh": "一个报告生成器：产出机器可读的 report.json 和人可读的 report.md——把“有份报告”和“数字可回溯”分开的可审计结构。",
+      "prerequisites": [
+        "Python 3.11 or newer available on your PATH",
+        "uv or pip to install the pinned pandas dependency",
+        "Any coding agent",
+        "Completing da-eda first is recommended, not required"
+      ],
+      "prerequisitesZh": [
+        "PATH 中有 Python 3.11 或更新版本",
+        "用 uv 或 pip 安装锁定的 pandas 依赖",
+        "任一编码 Agent",
+        "建议先完成 da-eda，非必需"
+      ],
+      "lessons": [
+        {
+          "id": "l01",
+          "title": "A report is a contract with the reader",
+          "titleZh": "报告是与读者的契约",
+          "objective": "Trace every number the report must carry back to its source field in results.json.",
+          "objectiveZh": "把报告必须携带的每个数字回溯到 results.json 的来源字段。"
+        },
+        {
+          "id": "l02",
+          "title": "Structure before prose",
+          "titleZh": "先结构，后文字",
+          "objective": "Decide the skeleton — title, section order, metrics block — before writing any prose.",
+          "objectiveZh": "先定骨架——标题、章节顺序、metrics 块——再写任何文字。"
+        },
+        {
+          "id": "l03",
+          "title": "Build and render the report",
+          "titleZh": "构建并渲染报告",
+          "objective": "Implement the contract in starter/report.py — metrics carried unchanged, sections in order, numbers formatted.",
+          "objectiveZh": "在 starter/report.py 里实现契约——指标原样传递、章节按序、数字格式化。"
+        },
+        {
+          "id": "l04",
+          "title": "Numbers traceable to inputs",
+          "titleZh": "数字可回溯到输入",
+          "objective": "Every metric equals its source field — the audit answer is a field name, not an explanation.",
+          "objectiveZh": "每个指标等于来源字段——审计答案是字段名，不是解释。"
+        },
+        {
+          "id": "l05",
+          "title": "What report verification cannot see",
+          "titleZh": "报告验证看不到的东西",
+          "objective": "The suite checks structure and numbers, not insight or honesty — write the boundary sentence.",
+          "objectiveZh": "套件检查结构与数字，不查洞见与诚实——写下那句边界说明。"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "analysis-pack",
+          "title": "Verified analysis pack",
+          "titleZh": "已验证的分析数据包",
+          "dataFile": "results.json",
+          "blurb": "A verified EDA summary that your report must trace, not recompute.",
+          "blurbZh": "一份已验证的 EDA 摘要——你的报告要回溯它，不是重算它。"
+        }
+      ],
+      "verification": {
+        "method": "Six-test contract suite: required headings in order, metrics matching inputs exactly, report files written. The starter must reproduce the unfinished state.",
+        "methodZh": "六个测试的契约套件：必需标题按序、指标与输入精确一致、报告文件写出。starter 必须复现未完成状态。",
+        "starterCommand": "python verify.py starter --expect-failure",
+        "starterExpectFailure": "python verify.py starter --expect-failure",
+        "solutionCommand": "python verify.py solution"
+      },
+      "badge": {
+        "id": "da-report",
+        "nameEn": "Report Challenger",
+        "nameZh": "分析报告挑战者"
+      },
+      "difficulty": "intermediate",
+      "shippedAt": "2026-09-13",
+      "duration": "1–2 hours",
+      "level": "Beginner; structured output",
+      "levelZh": "新手向；结构化输出",
+      "searchTerms": [
+        "python report generator",
+        "data analysis report",
+        "structured reporting python",
+        "agent report generation"
+      ],
+      "repoDir": "courses/da-report",
+      "manifestId": "course-da-report",
+      "manifestVersion": 2,
+      "reviewedAt": "2026-11-07"
+    }
+  ],
+  "contracts": {
+    "hands-on-python-with-claude-code": {
+      "courseId": "course-claude-code",
+      "salt": "a54f3ce504534d68",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-openai-codex": {
+      "courseId": "course-codex-cli",
+      "salt": "ae2999201a0be1df",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-openai-codex-cli": {
+      "courseId": "course-codex-cli",
+      "salt": "ae2999201a0be1df",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ],
+      "aliasOf": "hands-on-with-openai-codex"
+    },
+    "hands-on-with-cursor": {
+      "courseId": "course-cursor",
+      "salt": "6b187020c4507d6e",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-deepseek-harness": {
+      "courseId": "course-deepseek-harness",
+      "salt": "2f61c37ef24e027c",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-kimi-code": {
+      "courseId": "course-kimi-code",
+      "salt": "3b3e610344c18ba5",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-zcode": {
+      "courseId": "course-zcode",
+      "salt": "9432863162868c87",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-github-copilot": {
+      "courseId": "course-github-copilot",
+      "salt": "a5910c8a74df7af1",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "agent-rules-single-source": {
+      "courseId": "course-agent-rules",
+      "salt": "3af23393e1911a4a",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "verifying-ai-generated-code": {
+      "courseId": "course-verify-ship",
+      "salt": "8d11b8f902b1a109",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "mcp-server-in-python": {
+      "courseId": "course-mcp-tools",
+      "salt": "c328e39d6c8f8de4",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "llm-features-in-python": {
+      "courseId": "course-llm-features",
+      "salt": "815e90d6b6b795ff",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "secure-ai-generated-code": {
+      "courseId": "course-secure-code",
+      "salt": "3e0c08a9dd12de2f",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "da-eda": {
+      "courseId": "course-da-eda",
+      "salt": "e2a7c019f4d3b5aa",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "da-visualization": {
+      "courseId": "course-da-visualization",
+      "salt": "7c1f4a2e9b8d6f03",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "da-report": {
+      "courseId": "course-da-report",
+      "salt": "b9d2e8f14c6a7053",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    }
+  },
+  "agentToolCourseIds": [
+    "hands-on-python-with-claude-code",
+    "hands-on-with-openai-codex",
+    "hands-on-with-cursor",
+    "hands-on-with-deepseek-harness",
+    "hands-on-with-kimi-code",
+    "hands-on-with-zcode",
+    "hands-on-with-github-copilot"
+  ]
+}

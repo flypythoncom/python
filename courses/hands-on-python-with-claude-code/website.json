@@ -1,0 +1,114 @@
+{
+  "order": 0,
+  "agentTool": true,
+  "aliases": [],
+  "id": "hands-on-python-with-claude-code",
+  "teachingRunPending": true,
+  "tool": "Claude Code 2.x",
+  "toolZh": "Claude Code 2.x",
+  "title": "Hands-on Python with Claude Code",
+  "titleZh": "用 Claude Code 实战 Python",
+  "summary": "A challenge course that takes you from a broken script to a tested, verified Python report tool — one sentence starts it in your agent, which fetches the course itself. Task contract, bounded change, and objective pass/fail evidence; guided agent-taught mode included.",
+  "summaryZh": "一门挑战课程：从一个跑不起来的脚本到交付一个经过测试与验证的 Python 报表工具——一句话即可在你的 Agent 里开课，课程文件由 Agent 自己获取。任务契约、最小变更与客观的通过/失败证据；内含可选的 Agent 引导模式。",
+  "outcome": "A working scenario report tool (CSV + JSON inputs, error isolation, rounded aggregates, atomic report writes) that passes a nine-test suite — plus a contract-first workflow you can apply to your own script the same day.",
+  "outcomeZh": "一个可运行的场景报表工具（CSV + JSON 输入、错误隔离、聚合舍入、原子写报告），通过九个测试——外加一套当天就能迁移到自己脚本的契约优先工作流。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "Claude Code 2.x installed and signed in",
+    "Comfort running shell commands; no Python packages are installed",
+    "No prior testing experience required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "已安装并登录 Claude Code 2.x",
+    "能运行 shell 命令；无需安装任何 Python 包",
+    "不要求有测试经验"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "Set up Claude Code, install the FlyPython Skill, fetch the course",
+      "titleZh": "装好 Claude Code、装上 FlyPython Skill、让 Agent 取回课程",
+      "objective": "Start Claude Code, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+      "objectiveZh": "启动 Claude Code、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+    },
+    {
+      "id": "l02",
+      "title": "Write the task contract before the change",
+      "titleZh": "动手之前先写任务契约",
+      "objective": "Turn “make it better” into testable contract statements, trace each to a test, and write one contract line for your own project.",
+      "objectiveZh": "把「优化一下」变成可测试的契约陈述，逐条对应到测试，并为自己的项目写出一条契约。"
+    },
+    {
+      "id": "l03",
+      "title": "Drive a bounded change, test by test",
+      "titleZh": "按测试驱动一次有边界的变更",
+      "objective": "Supervise the agent through seven small diffs — smallest change, no new dependencies, one failing test group at a time — until the starter passes.",
+      "objectiveZh": "监督 Agent 完成七个小 diff——最小变更、不新增依赖、一次一组测试——直到 starter 通过。"
+    },
+    {
+      "id": "l04",
+      "title": "Verify like an engineer, review like a skeptic",
+      "titleZh": "像工程师一样验证，像怀疑者一样审查",
+      "objective": "Complete the evidence loop: verify both directions, exercise all three scenario skins, review the diff for scope creep, and record what is not proven.",
+      "objectiveZh": "完成证据闭环：双向验证、跑通三个场景皮肤、审查 diff 是否越界，并记录未证明的部分。"
+    },
+    {
+      "id": "l05",
+      "title": "Apply this to your own project",
+      "titleZh": "把这套方法带回你自己的项目",
+      "objective": "Port the workflow — not the code — to one script you own, with a contract, one new failing test made to pass, and an honest verification record.",
+      "objectiveZh": "把工作流（而不是代码）迁移到你自己的一个脚本上：一份契约、一个从红变绿的测试、一份诚实的验证记录。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "excel-report",
+      "title": "Excel / report automation",
+      "titleZh": "Excel / 报表自动化",
+      "dataFile": "orders.csv",
+      "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+      "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+    },
+    {
+      "id": "data-monitor",
+      "title": "Data monitor script",
+      "titleZh": "数据监控脚本",
+      "dataFile": "metrics.csv",
+      "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+      "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+    },
+    {
+      "id": "api-tool",
+      "title": "Small API tool",
+      "titleZh": "小型 API 工具",
+      "dataFile": "tickets.json",
+      "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+      "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+    }
+  ],
+  "verification": {
+    "method": "The course ships a nine-test contract suite. The starter must reproduce seven named failures; the reviewed solution passes 9/9. The same suite verifies your own bounded change in lesson 3.",
+    "methodZh": "课程自带九个测试的契约套件。starter 必须复现七个具名失败；已审核的实现 9/9 通过。第 3 课中同一套件验证你自己的最小变更。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-claude-code",
+    "nameEn": "Reproduce the failure",
+    "nameZh": "复现故障"
+  },
+  "difficulty": "beginner",
+  "shippedAt": "2026-09-12",
+  "duration": "2–4 hours",
+  "level": "Beginner-friendly; code-curious",
+  "levelZh": "对新手友好；需要读代码的耐心",
+  "searchTerms": [
+    "claude code course",
+    "claude code tutorial",
+    "claude code python",
+    "vibe coding python",
+    "ai coding verification"
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "order": 11,
+  "agentTool": false,
+  "aliases": [],
+  "id": "secure-ai-generated-code",
+  "tool": "Any coding agent + an attack-replay harness",
+  "toolZh": "任一编码 Agent + 攻击重放装置",
+  "title": "Security review for AI-written Python",
+  "titleZh": "AI 写的 Python 代码的安全审查",
+  "summary": "Review a plausible, AI-style notes service the way an attacker would — close SQL injection, path traversal, a hard-coded secret, fast password hashes, and pickled sessions one class at a time, then prove each fix by replaying the attacks.",
+  "summaryZh": "像攻击者一样审查一个看起来没问题、AI 风格的笔记服务——一次一类地堵上 SQL 注入、路径穿越、硬编码密钥、快速密码哈希和 pickle 会话，再通过重放攻击证明每处修复。",
+  "outcome": "Every one of nine recorded attacks blocked, an attack-replay command that proves it on both scenario skins, and a five-question review habit for the next repository your assistant writes.",
+  "outcomeZh": "九个录制攻击全部被挡下、一条能在两个场景皮肤上证明此事的重放命令，以及一套能带去下一个仓库的五问审查习惯。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "Any coding agent with the FlyPython Skill installed",
+    "Comfort running shell commands; standard library only",
+    "Can read Python functions with file and SQL operations"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "任一装好 FlyPython Skill 的编码 Agent",
+    "能运行 shell 命令；仅用标准库",
+    "能读懂带文件与 SQL 操作的 Python 函数"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "Plausible is not safe",
+      "titleZh": "看起来对不等于安全",
+      "objective": "Read a notes service that looks fine, then replay nine attacks against it and watch every one succeed.",
+      "objectiveZh": "读一个看起来没问题的笔记服务，然后对它重放九个攻击，看着每一个都得手。"
+    },
+    {
+      "id": "l02",
+      "title": "Write the threat model as a contract",
+      "titleZh": "把威胁模型写成契约",
+      "objective": "For each function, name who controls the input, what they want, and what the code must refuse — then trace every refusal to a test and the Python documentation behind it.",
+      "objectiveZh": "对每个函数，说清谁控制输入、他想要什么、代码必须拒绝什么——再把每一条拒绝追查到一个测试，以及它背后的 Python 文档。"
+    },
+    {
+      "id": "l03",
+      "title": "Close one flaw class per turn",
+      "titleZh": "每轮只堵一类漏洞",
+      "objective": "Five bounded turns — search, attachments, secret key, passwords, sessions — each closing one weakness class with a mechanism, never a filter, each proven by tests and the replay.",
+      "objectiveZh": "五个有界轮次——搜索、附件、密钥、密码、会话——每轮用机制（绝不用过滤）堵上一类弱点，并用测试和重放证明。"
+    },
+    {
+      "id": "l04",
+      "title": "Review like an attacker",
+      "titleZh": "像攻击者一样复查",
+      "objective": "Replay the second skin, run a static scanner and note what it misses, attack one thing the suite never tried, and write down what is still unreviewed.",
+      "objectiveZh": "重放第二个皮肤、跑一遍静态扫描并记下它漏了什么、攻击一处套件从没试过的地方，并写下还有什么没审查。"
+    },
+    {
+      "id": "l05",
+      "title": "Review your own AI-written code",
+      "titleZh": "审查你自己的 AI 代码",
+      "objective": "Take the five questions and the scanner pass to a repository you own: find where input crosses a trust boundary, check each crossing for a mechanism, and write down what you did not review.",
+      "objectiveZh": "把五个问题和扫描步骤带到你自己的仓库：找出输入跨越信任边界的地方，检查每处是否用了机制，并写下你没有审查的部分。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "clinic-notes",
+      "title": "Clinic visit notes",
+      "titleZh": "诊所就诊记录",
+      "dataFile": "attacks.json + seed.json",
+      "blurb": "A small clinic's visit notes — every note belongs to one clinician; attachments live under a scans folder. All names and records are fictional.",
+      "blurbZh": "一家小诊所的就诊记录——每条记录只属于一位医生，附件放在 scans 目录下。所有人名与记录均为虚构。"
+    },
+    {
+      "id": "team-notes",
+      "title": "Team shared notes",
+      "titleZh": "团队共享笔记",
+      "dataFile": "attacks.json + seed.json",
+      "blurb": "A small team's shared notes app: search, attachments, logins, and sessions.",
+      "blurbZh": "一个小团队的共享笔记应用：搜索、附件、登录与会话。"
+    }
+  ],
+  "verification": {
+    "method": "A 16-test suite plus an attack-replay harness covering nine attacks per skin — SQL injection, path traversal, secret disclosure, weak password hashes, and pickled sessions. The starter lets all nine through; the reviewed solution blocks 9/9 on both skins.",
+    "methodZh": "16 个测试的套件，外加每个皮肤重放九个攻击的装置——SQL 注入、路径穿越、密钥泄露、弱密码哈希与 pickle 会话。starter 对九个攻击全部放行；已审核的实现两个皮肤均 9/9 拦截。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-secure-code",
+    "nameEn": "Plausible is not safe",
+    "nameZh": "看起来对不等于安全"
+  },
+  "difficulty": "intermediate",
+  "shippedAt": "2026-10-11",
+  "duration": "2–4 hours",
+  "level": "Reads Python with file and SQL operations comfortably",
+  "levelZh": "能顺畅读懂带文件与 SQL 操作的 Python",
+  "searchTerms": [
+    "secure ai generated code",
+    "sql injection python",
+    "path traversal",
+    "pickle security",
+    "ai code security review",
+    "安全审查"
+  ]
+}

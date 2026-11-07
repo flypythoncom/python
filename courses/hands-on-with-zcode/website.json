@@ -1,0 +1,114 @@
+{
+  "order": 5,
+  "agentTool": true,
+  "aliases": [],
+  "id": "hands-on-with-zcode",
+  "sharedCoreOf": "hands-on-python-with-claude-code",
+  "teachingRunPending": true,
+  "tool": "ZCode desktop app",
+  "toolZh": "ZCode 桌面应用",
+  "title": "Hands-on with ZCode",
+  "titleZh": "上手 ZCode",
+  "summary": "The same verified Python workflow as the flagship course — task contract, bounded change, objective verify.py evidence — taught hands-on in the ZCode desktop workspace: Goal Mode task decomposition and the Git state as your review surface.",
+  "summaryZh": "与旗舰课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 ZCode 桌面工作区里实战：Goal 模式任务拆解，Git 状态作为你的审查面。",
+  "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through ZCode's Goal Mode — plus a goal-and-task-list workflow that transfers to any capable coding agent.",
+  "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 ZCode 的 Goal 模式驱动——外加一套可迁移到任何编码 Agent 的目标与任务列表工作流。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "The ZCode desktop app installed and signed in",
+    "Comfort running shell commands; no Python packages are installed",
+    "No prior testing experience required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "已安装并登录 ZCode 桌面应用",
+    "能运行 shell 命令；无需安装任何 Python 包",
+    "不要求有测试经验"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "Set up ZCode, install the FlyPython Skill, fetch the course",
+      "titleZh": "装好 ZCode、装上 FlyPython Skill、让 Agent 取回课程",
+      "objective": "Start ZCode, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+      "objectiveZh": "启动 ZCode、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+    },
+    {
+      "id": "l02",
+      "title": "Write the task contract, let Goal Mode hold the plan",
+      "titleZh": "写任务契约，让 Goal 模式承载计划",
+      "objective": "Turn “make it better” into bounded, testable statements — then watch Goal Mode decompose it into tasks before anything edits.",
+      "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再看 Goal 模式把它拆成任务，然后才许动文件。"
+    },
+    {
+      "id": "l03",
+      "title": "The bounded change, watched task by task",
+      "titleZh": "有界改动，逐任务盯守",
+      "objective": "Supervise the goal's task list through small changes — smallest change, no new dependencies, one failing test group at a time — checking the Git state after each task.",
+      "objectiveZh": "沿目标的任务列表逐个守小改动——最小变更、不新增依赖、一次一组失败测试——每个任务后核对 Git 状态。"
+    },
+    {
+      "id": "l04",
+      "title": "Verify like a reviewer, not a spectator",
+      "titleZh": "像评审者一样验证，别当观众",
+      "objective": "Complete the evidence loop — both verification directions, all three skins, an accumulated Git-diff review, and a written record of what is not proven.",
+      "objectiveZh": "完成证据闭环——双向验证、三个皮肤、累积 Git diff 评审，以及一份写明未证明内容的记录。"
+    },
+    {
+      "id": "l05",
+      "title": "Take the workflow to your own project",
+      "titleZh": "把工作流带回自己的项目",
+      "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+      "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "excel-report",
+      "title": "Excel / report automation",
+      "titleZh": "Excel / 报表自动化",
+      "dataFile": "orders.csv",
+      "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+      "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+    },
+    {
+      "id": "data-monitor",
+      "title": "Data monitor script",
+      "titleZh": "数据监控脚本",
+      "dataFile": "metrics.csv",
+      "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+      "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+    },
+    {
+      "id": "api-tool",
+      "title": "Small API tool",
+      "titleZh": "小型 API 工具",
+      "dataFile": "tickets.json",
+      "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+      "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+    }
+  ],
+  "verification": {
+    "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+    "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-zcode",
+    "nameEn": "Reproduce with ZCode in the loop",
+    "nameZh": "ZCode 协同复现"
+  },
+  "difficulty": "beginner",
+  "shippedAt": "2026-09-13",
+  "duration": "2–4 hours",
+  "level": "Beginner-friendly; code-curious",
+  "levelZh": "对新手友好；需要读代码的耐心",
+  "searchTerms": [
+    "zcode tutorial",
+    "z.ai agent course",
+    "zcode goal mode",
+    "zcode 教程"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "order": 6,
+  "agentTool": true,
+  "aliases": [],
+  "id": "hands-on-with-github-copilot",
+  "sharedCoreOf": "hands-on-python-with-claude-code",
+  "teachingRunPending": true,
+  "tool": "GitHub Copilot in VS Code",
+  "toolZh": "VS Code 中的 GitHub Copilot",
+  "title": "Hands-on with GitHub Copilot",
+  "titleZh": "上手 GitHub Copilot",
+  "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on with GitHub Copilot in VS Code, where the Agent role runs the loop and you supervise permissions, instructions files, and diffs.",
+  "summaryZh": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 VS Code 的 GitHub Copilot 里手把手教：由 Agent 角色跑闭环，你监督权限、指令文件与 diff。",
+  "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven with Copilot's Agent role — plus the Copilot workflow: Agent/Plan/Ask roles, Manual permissions, .github/copilot-instructions.md and applyTo instructions files, checkpoints, and Source Control diff review.",
+  "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Copilot 的 Agent 角色驱动——外加 Copilot 工作流：Agent/Plan/Ask 角色、Manual permissions、.github/copilot-instructions.md 与 applyTo 指令文件、检查点，以及 Source Control 的 diff 评审。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "VS Code with GitHub Copilot signed in",
+    "Comfort running shell commands; no Python packages are installed",
+    "No prior testing experience required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "装有 VS Code 并已登录 GitHub Copilot",
+    "能运行 shell 命令；无需安装任何 Python 包",
+    "不要求有测试经验"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "Set up Copilot in VS Code, install the FlyPython Skill, fetch the course",
+      "titleZh": "在 VS Code 里装好 Copilot、装上 FlyPython Skill、让 Agent 取回课程",
+      "objective": "Get Copilot running with the Agent role and Manual permissions, let the agent fetch this course's files, and make the starter's failure objective.",
+      "objectiveZh": "让 Copilot 以 Agent 角色和 Manual permissions 跑起来，让 Agent 取回本课文件，并让 starter 的失败变得客观。"
+    },
+    {
+      "id": "l02",
+      "title": "Write the task contract, let .github instructions carry the rules",
+      "titleZh": "写任务契约，让 .github 指令文件承载规则",
+      "objective": "Turn \"make it better\" into a bounded, testable contract — then make it durable with .github/copilot-instructions.md and an applyTo instructions file.",
+      "objectiveZh": "把「改好一点」变成有边界、可测试的契约——再用 .github/copilot-instructions.md 和带 applyTo 的指令文件把它持久化。"
+    },
+    {
+      "id": "l03",
+      "title": "The bounded change, reviewed turn by turn",
+      "titleZh": "有界改动，一轮一审",
+      "objective": "Drive the starter to green through bounded turns — review each turn's diff before the next, and use Restore Checkpoint and Git to keep every change yours.",
+      "objectiveZh": "通过有界的轮次把 starter 推到全绿——每轮先审 diff 再发下一轮，用 Restore Checkpoint 和 Git 守住每一处改动。"
+    },
+    {
+      "id": "l04",
+      "title": "Verify like a reviewer, not a spectator",
+      "titleZh": "像评审者一样验证，别当观众",
+      "objective": "Green tests are the floor: run both suites, walk a scenario skin, and review the accumulated diff in Source Control the way you would review a colleague's.",
+      "objectiveZh": "测试全绿只是地板：两个套件都跑、走完一个场景皮肤，并按评审同事的标准在 Source Control 里审这份累积 diff。"
+    },
+    {
+      "id": "l05",
+      "title": "Take the workflow to your own project",
+      "titleZh": "把工作流带回自己的项目",
+      "objective": "Run the same loop — contract, instructions files, bounded agent work, diff review — with Copilot on a repository you actually own.",
+      "objectiveZh": "用 Copilot 在你真正拥有的仓库上跑同一套闭环：契约、指令文件、有界 Agent 工作、diff 评审。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "excel-report",
+      "title": "Excel / report automation",
+      "titleZh": "Excel / 报表自动化",
+      "dataFile": "orders.csv",
+      "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+      "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+    },
+    {
+      "id": "data-monitor",
+      "title": "Data monitor script",
+      "titleZh": "数据监控脚本",
+      "dataFile": "metrics.csv",
+      "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+      "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+    },
+    {
+      "id": "api-tool",
+      "title": "Small API tool",
+      "titleZh": "小型 API 工具",
+      "dataFile": "tickets.json",
+      "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+      "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+    }
+  ],
+  "verification": {
+    "method": "The course ships the shared nine-test contract suite. The starter must reproduce seven named failures; the reviewed solution passes 9/9. The same suite verifies your own bounded change in lesson 3.",
+    "methodZh": "课程自带共享的九个测试契约套件。starter 必须复现七个具名失败；已审核的实现 9/9 通过。第 3 课中同一套件验证你自己的最小变更。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-github-copilot",
+    "nameEn": "Reproduce with Copilot in the loop",
+    "nameZh": "Copilot 协同复现"
+  },
+  "difficulty": "beginner",
+  "shippedAt": "2026-10-11",
+  "duration": "2–4 hours",
+  "level": "Beginner-friendly; code-curious",
+  "levelZh": "对新手友好；需要读代码的耐心",
+  "searchTerms": [
+    "github copilot course",
+    "copilot agent mode",
+    "copilot instructions file",
+    "vscode agent course",
+    "copilot python"
+  ]
+}
