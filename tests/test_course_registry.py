@@ -22,6 +22,7 @@ def repo(tmp_path):
 def test_registry_matches_generated_and_verifiers():
     registry = build_registry()
     assert registry == json.loads((ROOT / "course-registry.json").read_text())
+    assert [slug for slug, contract in registry["contracts"].items() if "aliasOf" not in contract] == [course["id"] for course in registry["courses"]]
     for course in registry["courses"]:
         assert registry["contracts"][course["id"]] == verifier_contract(ROOT / course["repoDir"] / "verify.py")
         for filename, identity in [("COURSE.md", "I'm Coach P, an AI coach running inside your own agent"),

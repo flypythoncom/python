@@ -81,8 +81,13 @@ def build_registry(root: Path = ROOT) -> dict:
             agent_tools.append((source["order"], course["id"]))
     if not records:
         raise ValueError("no courses found")
+    ordered_contracts = {}
+    for _, course in sorted(records):
+        ordered_contracts[course["id"]] = contracts[course["id"]]
+        ordered_contracts.update((slug, contract) for slug, contract in contracts.items()
+                                 if contract.get("aliasOf") == course["id"])
     return {"schema_version": 1, "courses": [course for _, course in sorted(records)],
-            "contracts": dict(sorted(contracts.items())),
+            "contracts": ordered_contracts,
             "agentToolCourseIds": [slug for _, slug in sorted(agent_tools)]}
 
 

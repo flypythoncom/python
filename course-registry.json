@@ -1659,129 +1659,9 @@
     }
   ],
   "contracts": {
-    "agent-rules-single-source": {
-      "courseId": "course-agent-rules",
-      "salt": "3af23393e1911a4a",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "da-eda": {
-      "courseId": "course-da-eda",
-      "salt": "e2a7c019f4d3b5aa",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "da-report": {
-      "courseId": "course-da-report",
-      "salt": "b9d2e8f14c6a7053",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "da-visualization": {
-      "courseId": "course-da-visualization",
-      "salt": "7c1f4a2e9b8d6f03",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
     "hands-on-python-with-claude-code": {
       "courseId": "course-claude-code",
       "salt": "a54f3ce504534d68",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "hands-on-with-cursor": {
-      "courseId": "course-cursor",
-      "salt": "6b187020c4507d6e",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "hands-on-with-deepseek-harness": {
-      "courseId": "course-deepseek-harness",
-      "salt": "2f61c37ef24e027c",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "hands-on-with-github-copilot": {
-      "courseId": "course-github-copilot",
-      "salt": "a5910c8a74df7af1",
-      "checkpoints": [
-        "l01",
-        "l02",
-        "l03",
-        "l04",
-        "l05"
-      ],
-      "gated": [
-        "l03",
-        "l04"
-      ]
-    },
-    "hands-on-with-kimi-code": {
-      "courseId": "course-kimi-code",
-      "salt": "3b3e610344c18ba5",
       "checkpoints": [
         "l01",
         "l02",
@@ -1825,6 +1705,51 @@
       ],
       "aliasOf": "hands-on-with-openai-codex"
     },
+    "hands-on-with-cursor": {
+      "courseId": "course-cursor",
+      "salt": "6b187020c4507d6e",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-deepseek-harness": {
+      "courseId": "course-deepseek-harness",
+      "salt": "2f61c37ef24e027c",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "hands-on-with-kimi-code": {
+      "courseId": "course-kimi-code",
+      "salt": "3b3e610344c18ba5",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
     "hands-on-with-zcode": {
       "courseId": "course-zcode",
       "salt": "9432863162868c87",
@@ -1840,9 +1765,39 @@
         "l04"
       ]
     },
-    "llm-features-in-python": {
-      "courseId": "course-llm-features",
-      "salt": "815e90d6b6b795ff",
+    "hands-on-with-github-copilot": {
+      "courseId": "course-github-copilot",
+      "salt": "a5910c8a74df7af1",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "agent-rules-single-source": {
+      "courseId": "course-agent-rules",
+      "salt": "3af23393e1911a4a",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "verifying-ai-generated-code": {
+      "courseId": "course-verify-ship",
+      "salt": "8d11b8f902b1a109",
       "checkpoints": [
         "l01",
         "l02",
@@ -1870,6 +1825,21 @@
         "l04"
       ]
     },
+    "llm-features-in-python": {
+      "courseId": "course-llm-features",
+      "salt": "815e90d6b6b795ff",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
     "secure-ai-generated-code": {
       "courseId": "course-secure-code",
       "salt": "3e0c08a9dd12de2f",
@@ -1885,9 +1855,39 @@
         "l04"
       ]
     },
-    "verifying-ai-generated-code": {
-      "courseId": "course-verify-ship",
-      "salt": "8d11b8f902b1a109",
+    "da-eda": {
+      "courseId": "course-da-eda",
+      "salt": "e2a7c019f4d3b5aa",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "da-visualization": {
+      "courseId": "course-da-visualization",
+      "salt": "7c1f4a2e9b8d6f03",
+      "checkpoints": [
+        "l01",
+        "l02",
+        "l03",
+        "l04",
+        "l05"
+      ],
+      "gated": [
+        "l03",
+        "l04"
+      ]
+    },
+    "da-report": {
+      "courseId": "course-da-report",
+      "salt": "b9d2e8f14c6a7053",
       "checkpoints": [
         "l01",
         "l02",
