@@ -1,0 +1,114 @@
+{
+  "order": 4,
+  "agentTool": true,
+  "aliases": [],
+  "id": "hands-on-with-kimi-code",
+  "sharedCoreOf": "hands-on-python-with-claude-code",
+  "teachingRunPending": true,
+  "tool": "Kimi Code CLI",
+  "toolZh": "Kimi Code CLI",
+  "title": "Hands-on with Kimi Code",
+  "titleZh": "上手 Kimi Code",
+  "summary": "The same verified Python workflow as the flagship course — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code: built-in explore/plan/coder subagents keep reading, planning, and editing in separate lanes.",
+  "summaryZh": "与旗舰课程相同的已验证 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里实战：内置 explore/plan/coder 子代理把读、规划、改码分在三条道上。",
+  "outcome": "The same tested report tool as the flagship course (identical contract and nine-test suite), driven through Kimi Code's subagent lanes — plus a survey-plan-edit workflow that transfers to any capable coding agent.",
+  "outcomeZh": "与旗舰课程相同的报表工具（同一契约、同一九测套件），改由 Kimi Code 的子代理分道驱动——外加一套可迁移到任何编码 Agent 的勘察-规划-编辑工作流。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "The kimi CLI installed and authenticated (a Moonshot/Kimi account or API key)",
+    "Comfort running shell commands; no Python packages are installed",
+    "No prior testing experience required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "已安装并完成认证的 kimi CLI（Moonshot/Kimi 账号或 API key）",
+    "能运行 shell 命令；无需安装任何 Python 包",
+    "不要求有测试经验"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "Set up Kimi Code, install the FlyPython Skill, fetch the course",
+      "titleZh": "装好 Kimi Code、装上 FlyPython Skill、让 Agent 取回课程",
+      "objective": "Start Kimi Code, authorize the FlyPython Skill, fetch this course's files, and run the starter's objective check.",
+      "objectiveZh": "启动 Kimi Code、授权 FlyPython Skill、取回本课文件，并运行 starter 的客观检查。"
+    },
+    {
+      "id": "l02",
+      "title": "Write the task contract, plan it in the planning lane",
+      "titleZh": "写任务契约，在规划道里拆步",
+      "objective": "Turn “make it better” into bounded, testable statements — then let the plan subagent decompose it before anything edits.",
+      "objectiveZh": "把「优化一下」变成有边界、可测试的陈述——再让 plan 子代理先拆步，然后才许动文件。"
+    },
+    {
+      "id": "l03",
+      "title": "The bounded change, one contract line at a time",
+      "titleZh": "有界改动，一次一条契约行",
+      "objective": "Supervise the coder lane through small edits — smallest change, no new dependencies, one failing test group at a time.",
+      "objectiveZh": "监督 coder 道逐个小编辑推进——最小变更、不新增依赖、一次一组失败测试。"
+    },
+    {
+      "id": "l04",
+      "title": "Verify like a reviewer, not a spectator",
+      "titleZh": "像评审者一样验证，别当观众",
+      "objective": "Complete the evidence loop — both verification directions, all three skins, a scope-creep diff review, and a written record of what is not proven.",
+      "objectiveZh": "完成证据闭环——双向验证、三个皮肤、范围蔓延 diff 审查，以及一份写明未证明内容的记录。"
+    },
+    {
+      "id": "l05",
+      "title": "Take the workflow to your own project",
+      "titleZh": "把工作流带回自己的项目",
+      "objective": "Port the workflow — not the code — to one script you own, with tests, a verify command, and honest limits.",
+      "objectiveZh": "迁移工作流——而不是代码——到你拥有的一个脚本上，附测试、验证命令与诚实的局限说明。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "excel-report",
+      "title": "Excel / report automation",
+      "titleZh": "Excel / 报表自动化",
+      "dataFile": "orders.csv",
+      "blurb": "Turn a messy weekly orders export into a per-region sales summary.",
+      "blurbZh": "把混乱的每周订单导出变成按区域汇总的销售摘要。"
+    },
+    {
+      "id": "data-monitor",
+      "title": "Data monitor script",
+      "titleZh": "数据监控脚本",
+      "dataFile": "metrics.csv",
+      "blurb": "Aggregate service latency numbers and isolate malformed readings.",
+      "blurbZh": "汇总服务延迟数据，并隔离格式错误的读数。"
+    },
+    {
+      "id": "api-tool",
+      "title": "Small API tool",
+      "titleZh": "小型 API 工具",
+      "dataFile": "tickets.json",
+      "blurb": "Summarize ticket data pulled from an internal API (JSON input).",
+      "blurbZh": "汇总从内部 API 拉取的工单数据（JSON 输入）。"
+    }
+  ],
+  "verification": {
+    "method": "Identical contract and nine-test suite to the flagship course: the starter must reproduce seven named failures; the reviewed solution passes 9/9; your bounded change passes the same suite in lesson 3.",
+    "methodZh": "与旗舰课程相同的契约与九测套件：starter 必须复现七个具名失败；已审核实现 9/9 通过；第 3 课中你的最小变更通过同一套件。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-kimi-code",
+    "nameEn": "Reproduce with Kimi Code in the loop",
+    "nameZh": "Kimi Code 协同复现"
+  },
+  "difficulty": "beginner",
+  "shippedAt": "2026-09-13",
+  "duration": "2–4 hours",
+  "level": "Beginner-friendly; code-curious",
+  "levelZh": "对新手友好；需要读代码的耐心",
+  "searchTerms": [
+    "kimi code tutorial",
+    "kimi cli course",
+    "kimi subagents",
+    "kimi 教程"
+  ]
+}

@@ -68,6 +68,9 @@ reviewed catalog data, and stable public JSON contracts.
 - Verify every runnable example with `python tools/verify_examples.py`,
   every course folder with `python tools/verify_courses.py`, and every
   learning path with `python tools/verify_paths.py`.
+- Course display metadata lives in `courses/<slug>/website.json`; regenerate
+  `course-registry.json` with `make registry` after course/verifier edits.
+  Claim constants remain canonical in verify.py; never hand-edit the export.
 - Website consumers must pin a full repository commit and verify the catalog
   checksum. Do not make production builds depend on a moving branch.
 - Keep external-link checks read-only, rate-limited, retryable, and blocked from

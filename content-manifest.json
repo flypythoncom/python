@@ -50,23 +50,23 @@
     {
       "id": "course-agent-rules",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/agent-rules-single-source/COURSE.md",
           "title": "One source of truth for agent rules",
           "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source, taught hands-on with your coding agent.",
-          "sha256": "b75cb686586e3ae0ecb92d9b68c220212e9364b752808b5ba63c273da339fe87"
+          "sha256": "a74172cd3e9a824eb60a9eaf17aad3f9e38b7f4ae6a18d2fda8756b4d62dafb9"
         },
         {
           "lang": "zh-CN",
           "path": "courses/agent-rules-single-source/COURSE_cn.md",
           "title": "Agent 规则的单一真源",
           "summary": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器，由你的编码 Agent 授课。",
-          "sha256": "9d5efe0d5ee5615be9d90001fe8a53c209b285a9e7ca6364222f71779d83eedf"
+          "sha256": "51a14f64a5715d21a8f2b3fa83303e37c7ec2a8ab0a19f78b0caedabcd8f7c15"
         }
       ]
     },
@@ -188,23 +188,23 @@
     {
       "id": "course-claude-code",
       "type": "course",
-      "content_version": 4,
+      "content_version": 5,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-python-with-claude-code/COURSE.md",
           "title": "Hands-on Python with Claude Code",
           "summary": "An agent-taught course that takes you from a cloned folder to a tested, verified Python report tool using Claude Code — including the task contract, the bounded change, and the objective pass/fail evidence.",
-          "sha256": "e0077f90d6d715a6d47850744fc5eb232549527b201b350cc7cfa6dd5c3a6745"
+          "sha256": "a660a68e4c7b51390a21aa306884561c1065719f66f8d15aa5f79d0c847dbdc4"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-python-with-claude-code/COURSE_cn.md",
           "title": "用 Claude Code 实战 Python",
           "summary": "一门由 Agent 授课的课程：从下载课程文件夹到交付一个经过测试与验证的 Python 报表工具——包括任务契约、最小变更和客观的通过/失败证据。",
-          "sha256": "e8892611d8be70454a9b33276699ba5ec5beb8ce604b9ce25dc29a806c4934b4"
+          "sha256": "0048be7d96e43e4b4ff2b8f609da0a9f6ddea70b606532bed272cb9624656b54"
         }
       ]
     },
@@ -326,23 +326,23 @@
     {
       "id": "course-codex-cli",
       "type": "course",
-      "content_version": 5,
+      "content_version": 6,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-openai-codex/COURSE.md",
           "title": "Hands-on with the OpenAI Codex App",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the Codex desktop app, where an agent thread runs the loop and you supervise diffs and approvals.",
-          "sha256": "ebb1bea14c6f2afd30de04417c75a3525a5629d513428d825fb4bbd60588894f"
+          "sha256": "e4683bd41af53bc903f17eaa74c16e94993341938123426eedc127e92370f2ae"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-openai-codex/COURSE_cn.md",
           "title": "上手 OpenAI Codex 应用",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Codex 桌面应用里手把手教：由 Agent 线程跑闭环，你监督 diff 与审批。",
-          "sha256": "34e92005dd6ebb2791a79574d724eac2bdcdc7e53b4ea88ce7d2d160bd4a648c"
+          "sha256": "d342d281152f28fe27abe8421efb356dac30e1508490604ab05cbdf2b7ec525b"
         }
       ]
     },
@@ -464,23 +464,23 @@
     {
       "id": "course-cursor",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-cursor/COURSE.md",
           "title": "Hands-on with Cursor",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Cursor, where Agent mode runs the loop and you supervise diffs and project rules.",
-          "sha256": "771a50c3064ed5e0900634ebee505f3adfc0835290f6885489809943fe3dc51e"
+          "sha256": "614c877cd725908ecb297d72351876d24c0f6d5aa1b01e1dc891af01331eec7f"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-cursor/COURSE_cn.md",
           "title": "上手 Cursor",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Cursor 里手把手教：由 Agent 模式跑闭环，你监督 diff 与项目规则。",
-          "sha256": "f4649bb2f33651a870750bb43a83199d3cade99599bc74a2b3fe43165d5fd942"
+          "sha256": "3a60c6aa31f9f38a0b6b99c9261c1c5c463f0dd1b71bd48419de019b90ba0008"
         }
       ]
     },
@@ -602,23 +602,23 @@
     {
       "id": "course-da-eda",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/da-eda/COURSE.md",
           "title": "Exploratory Data Analysis with an Agent",
           "summary": "A challenge course — point your agent at a messy shop export and produce a verified EDA summary (results.json) whose numbers are checked against ground truth. First non-stdlib course in the catalog; pandas is pinned in requirements.txt.",
-          "sha256": "412cd414e1ecafa7827772f1c4355c1d2be4e7f5da7cd52700bb88c5c782fa56"
+          "sha256": "478bc69bf43b844495dd971157eb6d2c5267d8e02d54520587f558f680659c3f"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-eda/COURSE_cn.md",
           "title": "用 Agent 做探索性数据分析",
           "summary": "挑战式课程——让你的 Agent 处理一份脏的商店导出数据，产出一份经过真值校验的 EDA 摘要（results.json）。目录中第一门非标准库课程；pandas 版本固定在 requirements.txt。",
-          "sha256": "509913a62ecc46d0972b7572578f3f716c5cc98155734b19d4cb077c218780ac"
+          "sha256": "b6d7d469e7f29a83c70a8f6b613dbe8b971ad7b5f0d12daf022bc9ad10e91d00"
         }
       ]
     },
@@ -740,23 +740,23 @@
     {
       "id": "course-da-report",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/da-report/COURSE.md",
           "title": "From Analysis to Report with an Agent",
           "summary": "Challenge course — turn a verified EDA summary into a structured report (report.json + report.md) where every number traces back to its input. Verification checks structure and number consistency, not writing quality.",
-          "sha256": "3c80de32162187285964142406f1b482dc6c422608de63825783e0444a0f582a"
+          "sha256": "e26ef7e2c0df90d27bacfbbe7ccaaec9e909d53a8c7bca9718c6c9b1ac96b3e0"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-report/COURSE_cn.md",
           "title": "用 Agent 从分析到报告",
           "summary": "挑战课程——把经过验证的 EDA 摘要变成结构化报告（report.json + report.md），其中每个数字都可回溯到输入。验证检查结构与数字一致性，不评价文笔。",
-          "sha256": "40e0e079eaa4c9419b0ff72756a6ee28936bfe5c31cbcc530c48082574b2bd5a"
+          "sha256": "cdc6a66d025898d3ef20f1601144e62182706fdf9de7c7086adcb7917969af1b"
         }
       ]
     },
@@ -878,23 +878,23 @@
     {
       "id": "course-da-visualization",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/da-visualization/COURSE.md",
           "title": "Data Visualization with an Agent",
           "summary": "Challenge course — turn a clean sales dataset into three spec'd charts plus a summary.json whose numbers are verified against the data. Charts must be generated from data, never hardcoded.",
-          "sha256": "fd71dfd018467977e3430e61d290dfaf23ca888177af62bf4d81ac80a51da909"
+          "sha256": "165db52c630a31922c5136c764d72baa4fe1216858a432461217bc1d06aa6fcc"
         },
         {
           "lang": "zh-CN",
           "path": "courses/da-visualization/COURSE_cn.md",
           "title": "用 Agent 做数据可视化",
           "summary": "挑战课程——把干净的销售数据变成三张有规格的图和一份 summary.json，其中数字会与数据集校验。图必须由数据生成，不许硬编码。",
-          "sha256": "c67db40a964dbca98e46d61d6dbe5fb9bd4aa557bb49d9bb4af24e509e1281f5"
+          "sha256": "e8f95c88bbfcc0aa548ad54e164eab223a98241cc4bb26a2b09c2379a25a96e7"
         }
       ]
     },
@@ -1016,23 +1016,23 @@
     {
       "id": "course-deepseek-harness",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-deepseek-harness/COURSE.md",
           "title": "Hands-on with DeepSeek Harness",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in DeepSeek Harness, where the agent loop is composed from plugins and every step lands in an inspectable trajectory.",
-          "sha256": "e1afbd4952c13a0a1556b8b2b29aff4240dad515ac067db4971e842c6fc35f44"
+          "sha256": "5e603e173b701d85537ac9b8846b60535c050dbfd1556c99f5308113cfa154bc"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-deepseek-harness/COURSE_cn.md",
           "title": "上手 DeepSeek Harness",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 DeepSeek Harness 里手把手教：Agent 闭环由插件组装，每一步都落进可检查的轨迹日志。",
-          "sha256": "79a300e15c088864ca895ecfecd715430242db49b0f464273c0d74fda8893db8"
+          "sha256": "596bacae978c25b68bfd3bbb2ee2c97453c3a526e04309b1045d98c55a64f224"
         }
       ]
     },
@@ -1154,23 +1154,23 @@
     {
       "id": "course-github-copilot",
       "type": "course",
-      "content_version": 2,
+      "content_version": 3,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-github-copilot/COURSE.md",
           "title": "Hands-on with GitHub Copilot",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on with GitHub Copilot in VS Code, where the Agent role runs the loop and you supervise permissions, instructions files, and diffs.",
-          "sha256": "4b7036b397af685f38c303171f4aaa2c7ac4b14b8834cbcee08955615c2747c7"
+          "sha256": "f01550d99e4f1f5d3febc8b2a48b056e27d270c68e96636465efb9a87b9a3963"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-github-copilot/COURSE_cn.md",
           "title": "上手 GitHub Copilot",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 VS Code 的 GitHub Copilot 里手把手教：由 Agent 角色跑闭环，你监督权限、指令文件与 diff。",
-          "sha256": "6e66a59359e47387cc67ec16e4ec4c19aa18ffc7425ec3c91102c71975332edb"
+          "sha256": "564070dcea4c2ce6ed8a211e7446bc3a990a1c1a5bc23c5d64940870ec8324fd"
         }
       ]
     },
@@ -1292,23 +1292,23 @@
     {
       "id": "course-kimi-code",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-kimi-code/COURSE.md",
           "title": "Hands-on with Kimi Code",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in Kimi Code, where built-in subagents split read-only exploration, planning, and the edits you approve.",
-          "sha256": "8983d187d16acc6adbea70e01d9293f5d2d7bdf976232f04791c9e7eec2e307c"
+          "sha256": "1ded772efaf67d4fa3a425827423a011b16eeb42f3d6fb28d63cc0188a62bea6"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-kimi-code/COURSE_cn.md",
           "title": "上手 Kimi Code",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 Kimi Code 里手把手教：内置子代理把只读勘察、规划和经你批准的编辑分在三条道上。",
-          "sha256": "53a8b42b7e7b62491d44af7b185ade68d3532a9a07cc02b70bc1fff41ac04b03"
+          "sha256": "63e8d352c46c803d5d8196f84c99fbcbd3c494c955f36d1fb94143b44bd5d55f"
         }
       ]
     },
@@ -1430,23 +1430,23 @@
     {
       "id": "course-llm-features",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-10-11",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/llm-features-in-python/COURSE.md",
           "title": "Build LLM features in Python: structured output, tool calls, and evals",
           "summary": "Turn a demo-day model call into a feature you can ship — validate structured output, allowlist tool calls, retry with the error fed back, fall back to a human instead of guessing, and measure it with an offline eval that divides by every case.",
-          "sha256": "39bf1f7869da13115552c62ea0128db8a03092ba7b04184aa3a98832491dad9a"
+          "sha256": "921fe360e0e9b5edf3de2f9c8f708bf96a845a842831f1a08806cd079aec5448"
         },
         {
           "lang": "zh-CN",
           "path": "courses/llm-features-in-python/COURSE_cn.md",
           "title": "用 Python 构建 LLM 功能：结构化输出、工具调用与评测",
           "summary": "把演示日的一次模型调用变成能上线的功能——校验结构化输出、给工具调用设白名单、带着错误信息重试、拿不准就转人工而不是瞎猜，并用分母覆盖全部用例的离线评测来度量。",
-          "sha256": "be86fb13168251a5a5baec99c1c68f914bed7956329e95ebedf126afa9838516"
+          "sha256": "43e7d332e771eb46fa462cd9cf3b9ebdca3688778ee22c3647bb9ebe17ce5b9e"
         }
       ]
     },
@@ -1568,23 +1568,23 @@
     {
       "id": "course-mcp-tools",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/mcp-server-in-python/COURSE.md",
           "title": "Give your agent tools with MCP (Python)",
           "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip — and learn where a real tool belongs.",
-          "sha256": "6df68da45b69a9a62ba46cdba2b39963edc443759cdfdea00f94b9cdd1f4de40"
+          "sha256": "d54cee6617602ff94442ea7036880c701f98a3f92f860f5bad63e0b16de34f1c"
         },
         {
           "lang": "zh-CN",
           "path": "courses/mcp-server-in-python/COURSE_cn.md",
           "title": "用 MCP 给你的 Agent 装上工具（Python）",
           "summary": "用纯 Python 构建一个无状态的 Model Context Protocol 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互——并理解真正的工具该放在哪里。",
-          "sha256": "197797063a2f01da277d2c51a3cb3816077feca8eae9dfa00b76706bc0ef4887"
+          "sha256": "bc69b438ae0ba962def8606d08677dad73b49c6287303b8f2d86351a78c7db4f"
         }
       ]
     },
@@ -1706,23 +1706,23 @@
     {
       "id": "course-secure-code",
       "type": "course",
-      "content_version": 1,
+      "content_version": 2,
       "status": "reviewed",
-      "reviewed_on": "2026-10-11",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/secure-ai-generated-code/COURSE.md",
           "title": "Security review for AI-written Python",
           "summary": "Review a plausible, AI-style notes service the way an attacker would — close SQL injection, path traversal, a hard-coded secret, fast password hashes, and pickled sessions one class at a time, then prove each fix by replaying the attacks.",
-          "sha256": "17e8571f7192fbb86e5167e6c4505ed0a8d482e067efd4ef4da623ec2173a303"
+          "sha256": "de37e0f0576ecc840417684ea7a64374ff60989830e1d408e72f287b2eab702a"
         },
         {
           "lang": "zh-CN",
           "path": "courses/secure-ai-generated-code/COURSE_cn.md",
           "title": "AI 写的 Python 代码的安全审查",
           "summary": "像攻击者一样审查一个看起来没问题、AI 风格的笔记服务——一次一类地堵上 SQL 注入、路径穿越、硬编码密钥、快速密码哈希和 pickle 会话，再通过重放攻击证明每处修复。",
-          "sha256": "e4e388235efde9d2c6ea14e914792906fa8aeb887426650490609eab6be7af70"
+          "sha256": "890e2bbf92ae422ab2774fd4c8f79a31348695d7bb7ceefd6f73c4acb1179446"
         }
       ]
     },
@@ -1844,23 +1844,23 @@
     {
       "id": "course-verify-ship",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-09-12",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/verifying-ai-generated-code/COURSE.md",
           "title": "From \"it runs\" to \"it ships\": verifying AI-generated code",
           "summary": "Build the release-evidence machine your AI-written project is missing — a ship check that runs the tests, parses what actually ran, refuses zero-test projects, and writes an honest delivery record.",
-          "sha256": "f21f75bd6a716245b614ee2d9b8d782354e33d890694683a66fbd7a1fe53f46b"
+          "sha256": "c8f073e41290b2d0df42747acbcba0065f2be42e188e1446a56e8ed00f9317a2"
         },
         {
           "lang": "zh-CN",
           "path": "courses/verifying-ai-generated-code/COURSE_cn.md",
           "title": "从「能跑」到「能上线」：验证 AI 写的代码",
           "summary": "为你的 AI 项目补上缺失的发布证据机器——一个 ship check：运行测试、解析实际跑了什么、拒绝零测试项目，并写出诚实的交付记录。",
-          "sha256": "ade471c2a4f88526bdb5630b67791b4b5c0757e2a6daf59d2a56566b72f34da9"
+          "sha256": "27bd15bae84542d04c934c940968023ad7a50318ea7b1a09c3101d49a8d3d8c4"
         }
       ]
     },
@@ -1982,23 +1982,23 @@
     {
       "id": "course-zcode",
       "type": "course",
-      "content_version": 3,
+      "content_version": 4,
       "status": "reviewed",
-      "reviewed_on": "2026-11-04",
+      "reviewed_on": "2026-11-07",
       "locales": [
         {
           "lang": "en-US",
           "path": "courses/hands-on-with-zcode/COURSE.md",
           "title": "Hands-on with ZCode",
           "summary": "The verified Python workflow — task contract, bounded change, objective verify.py evidence — taught hands-on in the ZCode desktop workspace, where Goal Mode decomposes the work and the Git state shows every change.",
-          "sha256": "8c28cdfbaa331b00c6cd21c7627d2affa2070c2418c14f799d3c53bf3fb1113a"
+          "sha256": "d6aa303dde7b824907cd85a24f797abbe0d2bc7142f25b81c60e43f8e5d3b9fa"
         },
         {
           "lang": "zh-CN",
           "path": "courses/hands-on-with-zcode/COURSE_cn.md",
           "title": "上手 ZCode",
           "summary": "经过验证的 Python 工作流——任务契约、有界改动、客观 verify.py 证据——在 ZCode 桌面工作区里手把手教：Goal 模式拆解任务，Git 状态展示每一处改动。",
-          "sha256": "901c645a711addfad01d5f88dfe4d02efd0ad57cb2a382899a36825a70f628e0"
+          "sha256": "36fa2aaf66e98fa2e2f6c6c4a643722da9231be9c3affa38db4bf7d980da9872"
         }
       ]
     },

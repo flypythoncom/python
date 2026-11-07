@@ -1,0 +1,111 @@
+{
+  "order": 7,
+  "agentTool": false,
+  "aliases": [],
+  "id": "agent-rules-single-source",
+  "tool": "Any coding agent (Claude Code 2.x / Codex CLI 0.x / Cursor)",
+  "toolZh": "任一编码 Agent（Claude Code 2.x / Codex CLI 0.x / Cursor）",
+  "title": "One source of truth for agent rules",
+  "titleZh": "Agent 规则的单一真源",
+  "summary": "Stop maintaining diverging AGENTS.md, CLAUDE.md, and .cursorrules files — build a checker that proves your repository has exactly one rule source.",
+  "summaryZh": "不再同时维护彼此打架的 AGENTS.md、CLAUDE.md 与 .cursorrules——亲手构建一个能证明仓库只有一处规则真源的检查器。",
+  "outcome": "A working rule-consistency checker (rules_check.py) that fails CI the moment a rule file drifts from AGENTS.md — plus the single-source setup applied to your own repository.",
+  "outcomeZh": "一个可运行的规则一致性检查器（rules_check.py）——任何规则文件偏离 AGENTS.md 的那一刻，CI 就会失败——外加应用到你自己仓库的单一真源配置。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "Any coding agent that reads AGENTS.md, CLAUDE.md, or .cursorrules",
+    "Comfort running shell commands; standard library only"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "任一会读 AGENTS.md、CLAUDE.md 或 .cursorrules 的编码 Agent",
+    "能运行 shell 命令；仅用标准库"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "Measure the drift you already have",
+      "titleZh": "量化你已经存在的漂移",
+      "objective": "Run the checker against three scenario repositories and read drift as a test failure, not a vibe.",
+      "objectiveZh": "对三个场景仓库运行检查器，把漂移读成测试失败，而不是一种感觉。"
+    },
+    {
+      "id": "l02",
+      "title": "Decide the source of truth",
+      "titleZh": "确定唯一真源",
+      "objective": "AGENTS.md becomes the one file agents read; everything else is a pointer or a copy.",
+      "objectiveZh": "AGENTS.md 成为 Agent 唯一阅读的文件；其余都只能是指针或副本。"
+    },
+    {
+      "id": "l03",
+      "title": "Drive a bounded change, test by test",
+      "titleZh": "按测试驱动一次有边界的变更",
+      "objective": "Make the starter detect source, pointer, copy, and drift — one failing test group at a time.",
+      "objectiveZh": "让 starter 依次识别真源、指针、副本与漂移——一次一组失败测试。"
+    },
+    {
+      "id": "l04",
+      "title": "Verify and wire it in",
+      "titleZh": "验证并接入流程",
+      "objective": "Prove both verifier directions, run all three skins, then add the checker to your review loop.",
+      "objectiveZh": "证明验证器双向通过、跑完三个皮肤，然后把检查器接入你的审查环。"
+    },
+    {
+      "id": "l05",
+      "title": "Apply this to your repository",
+      "titleZh": "把这套方法带回你的仓库",
+      "objective": "One AGENTS.md, thin pointers everywhere else, and a failing check when it breaks.",
+      "objectiveZh": "一个 AGENTS.md，其余全是瘦指针，一旦破坏检查就失败。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "thin-pointer",
+      "title": "Healthy: thin pointers",
+      "titleZh": "健康：瘦指针",
+      "dataFile": "AGENTS.md + CLAUDE.md",
+      "blurb": "AGENTS.md plus two thin pointer files that defer to it.",
+      "blurbZh": "AGENTS.md 加两个指向它的瘦指针文件。"
+    },
+    {
+      "id": "single-copy",
+      "title": "Healthy: exact copy",
+      "titleZh": "健康：精确副本",
+      "dataFile": "AGENTS.md + CLAUDE.md",
+      "blurb": "AGENTS.md plus one byte-identical copy in CLAUDE.md.",
+      "blurbZh": "AGENTS.md 加一份逐字节一致的 CLAUDE.md 副本。"
+    },
+    {
+      "id": "drifted",
+      "title": "Broken: drifted .cursorrules",
+      "titleZh": "故障：漂移的 .cursorrules",
+      "dataFile": ".cursorrules",
+      "blurb": "A stale full ruleset that contradicts AGENTS.md — the drift to catch.",
+      "blurbZh": "一份与 AGENTS.md 矛盾的过期完整规则集——要捕获的漂移。"
+    }
+  ],
+  "verification": {
+    "method": "An 11-test suite pins pointer detection, the source requirement, copy and drift classification, and CLI exit codes; the starter reproduces six named failures, the solution passes 11/11.",
+    "methodZh": "11 个测试的套件锚定指针识别、真源要求、副本与漂移分类及 CLI 退出码；starter 复现六个具名失败，solution 通过 11/11。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-agent-rules",
+    "nameEn": "Measure the drift",
+    "nameZh": "规则漂移检测"
+  },
+  "difficulty": "intermediate",
+  "shippedAt": "2026-09-12",
+  "duration": "1–2 hours",
+  "level": "Maintains rule files for multiple tools",
+  "levelZh": "为多个工具维护规则文件",
+  "searchTerms": [
+    "agents.md tutorial",
+    "claude code rules",
+    "cursorrules",
+    "agents.md vs claude.md",
+    "agent 规则"
+  ]
+}

@@ -12,6 +12,13 @@
 网站仓库 `docs/courses/README.md`（课程标准）· 本仓库 `CONTRIBUTING.md`、
 `docs/CURATION_POLICY.md`、`LICENSE`
 
+## 2026-11-07 范围例外：已确认的自动同步
+
+所有者明确确认与 Coach P 一起实现「课程元数据与认领契约自动同步」。该工程子项现归入
+网站 `docs/product-and-growth-plan-0.1.3.md` FP-1303；本仓库提供 `website.json`、
+`course-registry.json` 与生成校验。社区课程投稿、脚手架、审核流程等其余范围继续暂缓。
+公开内容版本仍为已发布的 0.1.3，本轮代码记录在 CHANGELOG 的 Unreleased，不覆盖旧 tag。
+
 ## 决定
 
 - 所有者 2026-09-13：支持网友通过本仓库提交课程；**社区贡献课程永久免费**。

@@ -1,0 +1,96 @@
+{
+  "order": 14,
+  "agentTool": false,
+  "aliases": [],
+  "id": "da-report",
+  "tool": "Any coding agent",
+  "toolZh": "任一编码 Agent",
+  "title": "From Analysis to Report with an Agent",
+  "titleZh": "用 Agent 从分析到报告",
+  "summary": "A challenge course — turn a verified EDA summary into report.json + report.md where every number traces back to its input unchanged.",
+  "summaryZh": "一门挑战课程——把经过验证的 EDA 摘要变成 report.json + report.md，其中每个数字都可原样回溯到输入。",
+  "outcome": "A report generator that produces a machine-readable report.json and a human-readable report.md — the auditable structure that separates “a report exists” from “the numbers are traceable”.",
+  "outcomeZh": "一个报告生成器：产出机器可读的 report.json 和人可读的 report.md——把“有份报告”和“数字可回溯”分开的可审计结构。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "uv or pip to install the pinned pandas dependency",
+    "Any coding agent",
+    "Completing da-eda first is recommended, not required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "用 uv 或 pip 安装锁定的 pandas 依赖",
+    "任一编码 Agent",
+    "建议先完成 da-eda，非必需"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "A report is a contract with the reader",
+      "titleZh": "报告是与读者的契约",
+      "objective": "Trace every number the report must carry back to its source field in results.json.",
+      "objectiveZh": "把报告必须携带的每个数字回溯到 results.json 的来源字段。"
+    },
+    {
+      "id": "l02",
+      "title": "Structure before prose",
+      "titleZh": "先结构，后文字",
+      "objective": "Decide the skeleton — title, section order, metrics block — before writing any prose.",
+      "objectiveZh": "先定骨架——标题、章节顺序、metrics 块——再写任何文字。"
+    },
+    {
+      "id": "l03",
+      "title": "Build and render the report",
+      "titleZh": "构建并渲染报告",
+      "objective": "Implement the contract in starter/report.py — metrics carried unchanged, sections in order, numbers formatted.",
+      "objectiveZh": "在 starter/report.py 里实现契约——指标原样传递、章节按序、数字格式化。"
+    },
+    {
+      "id": "l04",
+      "title": "Numbers traceable to inputs",
+      "titleZh": "数字可回溯到输入",
+      "objective": "Every metric equals its source field — the audit answer is a field name, not an explanation.",
+      "objectiveZh": "每个指标等于来源字段——审计答案是字段名，不是解释。"
+    },
+    {
+      "id": "l05",
+      "title": "What report verification cannot see",
+      "titleZh": "报告验证看不到的东西",
+      "objective": "The suite checks structure and numbers, not insight or honesty — write the boundary sentence.",
+      "objectiveZh": "套件检查结构与数字，不查洞见与诚实——写下那句边界说明。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "analysis-pack",
+      "title": "Verified analysis pack",
+      "titleZh": "已验证的分析数据包",
+      "dataFile": "results.json",
+      "blurb": "A verified EDA summary that your report must trace, not recompute.",
+      "blurbZh": "一份已验证的 EDA 摘要——你的报告要回溯它，不是重算它。"
+    }
+  ],
+  "verification": {
+    "method": "Six-test contract suite: required headings in order, metrics matching inputs exactly, report files written. The starter must reproduce the unfinished state.",
+    "methodZh": "六个测试的契约套件：必需标题按序、指标与输入精确一致、报告文件写出。starter 必须复现未完成状态。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "da-report",
+    "nameEn": "Report Challenger",
+    "nameZh": "分析报告挑战者"
+  },
+  "difficulty": "intermediate",
+  "shippedAt": "2026-09-13",
+  "duration": "1–2 hours",
+  "level": "Beginner; structured output",
+  "levelZh": "新手向；结构化输出",
+  "searchTerms": [
+    "python report generator",
+    "data analysis report",
+    "structured reporting python",
+    "agent report generation"
+  ]
+}

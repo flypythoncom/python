@@ -1,0 +1,113 @@
+{
+  "order": 10,
+  "agentTool": false,
+  "aliases": [],
+  "id": "llm-features-in-python",
+  "tool": "Any coding agent + a recorded model replay (no API key)",
+  "toolZh": "任一编码 Agent + 录制好的模型回放（无需 API Key）",
+  "title": "Build LLM features in Python: structured output, tool calls, and evals",
+  "titleZh": "用 Python 构建 LLM 功能：结构化输出、工具调用与评测",
+  "summary": "Turn a demo-day model call into a feature you can ship — validate structured output, allowlist tool calls, retry with the error fed back, fall back to a human instead of guessing, and measure it with an offline eval that divides by every case.",
+  "summaryZh": "把演示日的一次模型调用变成能上线的功能——校验结构化输出、给工具调用设白名单、带着错误信息重试、拿不准就转人工而不是瞎猜，并用分母覆盖全部用例的离线评测来度量。",
+  "outcome": "A working ticket-triage feature (ticket_triage.py) that treats every model reply as untrusted input — validated output contract, tool-call allowlist, retry with the error fed back, human fallback — plus an offline eval with a pass/fail threshold you can replay on every change.",
+  "outcomeZh": "一个可运行的工单分诊功能（ticket_triage.py）：把每条模型回复当成不可信输入——经过校验的输出契约、工具调用白名单、带错误反馈的重试、人工兜底——外加一个每次改动都能回放、带通过阈值的离线评测。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "Any coding agent with the FlyPython Skill installed",
+    "Comfort running shell commands; standard library only",
+    "No model API key and no network access required"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "任一装好 FlyPython Skill 的编码 Agent",
+    "能运行 shell 命令；仅用标准库",
+    "不需要模型 API Key，也不需要联网"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "A demo reply is not a feature",
+      "titleZh": "演示能跑不等于功能可靠",
+      "objective": "Run the starter's eval, catch the number that cannot be true, and map every failing test to the real-world reply that breaks it.",
+      "objectiveZh": "跑一遍 starter 的评测，抓住那个不可能为真的数字，再把每个失败测试对应到让它坏掉的真实回复。"
+    },
+    {
+      "id": "l02",
+      "title": "Write the output contract",
+      "titleZh": "把模型输出写成契约",
+      "objective": "Read TASK.md as the boundary between your code and the model — what a reply must look like, which tools it may run, and what happens when it does not comply.",
+      "objectiveZh": "把 TASK.md 当成你的代码与模型之间的边界来读——回复必须长什么样、能运行哪些工具、不照做时怎么办。"
+    },
+    {
+      "id": "l03",
+      "title": "Validate, allowlist tools, retry — one group at a time",
+      "titleZh": "校验、工具白名单、重试——一次一组",
+      "objective": "Drive the starter to green in four bounded turns — parser, tool gate, retry-and-fallback loop, eval — and watch one fix expose a bug the old code was hiding.",
+      "objectiveZh": "用四个有界轮次把 starter 推到全绿——解析器、工具关口、重试与兜底循环、评测——并亲眼看到一处修复暴露出旧代码藏着的 bug。"
+    },
+    {
+      "id": "l04",
+      "title": "Read the eval honestly",
+      "titleZh": "诚实地读评测",
+      "objective": "Run all three skins, accept the one that fails its threshold, and write down what a handful of recorded replies can and cannot tell you.",
+      "objectiveZh": "跑完三个皮肤，接受那个没过阈值的结果，并写下少量录好的回复能说明什么、不能说明什么。"
+    },
+    {
+      "id": "l05",
+      "title": "Apply it to your own LLM feature",
+      "titleZh": "接到你自己的模型功能上",
+      "objective": "Put a real model behind the same seam: a callable client, an output contract, an allowlist, a fallback, and an eval you record once and replay on every change.",
+      "objectiveZh": "把真实模型放到同一个接缝后面：一个可调用的 client、一份输出契约、一张白名单、一个兜底，以及录一次、每次改动都回放的评测。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "it-helpdesk",
+      "title": "IT helpdesk with a device lookup tool",
+      "titleZh": "IT 服务台（带设备查询工具）",
+      "dataFile": "recordings.json + devices.json",
+      "blurb": "Classify internal tickets into five categories; the model may look up a device by asset tag first.",
+      "blurbZh": "把内部工单分到五个类别；模型可以先按资产标签查询设备。"
+    },
+    {
+      "id": "saas-feedback",
+      "title": "SaaS feedback inbox",
+      "titleZh": "SaaS 反馈收件箱",
+      "dataFile": "recordings.json",
+      "blurb": "Classify in-app feedback with no tools at all — the model answers from the ticket text alone.",
+      "blurbZh": "完全不带工具地分类应用内反馈——模型只凭工单文本作答。"
+    },
+    {
+      "id": "shop-support",
+      "title": "Shop support with an order lookup tool",
+      "titleZh": "商店客服（带订单查询工具）",
+      "dataFile": "recordings.json + orders.json",
+      "blurb": "Classify a shop's support mail; the model may look up an order before answering.",
+      "blurbZh": "分类商店的客服邮件；模型可以先查询订单再作答。"
+    }
+  ],
+  "verification": {
+    "method": "A 15-test suite pins the output contract, the tool-call allowlist, retry with error feedback, the human fallback, and an eval that divides by every case. The starter reproduces the named failures; the reviewed solution passes 15/15 against recorded replies — no network, no API key.",
+    "methodZh": "15 个测试锚定输出契约、工具调用白名单、带错误反馈的重试、人工兜底，以及分母覆盖全部用例的评测。starter 复现具名失败；已审核的实现对着录制回复通过 15/15——无需联网、无需 API Key。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-llm-features",
+    "nameEn": "Model output is untrusted input",
+    "nameZh": "模型输出是不可信输入"
+  },
+  "difficulty": "intermediate",
+  "shippedAt": "2026-10-11",
+  "duration": "2–4 hours",
+  "level": "Comfortable with functions, dictionaries, and exceptions",
+  "levelZh": "熟悉函数、字典与异常处理",
+  "searchTerms": [
+    "llm structured output python",
+    "tool call allowlist",
+    "offline eval llm",
+    "llm feature python",
+    "结构化输出"
+  ]
+}

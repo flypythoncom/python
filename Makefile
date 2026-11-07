@@ -5,7 +5,7 @@ ifeq ($(and $(wildcard pyproject.toml),$(wildcard tools/validate_catalog.py),$(w
 endif
 
 .DEFAULT_GOAL := help
-.PHONY: help setup check generated-check generate export render manifest solutions test verify courses paths lint lock lock-check all
+.PHONY: help setup check generated-check generate export render manifest registry solutions test verify courses paths lint lock lock-check all
 
 PYTHON ?= python3
 UV ?= uv
@@ -29,6 +29,7 @@ help:
 	@echo "  make export     - Regenerate catalog.json and radar.json"
 	@echo "  make render     - Regenerate root and catalog README indexes plus the Radar table"
 	@echo "  make manifest   - Regenerate content-manifest.json"
+	@echo "  make registry   - Regenerate public course metadata and claim contracts"
 	@echo "  make solutions  - Regenerate course-solutions.json"
 	@echo "  make lint       - Run ruff"
 	@echo "  make test       - Run pytest test suite"
@@ -54,6 +55,7 @@ generated-check:
 	$(PYTHON) tools/render_readmes.py --check
 	$(PYTHON) tools/build_content_manifest.py --check
 	$(PYTHON) tools/build_solution_hashes.py --check
+	$(PYTHON) -m tools.build_course_registry --check
 
 # Keep writers sequential even under make -j: README/manifest checks must not
 # race against a producer. No automatic commit, content-pin update or deploy.
@@ -62,6 +64,7 @@ generate:
 	$(MAKE) render
 	$(MAKE) manifest
 	$(MAKE) solutions
+	$(MAKE) registry
 
 export:
 	$(PYTHON) tools/export_catalog.py --target both
@@ -71,6 +74,9 @@ render:
 
 manifest:
 	$(PYTHON) tools/build_content_manifest.py
+
+registry:
+	$(PYTHON) -m tools.build_course_registry
 
 solutions:
 	$(PYTHON) tools/build_solution_hashes.py

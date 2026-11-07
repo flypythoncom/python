@@ -1,0 +1,111 @@
+{
+  "order": 9,
+  "agentTool": false,
+  "aliases": [],
+  "id": "mcp-server-in-python",
+  "tool": "Claude Code 2.x (protocol: MCP 2026-07-28)",
+  "toolZh": "Claude Code 2.x（协议：MCP 2026-07-28）",
+  "title": "Give your agent tools with MCP (Python)",
+  "titleZh": "用 MCP 给你的 Agent 装上工具（Python）",
+  "summary": "Build a stateless Model Context Protocol tool server in pure Python — JSON-RPC 2.0 dispatch, schema validation, error isolation, and the 2026-07-28 input_required round-trip.",
+  "summaryZh": "用纯 Python 构建一个无状态的 MCP 工具服务——JSON-RPC 2.0 分发、schema 校验、错误隔离与 2026-07-28 的 input_required 多轮交互。",
+  "outcome": "A working MCP tool server implementing the stateless 2026-07-28 specification: no initialize handshake, validated tool arguments, isolated handler failures, and the multi-round input_required flow.",
+  "outcomeZh": "一个实现无状态 2026-07-28 规范的 MCP 工具服务：无 initialize 握手、参数校验、处理异常隔离、input_required 多轮交互。",
+  "prerequisites": [
+    "Python 3.11 or newer available on your PATH",
+    "Comfort reading JSON; no API key or model account needed",
+    "Any coding agent; standard library only"
+  ],
+  "prerequisitesZh": [
+    "PATH 中有 Python 3.11 或更新版本",
+    "能读 JSON；无需 API Key 或模型账号",
+    "任一编码 Agent；仅用标准库"
+  ],
+  "lessons": [
+    {
+      "id": "l01",
+      "title": "What MCP actually is (2026-07-28)",
+      "titleZh": "MCP 到底是什么（2026-07-28）",
+      "objective": "A stateless JSON-RPC 2.0 surface for tools — no handshake, no sessions, versions in _meta.",
+      "objectiveZh": "一个面向工具的无状态 JSON-RPC 2.0 接口——无握手、无会话、版本放在 _meta 里。"
+    },
+    {
+      "id": "l02",
+      "title": "The JSON-RPC dispatch contract",
+      "titleZh": "JSON-RPC 分发契约",
+      "objective": "Valid requests echo their id; invalid ones get -32600; unknown or removed methods get -32601.",
+      "objectiveZh": "合法请求回显 id；非法请求得 -32600；未知或已移除的方法得 -32601。"
+    },
+    {
+      "id": "l03",
+      "title": "Validation and error isolation",
+      "titleZh": "校验与错误隔离",
+      "objective": "Arguments are untrusted input: validate before execution, and never let a handler crash the transport.",
+      "objectiveZh": "参数是不可信输入：先校验再执行，绝不让处理函数打断传输。"
+    },
+    {
+      "id": "l04",
+      "title": "The input_required round-trip",
+      "titleZh": "input_required 多轮交互",
+      "objective": "A tool can ask the client a question mid-call — return the requests, finish on the retry carrying answers.",
+      "objectiveZh": "工具可以在调用中途向客户端提问——先返回问题，客户端带答案重试后完成。"
+    },
+    {
+      "id": "l05",
+      "title": "Expose one real tool to your agent",
+      "titleZh": "给你的 Agent 暴露一个真实工具",
+      "objective": "Wrap one function you actually own behind the validated, isolated boundary you just built.",
+      "objectiveZh": "把你真正拥有的一个函数包进刚建好的「校验 + 隔离」边界。"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "01-tools-list.json",
+      "title": "Direct tools/list",
+      "titleZh": "直接 tools/list",
+      "dataFile": "requests/01-tools-list.json",
+      "blurb": "Listing tools with no prior handshake.",
+      "blurbZh": "无握手直接列出工具。"
+    },
+    {
+      "id": "03-missing-argument.json",
+      "title": "Argument validation",
+      "titleZh": "参数校验",
+      "dataFile": "requests/03-missing-argument.json",
+      "blurb": "A tools/call missing its required argument.",
+      "blurbZh": "一次缺少必填参数的 tools/call。"
+    },
+    {
+      "id": "04-removed-initialize.json",
+      "title": "The removed initialize",
+      "titleZh": "已移除的 initialize",
+      "dataFile": "requests/04-removed-initialize.json",
+      "blurb": "Calling the method the 2026-07-28 specification removed.",
+      "blurbZh": "调用 2026-07-28 规范已移除的方法。"
+    }
+  ],
+  "verification": {
+    "method": "The reviewed mcp-server contract suite: the starter reproduces the listed boundary failures and the solution passes the full suite; wire samples under scenario/requests/ let you probe the protocol by hand.",
+    "methodZh": "经过审核的 mcp-server 契约套件：starter 复现列出的边界失败，solution 通过全部测试；scenario/requests/ 下的线路样本让你可以手动探查协议。",
+    "starterCommand": "python verify.py starter --expect-failure",
+    "starterExpectFailure": "python verify.py starter --expect-failure",
+    "solutionCommand": "python verify.py solution"
+  },
+  "badge": {
+    "id": "course-mcp-tools",
+    "nameEn": "MCP Tool Server",
+    "nameZh": "MCP 工具服务器"
+  },
+  "difficulty": "advanced",
+  "shippedAt": "2026-09-12",
+  "duration": "2–3 hours",
+  "level": "Comfortable with Python functions and JSON",
+  "levelZh": "熟悉 Python 函数与 JSON",
+  "searchTerms": [
+    "build mcp server python",
+    "mcp tutorial",
+    "mcp 教程",
+    "model context protocol python",
+    "mcp server"
+  ]
+}
